@@ -102,7 +102,7 @@
         <!-- nav bar -->
         <div class="nav-bar">
             <ul class="nav">
-                <li><a href="#">Home</a></li>
+                <li><a href="{{ url('/') }}">Home</a></li>
                 <li><a href="#">About us</a></li>
                 <li><a href="#">Emplois du temps</a></li>
                 <li><a href="#">Our Service</a></li>
