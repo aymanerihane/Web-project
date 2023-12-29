@@ -158,6 +158,13 @@
         const span1 = document.querySelector(".menu span:first-child");
         const span2 = document.querySelector(".menu span:nth-child(2)");
         const span3 = document.querySelector(".menu span:last-child");
+        const sign = document.querySelector('.sign');
+        const header = document.querySelector('.header-container');
+
+        if(window.location.pathname == '/register' || window.location.pathname == '/login'){
+            sign.style.display = 'none';
+            header.style.height = '140px';
+        }
 
         // Add click event listener to the menu icon
         menuIcon.addEventListener("click", (event)=> {

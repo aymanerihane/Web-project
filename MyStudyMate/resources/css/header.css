@@ -30,7 +30,7 @@ body{
 /* position the header */
 .header-container{
     background-color: var(--fourthcolor);
-    position: absolute; 
+    position: relative;
     top: 0;
     width: 100%;
     height: 80px;
@@ -82,7 +82,7 @@ body{
 }
 .nav li a:hover{
     background-color: var(--color5);
-    color: var(--thirdcolor)
+    color: var(--thirdcolor);
 }
 .nav li a:hover::before{
     left: 0;
@@ -93,7 +93,7 @@ body{
 .sign li:first-child a::after{
     display: block;
     content: "|";
-    
+
     position: absolute;
     right: -7px;
     top: 0;
@@ -135,7 +135,7 @@ body{
 
 /* menu */
 div.menuConatiner{
-    
+
     display: none;
     cursor: pointer;
 }
@@ -165,7 +165,7 @@ div.menuConatiner{
     width: 82px;
     z-index: 3;
 }
-  
+
 
 
 
@@ -173,7 +173,7 @@ div.menuConatiner{
     .header-container{
         flex-direction: column;
         height: 256px;
-        
+
     }
     .nav-bar{
         width: 100%;
@@ -182,7 +182,7 @@ div.menuConatiner{
         height: 190px;
     }
     .nav{
-        justify-content: center;
+        justify-content: space-around;
         width: 100%;
         height: 60px;
     }
@@ -214,17 +214,17 @@ div.menuConatiner{
         margin-top: 10px;
         width: 100%;
     }
-    
+
     .nav-bar{
         display: none;
     }
     .nav{
         height: 50vh;
     }
-    
+
     .header-container{
-        justify-content: space-between; 
-        flex-direction: row;  
+        justify-content: space-between;
+        flex-direction: row;
         height: 72px;
         width: 100%;
     }
@@ -241,9 +241,9 @@ div.menuConatiner{
         position: absolute;
         top: 72px;
         background-color: #000;
-        opacity: 0.5;
+
         z-index: 1;
-    
+
     }
     .active li{
         width: 90%;
@@ -295,11 +295,14 @@ div.menuConatiner{
         -ms-transform: rotate(-45deg);
         -o-transform: rotate(-45deg);
     }
-    
-    
+    .nav li a:hover{
+        background-color: var(--fourthcolor);
+    }
+
+
 }
 
 
 
-    
+
 
