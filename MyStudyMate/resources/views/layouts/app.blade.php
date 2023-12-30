@@ -93,7 +93,8 @@
     <link rel="stylesheet" href="">
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js','resources/css/Normalize.css','resources/css/header.css'])
+    @vite(['resources/js/app.js','resources/css/Normalize.css','resources/css/header.css'])
+
 </head>
 <body>
     <header class="header-container">
@@ -162,10 +163,7 @@
         const sign = document.querySelector('.sign');
         const header = document.querySelector('.header-container');
 
-        // if(window.location.pathname == '/register' || window.location.pathname == '/login'){
-        //     sign.style.display = 'none';
-        //     header.style.height = '140px';
-        // }
+
 
         // Add click event listener to the menu icon
         menuIcon.addEventListener("click", (event)=> {
