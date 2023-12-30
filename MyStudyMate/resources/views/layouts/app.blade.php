@@ -98,11 +98,11 @@
 <body>
     <header class="header-container">
         <!-- logo -->
-        <h1 class="logo"><a class="navbar-brand" href="{{ url('/') }}">MyStudyMate!!</a></h1>
+        <h1 class="logo"><a href="{{ url('/') }}">MyStudyMate!!</a></h1>
         <!-- nav bar -->
         <div class="nav-bar">
             <ul class="nav">
-                <li><a href="#">Home</a></li>
+                <li><a href="{{ url('/') }}">Home</a></li>
                 <li><a href="#">About us</a></li>
                 <li><a href="#">Emplois du temps</a></li>
                 <li><a href="#">Our Service</a></li>
@@ -161,10 +161,10 @@
         const sign = document.querySelector('.sign');
         const header = document.querySelector('.header-container');
 
-        if(window.location.pathname == '/register' || window.location.pathname == '/login'){
-            sign.style.display = 'none';
-            header.style.height = '140px';
-        }
+        // if(window.location.pathname == '/register' || window.location.pathname == '/login'){
+        //     sign.style.display = 'none';
+        //     header.style.height = '140px';
+        // }
 
         // Add click event listener to the menu icon
         menuIcon.addEventListener("click", (event)=> {
