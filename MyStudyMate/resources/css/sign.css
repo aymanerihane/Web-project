@@ -1,0 +1,107 @@
+section{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+/* box of sign */
+.signbox{
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 70vh;
+    background-color: rgba(0, 0, 0, 0.5) ;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+
+    box-shadow: 5px 9px 35px -2px rgba(0,0,0,0.68);
+    -webkit-box-shadow: 5px 9px 35px -2px rgba(0,0,0,0.68);
+    -moz-box-shadow: 5px 9px 35px -2px rgba(0,0,0,0.68);
+}
+
+
+/* img in box */
+div.img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    width: 50%;
+    height: 100%;
+}
+img{
+    width: 300px;
+    filter: drop-shadow(5px 5px 10px #000000);
+    -webkit-filter: drop-shadow(5px 5px 10px #000000);
+    animation: upDown 3s infinite;
+    -webkit-animation: upDown 3s infinite;
+}
+@media (max-width: 1164px){
+    div.img{
+        display: none;
+    }
+}
+
+@keyframes upDown {
+    0%{
+        transform: translateY(-10px);
+        -webkit-transform: translateY(-10px);
+        -moz-transform: translateY(-10px);
+        -ms-transform: translateY(-10px);
+        -o-transform: translateY(-10px);
+}50%{
+    transform: translateY(10px);
+    -webkit-transform: translateY(10px);
+    -moz-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    -o-transform: translateY(10px);
+}100%{
+    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    -o-transform: translateY(-10px);
+}
+}
+
+/* form */
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+@media (max-width: 1164px){
+    form{
+        width: 100%;
+    }
+}
+/* inputs */
+input:not(input[type="submit"]):not(input[type="checkbox"]){
+    width: 100%;
+}
+input[type="submit"]{
+    color: var();
+    padding: 5px 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+input[type="checkbox"]{
+    
+    justify-self: start;
+}
+
+.check{
+    width: 50%;
+    display: flex;
+}
