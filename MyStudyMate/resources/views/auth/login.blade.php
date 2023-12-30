@@ -45,6 +45,6 @@
         </div>
 
     </form>
-    <div class="img"><img src="{{ asset('resources/images/sign2.png') }}" alt="sign"></div>
+    <div class="img"><img src="{{ asset('storage/images/sign2.png') }}" alt="sign"></div>
 </div>
 @endsection
