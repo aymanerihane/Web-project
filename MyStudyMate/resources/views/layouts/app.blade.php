@@ -111,13 +111,14 @@
             <!-- sing in and sing up -->
             <ul class="sign">
                 @guest
-                            @if (Route::has('login'))
+                            {{-- @if (Route::has('login')) --}}
+                            @if (Route::has('/'))
                             <li><a href="{{ route('login') }}">Sign in</a></li>
                             @endif
 
-                            @if (Route::has('register'))
+                            {{-- @if (Route::has('register'))
                             <li><a href="{{ route('register') }}">Sign up</a></li>
-                            @endif
+                            @endif --}}
 
                             @else
                             <li class="nav-item dropdown">
