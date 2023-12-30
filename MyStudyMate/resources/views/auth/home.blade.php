@@ -20,4 +20,15 @@
         </div>
     </div>
 </div>
+
+<div>
+    <Select name="optionsAdmin" id="optionsAdmin">
+        <option value="emplois">Gestion des emplois du temps</option>
+        <option value="affectationSalle">Affectation des Salles</option>
+        <option value="modifierProf">Modufication du role des professeurs</option>
+        <option value="inscritClass">Inscrire d'une nouvelle classe dans un module</option>
+        <option value="editerFil">Ajouter et modifier le contenu d’une filière</option>
+    </Select>
+    
+</div>
 @endsection
