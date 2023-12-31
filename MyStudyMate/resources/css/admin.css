@@ -5,9 +5,17 @@
     --fourthcolor: #31383F;
     --color5: #000;
 }
+.ad{
+    display: flex;
+}
+.GestionEmplois{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 
 .optionAD{
-    position: relative;
     width: 50%;
     height: 100vh;
     background-color: var(--secondcolor);
