@@ -1,4 +1,5 @@
 @extends('layouts.app')
+<head> <link rel="stylesheet" href={{ asset('css/article.css')}}> </head>
 
 @section('content')
 <div class="container">
@@ -22,13 +23,25 @@
 </div>
 
 <div>
-    <Select name="optionsAdmin" id="optionsAdmin">
-        <option value="emplois">Gestion des emplois du temps</option>
-        <option value="affectationSalle">Affectation des Salles</option>
-        <option value="modifierProf">Modufication du role des professeurs</option>
-        <option value="inscritClass">Inscrire d'une nouvelle classe dans un module</option>
-        <option value="editerFil">Ajouter et modifier le contenu d’une filière</option>
-    </Select>
-    
+    <div class="optionAD">
+        <form class="formChoice" method="post" action="">
+
+            <input type="radio" name="optionsAdmin" id="emplois" checked >
+            <label for="emplois">Gestion des emplois du temps</label><br>
+            <input type="radio" name="optionsAdmin" id="affectationSalle">
+            <label for="affectationSalle">Affectation des Salles</label><br>
+            <input type="radio" name="optionsAdmin" id="modifierProf">
+            <label for="modifierProf">Modufication du role des professeurs</label><br>
+            <input type="radio" name="optionsAdmin" id="inscritClass">
+            <label for="inscritClass">Inscrire d'une nouvelle classe dans un module</label><br>
+            <input type="radio" name="optionsAdmin" id="editerFil">
+            <label for="editerFil">Ajouter et modifier le contenu d'une filière</label><br>
+
+        </form>
+
+
+
+    </div>
+
 </div>
 @endsection
