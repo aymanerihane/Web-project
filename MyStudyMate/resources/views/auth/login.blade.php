@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="signbox">
-    <form  method="POST" action="{{ route('login') }}">
+    <form class="formSign" method="post" action="{{ route('login') }}">
         @csrf
         <div class="email">
             <label for="email">Email Adress</label><br>

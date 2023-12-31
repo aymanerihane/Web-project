@@ -72,14 +72,14 @@ img{
 }
 
 /* form */
-form{
+.formSign{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 50%;
 }
 @media (max-width: 1164px){
-    form{
+    .formSign{
         width: 100%;
     }
 }
@@ -97,7 +97,7 @@ input[type="submit"]{
     -o-border-radius: 10px;
 }
 input[type="checkbox"]{
-    
+
     justify-self: start;
 }
 
