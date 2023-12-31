@@ -93,7 +93,7 @@
     <link rel="stylesheet" href="">
 
     <!-- Scripts -->
-    @vite(['resources/js/app.js','resources/css/Normalize.css','resources/css/header.css','resources/css/sign.css'])
+    @vite(['resources/js/app.js','resources/css/Normalize.css','resources/css/header.css','resources/css/sign.css',"resources/css/admin.css"])
 
 </head>
 <body>
