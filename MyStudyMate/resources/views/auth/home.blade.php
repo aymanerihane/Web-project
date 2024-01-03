@@ -1,3 +1,7 @@
+
+
+    @vite(["resources/js/admin_ajax.js"])
+
 @extends('layouts.app')
 @section('content')
 
@@ -31,50 +35,51 @@
                     <hr/>
                 </div>
                 <div id="nav-content">
-                    <div class="nav-button"><span>Gestion des emplois du temps</span></div>
-                    <div class="nav-button"><span>Affectation des Salle</span></div>
-                    <div class="nav-button"><span>Modification du role des professeurs</span></div>
+                    <div class="nav-button btn1 active-side1"><span>Gestion des emplois du temps</span></div>
+                    <div class="nav-button btn2"><span>Modification du role des professeurs</span></div>
+                    <div class="nav-button btn3"><span>Affectation des Salle</span></div>
                     <hr/>
-                    <div class="nav-button"><span>Inscrire d'une nouvelle classe dans un module</span></div>
-                    <div class="nav-button"><span>Ajouter et modifier le contenu d'une filière</span></div>
+                    <div class="nav-button btn3"><span>Inscrire d'une nouvelle classe dans un module</span></div>
+                    <div class="nav-button btn5"><span>Ajouter et modifier le contenu d'une filière</span></div>
 
                 <div id="nav-content-highlight"></div>
+                <div id="nav-content-highlight2"></div>
             </div>
             <input id="nav-footer-toggle" type="checkbox"/>
         </div>
-    </div>
-    <div class="center">
+        <div class="center">
 
-        <div class="manup">
-            <div class="GestionEmplois">
-                <div class="salle">
-                    <Label>Salle :</Label><br>
-                    <Select>
-                        @php
-                        $salles = app('App\Http\Controllers\Locals')->showLocals();
-                        @endphp
-                        @if($salles->count() > 0)
-                            @foreach ($salles as $salle)
-                                <option value="{{ $salle->id_salle }}">{{ $salle->nom }}</option>
+            <div class="manup">
+                <div class="GestionEmplois">
+                    <div class="salle">
+                        <Label>Salle :</Label><br>
+                        <Select>
+                            @php
+                            $salles = app('App\Http\Controllers\Locals')->showLocals();
+                            @endphp
+                            @if($salles->count() > 0)
+                                @foreach ($salles as $salle)
+                                    <option value="{{ $salle->id_salle }}">{{ $salle->nom }}</option>
+                                @endforeach
+                            @else
+                                <option value="">aucune salle n'est disponible</option>
+                            @endif
+                        </Select>
+                    </div>
+                    <div class="departement">
+                        <Label>Département</Label><br>
+                        <select name="" id="">
+                            @php
+                            $departements = app('App\Http\Controllers\Departements')->showDepartements();
+                            @endphp
+                            @foreach ($departements as $departement)
+                                <option value="{{ $departement->id_departement }}">{{ $departement->nom }}</option>
                             @endforeach
-                        @else
-                            <option value="">aucune salle n'est disponible</option>
-                        @endif
-                    </Select>
+                        </select>
+                    </div>
                 </div>
-                <div class="departement">
-                    <Label>Département</Label><br>
-                    <select name="" id="">
-                        @php
-                        $departements = app('App\Http\Controllers\Departements')->showDepartements();
-                        @endphp
-                        @foreach ($departements as $departement)
-                            <option value="{{ $departement->id_departement }}">{{ $departement->nom }}</option>
-                        @endforeach
-                    </select>
-                </div>
+                <button>Associer</button>
             </div>
-            <button>Associer</button>
         </div>
     </div>
 </div>
