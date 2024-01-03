@@ -1,6 +1,4 @@
 @extends('layouts.app')
-
-
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -59,7 +57,16 @@
                 <div class="salle">
                     <Label>Salle :</Label><br>
                     <Select>
-                        <option value="1">Salle 1</option>
+                        @php
+            $salles = app('App\Http\Controllers\Locals')->showLocals();
+            @endphp
+                        @if($salles->count() > 0)
+        @foreach ($salles as $salle)
+        <option value="{{ $salle->id_salle }}">{{ $salle->name }}</option>
+        @endforeach
+        @else
+        <option value="">aucune salle n'est disponible</option>
+        @endif
                     </Select>
                 </div>
                 <div class="departement">
