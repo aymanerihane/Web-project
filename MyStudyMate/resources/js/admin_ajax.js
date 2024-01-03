@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       navButtons[index].classList.add(`active-side${index + 1}`);
+      if(navButtons[index].querySelector("span").textContent === "Affectation des Salle"){
+        chnagerManupulation();
+      }
     }
 
     // Add event listeners to each nav button
@@ -18,3 +21,17 @@ document.addEventListener("DOMContentLoaded", function () {
       button.addEventListener("click", () => handleActive(index));
     });
   });
+
+//   ajax part
+
+function chnagerManupulation() {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            document.querySelector(".center").innerHTML = xhr.responseText;
+        }
+    };
+    xhr.open("GET", "{{ asset('resources/views/auth/affectationSalle.blade.php') }}", true); //erreur
+    xhr.send();
+}
+
