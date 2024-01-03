@@ -90,10 +90,9 @@ body{
 
 
     /* sing in and up button */
-.sign li:first-child a::after{
+.sign li:first-child a::after:not(.lougout){
     display: block;
     content: "|";
-
     position: absolute;
     right: -7px;
     top: 0;
@@ -305,4 +304,69 @@ div.menuConatiner{
 
 
 
+
+/* search */
+.sign form input[type="text"].search {
+  width: 100px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  font-size: 9px;
+  background-color: white;
+  background-image: url("../../storage/app/public/searchicon.png") ;
+  background-size: 17px;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  text-align: right;
+}
+
+.sign form input[type="text"].search:focus {
+  width: 100%;
+}
+
+
+/* name */
+.log{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ccc;
+}
+.btnlog{
+    height: 20px;
+    margin-top: 10px;
+    width: 100px;
+}
+.loga{
+    font-size: 12px;
+    position:absolute;
+    transform: translate(-50%,-50%);
+}
+@media (max-width: 999px){
+    .sign form input[type="text"].search{
+        display: none;
+    }
+    .log{
+        height: 200px;
+        width: 50%;
+
+
+    }
+    .btnlog{
+        height: 34px;
+    }
+
+    .sign li a.loga{
+       height: 12px;
+    }
+}
 

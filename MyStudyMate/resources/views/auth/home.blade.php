@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -20,53 +21,45 @@
     </div>
 </div>
 
-<div>
-    <div class="optionAD">
-        <form class="formChoice" method="post" action="">
-            <input type="radio" name="optionsAdmin" id="emplois" checked >
-            <label for="emplois">Gestion des emplois du temps</label><br>
-            <input type="radio" name="optionsAdmin" id="affectationSalle">
-            <label for="affectationSalle">Affectation des Salles</label><br>
-            <input type="radio" name="optionsAdmin" id="modifierProf">
-            <label for="modifierProf">Modufication du role des professeurs</label><br>
-            <input type="radio" name="optionsAdmin" id="inscritClass">
-            <label for="inscritClass">Inscrire d'une nouvelle classe dans un module</label><br>
-            <input type="radio" name="optionsAdmin" id="editerFil">
-            <label for="editerFil">Ajouter et modifier le contenu d'une filière</label><br>
-        </form>
+<div class="contAllOp">
 
-        <div class="ad">
-            <div class="optionAD">
-                <form class="formChoice" method="post" action="">
-                    <input type="radio" name="optionsAdmin" id="emplois" checked >
-                    <label for="emplois">Gestion des emplois du temps</label><br>
-                    <input type="radio" name="optionsAdmin" id="affectationSalle">
-                    <label for="affectationSalle">Affectation des Salles</label><br>
-                    <input type="radio" name="optionsAdmin" id="modifierProf">
-                    <label for="modifierProf">Modufication du role des professeurs</label><br>
-                    <input type="radio" name="optionsAdmin" id="inscritClass">
-                    <label for="inscritClass">Inscrire d'une nouvelle classe dans un module</label><br>
-                    <input type="radio" name="optionsAdmin" id="editerFil">
-                    <label for="editerFil">Ajouter et modifier le contenu d'une filière</label><br>
-                </form>
+    <div class="conatinerAd">
+            <div id="nav-bar">
+                <input id="nav-toggle" type="checkbox"/>
+                <div id="nav-header"><h1 id="nav-title">Menu</h1>
+                    <label for="nav-toggle"><span id="nav-toggle-burger"></span></label>
+                    <hr/>
+                </div>
+                <div id="nav-content">
+                    <div class="nav-button"><span>Gestion des emplois du temps</span></div>
+                    <div class="nav-button"><span>Affectation des Salle</span></div>
+                    <div class="nav-button"><span>Modification du role des professeurs</span></div>
+                    <hr/>
+                    <div class="nav-button"><span>Inscrire d'une nouvelle classe dans un module</span></div>
+                    <div class="nav-button"><span>Ajouter et modifier le contenu d'une filière</span></div>
 
-
-
+                <div id="nav-content-highlight"></div>
             </div>
+            <input id="nav-footer-toggle" type="checkbox"/>
+        </div>
+    </div>
+    <div class="center">
+
+        <div class="manup">
             <div class="GestionEmplois">
                 <div class="salle">
                     <Label>Salle :</Label><br>
                     <Select>
                         @php
-            $salles = app('App\Http\Controllers\Locals')->showLocals();
-            @endphp
+                        $salles = app('App\Http\Controllers\Locals')->showLocals();
+                        @endphp
                         @if($salles->count() > 0)
-        @foreach ($salles as $salle)
-        <option value="{{ $salle->id_salle }}">{{ $salle->nom }}</option>
-        @endforeach
-        @else
-        <option value="">aucune salle n'est disponible</option>
-        @endif
+                            @foreach ($salles as $salle)
+                                <option value="{{ $salle->id_salle }}">{{ $salle->nom }}</option>
+                            @endforeach
+                        @else
+                            <option value="">aucune salle n'est disponible</option>
+                        @endif
                     </Select>
                 </div>
                 <div class="departement">
@@ -75,19 +68,15 @@
                         @php
                         $departements = app('App\Http\Controllers\Departements')->showDepartements();
                         @endphp
-
-                    @foreach ($departements as $departement)
-                    <option value="{{ $departement->id_departement }}">{{ $departement->nom }}</option>
-                    @endforeach
+                        @foreach ($departements as $departement)
+                            <option value="{{ $departement->id_departement }}">{{ $departement->nom }}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
             <button>Associer</button>
-
         </div>
-
-
     </div>
-
 </div>
+
 @endsection
