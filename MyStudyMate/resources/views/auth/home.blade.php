@@ -62,7 +62,7 @@
             @endphp
                         @if($salles->count() > 0)
         @foreach ($salles as $salle)
-        <option value="{{ $salle->id_salle }}">{{ $salle->name }}</option>
+        <option value="{{ $salle->id_salle }}">{{ $salle->nom }}</option>
         @endforeach
         @else
         <option value="">aucune salle n'est disponible</option>
@@ -72,7 +72,13 @@
                 <div class="departement">
                     <Label>Département</Label><br>
                     <select name="" id="">
-                        <option value="info">Département Info</option>
+                        @php
+                        $departements = app('App\Http\Controllers\Departements')->showDepartements();
+                        @endphp
+
+                    @foreach ($departements as $departement)
+                    <option value="{{ $departement->id_departement }}">{{ $departement->nom }}</option>
+                    @endforeach
                     </select>
                 </div>
             </div>
