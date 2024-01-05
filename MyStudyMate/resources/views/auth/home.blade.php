@@ -47,10 +47,9 @@
             </div>
             <input id="nav-footer-toggle" type="checkbox"/>
         </div>
-        <div class="center">
 
 
-        </div>
+        <div class="center"></div>
     </div>
 </div>
 

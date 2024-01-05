@@ -111,9 +111,6 @@
             </ul>
             <!-- sing in and sing up -->
             <ul class="sign">
-                <form>
-                    <input class="search" type="text" name="search" placeholder="Search..">
-                </form>
                 @guest
                             {{-- @if (Route::has('login')) --}}
                             @if (Route::has('/'))
