@@ -1,0 +1,52 @@
+:root{
+    --maincolor: #F2E9EB;
+    --secondcolor: #dd8e14;
+    --thirdcolor: #fec841;
+    --fourthcolor: #31383F;
+    --color5: #000;
+    --navbar-width: 256px;
+    --navbar-width-min: 80px;
+    --navbar-dark-primary: #18283b;
+    --navbar-dark-secondary: #2c3e50;
+    --navbar-light-primary: #f5f6fa;
+    --navbar-light-secondary: #8392a5;
+}
+caption /* Titre du tableau */
+        {
+           margin: auto; /* Centre le titre du tableau */
+           font-family: Arial, Times, "Times New Roman", serif;
+           font-weight: bold;
+           font-size: 1.2em;
+           color: var(--secondcolor);
+           margin-bottom: 20px; /* Pour éviter que le titre ne soit trop collé au tableau en-dessous */
+        }
+
+        table /* Le tableau en lui-même */
+        {
+           margin: auto; /* Centre le tableau */
+           border-collapse: collapse; /* Colle les bordures entre elles */
+           width:100%;
+        }
+        th /* Les cellules d'en-tête */
+        {
+           background-color: var(--secondcolor);
+           border: 1px solid var(--fourthcolor);
+           border-left: 0;
+           color: white;
+           font-size: 1.1em;
+           font-family: Arial, "Arial Black", Times, "Times New Roman", serif;
+        }
+
+        td /* Les cellules normales */
+        {
+            border: 2px dotted var(--fourthcolor);
+            border-top: 0;
+           border-left: 0;
+           font-family: "Comic Sans MS", "Trebuchet MS", Times, "Times New Roman", serif;
+           text-align: center; /* Tous les textes des cellules seront centrés*/
+           padding: 5px; /* Petite marge intérieure aux cellules pour éviter que le texte touche les bordures */
+        }
+        td.time
+        {
+            width:10%;
+        }

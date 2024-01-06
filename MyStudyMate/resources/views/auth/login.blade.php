@@ -43,7 +43,7 @@
 
             </div>
             <div class="sb">
-                <button class="">
+                <button>
                     <div class="btnLogin"><span class="spn2">{{ __('Login') }}</span></div>
                   </button>
                 @if (Route::has('password.request'))

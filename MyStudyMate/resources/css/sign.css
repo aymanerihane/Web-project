@@ -214,6 +214,7 @@ button.submitbtn{
 }
 /* butt */
 .btnLogin {
+    cursor: pointer;
     margin: 40px 5px;
     position: relative;
     display: inline-block;

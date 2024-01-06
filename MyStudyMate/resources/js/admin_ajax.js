@@ -8,9 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
     function handleActive(index) {
       navButtons.forEach((button, i) => {
         button.classList.remove(`active-side${i + 1}`);
+        button.classList.remove(`active-side`);
       });
 
       navButtons[index].classList.add(`active-side${index + 1}`);
+      navButtons[index].classList.add(`active-side`);
       if(navButtons[index].querySelector("span").textContent === "Affectation des Salle"){
         chnagerManupulation();
       }
