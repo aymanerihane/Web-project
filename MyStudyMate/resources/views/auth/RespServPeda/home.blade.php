@@ -32,16 +32,12 @@
                     <hr/>
                 </div>
                 <div id="nav-content">
-                    <div class="nav-button btn1 active-side1 active-side"><span>Emplois du Temps</span></div>
-                    <div class="nav-button btn2"><span>Annonces des Professeurs</span></div>
-                    <div class="nav-button btn3"><span> Demander lettre Recommandation</span></div>
-                    <div class="nav-button btn3"><span> Demander Rendez-vous</span></div>
+                    <div class="nav-button btn1 active-side1 active-side"><span>Gestion des Emplois du Temps</span></div>
+                    <div class="nav-button btn2"><span>Modifier Responsable Département</span></div>
+                    <div class="nav-button btn3"><span>Affectation des Salles à un Département</span></div>
                     <hr class="hr"/>
-                    <div class="nav-button btn3"><span>Justifier Absence</span></div>
-                    <div class="nav-button btn5"><span>Demander Changement Groupe TP</span>
-                    <div class="nav-button btn5"><span>Signaler Pannes Matérielles</span><!-- just for deleguer -->
-                     <div class="nav-button btn5"><span>Signaler Incidents Quotidiens</span><!-- just for deleguer -->
-                    </div>
+                    <div class="nav-button btn3"><span>Inscrire d'une nouvelle classe dans un module</span></div>
+                    <div class="nav-button btn5"><span>Ajouter et modifier le contenu d'une filière</span></div>
 
                 <div id="nav-content-highlight"></div>
                 <div id="nav-content-highlight2"></div>
@@ -57,3 +53,4 @@
     </div>
 </div>
 @endsection
+

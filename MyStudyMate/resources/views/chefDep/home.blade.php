@@ -32,12 +32,9 @@
                     <hr/>
                 </div>
                 <div id="nav-content">
-                    <div class="nav-button btn1 active-side1 active-side"><span>Gestion des emplois du temps</span></div>
-                    <div class="nav-button btn2"><span>Modification du role des professeurs</span></div>
-                    <div class="nav-button btn3"><span>Affectation des Salle</span></div>
-                    <hr class="hr"/>
-                    <div class="nav-button btn3"><span>Inscrire d'une nouvelle classe dans un module</span></div>
-                    <div class="nav-button btn5"><span>Ajouter et modifier le contenu d'une filière</span></div>
+                    <div class="nav-button btn1 active-side1 active-side"><span>Gérer Emplois du Temps Salle</span></div>
+                    <div class="nav-button btn2"><span>Gérer Annonces Département</span></div>
+
 
                 <div id="nav-content-highlight"></div>
                 <div id="nav-content-highlight2"></div>
