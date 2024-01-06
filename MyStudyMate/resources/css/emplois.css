@@ -1,16 +1,4 @@
-:root{
-    --maincolor: #F2E9EB;
-    --secondcolor: #dd8e14;
-    --thirdcolor: #fec841;
-    --fourthcolor: #31383F;
-    --color5: #000;
-    --navbar-width: 256px;
-    --navbar-width-min: 80px;
-    --navbar-dark-primary: #18283b;
-    --navbar-dark-secondary: #2c3e50;
-    --navbar-light-primary: #f5f6fa;
-    --navbar-light-secondary: #8392a5;
-}
+
 caption /* Titre du tableau */
         {
            margin: auto; /* Centre le titre du tableau */

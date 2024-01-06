@@ -1,13 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800;900&display=swap');
 
-:root{
-    --maincolor: #F2E9EB;
-    --secondcolor: #dd8e14;
-    --thirdcolor: #fec841;
-    --fourthcolor: #31383F;
-    --color5: #000;
-}
 
 /* normalize */
 *{

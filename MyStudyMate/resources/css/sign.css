@@ -1,19 +1,30 @@
 
-:root{
-    --maincolor: #F2E9EB;
-    --secondcolor: #dd8e14;
-    --thirdcolor: #fec841;
-    --fourthcolor: #31383F;
-    --color5: #000;
-}
-
 section{
     width: 100%;
-    height: 80vh;
+    height: 90vh;
     position: relative;
+    background-image: url(../../storage/app/public/bgclogin.jpg);
 }
+/* bgc and overlay */
+.bgclogin{
+
+}
+.overrlayLogin{
+    position: fixed; /* Sit on top of the page content */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
 /* box of sign */
 .signbox{
+    z-index: 3;
     border-radius: 10px;
     overflow: hidden;
     display: flex;
@@ -24,7 +35,7 @@ section{
     left: 50%;
     width: 60%;
     height: 90%;
-    background-color: rgba(0, 0, 0, 0.5) ;
+    background-color: #a58e6a ;
     transform: translate(-50%,-50%);
     -webkit-transform: translate(-50%,-50%);
     -moz-transform: translate(-50%,-50%);
@@ -97,7 +108,10 @@ img{
     }
 }
 
-/* checkbox */
+/* checkbox and remember*/
+.remember{
+    color: #fff;
+}
 .check{
     width: 64%;
 }
@@ -218,7 +232,7 @@ button.submitbtn{
     margin: 40px 5px;
     position: relative;
     display: inline-block;
-    padding: 10px 20px;
+    padding: 15px 30px;
     border: 2px solid #fefefe;
     text-transform: uppercase;
     color: #fefefe;
@@ -235,7 +249,7 @@ button.submitbtn{
     left: -2px;
     width: calc(100% + 4px);
     height: calc(100% - -2px);
-    background-color: #7F7F7F ;
+    background-color: var(--secondcolor) ;
     transition: 0.3s ease-out;
     transform: scaleY(1);
   }
@@ -247,7 +261,7 @@ button.submitbtn{
     left: -2px;
     width: calc(100% + 4px);
     height: calc(100% - 50px);
-    background-color: #212121;
+    background-color: var(--secondcolor);
     transition: 0.3s ease-out;
     transform: scaleY(1);
   }
@@ -276,6 +290,8 @@ button.submitbtn{
     border: none;
     background-color: transparent;
   }
+
+
 /* pass forget */
 .pasForget{
 
