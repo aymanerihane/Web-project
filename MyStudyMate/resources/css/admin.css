@@ -36,44 +36,39 @@
 }
 /* MANUPULATION */
 .manup{
-    border-radius: 10px;
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     z-index: 99;
-    transform: translate(-50%,-50%);
     color: #ddd;
-    height: 300px;
-    width: 500px;
+    height: 500px;
+    width: 100%;
     background-color: var(--fourthcolor);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    margin-bottom: 30px;
+
+    transform: translate(-50%,-50%);
     -webkit-transform: translate(-50%,-50%);
     -moz-transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
     -o-transform: translate(-50%,-50%);
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-    box-shadow: 5px 9px 35px -2px rgba(0,0,0,0.68);
-    -webkit-box-shadow: 5px 9px 35px -2px rgba(0,0,0,0.68);
-    -moz-box-shadow: 5px 9px 35px -2px rgba(0,0,0,0.68);
-}
-.manup button{
-    margin-left: auto;
-    margin-right: auto;
-    width: 100px;
-    height: 50px;
-    background-color: var(--secondcolor);
-    border: 0;
+
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+
+    box-shadow: 5px 9px 35px -2px rgba(0,0,0,0.68);
+    -webkit-box-shadow: 5px 9px 35px -2px rgba(0,0,0,0.68);
+    -moz-box-shadow: 5px 9px 35px -2px rgba(0,0,0,0.68);
 }
+.asso .btnLogin::before,.asso .btnLogin::after{
+    background-color: var(--fourthcolor) !important;
+}
+
 /* side bare */
 
 #nav-bar {
@@ -289,7 +284,7 @@
       top: -6px;
       width: 10px;
       height: 2px;
-      background: var(--navbar-light-primary);
+      background: var(--maincolor);
       border-radius: 99px;
       transform: translate(2px, 8px) rotate(30deg);
       transition: .2s; }
@@ -501,3 +496,48 @@
     #nav-footer-content::-webkit-scrollbar-thumb {
       border-radius: 99px;
       background-color: #D62929; }
+
+
+      /* select */
+      .select{
+        color: var(--navbar-light-primary);
+        border: 0 ;
+        border-bottom: var(--navbar-light-primary) solid 1px;
+        background-color: transparent;
+      }
+      .option{
+        background-color: var(--secondcolor);
+      }
+      .custom-dropdown select {
+        background-color:var(--secondcolor);
+        color: #fff;
+        font-size: inherit;
+        padding: .5em;
+        padding-right: 2.5em;
+        border: 0;
+        margin: 0;
+        border-radius: 3px;
+        text-indent: 0.01px;
+        text-overflow: '';
+
+      }
+
+
+
+
+
+
+
+
+/* h1 */
+.h1{
+    text-align: center;
+    background-color: #a58e6a;
+    color: #fff;
+    padding:10px;
+    border-radius:10px ;
+    -webkit-border-radius:10px ;
+    -moz-border-radius:10px ;
+    -ms-border-radius:10px ;
+    -o-border-radius:10px ;
+}

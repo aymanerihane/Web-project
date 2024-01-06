@@ -161,7 +161,7 @@ span.invalid{
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
 }
-.email,.password{
+.email,.nom,.confirme,.password{
     position: relative;
     width: 64%;
 }
