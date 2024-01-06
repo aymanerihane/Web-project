@@ -52,7 +52,7 @@
         <div class="center">
             {{-- @include('auth.affectationSalle') --}}
             {{-- @include('auth.emploisTemps') --}}
-            {{-- @include('auth.addEtudiant') --}}
+            @include('auth.addEtudiant')
         </div>
 
     </div>

@@ -15,11 +15,7 @@
                 </label>
 
             </div>
-            @error('email')
-                <span class="invalid" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
+
             <div class="password">
                 <input id="password" type="password" name="password" required autocomplete="current-password">
                 <label class="labelf">
@@ -28,6 +24,11 @@
 
 
             </div>
+            @error('email')
+                <span class="invalid" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
             @error('password')
                 <span class="invalid" role="alert">
                     <strong>{{ $message }}</strong>
