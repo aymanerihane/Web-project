@@ -29,6 +29,7 @@ caption /* Titre du tableau */
         }
         th /* Les cellules d'en-tête */
         {
+            width: 12.5%;
            background-color: var(--secondcolor);
            border: 1px solid var(--fourthcolor);
            border-left: 0;
