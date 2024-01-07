@@ -1,5 +1,7 @@
+
     <div class="signbox">
-        <form class="formSign" method="post" action="{{ route('login') }}">
+        <form class="formSign" method="POST" action="{{ route('auth.addEtudiant')}}">
+            @csrf
             <div class="nom">
                 <input id="nom" type="text"  @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                 <label class="labelf">
@@ -53,3 +55,11 @@
         </form>
         <div class="img"><img src="{{ asset('storage/images/sign2.png') }}" alt="sign"></div>
     </div>
+{{-- @php
+    if($_SERVER['REQUEST_METHOD']=="POST"){
+        $name=$_POST['name'];
+        $password=$_POST['password'];
+        $isRole=4;
+
+    }
+@endphp --}}

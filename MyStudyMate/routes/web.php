@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\addEtudiant;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,5 @@ Route::get('respFil/home', [App\Http\Controllers\respFill\HomeController::class,
 Route::get('prof/home', [App\Http\Controllers\Professeur\HomeController::class, 'index'])->name('prof.home');
 Route::get('etudiant/home', [App\Http\Controllers\etudiant\HomeController::class, 'index'])->name('etudiant.home');
 Route::get('landing/home', [App\Http\Controllers\landing\HomeController::class, 'index'])->name('landing.home');
+Route::post('auth/addEtudiant', [addEtudiant::class, 'create'])->name('auth.addEtudiant');
+
