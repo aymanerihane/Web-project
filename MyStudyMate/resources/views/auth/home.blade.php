@@ -45,7 +45,6 @@
                 <div id="nav-content-highlight"></div>
                 <div id="nav-content-highlight2"></div>
             </div>
-            <input id="nav-footer-toggle" type="checkbox"/>
         </div>
 
 

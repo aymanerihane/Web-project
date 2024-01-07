@@ -135,7 +135,7 @@ div.menuConatiner{
     right: 0;
   }
 .menu span {
-    background-color: black;
+    background-color: var(--maincolor);
     height: 2px;
     position: absolute;
     width: 20px;
@@ -260,7 +260,7 @@ div.menuConatiner{
     span.firstmenu:first-child,
     span.lastmenu:last-child {
         top: 6px;
-        background-color: red;
+        background-color: var(--secondcolor);
     }
 
     .firstmenu {
