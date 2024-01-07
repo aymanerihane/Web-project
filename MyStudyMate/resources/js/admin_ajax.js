@@ -1,9 +1,3 @@
-function isdelegue(ele){
-    console.log(ele.value);
-    if(ele.value==5){[
-
-    ]}
-}
 // Wait for the DOM to be ready
 document.addEventListener("DOMContentLoaded", function () {
     // Get all nav buttons and the highlight element
