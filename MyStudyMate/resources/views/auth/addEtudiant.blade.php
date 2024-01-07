@@ -34,6 +34,28 @@
 
 
             </div>
+            <div class="salle">
+                <Label>Role :</Label><br>
+                <span class="custom-dropdown small">
+                    <Select class="select" name="role" onclick="isdelegue(this)">
+                                <option class="option" value="1">Admin</option>
+                                <option class="option" value="2">Chef Departement</option>
+                                <option class="option" value="3">Responsable Filiere</option>
+                                <option class="option" value="4">Professeur</option>
+                                <option class="option" value="5">Etudiant</option>
+
+                    </Select>
+                </span>
+            </div>
+            <div class="salle" id="isdeleg">
+            <Label>Delegue :</Label><br>
+                <span class="custom-dropdown small">
+                    <Select class="select" name="deleg">
+                                <option class="option" value="0">Non</option>
+                                <option class="option" value="1">Oui</option>
+                    </Select>
+                </span>
+            </div>
             @error('email')
                 <span class="invalid" role="alert">
                     <strong>{{ $message }}</strong>
