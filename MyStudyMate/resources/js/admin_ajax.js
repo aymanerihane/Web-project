@@ -1,6 +1,6 @@
 function isdelegue(ele){
     console.log(ele.value);
-    if(ele.value=="5"){[
+    if(ele.value==5){[
 
     ]}
 }
@@ -8,6 +8,8 @@ function isdelegue(ele){
 document.addEventListener("DOMContentLoaded", function () {
     // Get all nav buttons and the highlight element
     const navButtons = document.querySelectorAll(".nav-button");
+    const slectRole = document.getElementById("selectRole");
+    const isdeleg = document.getElementById("isdeleg");
     const highlightElement = document.getElementById("nav-content-highlight2");
 
     // Function to handle the active state
@@ -28,6 +30,17 @@ document.addEventListener("DOMContentLoaded", function () {
     navButtons.forEach((button, index) => {
       button.addEventListener("click", () => handleActive(index));
     });
+
+    //show and hide delegue input
+    slectRole.addEventListener('change', ()=>{
+        var value = slectRole.value;
+        console.log(value)
+        if(value == 5)
+            isdeleg.style.display= 'block';
+        else
+            isdeleg.style.display= 'none';
+
+    })
   });
 
 //   ajax part

@@ -37,7 +37,7 @@
             <div class="salle">
                 <Label>Role :</Label><br>
                 <span class="custom-dropdown small">
-                    <Select class="select" name="role" onclick="isdelegue(this)">
+                    <Select id="selectRole" class="select" name="role">
                                 <option class="option" value="1">Admin</option>
                                 <option class="option" value="2">Chef Departement</option>
                                 <option class="option" value="3">Responsable Filiere</option>

@@ -67,11 +67,15 @@ img{
     animation: upDown 3s infinite;
     -webkit-animation: upDown 3s infinite;
 }
+#isdeleg{
+    display: none;
+}
 @media (max-width: 1164px){
     div.img{
         display: none;
     }
 }
+
 
 @keyframes upDown {
     0%{
