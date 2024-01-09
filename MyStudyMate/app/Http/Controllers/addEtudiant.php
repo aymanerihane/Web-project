@@ -6,6 +6,8 @@ use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use PhpParser\Node\Expr\AssignOp\Concat;
+
 class addEtudiant extends Controller
 {
 
@@ -20,11 +22,13 @@ class addEtudiant extends Controller
     if ($validator->fails()) {
         return redirect()->back()->withErrors($validator)->withInput();
     }
+
         User::create([
             'name' => $_POST['name'],
             'email' => $_POST['email'],
             'password' => Hash::make($_POST['password']),
             'is_role'=>$_POST['role'],
+            'is_delegue'=>$_POST['deleg'],
         ]);
         return redirect('/auth/home');
 

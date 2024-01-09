@@ -16,21 +16,22 @@ class isRole
     public function handle(Request $request, Closure $next): Response
     {
         if(auth()->check()){
-            if(auth()->user()->is_role == 1) {
-            return $next($request);
-             } elseif (auth()->user()->is_role == 2){
-            return redirect()->route('chefDep.home');
-                }elseif (auth()->user()->is_role == 3){
+            $routename=$request->route()->getName();
+            if(auth()->user()->is_role == 1 && $routename!='auth.home') {
+                return redirect()->route('auth.home');
+            }
+            elseif (auth()->user()->is_role == 2 && $routename!='chefdep.home'){
+                return redirect()->route('chefDep.home');
+            }elseif (auth()->user()->is_role == 3 && $routename!='respFil.home'){
                 return redirect()->route('respFil.home');
-                }
-                elseif (auth()->user()->is_role == 4){
-                    return redirect()->route('prof.home');
-                    }elseif (auth()->user()->is_role == 5){
-                        return redirect()->route('etudiant.home');
-                        }
-                    else{
-                        return redirect()->route('landing.home');
-                    }
+            }
+            elseif (auth()->user()->is_role == 4 && $routename!='prof.home'){
+                return redirect()->route('prof.home');
+            }elseif (auth()->user()->is_role == 5 && $routename!='etudiant.home'){
+                return redirect()->route('etudiant.home');
+            }
+            return $next($request);
         }
     }
+
 }
