@@ -46,7 +46,7 @@ function chnagerManupulation() {
             document.querySelector(".center").innerHTML = xhr.responseText;
         }
     };
-    xhr.open("GET", "{{ asset('resources/views/auth/affectationSalle.blade.php') }}", true); //erreur
+    xhr.open("GET", 'affectationSalle', true); //erreur
     xhr.send();
 }
 

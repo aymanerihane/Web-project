@@ -30,3 +30,6 @@ Route::get('landing/home', [App\Http\Controllers\landing\HomeController::class, 
 Route::post('auth/addEtudiant', [addEtudiant::class, 'create'])->name('auth.addEtudiant');
 });
 
+Route::get('auth/affectationSalle', function () {
+    return view('auth.affectationSalle');
+});
