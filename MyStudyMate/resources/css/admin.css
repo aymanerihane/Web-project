@@ -308,29 +308,28 @@
       transition: opacity 1s; }
     .nav-button .fas {
       transition: min-width .2s; }
-    .active-side1,.active-side2,.active-side3,.active-side4,.active-side5{
+    .active-side1,.active-side2,.active-side3,.active-side4,.active-side5,.active-side6,.active-side7,.active-side8{
     color: var(--navbar-dark-primary);
     }
-    .nav-button:nth-of-type(1):hover {
+    .nav-button:nth-of-type(1):hover,.nav-button:nth-of-type(4):hover,.nav-button:nth-of-type(5):hover,.nav-button:nth-of-type(3):hover,.nav-button:nth-of-type(2):hover,.nav-button:nth-of-type(6):hover,.nav-button:nth-of-type(7):hover,.nav-button:nth-of-type(8):hover {
       color: var(--navbar-dark-primary); }
       .nav-button:nth-of-type(1):hover ~ #nav-content-highlight, .active-side1~ #nav-content-highlight2 {
         top: 16px; }
-    .nav-button:nth-of-type(2):hover {
-      color: var(--navbar-dark-primary); }
       .nav-button:nth-of-type(2):hover ~ #nav-content-highlight,.active-side2~ #nav-content-highlight2  {
         top: 90px; }
-    .nav-button:nth-of-type(3):hover {
-      color: var(--navbar-dark-primary); }
       .nav-button:nth-of-type(3):hover ~ #nav-content-highlight,.active-side3~ #nav-content-highlight2  {
         top: 164px; }
-    .nav-button:nth-of-type(4):hover {
-      color: var(--navbar-dark-primary); }
       .nav-button:nth-of-type(4):hover ~ #nav-content-highlight,.active-side4~ #nav-content-highlight2 {
         top: 238px; }
-    .nav-button:nth-of-type(5):hover {
-      color: var(--navbar-dark-primary); }
       .nav-button:nth-of-type(5):hover ~ #nav-content-highlight,.active-side5~ #nav-content-highlight2  {
         top: 312px; }
+      .nav-button:nth-of-type(6):hover ~ #nav-content-highlight,.active-side6~ #nav-content-highlight2  {
+        top: 386px; }
+      .nav-button:nth-of-type(7):hover ~ #nav-content-highlight,.active-side7~ #nav-content-highlight2  {
+        top: 460px; }
+      .nav-button:nth-of-type(8):hover ~ #nav-content-highlight,.active-side8~ #nav-content-highlight2  {
+        top: 534px; }
+
 
   #nav-bar .fas {
     min-width: 3rem;
