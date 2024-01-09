@@ -13,7 +13,7 @@
             <div class="email">
                 <input id="email" type="email" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
                 <label class="labelf">
-                    <span style="transition-delay:0ms">E</span><span style="transition-delay:50ms">M</span><span style="transition-delay:100ms">A</span><span style="transition-delay:150ms">I</span><span style="transition-delay:200ms">L</span><span style="transition-delay:250ms"> </span><span style="transition-delay:300ms">A</span><span style="transition-delay:350ms">D</span><span style="transition-delay:400ms">R</span><span style="transition-delay:450ms">E</span><span style="transition-delay:500ms">S</span><span style="transition-delay:550ms">S</span>
+                    <span style="transition-delay:0ms">P</span><span style="transition-delay:50ms">R</span><span style="transition-delay:100ms">E</span><span style="transition-delay:150ms">N</span><span style="transition-delay:200ms">O</span><span style="transition-delay:250ms">M</span>
                 </label>
 
             </div>
