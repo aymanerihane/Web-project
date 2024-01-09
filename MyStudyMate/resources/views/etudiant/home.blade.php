@@ -2,25 +2,6 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                {{-- <div class="card-header">{{ __('Dashboard') }}</div> --}}
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{-- {{ __('You are logged in as Responsable service Pedagogique!') }} --}}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <div class="contAllOp">
 
@@ -35,25 +16,27 @@
                     <div class="nav-button btn1 active-side1 active-side"><span>Emplois du Temps</span></div>
                     <div class="nav-button btn2"><span>Annonces des Professeurs</span></div>
                     <div class="nav-button btn3"><span> Demander lettre Recommandation</span></div>
-                    <div class="nav-button btn3"><span> Demander Rendez-vous</span></div>
+                    <div class="nav-button btn4"><span> Demander Rendez-vous</span></div>
                     <hr class="hr"/>
-                    <div class="nav-button btn3"><span>Justifier Absence</span></div>
-                    <div class="nav-button btn5"><span>Demander Changement Groupe TP</span>
-                    <div class="nav-button btn5"><span>Signaler Pannes Matérielles</span><!-- just for deleguer -->
-                     <div class="nav-button btn5"><span>Signaler Incidents Quotidiens</span><!-- just for deleguer -->
-                    </div>
+                    <div class="nav-button btn5"><span>Justifier Absence</span></div>
+                    <div class="nav-button btn6"><span>Demander Changement Groupe TP</span></div>
+                    <div class="nav-button btn7"><span>Signaler Pannes Matérielles</span></div><!-- just for deleguer -->
+                     <div class="nav-button btn8"><span>Signaler Incidents Quotidiens</span></div><!-- just for deleguer -->
 
                 <div id="nav-content-highlight"></div>
                 <div id="nav-content-highlight2"></div>
             </div>
-            <input id="nav-footer-toggle" type="checkbox"/>
         </div>
 
 
         <div class="center">
-
+            {{-- @include('auth.affectationSalle')
+            @include('auth.emploisTemps') --}}
+            @include('auth.addEtudiant')
         </div>
 
     </div>
 </div>
+
 @endsection
+
