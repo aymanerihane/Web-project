@@ -20,7 +20,7 @@ class isRole
             if(auth()->user()->is_role == 1 && $routename!='auth.home') {
                 return redirect()->route('auth.home');
             }
-            elseif (auth()->user()->is_role == 2 && $routename!='chefdep.home'){
+            elseif (auth()->user()->is_role == 2 && $routename!='chefDep.home'){
                 return redirect()->route('chefDep.home');
             }elseif (auth()->user()->is_role == 3 && $routename!='respFil.home'){
                 return redirect()->route('respFil.home');
