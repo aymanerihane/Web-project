@@ -50,3 +50,6 @@ function chnagerManupulation() {
     xhr.send();
 }
 
+
+
+
