@@ -26,6 +26,7 @@
     align-items: center;
 }
 .center{
+    opacity: 0;
     overflow: scroll;
     padding: 50px;
     position: relative;
@@ -35,10 +36,12 @@
     left: 0;
     flex:1;
     transition: all 0.9;
-    -webkit-transition: all 0.9;
-    -moz-transition: all 0.9;
-    -ms-transition: all 0.9;
-    -o-transition: all 0.9;
+    -webkit-transition: opacity 0.5s ease;
+    -moz-transition: opacity 0.5s ease;
+    -ms-transition: opacity 0.5s ease;
+    -o-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+
 }
 @media (max-width:999px) {
     .center{

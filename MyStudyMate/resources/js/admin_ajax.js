@@ -7,21 +7,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const isdeleg = document.getElementById("isdeleg");
     const highlightElement = document.getElementById("nav-content-highlight2");
 
+
     // Function to handle the active state
     function handleActive(index) {
       navButtons.forEach((button, i) => {
         button.classList.remove(`active-side${i + 1}`);
         button.classList.remove(`active-side`);
       });
-
+      const center = document.querySelector(".center");
       navButtons[index].classList.add(`active-side${index + 1}`);
       navButtons[index].classList.add(`active-side`);
       if(navButtons[index].querySelector("span").textContent === "Affectation des Salle"){
         chnagerManupulation('affectationSalle');
+        center.style.opacity = 0;
       }else if(navButtons[index].querySelector("span").textContent === "Gestion des emplois du temps"){
         chnagerManupulation('emploisTemps');
+        center.style.opacity = 0;
       }else if(navButtons[index].querySelector("span").textContent === "Ajouter Membres"){
         chnagerManupulation('addEtudiant');
+        center.style.opacity = 0;
       }
     }
 
@@ -48,7 +52,11 @@ function chnagerManupulation(url) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
+            const center = document.querySelector(".center");
             document.querySelector(".center").innerHTML = xhr.responseText;
+            setTimeout(function () {
+                center.style.opacity = 1; // Set opacity to 1 to fade in the content
+            }, 30);
         }
     };
     xhr.open("GET", url, true); //erreur
