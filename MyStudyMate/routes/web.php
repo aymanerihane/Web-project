@@ -36,3 +36,9 @@ Route::get('auth/affectationSalle', [App\Http\Controllers\Auth\HomeController::c
 Route::get('auth/affectationSalle', function () {
     return view('auth.affectationSalle');
 });
+Route::get('auth/addEtudiant', function () {
+    return view('auth.addEtudiant');
+});
+Route::get('auth/emploisTemps', function () {
+    return view('auth.emploisTemps');
+});

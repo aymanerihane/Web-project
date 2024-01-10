@@ -1,5 +1,6 @@
 // Wait for the DOM to be ready
 document.addEventListener("DOMContentLoaded", function () {
+    chnagerManupulation('emploisTemps');
     // Get all nav buttons and the highlight element
     const navButtons = document.querySelectorAll(".nav-button");
     const slectRole = document.getElementById("selectRole");
@@ -16,7 +17,11 @@ document.addEventListener("DOMContentLoaded", function () {
       navButtons[index].classList.add(`active-side${index + 1}`);
       navButtons[index].classList.add(`active-side`);
       if(navButtons[index].querySelector("span").textContent === "Affectation des Salle"){
-        chnagerManupulation();
+        chnagerManupulation('affectationSalle');
+      }else if(navButtons[index].querySelector("span").textContent === "Gestion des emplois du temps"){
+        chnagerManupulation('emploisTemps');
+      }else if(navButtons[index].querySelector("span").textContent === "Ajouter Membre"){
+        chnagerManupulation('addEtudiant');
       }
     }
 
@@ -39,14 +44,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //   ajax part
 
-function chnagerManupulation() {
+function chnagerManupulation(url) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             document.querySelector(".center").innerHTML = xhr.responseText;
         }
     };
-    xhr.open("GET", 'affectationSalle', true); //erreur
+    xhr.open("GET", url, true); //erreur
     xhr.send();
 }
 
