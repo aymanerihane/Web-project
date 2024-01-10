@@ -72,7 +72,9 @@
             <!-- sing in and sing up -->
             <ul class="sign">
                 @guest
+
                             {{-- @if (Route::has('login')) --}}
+
                             <?php
                             if($_SERVER["PHP_SELF"] == "/index.php"){
                                 ?>
@@ -82,28 +84,43 @@
                             <li><a href="{{ route('register') }}">Sign up</a></li>
                             <?php }
                             ?>
+
                             @else
                             <div class="log">
+                                @if($_SERVER["PHP_SELF"] == "/index.php")
+                                    @auth
+                                        <p class="name"> {{ Auth::user()->name }} </p>
+                                        <li class="btnlog">
 
+                                            <div class="lougout">
+                                                <a class="loga" href="{{ route('auth.home') }}">
+                                                    DashBord
+                                                </a>
+                                            </div>
+                                        </li>
+                                    @endauth
+                                @else
                                 <p class="name"> {{ Auth::user()->name }} </p>
-                                <li class="btnlog">
+                                    <li class="btnlog">
 
-                                    <div class="lougout">
-                                        <a class="loga" href="{{ route('logout') }}"
-                                           onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
-                                        </a>
+                                        <div class="lougout">
+                                            <a class="loga" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                            document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                            </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                            @csrf
-                                        </form>
-                                    </div>
-                                </li>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                @csrf
+                                            </form>
+                                        </div>
+                                    </li>
+                                @endif
                             </div>
                         @endguest
             </ul>
         </div>
+
         <!-- menu burger for small screen -->
         <div class="menuConatiner">
 

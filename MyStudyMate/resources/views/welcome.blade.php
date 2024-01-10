@@ -138,9 +138,7 @@
             </div>
         </div>
     </body>
-</html> --}}
-@extends('layouts.app')
-@if (Route::has('login'))
+</html> --}}@if (Route::has('login'))
 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
     @auth
     <p>Hello {{auth()->user()->name}}!</p>
@@ -154,3 +152,5 @@
     @endauth
 </div>
 @endif
+@extends('layouts.app')
+
