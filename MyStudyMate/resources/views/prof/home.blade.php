@@ -38,6 +38,11 @@
 
                 <div id="nav-content-highlight"></div>
                 <div id="nav-content-highlight2"></div>
+                @if(Auth::user()->is_chef == 1)
+                    <div class="nav-footer" style="z-index: 1999">
+                        <a href="{{url('chefDep/home')}}">Change Mode</a>
+                    </div>
+                @endif
             </div>
             <input id="nav-footer-toggle" type="checkbox"/>
         </div>

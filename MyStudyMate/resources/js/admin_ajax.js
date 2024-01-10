@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         chnagerManupulation('affectationSalle');
       }else if(navButtons[index].querySelector("span").textContent === "Gestion des emplois du temps"){
         chnagerManupulation('emploisTemps');
-      }else if(navButtons[index].querySelector("span").textContent === "Ajouter Membre"){
+      }else if(navButtons[index].querySelector("span").textContent === "Ajouter Membres"){
         chnagerManupulation('addEtudiant');
       }
     }

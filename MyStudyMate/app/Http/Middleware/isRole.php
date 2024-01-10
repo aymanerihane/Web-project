@@ -20,8 +20,12 @@ class isRole
             if(auth()->user()->is_role == 1 && $routename!='auth.home') {
                 return redirect()->route('auth.home');
             }
-            elseif (auth()->user()->is_role == 2 && $routename!='chefDep.home'){
-                return redirect()->route('chefDep.home');
+            elseif (auth()->user()->is_role == 2 ){
+                if($routename!='chefDep.home' && $routename!='prof.home' && $routename!='choixMode')
+                    return redirect()->route('chefDep.home');
+                elseif($routename=='prof.home' && $routename=='choixMode')
+                 return redirect()->route('chefDep.home');
+
             }elseif (auth()->user()->is_role == 3 && $routename!='respFil.home'){
                 return redirect()->route('respFil.home');
             }

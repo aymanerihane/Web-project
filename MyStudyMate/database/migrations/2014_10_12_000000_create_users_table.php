@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->tinyInteger('is_role')->default(0);
             $table->tinyInteger('is_delegue')->default(0);
+            $table->tinyInteger('is_chef')->default(0);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
