@@ -115,6 +115,25 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity .1s; }
+  #nav-toggle:checked ~ #footer-nav {
+    width: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .1s;
+    -webkit-transition: opacity .1s;
+    -moz-transition: opacity .1s;
+    -ms-transition: opacity .1s;
+    -o-transition: opacity .1s, width .1s;
+}
+  #nav-toggle:checked ~ #footer-nav .foo {
+    width: 0 !important;
+    opacity: 0 !important;
+    transition: opacity .1s;
+    -webkit-transition: opacity .1s;
+    -moz-transition: opacity .1s;
+    -ms-transition: opacity .1s;
+    -o-transition: opacity .1s, width .1s;
+}
 
   #nav-toggle:checked ~ #nav-header label[for="nav-toggle"] {
     left: calc(50% - 8px);
@@ -174,7 +193,34 @@
 
   #nav-title {
     font-size: 1.5rem;
-    transition: opacity 1s; }
+    transition: opacity 1s;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    -o-transition: opacity 1s;
+}
+#footer-nav{
+    direction: ltr;
+    position: absolute;
+    bottom: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    background-color: #1d2126;
+    border-radius: 10px 10px 10px 0;
+    -webkit-border-radius: 10px 10px 10px 0;
+    -moz-border-radius: 10px 10px 10px 0;
+    -ms-border-radius: 10px 10px 10px 0;
+    -o-border-radius: 10px 10px 10px 0;
+}
+.foo{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
   label[for="nav-toggle"] {
     position: absolute;
@@ -213,6 +259,7 @@
     margin: -16px 0;
     padding: 16px 0;
     position: relative;
+    height: 100%;
     flex: 1;
     width: var(--navbar-width);
     background: var(--fourthcoloy);

@@ -1,4 +1,6 @@
 @vite(["resources/CSS/choixCard.css"])
+@extends('layouts.app')
+@section('content')
 <h1 class="mode-header"> Mode de connexion</h1>
 <div class="choixMode">
 <div class="optionsMode">
@@ -76,3 +78,4 @@
         </div>
     </a>
 
+    @endsection

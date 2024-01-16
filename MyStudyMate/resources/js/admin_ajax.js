@@ -26,6 +26,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }else if(navButtons[index].querySelector("span").textContent === "Ajouter Membres"){
         chnagerManupulation('addEtudiant');
         center.style.opacity = 0;
+      }else if(navButtons[index].querySelector("span").textContent === "Gérer Annonces Département"){
+        chnagerManupulation('annonce');
+        center.style.opacity = 0;
       }
     }
 

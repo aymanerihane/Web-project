@@ -100,7 +100,7 @@
                                         </li>
                                     @endauth
                                 @else
-                                <p class="name"> {{ Auth::user()->name }} </p>
+                                {{-- <p class="name"> {{ Auth::user()->name }} </p>
                                     <li class="btnlog">
 
                                         <div class="lougout">
@@ -114,7 +114,7 @@
                                                 @csrf
                                             </form>
                                         </div>
-                                    </li>
+                                    </li> --}}
                                 @endif
                             </div>
                         @endguest

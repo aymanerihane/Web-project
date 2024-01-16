@@ -45,4 +45,7 @@ Route::get('auth/emploisTemps', function () {
 Route::get('choixMode', function () {
     return view('chefDep.choixMode');
 });
+Route::get('annonce', function () {
+    return view('chefDep.gererAnnonces');
+});
 
