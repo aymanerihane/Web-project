@@ -1,12 +1,28 @@
-document.ready(function(){
-    document.querySelector('input[type=file]').drop_uploader({
-        uploader_text: 'Drop files to upload, or',
-        browse_text: 'Browse',
-        browse_css_class: 'button button-primary',
-        browse_css_selector: 'file_browse',
-        uploader_icon: '<i class="pe-7s-cloud-upload"></i>',
-        file_icon: '<i class="pe-7s-file"></i>',
-        time_show_errors: 5,
-        layout: 'thumbnails'
-    });
+
+document.bind('dragover', function (e) {
+    var dropZone = document.querySelector('.zone'),
+        timeout = window.dropZoneTimeout;
+    if (!timeout) {
+        dropZone.addClass('in');
+    } else {
+        clearTimeout(timeout);
+    }
+    var found = false,
+        node = e.target;
+    do {
+        if (node === dropZone[0]) {
+            found = true;
+            break;
+        }
+        node = node.parentNode;
+    } while (node != null);
+    if (found) {
+        dropZone.addClass('hover');
+    } else {
+        dropZone.removeClass('hover');
+    }
+    window.dropZoneTimeout = setTimeout(function () {
+        window.dropZoneTimeout = null;
+        dropZone.removeClass('in hover');
+    }, 100);
 });

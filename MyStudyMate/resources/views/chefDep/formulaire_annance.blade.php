@@ -1,6 +1,6 @@
 @vite(["resources/css/fileUpload.css","resources/js/file.js"])
 <div class="signbox" >
-    <form style="flex: 1;justify-content: center;" class="formSign" method="POST" action="{{ route('auth.addEtudiant')}}">
+    <form style="flex: 1;justify-content: center;" class="formSign" method="POST" action="">
         @csrf
         <div class="nom">
             <input id="nom" type="text"  @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -11,25 +11,27 @@
         </div>
         @csrf
         <div class="email">
-            <input id="email" type="text">
+            <input  required >
             <label class="labelf">
                 <span style="transition-delay:0ms">D</span><span style="transition-delay:50ms">I</span><span style="transition-delay:100ms">S</span><span style="transition-delay:150ms">C</span><span style="transition-delay:200ms">R</span><span style="transition-delay:250ms">I</span><span style="transition-delay:300ms">P</span><span style="transition-delay:350ms">T</span><span style="transition-delay:400ms">I</span><span style="transition-delay:450ms">O</span><span style="transition-delay:500ms">N</span>
             </label>
 
         </div>
 
-        <div class="container-file">
-            <div class="row">
-                <div class="twelve column" style="margin-top: 5%">
-                    <h4>Multiple File Upload Form</h4>
-                    <form method="POST" action="upload.php" enctype="multipart/form-data">
-                        <input type="file" name="file[]" multiple>
-                        {{-- <input class="button-primary" type="submit" value="Submit"> --}}
+            <div class="zone">
 
-                    </form>
-
+                <div id="dropZ">
+                  <i class="fa fa-cloud-upload"></i>
+                  <div>Drag and drop your file here</div>
+                  <span>OR</span>
+                  <div class="selectFile">
+                    <label for="file">Select file</label>
+                    <input type="file" name="files[]" id="file">
+                  </div>
+                  <p>File size limit : 10 MB</p>
                 </div>
-            </div>
+
+              </div>
             @error('email')
                 <span class="invalid" role="alert">
                     <strong>{{ $message }}</strong>
@@ -49,7 +51,7 @@
         </div>
         </div>
     </form>
-    <div class="img"><img src="{{ asset('storage/images/sign2.png') }}" alt="sign"></div>
+
 </div>
 {{-- @php
 if($_SERVER['REQUEST_METHOD']=="POST"){
