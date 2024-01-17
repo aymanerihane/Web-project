@@ -1,3 +1,40 @@
+#delete,.posinew{
+    cursor: pointer;
+    position: relative;
+    transition: transform .3s;
+    -webkit-transition: transform .3s;
+    -moz-transition: transform .3s;
+    -ms-transition: transform .3s;
+    -o-transition: transform .3s;
+}
+
+.icon{
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+.posinew{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 0;
+    right: 0;
+}
+
+#delete:hover,.posinew:hover{
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+
 .listannonce{
     display: flex;
     position: relative;
@@ -20,7 +57,7 @@
  box-shadow: 10px 10px 10px #bebebe, -10px -10px 10px #ffffff;
 }
 
-.new, .imgholder{
+.new, .imgholder, .posinew{
     background-color: var(--secondcolor);
     border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -35,14 +72,7 @@
 .imgholder{
     width: 80px;
     height: 80px;
-    position: relative;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
+
 }
 .add-card .imgholder:hover{
     cursor: pointer;
@@ -69,56 +99,27 @@
 }
 
 .head-card{
-    background-color: #c0c0c0;
-    width: 60%;
-    left: auto;
-    right: auto;
-    height: 10px;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
-    position: relative;
-    top: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
+     width: 60%;
+    font-size: medium;
+    text-align: center;
+
+}
+.containerAnnonceText{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .text-card{
-    background-color: #c0c0c0;
     width: 80%;
-    height: 10px;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
-    position: relative;
-    top: 25%;
-    left: 50%;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
+    font-size: small;
+    text-align: center;
+
 }
-.text-card::after{
-    content: '';
-    width: 100%;
-    height: 10px;
-    background-color: #c0c0c0;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
-    position: absolute;
-    top: 200%;
+.imgholdera{
+    position: relative;
+    top: 10%;
     left: 50%;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);

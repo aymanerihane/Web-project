@@ -120,7 +120,8 @@
                         @endguest
             </ul>
         </div>
-
+        <?php
+        if($_SERVER["PHP_SELF"] == "/index.php"){?>
         <!-- menu burger for small screen -->
         <div class="menuConatiner">
 
@@ -130,6 +131,7 @@
                 <span></span>
             </div>
         </div>
+        <?php } ?>
     </header>
     <script>
         document.addEventListener("DOMContentLoaded", function () {

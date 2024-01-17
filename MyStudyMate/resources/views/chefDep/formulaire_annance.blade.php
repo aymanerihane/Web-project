@@ -13,6 +13,13 @@
         <div class="email">
             <input  required >
             <label class="labelf">
+                <span style="transition-delay:0ms">R</span><span style="transition-delay:50ms">E</span><span style="transition-delay:100ms">S</span><span style="transition-delay:150ms">U</span><span style="transition-delay:200ms">M</span><span style="transition-delay:250ms">E</span><span style="transition-delay:300ms">R</span>
+            </label>
+
+        </div>
+        <div class="email">
+            <input  required >
+            <label class="labelf">
                 <span style="transition-delay:0ms">D</span><span style="transition-delay:50ms">I</span><span style="transition-delay:100ms">S</span><span style="transition-delay:150ms">C</span><span style="transition-delay:200ms">R</span><span style="transition-delay:250ms">I</span><span style="transition-delay:300ms">P</span><span style="transition-delay:350ms">T</span><span style="transition-delay:400ms">I</span><span style="transition-delay:450ms">O</span><span style="transition-delay:500ms">N</span>
             </label>
 
@@ -46,7 +53,7 @@
 
         <div class="sb" style="margin-left: auto;margin-right: auto;">
             <button type="submit">
-                <div class="btnLogin"><span>{{ __('Register') }}</span></div>
+                <div style="margin-bottom: 0" class="btnLogin"><span>{{ __('Register') }}</span></div>
               </button>
         </div>
         </div>
