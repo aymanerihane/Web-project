@@ -48,4 +48,7 @@ Route::get('choixMode', function () {
 Route::get('annonce', function () {
     return view('chefDep.gererAnnonces');
 });
+Route::get('formAn', function () {
+    return view('chefDep.formulaire_annance');
+});
 

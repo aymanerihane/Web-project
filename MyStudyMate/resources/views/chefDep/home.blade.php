@@ -1,4 +1,4 @@
-@vite(["resources/CSS/choixCard.css"])
+@vite(["resources/CSS/choixCard.css","resources/CSS/admin_ajax.js"])
 @extends('layouts.app')
 @section('content')
 <h1 class="mode-header"> Mode de connexion</h1>

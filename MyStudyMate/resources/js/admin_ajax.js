@@ -2,11 +2,11 @@
 document.addEventListener("DOMContentLoaded", function () {
     chnagerManupulation('emploisTemps');
     // Get all nav buttons and the highlight element
-    const navButtons = document.querySelectorAll(".nav-button");
-    const slectRole = document.getElementById("selectRole");
-    const isdeleg = document.getElementById("isdeleg");
-    const highlightElement = document.getElementById("nav-content-highlight2");
-
+    var navButtons = document.querySelectorAll(".nav-button");
+    var iconAdd = document.getElementById("addClick");
+    var selectRole = document.getElementById("selectRole");
+    var isdeleg = document.getElementById("isdeleg");
+    var highlightElement = document.getElementById("nav-content-highlight2");
 
     // Function to handle the active state
     function handleActive(index) {
@@ -26,9 +26,36 @@ document.addEventListener("DOMContentLoaded", function () {
       }else if(navButtons[index].querySelector("span").textContent === "Ajouter Membres"){
         chnagerManupulation('addEtudiant');
         center.style.opacity = 0;
+
+
+
+
+        //show and hide delegue input
+        document.addEventListener('change', ()=>{
+            selectRole = document.getElementById("selectRole");
+            isdeleg = document.getElementById("isdeleg");
+            var value = selectRole.value;
+
+            if(value == 5)
+                isdeleg.style.display= 'block';
+            else
+                isdeleg.style.display= 'none';
+
+        })
+        // selectRole = document.getElementById("selectRole");
       }else if(navButtons[index].querySelector("span").textContent === "Gérer Annonces Département"){
         chnagerManupulation('annonce');
         center.style.opacity = 0;
+
+              document.addEventListener('click',(event)=>{
+                if(event.target.classList.contains('addClick') ){
+                    chnagerManupulation('formAn');
+                    center.style.opacity = 0;
+                }
+
+            })
+
+
       }
     }
 
@@ -37,21 +64,15 @@ document.addEventListener("DOMContentLoaded", function () {
       button.addEventListener("click", () => handleActive(index));
     });
 
-    //show and hide delegue input
-    slectRole.addEventListener('change', ()=>{
-        var value = slectRole.value;
-        console.log(value)
-        if(value == 5)
-            isdeleg.style.display= 'block';
-        else
-            isdeleg.style.display= 'none';
 
-    })
   });
+
+
 
 //   ajax part
 
 function chnagerManupulation(url) {
+
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
