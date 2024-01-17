@@ -39,21 +39,11 @@
                 </div>
 
               </div>
-            @error('email')
-                <span class="invalid" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-            @error('password')
-                <span class="invalid" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
 
 
         <div class="sb" style="margin-left: auto;margin-right: auto;">
             <button type="submit">
-                <div style="margin-bottom: 0" class="btnLogin"><span>{{ __('Register') }}</span></div>
+                <div style="margin-bottom: 0" class=""><span>Submit</span></div>
               </button>
         </div>
         </div>
