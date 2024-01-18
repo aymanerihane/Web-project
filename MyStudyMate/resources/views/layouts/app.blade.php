@@ -51,8 +51,13 @@
             </g>
         </svg>
     </div> --}}
-
+    <?php
+        if($_SERVER["PHP_SELF"] == "/index.php"){
+    ?>
     <header class="header-container">
+    <?php }else{?>
+        <header style="height: 80px" class="header-container">
+    <?php }?>
         <!-- logo -->
         <h1 class="logo"><a href="{{ url('/') }}">MyStudyMate!!</a></h1>
         <!-- nav bar -->

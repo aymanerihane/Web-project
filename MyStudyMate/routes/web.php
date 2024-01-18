@@ -42,6 +42,10 @@ Route::get('auth/addEtudiant', function () {
 Route::get('auth/emploisTemps', function () {
     return view('auth.emploisTemps');
 });
+Route::get('listMember', function () {
+    return view('auth.list');
+});
+
 Route::get('choixMode', function () {
     return view('chefDep.choixMode');
 });

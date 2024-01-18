@@ -23,6 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }else if(navButtons[index].querySelector("span").textContent === "Gestion des emplois du temps"){
         chnagerManupulation('emploisTemps');
         center.style.opacity = 0;
+      }else if(navButtons[index].querySelector("span").textContent === "Liste des Menbres"){
+        chnagerManupulation('listMember');
+        center.style.opacity = 0;
       }else if(navButtons[index].querySelector("span").textContent === "Ajouter Membres"){
         chnagerManupulation('addEtudiant');
         center.style.opacity = 0;

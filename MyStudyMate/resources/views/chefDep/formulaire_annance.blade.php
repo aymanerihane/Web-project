@@ -40,11 +40,12 @@
 
               </div>
 
-
-        <div class="sb" style="margin-left: auto;margin-right: auto;">
+        <div class="sb">
             <button type="submit">
-                <div style="margin-bottom: 0" class=""><span>Submit</span></div>
+                <div style="margin-bottom: 0" class="btnLogin"><span>Submit</span></div>
               </button>
+
+
         </div>
         </div>
     </form>

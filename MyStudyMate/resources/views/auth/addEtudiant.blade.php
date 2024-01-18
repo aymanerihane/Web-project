@@ -1,6 +1,6 @@
 
     <div class="signbox">
-        <form class="formSign" method="POST" action="{{ route('auth.addEtudiant')}}">
+        <form style="width:100%;" class="formSign" method="POST" action="{{ route('auth.addEtudiant')}}">
             @csrf
             <div class="nom">
                 <input id="nom" type="text"  @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -18,22 +18,6 @@
 
             </div>
 
-            <div class="password">
-                <input id="password" type="password"  @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-                <label class="labelf">
-                    <span style="transition-delay:0ms">P</span><span style="transition-delay:50ms">A</span><span style="transition-delay:100ms">S</span><span style="transition-delay:150ms">S</span><span style="transition-delay:200ms">W</span><span style="transition-delay:250ms">O</span><span style="transition-delay:300ms">R</span><span style="transition-delay:350ms">D</span>
-                </label>
-
-
-            </div>
-            <div class="password">
-                <input id="password" type="password"  name="password_confirmation" required autocomplete="new-password">
-                <label class="labelf">
-                    <span style="transition-delay:0ms">C</span><span style="transition-delay:50ms">O</span><span style="transition-delay:100ms">N</span><span style="transition-delay:150ms">F</span><span style="transition-delay:200ms">I</span><span style="transition-delay:250ms">R</span><span style="transition-delay:300ms">M</span><span style="transition-delay:350ms">E</span> <span style="transition-delay:400ms">P</span><span style="transition-delay:450ms">A</span><span style="transition-delay:500ms">S</span><span style="transition-delay:550ms">S</span><span style="transition-delay:600ms">W</span><span style="transition-delay:650ms">O</span><span style="transition-delay:700ms">R</span><span style="transition-delay:750ms">D</span>
-                </label>
-
-
-            </div>
             <div class="salle">
                 <Label>Role :</Label><br>
                 <span class="custom-dropdown small">
@@ -75,7 +59,6 @@
 
             </div>
         </form>
-        <div class="img"><img src="{{ asset('storage/images/sign2.png') }}" alt="sign"></div>
     </div>
 {{-- @php
     if($_SERVER['REQUEST_METHOD']=="POST"){
