@@ -42,7 +42,7 @@ Route::get('auth/addEtudiant', function () {
 Route::get('auth/emploisTemps', function () {
     return view('auth.emploisTemps');
 });
-Route::get('listMember', function () {
+Route::get('auth/list', function () {
     return view('auth.list');
 });
 

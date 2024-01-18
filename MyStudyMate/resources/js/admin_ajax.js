@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         chnagerManupulation('emploisTemps');
         center.style.opacity = 0;
       }else if(navButtons[index].querySelector("span").textContent === "Liste des Menbres"){
-        chnagerManupulation('listMember');
+        chnagerManupulation('list');
         center.style.opacity = 0;
       }else if(navButtons[index].querySelector("span").textContent === "Ajouter Membres"){
         chnagerManupulation('addEtudiant');
