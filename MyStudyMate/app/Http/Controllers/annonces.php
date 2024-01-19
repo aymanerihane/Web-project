@@ -8,10 +8,11 @@ use Illuminate\Http\Request;
 class annonces extends Controller
 {
     public function add(){
-        Annonces::create(
-            
-        ){
-
-        }
+        ModelsAnnonces::create([
+            'id_annonces'=>$_POST[''],
+            'contenu'=>$_POST[''],
+            'is_role'=>1,
+        ]);
+       return redirect($_SERVER["PHP_SELF"]);
     }
 }
