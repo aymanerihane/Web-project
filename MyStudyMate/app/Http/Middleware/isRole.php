@@ -21,7 +21,7 @@ class isRole
                 return redirect()->route('auth.home');
             }
             elseif (auth()->user()->is_role == 2 ){
-                if($_SERVER['PHP_SELF']='choixMode'){
+                if($_SERVER['PHP_SELF']='/choixMode' && $_SERVER["REQUEST_METHOD"]=='POST'){
                 }
                 elseif($routename!='chefDep.home' && $routename!='prof.home' && $routename!='choixMode')
                     return redirect()->route('chefDep.home');
