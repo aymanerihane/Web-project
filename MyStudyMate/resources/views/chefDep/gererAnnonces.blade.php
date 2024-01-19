@@ -10,6 +10,7 @@
         </div>
     </div>
     {{-- <?php
+
         try {
             $conn = new PDO("mysql:host=localhost:bdname=dev-projet;", "root", "");
 

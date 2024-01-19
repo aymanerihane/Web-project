@@ -57,7 +57,7 @@ div.img{
     width: 50%;
     height: 100%;
 }
-img{
+img.loginImag{
     width: 300px;
     filter: drop-shadow(5px 5px 10px #000000);
     -webkit-filter: drop-shadow(5px 5px 10px #000000);
@@ -68,7 +68,7 @@ img{
     display: none;
 }
 @media (max-width: 1164px){
-    div.img{
+    div.img.loginImag{
         display: none;
     }
 }
