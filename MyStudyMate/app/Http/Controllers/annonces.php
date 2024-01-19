@@ -12,6 +12,6 @@ class annonces extends Controller
             'contenu'=>$_POST['disc'],
             'is_role'=>1,
         ]);
-       return redirect($_SERVER["PHP_SELF"]);
+       return redirect('/choixMode');
     }
 }

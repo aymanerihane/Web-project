@@ -29,7 +29,7 @@ Route::get('prof/home', [App\Http\Controllers\Professeur\HomeController::class, 
 Route::get('etudiant/home', [App\Http\Controllers\etudiant\HomeController::class, 'index'])->name('etudiant.home');
 Route::get('landing/home', [App\Http\Controllers\landing\HomeController::class, 'index'])->name('landing.home');
 Route::post('auth/addEtudiant', [addEtudiant::class, 'create'])->name('auth.addEtudiant');
-Route::post('choixmode/annonces', [annonces::class, 'add'])->name('annonces');
+Route::post('choixMode/annonces', [annonces::class, 'add'])->name('annonces');
 
 // web.php
 Route::get('auth/affectationSalle', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('auth.affectationSalle');
