@@ -9,8 +9,7 @@ class annonces extends Controller
 {
     public function add(){
         ModelsAnnonces::create([
-            'id_annonces'=>$_POST[''],
-            'contenu'=>$_POST[''],
+            'contenu'=>$_POST['disc'],
             'is_role'=>1,
         ]);
        return redirect($_SERVER["PHP_SELF"]);
