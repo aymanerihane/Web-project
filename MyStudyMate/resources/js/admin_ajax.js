@@ -1,5 +1,15 @@
 // Wait for the DOM to be ready
 document.addEventListener("DOMContentLoaded", function () {
+
+    // Check if the previous URL ends with "/choixMode"
+    var referrer = document.referrer;
+    var lastSegment = referrer.substr(referrer.lastIndexOf('/') + 1);
+
+    if (lastSegment === "choixMode") {
+        chnagerManupulation('annonce');
+    }
+
+    // if(/^\/auth\/.*/.test(window.location.pathname))
     chnagerManupulation('emploisTemps');
     // Get all nav buttons and the highlight element
     var navButtons = document.querySelectorAll(".nav-button");
@@ -74,7 +84,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-
 //   ajax part
 
 function chnagerManupulation(url) {
@@ -92,6 +101,9 @@ function chnagerManupulation(url) {
     xhr.open("GET", url, true); //erreur
     xhr.send();
 }
+
+
+
 
 
 
