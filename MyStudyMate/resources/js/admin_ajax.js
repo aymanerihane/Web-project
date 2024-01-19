@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var referrer = document.referrer;
     var lastSegment = referrer.substr(referrer.lastIndexOf('/') + 1);
 
-    if (lastSegment === "choixMode") {
+    if (lastSegment == "choixMode") {
         chnagerManupulation('annonce');
     }
 
@@ -43,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-        //show and hide delegue input
         document.addEventListener('change', ()=>{
             selectRole = document.getElementById("selectRole");
             isdeleg = document.getElementById("isdeleg");
@@ -59,19 +58,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }else if(navButtons[index].querySelector("span").textContent === "Gérer Annonces Département"){
         chnagerManupulation('annonce');
         center.style.opacity = 0;
-
-              document.addEventListener('click',(event)=>{
-                if(event.target.classList.contains('addClick') ){
-                    chnagerManupulation('formAn');
-                    center.style.opacity = 0;
-                }else if(event.target.classList.contains('edit')){
-                    chnagerManupulation('edit');
-                    center.style.opacity = 0;
-                }
-
-            })
-
-
       }
     }
 
@@ -79,7 +65,16 @@ document.addEventListener("DOMContentLoaded", function () {
     navButtons.forEach((button, index) => {
       button.addEventListener("click", () => handleActive(index));
     });
+    document.addEventListener('click',(event)=>{
+        if(event.target.classList.contains('addClick') ){
+            chnagerManupulation('formAn');
+            center.style.opacity = 0;
+        }else if(event.target.classList.contains('edit')){
+            chnagerManupulation('edit');
+            center.style.opacity = 0;
+        }
 
+    })
 
   });
 
