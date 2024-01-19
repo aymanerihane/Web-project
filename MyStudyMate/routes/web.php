@@ -58,4 +58,7 @@ Route::get('annonce', function () {
 Route::get('formAn', function () {
     return view('chefDep.formulaire_annance');
 });
+Route::get('edit', function () {
+    return view('chefDep.editAnnonce');
+});
 

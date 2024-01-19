@@ -54,6 +54,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 if(event.target.classList.contains('addClick') ){
                     chnagerManupulation('formAn');
                     center.style.opacity = 0;
+                }else if(event.target.classList.contains('edit')){
+                    chnagerManupulation('edit');
+                    center.style.opacity = 0;
                 }
 
             })
