@@ -33,5 +33,4 @@ class addEtudiant extends Controller
         return redirect('/auth/home');
 
 }
-
 }
