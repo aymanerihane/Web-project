@@ -140,4 +140,10 @@
     </body>
 </html> --}}
 @extends('layouts.app')
-
+@section('content')
+<div class="landingContent" style="float: left">
+    <h1>Faculter des Sciences et tecnique</h1>
+    <p style="max-width: 550px">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum aliquam corporis commodi. Molestias illum aperiam assumenda veniam corrupti, et nihil quibusdam voluptas, rem dolorem modi reprehenderit quam laborum alias excepturi!</p>
+</div>
+<img style="float: right" src="{{ asset('storage/images/landingImage.png') }}" alt="landing image">
+@endsection
