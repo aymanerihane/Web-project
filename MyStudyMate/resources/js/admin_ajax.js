@@ -7,9 +7,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (lastSegment == "choixMode") {
         chnagerManupulation('annonce');
+        var navButtons = document.querySelectorAll(".nav-button");
+        navButtons.forEach((button, i) => {
+            button.classList.remove(`active-side${i + 1}`);
+            button.classList.remove(`active-side`);
+          });
+        navButtons[1].classList.add(`active-side2`);
+        navButtons[1].classList.add(`active-side`);
+    }else if(lastSegment == "chefDep/home"){
+        if(window.location.pathname === "/choixMode"){
+            console.log("m3elem");
+        }
     }
-
-    // if(/^\/auth\/.*/.test(window.location.pathname))
     chnagerManupulation('emploisTemps');
     // Get all nav buttons and the highlight element
     var navButtons = document.querySelectorAll(".nav-button");
