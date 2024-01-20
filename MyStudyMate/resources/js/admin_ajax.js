@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var referrer = document.referrer;
     var lastSegment = referrer.substr(referrer.lastIndexOf('/') + 1);
 
-    if (lastSegment == "choixMode") {
+    if (lastSegment == "chefDep") {
         chnagerManupulation('annonce');
         var navButtons = document.querySelectorAll(".nav-button");
         navButtons.forEach((button, i) => {
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         navButtons[1].classList.add(`active-side2`);
         navButtons[1].classList.add(`active-side`);
     }else if(lastSegment == "chefDep/home"){
-        if(window.location.pathname === "/choixMode"){
+        if(window.location.pathname === "/chefDep"){
             console.log("m3elem");
         }
     }

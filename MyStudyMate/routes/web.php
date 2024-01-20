@@ -23,7 +23,7 @@ Route::get('/', function () {
 Auth::routes();
 Route::middleware(['isRole'])->group(function () {
 Route::get('auth/home', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('auth.home');
-Route::get('chefDep/home', [App\Http\Controllers\chefDep\HomeController::class, 'index'])->name('chefDep.home');
+Route::get('chefDep/choixMode', [App\Http\Controllers\chefDep\HomeController::class, 'index'])->name('chefDep.choixMode');
 Route::get('respFil/home', [App\Http\Controllers\respFill\HomeController::class, 'index'])->name('respFil.home');
 Route::get('prof/home', [App\Http\Controllers\Professeur\HomeController::class, 'index'])->name('prof.home');
 Route::get('etudiant/home', [App\Http\Controllers\etudiant\HomeController::class, 'index'])->name('etudiant.home');
@@ -49,8 +49,8 @@ Route::get('auth/list', function () {
     return view('auth.list');
 });
 
-Route::get('choixMode', function () {
-    return view('chefDep.choixMode');
+Route::get('chefDep', function () {
+    return view('chefDep.home');
 });
 Route::get('annonce', function () {
     return view('chefDep.gererAnnonces');
