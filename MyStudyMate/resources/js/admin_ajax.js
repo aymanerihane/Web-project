@@ -45,6 +45,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }else if(navButtons[index].querySelector("span").textContent === "Liste des Menbres"){
         chnagerManupulation('list');
         center.style.opacity = 0;
+      }else if(navButtons[index].querySelector("span").textContent === "Répondre Demandes Étudiants"){
+        chnagerManupulation('prof/repondreDemande');
+        center.style.opacity = 0;
       }else if(navButtons[index].querySelector("span").textContent === "Ajouter Membres"){
         chnagerManupulation('addEtudiant');
         center.style.opacity = 0;
@@ -64,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         })
         // selectRole = document.getElementById("selectRole");
-      }else if(navButtons[index].querySelector("span").textContent === "Gérer Annonces Département"){
+      }else if(navButtons[index].querySelector("span").textContent === "Gérer Annonces Département" || navButtons[index].querySelector("span").textContent === "Gérer Annonces Modules"){
         chnagerManupulation('annonce');
         center.style.opacity = 0;
       }

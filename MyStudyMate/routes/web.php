@@ -61,4 +61,7 @@ Route::get('formAn', function () {
 Route::get('edit', function () {
     return view('chefDep.editAnnonce');
 });
+Route::get('prof/repondreDemande', function () {
+    return view('prof.repondreDemande');
+});
 

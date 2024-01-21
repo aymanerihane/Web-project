@@ -11,15 +11,30 @@
     </div>
     {{-- <?php
 
-        try {
-            $conn = new PDO("mysql:host=localhost:bdname=dev-projet;", "root", "");
-
-            $stmt = $conn->prepare("SELECT title,resum,img FROM annonces");
-            $stmt->execute();
+        if($_SERVER["PHP_SELF"] == "/chefDep"){
 
 
-        }catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
+            try {
+                $conn = new PDO("mysql:host=localhost:bdname=dev-projet;", "root", "");
+
+                $stmt = $conn->prepare("SELECT title,resum,img FROM annonces");
+                $stmt->execute();
+
+
+            }catch (PDOException $e) {
+                echo "Error: " . $e->getMessage();
+            }
+        }elseif($_SERVER["PHP_SELF"] == "/prof/home"){
+            try {
+                $conn = new PDO("mysql:host=localhost:bdname=dev-projet;", "root", "");
+
+                $stmt = $conn->prepare("SELECT title,resum,img FROM annonces");
+                $stmt->execute();
+
+
+            }catch (PDOException $e) {
+                echo "Error: " . $e->getMessage();
+            }
         }
             // Fetch data
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {

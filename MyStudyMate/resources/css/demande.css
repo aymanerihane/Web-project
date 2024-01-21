@@ -1,0 +1,237 @@
+/* form design */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .demandes,.msgDemande,.formulaireRepondre{
+    background-color: #f3f3f3;
+
+
+  }
+  .espaceRPDEM{
+    flex: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .demandes{
+    overflow-x: scroll;
+    height: 100%;
+    margin-right: 10px;
+    flex: 1;
+  }
+  .msgDemande{
+    flex: 1;
+    margin-bottom: 10px;
+  }
+  .formulaireRepondre{
+    width: 100%;
+    flex: 1;
+  }
+
+  .message{
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #000;
+  }
+  /* design the demandes */
+  .barMessage{
+    width: 100%;
+    background-color: #a58e6a;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: end;}
+  .new{
+    background-color: #4949ff;
+    position: absolute;
+    right: 0;
+    margin: 20px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+
+  /* Hide the default checkbox */
+  .container input {
+    opacity: 0;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+  }
+
+  .container {
+    margin: 10px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+    user-select: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    background: rgba(216, 216, 216, 0.603);
+  }
+
+  .container:hover {
+    background: rgba(197, 197, 197, 0.527);
+  }
+
+  .line {
+    width: calc(100% - 8px);
+    height: 3px;
+    left: 4px;
+    background: rgb(58, 58, 58);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .7s transform cubic-bezier(0,1,.33,1.2), background .4s;
+  }
+
+  .line-indicator {
+    transform: translateY(-50%) rotate(90deg);
+  }
+
+  .container input:checked ~ .line-indicator {
+    transform: translateY(-50%);
+  }
+
+  /* right side */
+  /* reponse side */
+  .textarea{
+    margin: 20px 20px 10px 20px;
+    width: 95%;
+    height: 217px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+  }
+
+
+  /* submit styling */
+  .btn-conteiner {
+    display: flex;
+    justify-content: center;
+    --color-text: #ffffff;
+    --color-background: #a58e6a;
+    --color-outline: #ff145b80;
+    --color-shadow: #00000080;
+  }
+
+  .btn-content {
+    display: flex;
+    align-items: center;
+    padding: 2px 18px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--color-text);
+    background: var(--color-background);
+    transition: 1s;
+    border-radius: 100px;
+    box-shadow: 0 0 0.2em 0 var(--color-background);
+  }
+
+  .btn-content:hover, .btn-content:focus {
+    transition: 0.5s;
+    -webkit-animation: btn-content 1s;
+    animation: btn-content 1s;
+    outline: 0.1em solid transparent;
+    outline-offset: 0.2em;
+    box-shadow: 0 0 0.4em 0 var(--color-background);
+  }
+
+  .btn-content .icon-arrow {
+    transition: 0.5s;
+    margin-right: 0px;
+    transform: scale(0.6);
+  }
+
+  .btn-content:hover .icon-arrow {
+    transition: 0.5s;
+    margin-right: 25px;
+  }
+
+  .icon-arrow {
+    width: 20px;
+    margin-left: 15px;
+    position: relative;
+    top: 6%;
+  }
+
+  /* SVG */
+  #arrow-icon-one {
+    transition: 0.4s;
+    transform: translateX(-60%);
+  }
+
+  #arrow-icon-two {
+    transition: 0.5s;
+    transform: translateX(-30%);
+  }
+
+  .btn-content:hover #arrow-icon-three {
+    animation: color_anim 1s infinite 0.2s;
+  }
+
+  .btn-content:hover #arrow-icon-one {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.6s;
+  }
+
+  .btn-content:hover #arrow-icon-two {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.4s;
+  }
+
+  /* SVG animations */
+  @keyframes color_anim {
+    0% {
+      fill: white;
+    }
+
+    50% {
+      fill: var(--color-background);
+    }
+
+    100% {
+      fill: white;
+    }
+  }
+
+  /* Button animations */
+  @-webkit-keyframes btn-content {
+    0% {
+      outline: 0.2em solid var(--color-background);
+      outline-offset: 0;
+    }
+  }
+
+  @keyframes btn-content {
+    0% {
+      outline: 0.2em solid var(--color-background);
+      outline-offset: 0;
+    }
+  }
