@@ -67,6 +67,9 @@ img.loginImag{
 #isdeleg{
     display: none;
 }
+#isprof{
+    display: none;
+}
 @media (max-width: 1164px){
     div.img.loginImag{
         display: none;

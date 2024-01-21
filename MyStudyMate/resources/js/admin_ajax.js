@@ -56,14 +56,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         document.addEventListener('change', ()=>{
+
             selectRole = document.getElementById("selectRole");
             isdeleg = document.getElementById("isdeleg");
+            isprof = document.getElementById("isprof");
             var value = selectRole.value;
 
-            if(value == 5)
+            if(value == 3){
                 isdeleg.style.display= 'block';
-            else
+                isprof.style.display= 'none';
+            }else if(value ==2){
+
+                isprof.style.display= 'block';
                 isdeleg.style.display= 'none';
+            }else{
+                isprof.style.display= 'none';
+                isdeleg.style.display= 'none';
+            }
 
         })
         // selectRole = document.getElementById("selectRole");
