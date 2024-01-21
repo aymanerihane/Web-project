@@ -46,7 +46,10 @@ document.addEventListener("DOMContentLoaded", function () {
         chnagerManupulation('list');
         center.style.opacity = 0;
       }else if(navButtons[index].querySelector("span").textContent === "Répondre Demandes Étudiants"){
-        chnagerManupulation('prof/repondreDemande');
+        chnagerManupulation('repondreDemande');
+        center.style.opacity = 0;
+      }else if(navButtons[index].querySelector("span").textContent === "Ajouter et modifier le contenu d'une filière"){
+        chnagerManupulation('feliereChoix');
         center.style.opacity = 0;
       }else if(navButtons[index].querySelector("span").textContent === "Ajouter Membres"){
         chnagerManupulation('addEtudiant');

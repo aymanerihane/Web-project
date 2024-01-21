@@ -1,0 +1,11 @@
+.filiereChoix{
+
+    flex-wrap: wrap;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+}
+.choixF{
+    width: 186px ;
+    height: 230px ;
+}

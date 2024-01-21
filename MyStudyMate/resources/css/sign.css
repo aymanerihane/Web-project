@@ -180,7 +180,7 @@ label.labelf {
     color: #fff;
     transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
-input:not(input[type="submit"]):not(input[type="checkbox"]){
+input:not(input[type="submit"]):not(input[type="checkbox"]):not(input[type="image"]){
     width: 100%;
     color: #fff;
     background-color: transparent;

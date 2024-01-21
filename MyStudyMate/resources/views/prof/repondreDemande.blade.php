@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="menu.css">
-    <title>Document</title>
-</head>
-<body>
+@vite(["resources/css/demande.css"])
+<div class="body">
 
-    <div class="demandes">
+    <div class="demandes" >
         <form action="">
 
             <div class="barMessage">
-                <input type="image" src="trash.png" alt="Submit" width="20" height="20">
-                <input type="image" src="email.png" alt="Submit" width="20" height="20">
+                <input type="image" src="{{ asset('storage/images/trash.png') }}" alt="Submit" width="20" height="20">
+                <input type="image" src="{{ asset('storage/images/email.png') }}" alt="Submit" width="20" height="20">
             </div>
             <div class="message">
                 <label class="container">
@@ -42,7 +35,7 @@
         </form>
 
     </div>
-    <div class="espaceRPDEM">
+    <div class="espaceRPDEM" >
         <div class="msgDemande">
             <div style="width: 100%;display: flex;justify-content: space-between;align-items: center;">
                 <h3 class="NameOfEtud">Name</h3>
@@ -76,5 +69,4 @@
 
     </div>
 
-</body>
-</html>
+</div>

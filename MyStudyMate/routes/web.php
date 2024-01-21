@@ -48,6 +48,9 @@ Route::get('auth/emploisTemps', function () {
 Route::get('auth/list', function () {
     return view('auth.list');
 });
+Route::get('auth/feliereChoix', function () {
+    return view('auth.feliereChoix');
+});
 
 Route::get('chefDep', function () {
     return view('chefDep.home');
