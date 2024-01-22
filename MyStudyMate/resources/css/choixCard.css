@@ -6,13 +6,23 @@
 
 .choixMode{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    width: 100%;
+
 }
+.filierech{
+    top: 0;
+    left: 0;
+}
+
 
 .optionsMode{
     margin: 30px;
 }
+
 .e-card {
     margin: 100px auto;
     background: transparent;
@@ -37,6 +47,10 @@
     -ms-transform: scale(1.2);
     -o-transform: scale(1.2);
 
+}
+.cardW{
+    width: 202px;
+    height: 166px;
 }
 
   .wave {
@@ -66,6 +80,9 @@
     right: 0;
     color: rgb(255, 255, 255);
     font-weight: 600;
+  }
+  .info-TOP{
+    top: 1.8em;
   }
 
   .name {

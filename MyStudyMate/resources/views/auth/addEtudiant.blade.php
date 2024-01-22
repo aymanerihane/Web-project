@@ -11,7 +11,7 @@
             </div>
             @csrf
             <div class="email">
-                <input id="email" type="email" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                <input id="email" required >
                 <label class="labelf">
                     <span style="transition-delay:0ms">P</span><span style="transition-delay:50ms">R</span><span style="transition-delay:100ms">E</span><span style="transition-delay:150ms">N</span><span style="transition-delay:200ms">O</span><span style="transition-delay:250ms">M</span>
                 </label>
@@ -21,8 +21,8 @@
             <div class="salle">
                 <Label>Type :</Label><br>
                 <span class="custom-dropdown small">
-                    <Select id="selectRole" class="select" name="role">
-                                <option class="option" value="1">Admin</option>
+                    <Select id="selectRole" class="select" name="role" space>
+                                <option class="option" value="" disabled selected>Type</option>
                                 <option class="option" value="2">Professeur</option>
                                 <option class="option" value="3">Etudiant</option>
 

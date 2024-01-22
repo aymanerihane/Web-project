@@ -48,8 +48,8 @@ Route::get('auth/emploisTemps', function () {
 Route::get('auth/list', function () {
     return view('auth.list');
 });
-Route::get('auth/feliereChoix', function () {
-    return view('auth.feliereChoix');
+Route::get('auth/formationChoix', function () {
+    return view('auth.formationChoix');
 });
 
 Route::get('chefDep', function () {

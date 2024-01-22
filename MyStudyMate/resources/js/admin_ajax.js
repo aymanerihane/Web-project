@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var selectRole = document.getElementById("selectRole");
     var isdeleg = document.getElementById("isdeleg");
     var highlightElement = document.getElementById("nav-content-highlight2");
+    var navtoggle = document.getElementById("nav-toggle");
 
     // Function to handle the active state
     function handleActive(index) {
@@ -49,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
         chnagerManupulation('repondreDemande');
         center.style.opacity = 0;
       }else if(navButtons[index].querySelector("span").textContent === "Ajouter et modifier le contenu d'une filière"){
-        chnagerManupulation('feliereChoix');
+        chnagerManupulation('formationChoix');
         center.style.opacity = 0;
       }else if(navButtons[index].querySelector("span").textContent === "Ajouter Membres"){
         chnagerManupulation('addEtudiant');

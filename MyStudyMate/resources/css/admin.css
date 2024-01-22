@@ -415,7 +415,11 @@
         }
         .btn5{
 
-            width:100%;
+            width:50%;
+        }
+        .btn6{
+
+            width:50%;
         }
         #nav-bar{
             border-radius: 0 0 16px 16px;
