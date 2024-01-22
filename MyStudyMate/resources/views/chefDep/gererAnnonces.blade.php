@@ -9,38 +9,37 @@
             {{-- <i class="fa-solid fa-plus fa-2xl iconAdd" style="color: #fff;"></i> --}}
         </div>
     </div>
-    <div id="container">
-    </div>
-    {{-- <?php
+        {{-- <div id="container"> --}}
+    {{-- </div> --}}
+    <?php
 
-        if($_SERVER["PHP_SELF"] == "/chefDep"){
-
-
-            try {
-                $conn = new PDO("mysql:host=localhost:bdname=dev-projet;", "root", "");
-
-                $stmt = $conn->prepare("SELECT title,resum,img FROM annonces");
-                $stmt->execute();
+        if($_SERVER["PHP_SELF"] == "/index.php/annonce"){
 
 
-            }catch (PDOException $e) {
-                echo "Error: " . $e->getMessage();
-            }
-        }elseif($_SERVER["PHP_SELF"] == "/prof/home"){
-            try {
-                $conn = new PDO("mysql:host=localhost:bdname=dev-projet;", "root", "");
 
-                $stmt = $conn->prepare("SELECT title,resum,img FROM annonces");
-                $stmt->execute();
+                $conn = mysqli_connect("localhost", "root", "", "dev-projet");
+
+                $sql = "SELECT id_annonce, contenu FROM annonces";
+                $result = mysqli_query($conn, $sql);
 
 
-            }catch (PDOException $e) {
-                echo "Error: " . $e->getMessage();
-            }
+
+        // }
+        // elseif($_SERVER["PHP_SELF"] == "/prof/home"){
+        //     try {
+        //         $conn = new PDO("mysql:host=localhost:bdname=dev-projet;", "root", "");
+
+        //         $stmt = $conn->prepare("SELECT title,resum,img FROM annonces");
+        //         $stmt->execute();
+
+
+        //     }catch (PDOException $e) {
+        //         echo "Error: " . $e->getMessage();
+        //     }
         }
             // Fetch data
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    ?> --}}
+    while ($rows = $result -> fetch_assoc()) {
+    ?>
     <div class="annonce-card">
         <div id="delete" class="new">
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="20" width="15" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by  @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path  fill="#fefefe" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
@@ -54,17 +53,17 @@
             <div class="containerAnnonceText">
 
                 <h1 class="head-card"">Titre</h1>
-                {{-- <h1 class="head-card""><?php $row['title'] ?></h1> --}}
+                {{-- <h1 class="head-card""><?php $row['id_annonce'] ?></h1> --}}
                 <p class="text-card">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis consectetur ullam</p>
-                {{-- <p class="text-card"><?php $row['resum'] ?></p> --}}
+                {{-- <p class="text-card"><?php $row['contenu'] ?></p> --}}
             </div>
         </div>
 
     </div>
-    {{-- <?php } ?> --}}
+    <?php  } mysqli_close($conn);?>
 </div>
 <script src="https://kit.fontawesome.com/e9d0d16c17.js" crossorigin="anonymous"></script>
-<script>
+{{-- <script>
     document.addEventListener('DOMContentLoaded', function () {
         // Function to make an AJAX request
         function fetchData() {
@@ -100,4 +99,4 @@
         // Fetch data when the page loads
         fetchData();
     });
-</script>
+</script> --}}
