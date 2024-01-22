@@ -100,6 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
     })
+    
 
   });
 
@@ -121,6 +122,8 @@ function chnagerManupulation(url) {
     xhr.open("GET", url, true); //erreur
     xhr.send();
 }
+
+
 
 
 

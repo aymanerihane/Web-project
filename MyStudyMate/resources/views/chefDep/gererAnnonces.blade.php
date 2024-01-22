@@ -9,6 +9,8 @@
             {{-- <i class="fa-solid fa-plus fa-2xl iconAdd" style="color: #fff;"></i> --}}
         </div>
     </div>
+    <div id="container">
+    </div>
     {{-- <?php
 
         if($_SERVER["PHP_SELF"] == "/chefDep"){
@@ -62,3 +64,40 @@
     {{-- <?php } ?> --}}
 </div>
 <script src="https://kit.fontawesome.com/e9d0d16c17.js" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Function to make an AJAX request
+        function fetchData() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '/annonce', true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    // Handle the response data and update the page
+                    var responseData = JSON.parse(xhr.responseText);
+                    updatePage(responseData.annonces);
+                }
+            };
+
+            xhr.send();
+        }
+
+        // Function to update the page content
+        function updatePage(annonces) {
+            var container = document.getElementById('container');
+
+            // Clear existing content
+            container.innerHTML = '';
+
+            // Process and display the fetched data
+            annonces.forEach(function (item) {
+                var paragraph = document.createElement('p');
+                paragraph.textContent = 'ID: ' + item.contenu;
+                container.appendChild(paragraph);
+            });
+        }
+
+        // Fetch data when the page loads
+        fetchData();
+    });
+</script>
