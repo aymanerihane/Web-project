@@ -18,4 +18,8 @@ class annonces extends Controller
         ]);
        return redirect('/chefDep');
     }
+    public function edit($id){
+        $annonce = ModelsAnnonces::find($id);
+        return response()->json(['annonce' => $annonce]);
+    }
 }
