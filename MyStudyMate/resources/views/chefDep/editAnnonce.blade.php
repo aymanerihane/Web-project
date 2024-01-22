@@ -1,6 +1,6 @@
 @vite(["resources/css/fileUpload.css","resources/js/file.js"])
 <div class="signbox" >
-    <form style="flex: 1;justify-content: center;" class="formSign" method="POST" action="{{ route('editannonce')}}">
+    <form style="flex: 1;justify-content: center;" class="formSign" method="POST" action="{{ route('annonces')}}">
         @csrf
         <div class="nom">
             <input id="nom" type="text" name="title" required autofocus>
