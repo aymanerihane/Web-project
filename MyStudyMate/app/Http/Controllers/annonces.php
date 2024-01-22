@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class annonces extends Controller
 {
+    public function index(){
+        $annonces = ModelsAnnonces::all();
+        return response()->json(['annonces' => $annonces]);
+    }
     public function add(){
         ModelsAnnonces::create([
             'contenu'=>$_POST['disc'],
