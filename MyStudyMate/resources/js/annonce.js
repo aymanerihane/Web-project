@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
+<<<<<<< HEAD
 //   ajax part
 function chnagerManupulation(url) {
 
@@ -48,3 +49,6 @@ function chnagerManupulation(url) {
     xhr.open("GET", url, true); //erreur
     xhr.send();
 }
+=======
+
+>>>>>>> d3ff39453b473f66b967da78ced7685d2e9596ed

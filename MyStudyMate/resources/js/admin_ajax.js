@@ -1,6 +1,9 @@
 // Wait for the DOM to be ready
 document.addEventListener("DOMContentLoaded", function () {
 
+
+
+
     // Check if the previous URL ends with "/choixMode"
     var referrer = document.referrer;
     var lastSegment = referrer.substr(referrer.lastIndexOf('/') + 1);
@@ -16,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
         navButtons[1].classList.add(`active-side`);
     }else if(lastSegment == "chefDep/home"){
         if(window.location.pathname === "/chefDep"){
-            console.log("m3elem");
         }
     }
     chnagerManupulation('emploisTemps');
@@ -27,6 +29,25 @@ document.addEventListener("DOMContentLoaded", function () {
     var isdeleg = document.getElementById("isdeleg");
     var highlightElement = document.getElementById("nav-content-highlight2");
     var navtoggle = document.getElementById("nav-toggle");
+    //   ajax part
+function chnagerManupulation(url) {
+
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            const center = document.querySelector(".center");
+            document.querySelector(".center").innerHTML = xhr.responseText;
+            setTimeout(function () {
+                center.style.opacity = 1; // Set opacity to 1 to fade in the content
+            }, 30);
+        }
+    };
+    xhr.open("GET", url, true); //erreur
+    xhr.send();
+}
+
+
+
 
     // Function to handle the active state
     function handleActive(index) {
@@ -101,6 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
     })
+<<<<<<< HEAD
     // Function to make an AJAX request
     function fetchData() {
         var xhr = new XMLHttpRequest();
@@ -149,6 +171,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Fetch data when the page loads
     fetchData();
+=======
+
+>>>>>>> d3ff39453b473f66b967da78ced7685d2e9596ed
 
   });
 
@@ -166,11 +191,16 @@ function chnagerManupulation(url) {
                 center.style.opacity = 1; // Set opacity to 1 to fade in the content
             }, 30);
         }
+
     };
+
+
+
     xhr.open("GET", url, true); //erreur
     xhr.send();
 }
 
+<<<<<<< HEAD
 function editRecord(id) {
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/edit-data/' + id, true);
@@ -199,3 +229,5 @@ function editRecord(id) {
 
 
 
+=======
+>>>>>>> d3ff39453b473f66b967da78ced7685d2e9596ed
