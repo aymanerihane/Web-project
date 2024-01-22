@@ -11,35 +11,8 @@
     </div>
         {{-- <div id="container"> --}}
     {{-- </div> --}}
-    <?php
-
-        if($_SERVER["PHP_SELF"] == "/index.php/annonce"){
-
-
-
-                $conn = mysqli_connect("localhost", "root", "", "dev-projet");
-
-                $sql = "SELECT id_annonce, contenu FROM annonces";
-                $result = mysqli_query($conn, $sql);
-
-
-
-        // }
-        // elseif($_SERVER["PHP_SELF"] == "/prof/home"){
-        //     try {
-        //         $conn = new PDO("mysql:host=localhost:bdname=dev-projet;", "root", "");
-
-        //         $stmt = $conn->prepare("SELECT title,resum,img FROM annonces");
-        //         $stmt->execute();
-
-
-        //     }catch (PDOException $e) {
-        //         echo "Error: " . $e->getMessage();
-        //     }
-        }
-            // Fetch data
-    while ($rows = $result -> fetch_assoc()) {
-    ?>
+    <div id="container">
+    </div>
     <div class="annonce-card">
         <div id="delete" class="new">
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="20" width="15" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by  @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path  fill="#fefefe" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
@@ -60,46 +33,6 @@
         </div>
 
     </div>
-    <?php  } mysqli_close($conn);?>
 </div>
 <script src="https://kit.fontawesome.com/e9d0d16c17.js" crossorigin="anonymous"></script>
-<<<<<<< HEAD
-=======
-{{-- <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Function to make an AJAX request
-        function fetchData() {
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', '/annonce', true);
 
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    // Handle the response data and update the page
-                    var responseData = JSON.parse(xhr.responseText);
-                    updatePage(responseData.annonces);
-                }
-            };
-
-            xhr.send();
-        }
-
-        // Function to update the page content
-        function updatePage(annonces) {
-            var container = document.getElementById('container');
-
-            // Clear existing content
-            container.innerHTML = '';
-
-            // Process and display the fetched data
-            annonces.forEach(function (item) {
-                var paragraph = document.createElement('p');
-                paragraph.textContent = 'ID: ' + item.contenu;
-                container.appendChild(paragraph);
-            });
-        }
-
-        // Fetch data when the page loads
-        fetchData();
-    });
-</script> --}}
->>>>>>> d3ff39453b473f66b967da78ced7685d2e9596ed

@@ -21,12 +21,12 @@ class isRole
                 return redirect()->route('auth.home');
             }
             elseif (auth()->user()->is_role == 2 ){
-                if($_SERVER["REQUEST_METHOD"]=='POST' || ($_SERVER["REQUEST_METHOD"]=='GET' && $_SERVER['PHP_SELF']='/chefDep')){
-                }
-                elseif($routename!='chefDep.choixMode' && $routename!='prof.home' && $routename!='chefDep')
-                    return redirect()->route('chefDep.choixMode');
-                elseif($routename=='prof.home' && $routename=='chefDep')
-                 return redirect()->route('chefDep.choixMode');
+                // if($_SERVER['PHP_SELF']='/chefDep' && $_SERVER["REQUEST_METHOD"]=='POST'){
+                // }
+                // elseif($routename!='chefDep.choixMode' && $routename!='prof.home' && $routename!='chefDep')
+                //     return redirect()->route('chefDep.choixMode');
+                // elseif($routename=='prof.home' && $routename=='chefDep')
+                //  return redirect()->route('chefDep.choixMode');
             }
             elseif (auth()->user()->is_role == 3 && $routename!='respFil.home'){
                 return redirect()->route('respFil.home');
