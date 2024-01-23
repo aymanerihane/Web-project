@@ -10,8 +10,9 @@ class Annonces extends Model
     use HasFactory;
     protected $fillable = [
         'id_annonce',
-        'contenu',
-        'date_publication',
-        'is_role'
+        'titre',
+        'resume',
+        'Description',
+       'MatriculeProf '
     ];
 }

@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('annonces', function (Blueprint $table) {
             $table->id('id_annonce');
-            $table->text('contenu');
-            $table->timestamp('date_publication');
-            $table->foreignId('is_role')->constrained('users');
+            $table->text('titre');
+            $table->text('resume');
+            $table->text('Description');
+            $table->foreignId('MatriculeProf')->references('MatriculeProf')->on('professeur');
             $table->timestamps();
         });
     }
