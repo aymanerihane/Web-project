@@ -186,15 +186,15 @@ function chnagerManupulation(url) {
             function edit(annonce){
                 var container=document.getElementById('editAnnonce');
             container.innerHTML='<form style="flex: 1;justify-content: center;" class="formSign" method="POST" action="{{ route("annonces.update", '+annonce.id_annonce+')}}">\
-            @csrf\
-            @method("PUT")\
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">\
+            <input type="hidden" name="_method" value="PUT">\
             <div class="nom">\
                 <input id="nom" type="text" name="title" required autofocus>\
                 <label class="labelf">\
                     <span style="transition-delay:0ms">T</span><span style="transition-delay:50ms">I</span><span style="transition-delay:100ms">T</span><span style="transition-delay:150ms">R</span><span style="transition-delay:200ms">E</span>\
                 </label>\
             </div>\
-            @csrf\
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">\
             <div class="email">\
                 <input type="text" name="resume"  required >\
                 <label class="labelf">\
