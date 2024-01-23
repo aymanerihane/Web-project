@@ -118,6 +118,7 @@ function chnagerManupulation(url) {
             chnagerManupulation('formAn');
             center.style.opacity = 0;
         }else if(event.target.classList.contains('edit')){
+            editannonce(event.target);
             chnagerManupulation('edit');
             center.style.opacity = 0;
         }
@@ -148,8 +149,8 @@ function chnagerManupulation(url) {
             <div id="delete" class="new">\
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="20" width="15" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by  @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path  fill="#fefefe" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>\
         </div>\
-        <div class="posinew edit" >\
-            <svg class="icon edit"  data-id="'+item.id_annonce+'" xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#fefefe" d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg>\
+        <div class="posinew edit" data-id="'+item.id_annonce+'">\
+            <svg class="icon edit" data-id="'+item.id_annonce+'" xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#fefefe" d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg>\
         </div>\
         <div class="containerAnnonceText">\
             <div class="imgholder">\
@@ -169,10 +170,10 @@ function chnagerManupulation(url) {
     // Fetch data when the page loads
     fetchData();
   //edit data
-  document.querySelectorAll('.icon edit').forEach(function (svg) {
-    svg.addEventListener('click', function () {
-        console.log("test");
-        var id = this.dataset.id;
+ function editannonce(ele) {
+      console.log("test");
+
+        var id = ele.dataset.id;
         fetch('/annonce/' + id + '/edit')
             .then(response => response.json())
             .then(annonce => {
@@ -184,8 +185,8 @@ function chnagerManupulation(url) {
             .catch(error => {
                 console.error('Edit error:', error);
             });
-    });
-});
+
+};
   });
 
 
@@ -211,66 +212,66 @@ function chnagerManupulation(url) {
     xhr.send();
 }
 
-function editannonce(id) {
-    var xhr = new XMLHttpRequest();
-    console.log("test");
-    // fetch('/annonce/' + id + '/edit')
-    xhr.open('GET', '/annonce/' + id + '/edit', true);
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4) {
-            if (xhr.status == 200) {
-                    var responseData = JSON.parse(xhr.responseText);
-                    // Handle the response data for editing
-                    console.log(responseData.annonce);
-                    EditData(responseData.annonce);
-            }
-        }
-        EditData(annonce);{
-           var container=document.getElementById('editannonce');
-            container.innerHTML='<form style="flex: 1;justify-content: center;" class="formSign" method="POST" action="{{ route("annonces.update", '+annonce.id_annonce+')}}">\
-            @csrf\
-            @method("PUT")\
-            <div class="nom">\
-                <input id="nom" type="text" name="title" required autofocus>\
-                <label class="labelf">\
-                    <span style="transition-delay:0ms">T</span><span style="transition-delay:50ms">I</span><span style="transition-delay:100ms">T</span><span style="transition-delay:150ms">R</span><span style="transition-delay:200ms">E</span>\
-                </label>\
-            </div>\
-            @csrf\
-            <div class="email">\
-                <input type="text" name="resume"  required >\
-                <label class="labelf">\
-                    <span style="transition-delay:0ms">R</span><span style="transition-delay:50ms">E</span><span style="transition-delay:100ms">S</span><span style="transition-delay:150ms">U</span><span style="transition-delay:200ms">M</span><span style="transition-delay:250ms">E</span><span style="transition-delay:300ms">R</span>\
-                </label>\
-            </div>\
-            <div class="email">\
-                <input type="text" name="disc" required >\
-                <label class="labelf">\
-                    <span style="transition-delay:0ms">D</span><span style="transition-delay:50ms">I</span><span style="transition-delay:100ms">S</span><span style="transition-delay:150ms">C</span><span style="transition-delay:200ms">R</span><span style="transition-delay:250ms">I</span><span style="transition-delay:300ms">P</span><span style="transition-delay:350ms">T</span><span style="transition-delay:400ms">I</span><span style="transition-delay:450ms">O</span><span style="transition-delay:500ms">N</span>\
-                </label>\
-            </div>\
-                <div class="zone">\
-                    <div id="dropZ">\
-                      <i class="fa fa-cloud-upload"></i>\
-                      <div>Drag and drop your file here</div>\
-                      <span>OR</span>\
-                      <div class="selectFile">\
-                        {{-- <label for="file">Select file</label> --}}\
-                        <input type="file" name="files[]" id="fileInput" multiple>\
-                      </div>\
-                      <p>File size limit : 10 MB</p>\
-                    </div>\
-                  </div>\
-            <div class="sb">\
-                <button type="submit">\
-                    <div style="margin-bottom: 0" class="btnLogin"><span>Submit</span></div>\
-                  </button>\
-            </div>\
-            </div>\
-        </form>';
-        }
-    };
+// function editannonce(id) {
+//     var xhr = new XMLHttpRequest();
+//     console.log("test");
+//     // fetch('/annonce/' + id + '/edit')
+//     xhr.open('GET', '/annonce/' + id + '/edit', true);
+//     xhr.onreadystatechange = function () {
+//         if (xhr.readyState == 4) {
+//             if (xhr.status == 200) {
+//                     var responseData = JSON.parse(xhr.responseText);
+//                     // Handle the response data for editing
+//                     console.log(responseData.annonce);
+//                     EditData(responseData.annonce);
+//             }
+//         }
+//         EditData(annonce);{
+//            var container=document.getElementById('editannonce');
+//             container.innerHTML='<form style="flex: 1;justify-content: center;" class="formSign" method="POST" action="{{ route("annonces.update", '+annonce.id_annonce+')}}">\
+//             @csrf\
+//             @method("PUT")\
+//             <div class="nom">\
+//                 <input id="nom" type="text" name="title" required autofocus>\
+//                 <label class="labelf">\
+//                     <span style="transition-delay:0ms">T</span><span style="transition-delay:50ms">I</span><span style="transition-delay:100ms">T</span><span style="transition-delay:150ms">R</span><span style="transition-delay:200ms">E</span>\
+//                 </label>\
+//             </div>\
+//             @csrf\
+//             <div class="email">\
+//                 <input type="text" name="resume"  required >\
+//                 <label class="labelf">\
+//                     <span style="transition-delay:0ms">R</span><span style="transition-delay:50ms">E</span><span style="transition-delay:100ms">S</span><span style="transition-delay:150ms">U</span><span style="transition-delay:200ms">M</span><span style="transition-delay:250ms">E</span><span style="transition-delay:300ms">R</span>\
+//                 </label>\
+//             </div>\
+//             <div class="email">\
+//                 <input type="text" name="disc" required >\
+//                 <label class="labelf">\
+//                     <span style="transition-delay:0ms">D</span><span style="transition-delay:50ms">I</span><span style="transition-delay:100ms">S</span><span style="transition-delay:150ms">C</span><span style="transition-delay:200ms">R</span><span style="transition-delay:250ms">I</span><span style="transition-delay:300ms">P</span><span style="transition-delay:350ms">T</span><span style="transition-delay:400ms">I</span><span style="transition-delay:450ms">O</span><span style="transition-delay:500ms">N</span>\
+//                 </label>\
+//             </div>\
+//                 <div class="zone">\
+//                     <div id="dropZ">\
+//                       <i class="fa fa-cloud-upload"></i>\
+//                       <div>Drag and drop your file here</div>\
+//                       <span>OR</span>\
+//                       <div class="selectFile">\
+//                         {{-- <label for="file">Select file</label> --}}\
+//                         <input type="file" name="files[]" id="fileInput" multiple>\
+//                       </div>\
+//                       <p>File size limit : 10 MB</p>\
+//                     </div>\
+//                   </div>\
+//             <div class="sb">\
+//                 <button type="submit">\
+//                     <div style="margin-bottom: 0" class="btnLogin"><span>Submit</span></div>\
+//                   </button>\
+//             </div>\
+//             </div>\
+//         </form>';
+//         }
+//     };
 
-    xhr.send();
-}
+//     xhr.send();
+// }
 
