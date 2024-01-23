@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id('id_local'); // clé primaire
             $table->string('nom');
             $table->string('type'); // Salle de cours, Salle TP, etc.
-            $table->unsignedBigInteger('id_departement'); // clé étrangère vers le département
-            $table->foreign('id_departement')->references('id_departement')->on('departements');
+            // clé étrangère vers le département
+            $table->foreignId('id_departement')->references('id_departement')->on('departements');
             $table->timestamps();
         });
     }

@@ -14,14 +14,13 @@ return new class extends Migration
         Schema::create('filieres', function (Blueprint $table) {
             $table->id('id_filiere'); // clé primaire
             $table->string('nom');
-            $table->unsignedBigInteger('id_responsable'); // clé étrangère vers l'utilisateur
-            $table->unsignedBigInteger('id_departement'); // clé étrangère vers le département
-
-            $table->foreign('id_responsable')->references('id')->on('users');
-            $table->foreign('id_departement')->references('id_departement')->on('departements');
-
+            $table->string('contenuFiliere');
+            // clés étrangères vers le département et l'utilisateur
+            $table->foreignId('id_responsable')->references('id')->on('users');
+            $table->foreignId('id_departement')->references('id_departement')->on('departements');
             $table->timestamps();
         });
+
     }
 
     /**

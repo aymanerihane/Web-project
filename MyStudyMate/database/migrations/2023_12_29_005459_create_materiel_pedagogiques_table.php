@@ -15,10 +15,8 @@ return new class extends Migration
             $table->id('id_materiel'); // clé primaire
             $table->string('nom');
             $table->enum('etat', ['Opérationnel', 'En panne']);
-            $table->unsignedBigInteger('id_local'); // clé étrangère vers le local
-
-            $table->foreign('id_local')->references('id_local')->on('locals');
-
+            // clé étrangère vers le local
+            $table->foreignId('id_local')->references('id_local')->on('locals');
             $table->timestamps();
         });
     }

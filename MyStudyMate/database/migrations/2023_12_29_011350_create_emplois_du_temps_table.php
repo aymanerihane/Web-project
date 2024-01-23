@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('emplois_du_temps', function (Blueprint $table) {
             $table->id('id_emploi'); // clé primaire
-            $table->unsignedBigInteger('id_local'); // clé étrangère vers le local
+
             $table->string('jour');
             $table->string('creneau_horaire');
             $table->string('activite');
-            $table->unsignedBigInteger('id_module'); // clé étrangère vers le module
 
-            $table->foreign('id_local')->references('id_local')->on('locals');
-            $table->foreign('id_module')->references('id_module')->on('modules');
+            //  les clés étrangères
+            $table->foreignId('id_module')->constrained('modules'); // Utilisation de constrained
+            $table->foreignId('id_local')->constrained('locals');   // Utilisation de constrained
 
             $table->timestamps();
         });

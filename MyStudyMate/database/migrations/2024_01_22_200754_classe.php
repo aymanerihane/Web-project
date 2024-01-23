@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Classe', function (Blueprint $table) {
+        Schema::create('classes', function (Blueprint $table) {
             $table->id('id_classe');
             $table->integer('nbrEtudiants');
-            $table->integer('id_Module');
-            $table->integer('id_filiere');
-            $table->foreignId('id_Module')->references('id_Module')->on('modules');
-            $table->foreignId('id_filiere')->references('id_filiere')->on('filieres');
+            $table->foreignId('id_Module')->constrained('modules');
+            $table->foreignId('id_filiere')->constrained('filieres');
             $table->timestamps();
         });
     }
