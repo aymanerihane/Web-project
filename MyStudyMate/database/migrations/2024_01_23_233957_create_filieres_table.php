@@ -15,12 +15,7 @@ return new class extends Migration
             $table->id('id_filiere'); // clé primaire
             $table->string('nom');
             $table->string('contenuFiliere');
-            $table->foreignId('id_RespoFiliere')
-            ->references('MatriculeProf')
-            ->on('Professeur')
-            ->where('is_RespoFiliere', true) // Condition pour être responsable de filière
-            ->onUpdate('cascade')
-            ->onDelete('cascade');
+            $table->foreignId('id_RespoFiliere')->references('MatriculeProf')->on('Professeur');
             $table->foreignId('id_departement')->references('id_departement')->on('departements');
             $table->foreignId('id_formation')->references('id_formation')->on('formation');
             $table->timestamps();

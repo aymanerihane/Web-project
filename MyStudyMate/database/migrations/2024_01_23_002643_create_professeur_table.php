@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('Professeur', function (Blueprint $table) {
 
-            $table->string('MatriculeProf')->primary(); // clé primaire
+            $table->id('MatriculeProf'); // clé primaire
             $table->boolean('is_RespoDepart')->default(false);
             $table->boolean('is_RespoFiliere')->default(false);
 

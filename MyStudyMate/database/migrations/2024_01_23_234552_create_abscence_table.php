@@ -16,7 +16,7 @@ return new class extends Migration
             $table->text('justification');
             $table->date('date');
             $table->string('filepath');
-            $table->foreignId('CNE')->constrained('etudiants');
+            $table->foreignId('CNE')->references('CNE')->on('etudiant');
 
             $table->timestamps();
         });
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('_abscence');
+        Schema::dropIfExists('abscence');
     }
 };

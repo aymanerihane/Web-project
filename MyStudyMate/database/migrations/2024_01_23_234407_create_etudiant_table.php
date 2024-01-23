@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('etudiant', function (Blueprint $table) {
 
-            $table->string('CNE')->primary(); // clé primaire
+            $table->id('CNE'); // clé primaire
             $table->unsignedInteger('groupTp');
             $table->boolean('is_Delegue')->default(false);
 

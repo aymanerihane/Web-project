@@ -18,8 +18,8 @@ return new class extends Migration
             $table->text('DescripDemande');
             $table->text('ReponseDemande')->nullable();
             $table->enum('statutDemande', ['En attente', 'Approuvée', 'Rejetée']);
-            $table->foreignId('CNE')->constrained('etudiant');
-            $table->foreignId('id_departement')->constrained('departements');
+            $table->foreignId('CNE')->references('CNE')->on('etudiant');
+            $table->foreignId('id_departement')->references('id_departement')->on('departements');
             $table->timestamps();
         });
 
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('_demande');
+        Schema::dropIfExists('demande');
     }
 };
