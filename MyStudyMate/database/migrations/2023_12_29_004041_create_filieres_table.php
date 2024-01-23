@@ -15,8 +15,12 @@ return new class extends Migration
             $table->id('id_filiere'); // clé primaire
             $table->string('nom');
             $table->string('contenuFiliere');
-            // clés étrangères vers le département et l'utilisateur
-            $table->foreignId('id_responsable')->references('id')->on('users');
+            $table->foreignId('MatriculeProf')
+            ->references('MatriculeProf')
+            ->on('Professeur')
+            ->where('is_RespoFiliere', true) // Condition pour être responsable de filière
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->foreignId('id_departement')->references('id_departement')->on('departements');
             $table->timestamps();
         });
