@@ -1,5 +1,5 @@
 
-@vite(["resources/CSS/annonce.css"])
+@vite(["resources/CSS/annonce.css","resources/js/admin_ajax.js"])
 <h1>Annonce list</h1>
 <div class="listAnnonce">
 

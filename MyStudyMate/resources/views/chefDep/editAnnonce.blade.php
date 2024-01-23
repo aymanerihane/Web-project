@@ -1,6 +1,6 @@
-@vite(["resources/css/fileUpload.css","resources/js/file.js"])
-<div class="signbox" >
-    <form style="flex: 1;justify-content: center;" class="formSign" method="POST" action="{{ route('annonces')}}">
+@vite(["resources/css/fileUpload.css","resources/js/admin_ajax.js"])
+<div class="signbox" id="editAnnonce">
+    {{-- <form style="flex: 1;justify-content: center;" class="formSign" method="POST" action="{{ route('annonces.update', $annonce->id)}}">
         @csrf
         <div class="nom">
             <input id="nom" type="text" name="title" required autofocus>
@@ -10,6 +10,7 @@
 
         </div>
         @csrf
+        @method('PUT')
         <div class="email">
             <input type="text" name="resume"  required >
             <label class="labelf">
@@ -33,7 +34,7 @@
                   <span>OR</span>
                   <div class="selectFile">
                     {{-- <label for="file">Select file</label> --}}
-                    <input type="file" name="files[]" id="fileInput" multiple>
+                    {{-- <input type="file" name="files[]" id="fileInput" multiple>
                   </div>
                   <p>File size limit : 10 MB</p>
                 </div>
@@ -48,7 +49,7 @@
 
         </div>
         </div>
-    </form>
+    </form>  --}}
 
 </div>
 

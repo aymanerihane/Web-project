@@ -31,7 +31,9 @@ Route::get('landing/home', [App\Http\Controllers\landing\HomeController::class, 
 Route::post('auth/addEtudiant', [addEtudiant::class, 'create'])->name('auth.addEtudiant');
 Route::post('choixMode/annonces', [annonces::class, 'add'])->name('annonces');
 Route::get('/fetch-annonce', [annonces::class, 'index']);
-
+Route::get('/annonce/{id}/edit', [annonces::class, 'edit']);
+Route::put('/annonce/{id}', [annonces::class, 'update'])->name('annonces.update');
+Route::delete('/annonce/{id}', [annonces::class, 'destroy']);
 // web.php
 Route::get('auth/affectationSalle', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('auth.affectationSalle');
 
