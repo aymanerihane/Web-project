@@ -12,11 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('Professeur', function (Blueprint $table) {
+
             $table->string('MatriculeProf')->primary(); // clé primaire
             $table->boolean('is_RespoDepart')->default(false);
             $table->boolean('is_RespoFiliere')->default(false);
-            // clé étrangère vers l'utilisateur
-            $table->foreignId('id')->constrained('users');
+
+            $table->foreignId('id_Utilisateur')->references('id')->on('users');
+
+
+
             $table->timestamps();
         });
     }

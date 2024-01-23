@@ -12,12 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('etudiant', function (Blueprint $table) {
+
             $table->string('CNE')->primary(); // clé primaire
             $table->unsignedInteger('groupTp');
             $table->boolean('is_Delegue')->default(false);
-            $table->foreignId('id')->constrained('users'); // Utilisation de constrained pour simplifier
-            $table->foreignId('idFiliere')->constrained('filieres', 'idFiliere'); // Ajout du nom de la colonne de référence
-            $table->foreignId('id_Classe')->constrained('classe', 'id_Classe')->nullable(); // Ajout du nom de la colonne de référence
+
+            $table->foreignID('idUtilisateur')->references('id')->on('users');
+            $table->foreignID('idFiliere')->references('id_filiere')->on('filieres');
+            $table->foreignID('id_Classe')->references('id_classe')->on('classe');
+
             $table->timestamps();
         });
     }
