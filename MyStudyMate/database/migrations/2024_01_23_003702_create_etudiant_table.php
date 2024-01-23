@@ -16,12 +16,9 @@ return new class extends Migration
             $table->Integer('groupTp');
             $table->boolean('is_Delegue');
 
-            $table->unsignedBigInteger('idUtilisateur');// clé étrangère vers Utilisateur
-            $table->unsignedBigInteger('idFiliere'); // clé étrangère vers filiere
-            $table->unsignedBigInteger('id_Classe');// clé étrangère vers class
-            $table->foreign('idUtilisateur')->references('id')->on('users');
-            $table->foreign('idFiliere')->references('idFiliere')->on('filieres');
-            $table->foreign('id_Classe')->references('id_Classe')->on('Classe');
+            $table->foreignID('idUtilisateur')->references('id')->on('users');
+            $table->foreignID('idFiliere')->references('id_filiere')->on('filieres');
+            $table->foreignID('id_Classe')->references('id_classe')->on('classe');
             $table->timestamps();
         });
     }

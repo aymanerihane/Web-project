@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('modules', function (Blueprint $table) {
+        Schema::create('classe', function (Blueprint $table) {
             $table->id('id_classe');
             $table->integer('nbrEtudiants');
-            $table->integer('id_Module');
-            $table->integer('id_filiere');
-            $table->foreignId('id_Module')->references('id_Module')->on('modules');
+            $table->foreignId('id_Module')->references('id_module')->on('modules');
             $table->foreignId('id_filiere')->references('id_filiere')->on('filieres');
             $table->timestamps();
         });
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('classe');
     }
 };
