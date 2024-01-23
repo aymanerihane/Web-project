@@ -19,7 +19,7 @@ class annonces extends Controller
        return redirect('/chefDep');
     }
     public function edit($id){
-        $annonce = ModelsAnnonces::find($id);
+        $annonce = ModelsAnnonces::where('id_annonce', $id)->first();
         return response()->json(['annonce' => $annonce]);
     }
     public function update(Request $request, $id)
