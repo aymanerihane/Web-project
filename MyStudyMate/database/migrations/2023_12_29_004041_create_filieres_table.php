@@ -22,6 +22,7 @@ return new class extends Migration
             ->onUpdate('cascade')
             ->onDelete('cascade');
             $table->foreignId('id_departement')->references('id_departement')->on('departements');
+            $table->foreignId('id_formation')->references('id_formation')->on('formation');
             $table->timestamps();
         });
 
