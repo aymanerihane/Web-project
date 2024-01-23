@@ -118,8 +118,8 @@ function chnagerManupulation(url) {
             chnagerManupulation('formAn');
             center.style.opacity = 0;
         }else if(event.target.classList.contains('edit')){
-            editannonce(event.target);
             chnagerManupulation('edit');
+            editannonce(event.target);
             center.style.opacity = 0;
         }
 
@@ -184,7 +184,7 @@ function chnagerManupulation(url) {
             }
         };
             function edit(annonce){
-                var container=document.getElementById('editannonce');
+                var container=document.getElementById('editAnnonce');
             container.innerHTML='<form style="flex: 1;justify-content: center;" class="formSign" method="POST" action="{{ route("annonces.update", '+annonce.id_annonce+')}}">\
             @csrf\
             @method("PUT")\
@@ -227,19 +227,7 @@ function chnagerManupulation(url) {
             </div>\
         </form>';
         }
-
     xhr.send();
-// fetch('/annonce/'+ id +'/edit')
-//  .then(response => response.json())
-//  .then(annonce => {
-//      // Handle the response (e.g., populate form fields for editing)
-//      console.log('Edit response:');
-//      console.log('Edit response:', annonce);
-//      document.getElementById('editAnnonce').innerText = JSON.stringify(annonce);
-//  })
-//  .catch(error => {
-//      console.error('Edit error:', error);
-//  });
 };
   });
 
@@ -265,67 +253,3 @@ function chnagerManupulation(url) {
     xhr.open("GET", url, true); //erreur
     xhr.send();
 }
-
-// function editannonce(id) {
-//     var xhr = new XMLHttpRequest();
-//     console.log("test");
-//     // fetch('/annonce/' + id + '/edit')
-//     xhr.open('GET', '/annonce/' + id + '/edit', true);
-//     xhr.onreadystatechange = function () {
-//         if (xhr.readyState == 4) {
-//             if (xhr.status == 200) {
-//                     var responseData = JSON.parse(xhr.responseText);
-//                     // Handle the response data for editing
-//                     console.log(responseData.annonce);
-//                     EditData(responseData.annonce);
-//             }
-//         }
-//         EditData(annonce);{
-//            var container=document.getElementById('editannonce');
-//             container.innerHTML='<form style="flex: 1;justify-content: center;" class="formSign" method="POST" action="{{ route("annonces.update", '+annonce.id_annonce+')}}">\
-//             @csrf\
-//             @method("PUT")\
-//             <div class="nom">\
-//                 <input id="nom" type="text" name="title" required autofocus>\
-//                 <label class="labelf">\
-//                     <span style="transition-delay:0ms">T</span><span style="transition-delay:50ms">I</span><span style="transition-delay:100ms">T</span><span style="transition-delay:150ms">R</span><span style="transition-delay:200ms">E</span>\
-//                 </label>\
-//             </div>\
-//             @csrf\
-//             <div class="email">\
-//                 <input type="text" name="resume"  required >\
-//                 <label class="labelf">\
-//                     <span style="transition-delay:0ms">R</span><span style="transition-delay:50ms">E</span><span style="transition-delay:100ms">S</span><span style="transition-delay:150ms">U</span><span style="transition-delay:200ms">M</span><span style="transition-delay:250ms">E</span><span style="transition-delay:300ms">R</span>\
-//                 </label>\
-//             </div>\
-//             <div class="email">\
-//                 <input type="text" name="disc" required >\
-//                 <label class="labelf">\
-//                     <span style="transition-delay:0ms">D</span><span style="transition-delay:50ms">I</span><span style="transition-delay:100ms">S</span><span style="transition-delay:150ms">C</span><span style="transition-delay:200ms">R</span><span style="transition-delay:250ms">I</span><span style="transition-delay:300ms">P</span><span style="transition-delay:350ms">T</span><span style="transition-delay:400ms">I</span><span style="transition-delay:450ms">O</span><span style="transition-delay:500ms">N</span>\
-//                 </label>\
-//             </div>\
-//                 <div class="zone">\
-//                     <div id="dropZ">\
-//                       <i class="fa fa-cloud-upload"></i>\
-//                       <div>Drag and drop your file here</div>\
-//                       <span>OR</span>\
-//                       <div class="selectFile">\
-//                         {{-- <label for="file">Select file</label> --}}\
-//                         <input type="file" name="files[]" id="fileInput" multiple>\
-//                       </div>\
-//                       <p>File size limit : 10 MB</p>\
-//                     </div>\
-//                   </div>\
-//             <div class="sb">\
-//                 <button type="submit">\
-//                     <div style="margin-bottom: 0" class="btnLogin"><span>Submit</span></div>\
-//                   </button>\
-//             </div>\
-//             </div>\
-//         </form>';
-//         }
-//     };
-
-//     xhr.send();
-// }
-
