@@ -5,13 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Fillieres extends Model
+class Demande extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id_filiere',
-        'nom',
-        'id_RespoFiliere',
+        'id_demande',
+        'objet',
+        'TypeDemande',
+        'DescripDemande',
+        'ReponseDemande',
+        'statutDemande',
+        'CNE',
         'id_departement'
     ];
 }

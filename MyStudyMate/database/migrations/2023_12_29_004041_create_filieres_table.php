@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('id_filiere'); // clé primaire
             $table->string('nom');
             $table->string('contenuFiliere');
-            $table->foreignId('MatriculeProf')
+            $table->foreignId('id_RespoFiliere')
             ->references('MatriculeProf')
             ->on('Professeur')
             ->where('is_RespoFiliere', true) // Condition pour être responsable de filière
