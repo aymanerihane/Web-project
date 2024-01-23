@@ -14,12 +14,7 @@ return new class extends Migration
         Schema::create('departements', function (Blueprint $table) {
             $table->id('id_departement');
             $table->string('nom');
-            $table->foreignId('id_RespoDepart')
-            ->references('MatriculeProf')
-            ->on('Professeur')
-            ->where('is_RespoDepart', true) // Condition pour être responsable de filière
-            ->onUpdate('cascade')
-            ->onDelete('cascade');
+            $table->foreignId('id_RespoDepart')->references('MatriculeProf')->on('Professeur');
             $table->timestamps();
         });
     }

@@ -13,7 +13,7 @@ class annonces extends Controller
     }
     public function add(){
         ModelsAnnonces::create([
-            'contenu'=>$_POST['disc'],
+            'Description'=>$_POST['disc'],
             'is_role'=>1,
         ]);
        return redirect('/chefDep');
@@ -24,9 +24,8 @@ class annonces extends Controller
     }
     public function update(Request $request, $id)
     {
-        $professeur = ModelsAnnonces::find($id);
+        $professeur = ModelsAnnonces::where('id_annonce', $id)->first();
         $professeur->update($request->all());
-
-        // return response()->json(['message' => 'Professeur updated successfully']);
+        return redirect('/chefDep');
     }
 }

@@ -19,9 +19,9 @@ return new class extends Migration
             $table->string('activite');
 
             //  les clés étrangères
-            $table->foreignId('id_module')->references('id_module')->on('modules');
-            $table->foreignId('id_local')->references('id_local')->on('locals');
-            $table->foreignId('id_filiere')->references('id_filiere')->on('filiers');
+            $table->foreignId('id_module')->constrained('modules'); // Utilisation de constrained
+            $table->foreignId('id_local')->constrained('locals');   // Utilisation de constrained
+            $table->foreignId('id_filiere')->constrained('filieres');
             $table->timestamps();
         });
     }

@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('_abscence', function (Blueprint $table) {
-            $table->id('id_abscence');
-            $table->text('justification');
-            $table->date('date');
-            $table->string('filepath');
-            $table->foreignId('CNE')->constrained('etudiants');
-
+        Schema::create('modules', function (Blueprint $table) {
+            $table->id('id_module');
+            $table->string('nom');
+            $table->foreignId('MatriculeProf')->references('MatriculeProf')->on('Professeur');
+            $table->foreignId('id_filiere')->references('id_filiere')->on('filieres');
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('_abscence');
+        Schema::dropIfExists('modules');
     }
 };
