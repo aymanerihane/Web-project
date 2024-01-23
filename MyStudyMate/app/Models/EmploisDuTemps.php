@@ -14,6 +14,7 @@ class EmploisDuTemps extends Model
         'jour',
         'creneau_horaire',
         'activite',
-        'id_module'
+        'id_module',
+        'id_filiere'
     ];
 }
