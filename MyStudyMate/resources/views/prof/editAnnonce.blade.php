@@ -27,7 +27,6 @@
             <div class="zone">
 
                 <div id="dropZ">
-                  <i class="fa fa-cloud-upload"></i>
                   <div>Drag and drop your file here</div>
                   <span>OR</span>
                   <div class="selectFile">
