@@ -34,6 +34,7 @@ Route::post('prof/annonces', [annonces::class, 'addProf'])->name('profAnnonces')
 Route::get('/fetch-annonce', [annonces::class, 'index']);
 Route::get('/annonce/{id}/edit', [annonces::class, 'edit'])->name('annonce.edit');;
 Route::post('annonce/{id}', [annonces::class, 'update'])->name('annonce.update');
+Route::post('prof/annonceProf/{id}', [annonces::class, 'updateProf'])->name('annonce.updateProf');
 Route::get('/annonce/{id}', [annonces::class, 'delete'])->name('annonce.delete');;
 // web.php
 Route::get('auth/affectationSalle', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('auth.affectationSalle');
@@ -61,10 +62,10 @@ Route::get('auth/formationChoix', function () {
 Route::get('chefDep', function () {
     return view('chefDep.home');
 });
-Route::get('annonce', function () {
+Route::get('chefDep/annonce', function () {
     return view('chefDep.gererAnnonces');
 });
-Route::get('prof/prof/annonce', function () {
+Route::get('prof/annonce', function () {
     return view('prof.gererAnnonces');
 });
 Route::get('formAn', function () {

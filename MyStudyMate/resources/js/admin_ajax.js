@@ -10,17 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var lastSegment = referrer.substr(referrer.lastIndexOf('/') + 1);
 
     if (lastSegment == "chefDep") {
-        chnagerManupulation('annonce');
-        fetchData();
-        var navButtons = document.querySelectorAll(".nav-button");
-        navButtons.forEach((button, i) => {
-            button.classList.remove(`active-side${i + 1}`);
-            button.classList.remove(`active-side`);
-          });
-        navButtons[1].classList.add(`active-side2`);
-        navButtons[1].classList.add(`active-side`);
-    }else if(lastSegment == "prof/home"){
-        chnagerManupulation('annonce');
+        chnagerManupulation('chefDep/annonce');
         fetchData();
         var navButtons = document.querySelectorAll(".nav-button");
         navButtons.forEach((button, i) => {
@@ -31,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         navButtons[1].classList.add(`active-side`);
     }
     chnagerManupulation('emploisTemps');
+    chnagerManupulation('annonce');
     // Get all nav buttons and the highlight element
     var navButtons = document.querySelectorAll(".nav-button");
     var iconAdd = document.getElementById("addClick");
@@ -124,11 +115,11 @@ function chnagerManupulation(url) {
         })
         // selectRole = document.getElementById("selectRole");
       }else if(navButtons[index].querySelector("span").textContent === "Gérer Annonces Département"){
-        chnagerManupulation('annonce');
+        chnagerManupulation('chefDep/annonce');
         fetchData();
         center.style.opacity = 0;
       }else if(navButtons[index].querySelector("span").textContent === "Gérer Annonces Modules"){
-        chnagerManupulation('prof/annonce');
+        chnagerManupulation('annonce');
         center.style.opacity = 0;
       }
     }
@@ -142,8 +133,18 @@ function chnagerManupulation(url) {
             chnagerManupulation('formAn');
             center.style.opacity = 0;
         }else if(event.target.classList.contains('edit')){
+            referrer = window.location.pathname;
+            added='';
+            lastSegment = referrer.substr(referrer.lastIndexOf('/') + 1);
+            if (lastSegment == "chefDep"){
+                console.log("asasd222")
+                chnagerManupulation('edit');
+                editannonce(event.target);
+            }else if (lastSegment == "home"){
             chnagerManupulation('edit');
-            editannonce(event.target);
+            editannonceProf(event.target);
+            }
+
             center.style.opacity = 0;
         }else if(event.target.classList.contains('delete')){
             deleteAnnonces(event.target);
@@ -228,6 +229,33 @@ function chnagerManupulation(url) {
                 desc.value=annonce.Description;
         }
     xhr.send();
+};
+  //edit data
+  function editannonceProf(ele) {
+    console.log("test");
+      var id = ele.dataset.id;
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', '/annonce/'+ id +'/edit', true);
+      xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+              // Handle the response data and update the page
+              var responseData = JSON.parse(xhr.responseText);
+              console.log(responseData.annonce);
+              editProf(responseData.annonce);
+          }
+      };
+          function editProf(annonce){
+            console.log(annonce);
+              var container=document.getElementById('editAnnonce');
+              var desc=document.getElementById('disc');
+              var resume=document.getElementById('resume');
+              var title=document.getElementById('title');
+              container.action='annonceProf/'+annonce.id_annonce+'';
+              title.value=annonce.titre;
+              resume.value=annonce.resume;
+              desc.value=annonce.Description;
+      }
+  xhr.send();
 };
   });
 

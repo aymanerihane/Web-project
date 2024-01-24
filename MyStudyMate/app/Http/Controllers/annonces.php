@@ -27,7 +27,7 @@ class annonces extends Controller
             'id_Utilisateur'=>auth()->user()->id,
         ]);
         if($_SERVER['PHP_SELF']=='/prof/home')
-        
+
        return redirect('/prof/home');
     else
     return redirect('/chefDep');
@@ -44,7 +44,6 @@ class annonces extends Controller
     public function edit($id){
         $annonce = ModelsAnnonces::where('id_annonce', $id)->first();
         return response()->json(['annonce' => $annonce]);
-        return url('/chefDep');
     }
     public function delete($id){
         ModelsAnnonces::where('id_annonce', $id)->delete();
@@ -59,4 +58,15 @@ class annonces extends Controller
         ]);
         return redirect('/chefDep');
     }
+    public function updateProf($id)
+    {
+        $annonce = ModelsAnnonces::where('id_annonce', $id);
+        $annonce->update([
+            'titre'=>$_POST['title'],
+            'resume'=>$_POST['resume'],
+            'Description'=>$_POST['disc'],
+        ]);
+        return redirect('/prof/home');
+    }
+
 }
