@@ -30,8 +30,12 @@ class annonces extends Controller
     }
     public function update(Request $request, $id)
     {
-        $professeur = ModelsAnnonces::where('id_annonce', $id)->first();
-        $professeur->update($request->all());
+        $annonce = ModelsAnnonces::where('id_annonce', $id);;
+        $annonce->update([
+            'titre'=>$_POST['title'],
+            'resume'=>$_POST['resume'],
+            'Description'=>$_POST['disc'],
+        ]);
         return redirect('/chefDep');
     }
 }
