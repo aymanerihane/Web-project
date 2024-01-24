@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (lastSegment == "chefDep") {
         chnagerManupulation('annonce');
+        fetchData();
         var navButtons = document.querySelectorAll(".nav-button");
         navButtons.forEach((button, i) => {
             button.classList.remove(`active-side${i + 1}`);
@@ -18,9 +19,16 @@ document.addEventListener("DOMContentLoaded", function () {
           });
         navButtons[1].classList.add(`active-side2`);
         navButtons[1].classList.add(`active-side`);
-    }else if(lastSegment == "chefDep/home"){
-        if(window.location.pathname === "/chefDep"){
-        }
+    }else if(lastSegment == "prof/home"){
+        chnagerManupulation('annonce');
+        fetchData();
+        var navButtons = document.querySelectorAll(".nav-button");
+        navButtons.forEach((button, i) => {
+            button.classList.remove(`active-side${i + 1}`);
+            button.classList.remove(`active-side`);
+          });
+        navButtons[1].classList.add(`active-side2`);
+        navButtons[1].classList.add(`active-side`);
     }
     chnagerManupulation('emploisTemps');
     // Get all nav buttons and the highlight element
