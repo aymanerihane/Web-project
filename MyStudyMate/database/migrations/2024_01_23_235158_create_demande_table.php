@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('DescripDemande');
             $table->text('ReponseDemande')->nullable();
             $table->enum('statutDemande', ['En attente', 'Approuvée', 'Rejetée']);
-            $table->foreignId('CNE')->references('CNE')->on('etudiant');
+            $table->foreignId('CNE')->references('CNE')->on('etudiants');
             $table->foreignId('id_departement')->references('id_departement')->on('departements');
             $table->timestamps();
         });

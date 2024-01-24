@@ -16,7 +16,7 @@ return new class extends Migration
             $table->text('justification');
             $table->date('date');
             $table->string('filepath');
-            $table->foreignId('CNE')->references('CNE')->on('etudiant');
+            $table->foreignId('CNE')->references('CNE')->on('etudiants');
 
             $table->timestamps();
         });

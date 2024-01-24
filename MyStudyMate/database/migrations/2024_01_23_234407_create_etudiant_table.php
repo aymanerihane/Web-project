@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('etudiant', function (Blueprint $table) {
+        Schema::create('etudiants', function (Blueprint $table) {
 
             $table->id('CNE'); // clé primaire
             $table->unsignedInteger('groupTp');
             $table->boolean('is_Delegue')->default(false);
 
-            $table->foreignID('idUtilisateur')->references('id')->on('users');
-            $table->foreignID('idFiliere')->references('id_filiere')->on('filieres');
+            $table->foreignID('id_Utilisateur')->references('id')->on('users');
+            $table->foreignID('id_Filiere')->references('id_filiere')->on('filieres');
             $table->foreignID('id_Classe')->references('id_classe')->on('classe');
 
             $table->timestamps();

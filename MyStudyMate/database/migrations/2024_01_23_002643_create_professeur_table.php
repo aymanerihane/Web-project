@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Professeur', function (Blueprint $table) {
+        Schema::create('Professeurs', function (Blueprint $table) {
 
             $table->id('MatriculeProf'); // clé primaire
             $table->boolean('is_RespoDepart')->default(false);

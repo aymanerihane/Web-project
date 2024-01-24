@@ -13,8 +13,8 @@ class etudiant extends Model
         'CNE',
         'groupTp',
         'is_Delegue',
-        'idUtilisateur',
-        'idFiliere',
+        'id_Utilisateur',
+        'id_Filiere',
         'id_Classe'
     ];
 }

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('modules', function (Blueprint $table) {
             $table->id('id_module');
             $table->string('nom');
-            $table->foreignId('MatriculeProf')->references('MatriculeProf')->on('Professeur');
+            $table->foreignId('MatriculeProf')->references('MatriculeProf')->on('Professeurs');
             $table->foreignId('id_filiere')->references('id_filiere')->on('filieres');
             $table->timestamps();
         });

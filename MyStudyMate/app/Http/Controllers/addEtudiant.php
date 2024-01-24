@@ -39,8 +39,8 @@ class addEtudiant extends Controller
         'CNE' => $_POST['cne'],
         'groupTp'=> $_POST['groupTP'],
         'is_Delegue'=> $_POST['deleg'],
-        'idUtilisateur'=> User::where('name', $nom)->value('id'),
-        'idFiliere'=> $_POST['filiere'],
+        'id_Utilisateur'=> User::where('name', $nom)->value('id'),
+        'id_Filiere'=> $_POST['filiere'],
         'id_Classe'=> $_POST['classe'],
     ]);
     User::where('name', $nom)->update(['password' => $_POST['cne']]);
@@ -48,7 +48,7 @@ class addEtudiant extends Controller
         elseif($_POST['role']==2){
             Professeur::create([
         'MatriculeProf' => $_POST['matricule'],
-        'idUtilisateur' => User::where('name', $nom)->value('id'),
+        'id_Utilisateur' => User::where('name', $nom)->value('id'),
     ]);
        if($_POST['prof']==1){
         Professeur::where('MatriculeProf', $_POST['matricule'])->update(['is_RespoDepart' => true]);
