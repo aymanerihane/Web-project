@@ -8,6 +8,22 @@
     margin: 0;
     padding: 0;
 }
+/* Scrollbar Styling for both horizontal and vertical scrollbars */
+::-webkit-scrollbar {
+    width: 10px; /* Width of the vertical scrollbar */
+    height: 10px; /* Height of the horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ebebeb;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #6d6d6d;
+}
+
 ul{
     list-style: none;
 }
@@ -19,6 +35,7 @@ body{
     font-family: 'Poppins', sans-serif;
     width: 100%;
     height: 100vh;
+    overflow: hidden;
 }
 /* position the header */
 .header-container{
