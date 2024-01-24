@@ -60,7 +60,7 @@ Route::get('auth/formationChoix', function () {
 Route::get('chefDep', function () {
     return view('chefDep.home');
 });
-Route::get('chefDep/annonce', function () {
+Route::get('annonce', function () {
     return view('chefDep.gererAnnonces');
 });
 Route::get('prof/annonce', function () {
