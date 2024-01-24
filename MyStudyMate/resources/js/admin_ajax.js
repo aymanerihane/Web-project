@@ -89,11 +89,11 @@ function chnagerManupulation(url) {
             var value = selectRole.value;
 
             if(value == 3){
-                isdeleg.style.display= 'block';
+                isdeleg.style.display= 'flex';
                 isprof.style.display= 'none';
             }else if(value ==2){
 
-                isprof.style.display= 'block';
+                isprof.style.display= 'flex';
                 isdeleg.style.display= 'none';
             }else{
                 isprof.style.display= 'none';
