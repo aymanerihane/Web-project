@@ -123,6 +123,10 @@ function chnagerManupulation(url) {
             center.style.opacity = 0;
         }else if(event.target.classList.contains('delete')){
             deleteAnnonces(event.target);
+            chnagerManupulation('annonce');
+            fetchData();
+            // history.go(0);
+
         }
 
     })
@@ -157,11 +161,9 @@ function chnagerManupulation(url) {
         <div class="containerAnnonceText">\
             <div class="imgholder">\
             </div>\
-            <div class="containerAnnonceText">\
-                <h1 class="head-card"">'+item.titre+'</h1>\
-                <h1 class="head-card""></h1>\
-                <p class="text-card">'+item.resume+'</p>\
-                <p class="text-card"></p>\
+            <div class="containerAnnonceText" style="width: 100%;">\
+                <h1 class="head-card">'+item.titre+'</h1>\
+                <p class="text-card" style="width: 100%;"">'+item.resume+'</p>\
             </div>\
         </div>\
         </div>\
