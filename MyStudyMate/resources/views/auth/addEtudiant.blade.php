@@ -58,9 +58,15 @@
                         <Label>Classe :</Label><br>
                         <span class="custom-dropdown small" >
                             <Select class="select" name="classe" style="margin-bottom: 15px;">
-                                <option class="option" value="1">classe 1</option>
-                                <option class="option" value="2">classe 2</option>
+                                @php
+                    $classes = app('App\Http\Controllers\classes')->showClasses();
+                    @endphp
+                    @if($classes->count() > 0)
+                        @foreach ($classes as $classe)
+                            <option class="option" value="{{ $classe->id_classe }}">{{ $classe->id_classe }}</option>
+                        @endforeach
                             </Select>
+                            @endif
                         </span>
                     </div>
                     <div style="flex: 1">
@@ -68,9 +74,17 @@
                         <Label>Filiere :</Label><br>
                         <span class="custom-dropdown small" >
                             <Select class="select" name="filiere" style="margin-bottom: 15px;">
-                                <option class="option" value="1">IDAI</option>
-                                <option class="option" value="2">AD</option>
+                                {{-- <option class="option" value="1">IDAI</option>
+                                <option class="option" value="2">AD</option> --}}
+                                @php
+                    $classes = app('App\Http\Controllers\filieres')->showFilieres();
+                    @endphp
+                    @if($filieres->count() > 0)
+                        @foreach ($filieres as $filiere)
+                            <option class="option" value="{{ $filiere->id_filiere }}">{{ $filiere->nom }}</option>
+                        @endforeach
                             </Select>
+                            @endif
                         </span>
                     </div>
 

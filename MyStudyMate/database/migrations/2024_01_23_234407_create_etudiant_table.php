@@ -19,7 +19,7 @@ return new class extends Migration
 
             $table->foreignID('id_Utilisateur')->references('id')->on('users');
             $table->foreignID('id_Filiere')->references('id_filiere')->on('filieres');
-            $table->foreignID('id_Classe')->references('id_classe')->on('classe');
+            $table->foreignID('id_Classe')->references('id_classe')->on('classes');
 
             $table->timestamps();
         });
