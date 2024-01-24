@@ -30,6 +30,7 @@ Route::get('etudiant/home', [App\Http\Controllers\etudiant\HomeController::class
 Route::get('landing/home', [App\Http\Controllers\landing\HomeController::class, 'index'])->name('landing.home');
 Route::post('auth/addEtudiant', [addEtudiant::class, 'create'])->name('auth.addEtudiant');
 Route::post('choixMode/annonces', [annonces::class, 'add'])->name('annonces');
+Route::post('prof/annonces', [annonces::class, 'addProf'])->name('profAnnonces');
 Route::get('/fetch-annonce', [annonces::class, 'index']);
 Route::get('/annonce/{id}/edit', [annonces::class, 'edit'])->name('annonce.edit');;
 Route::post('annonce/{id}', [annonces::class, 'update'])->name('annonce.update');

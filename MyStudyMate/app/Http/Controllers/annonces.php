@@ -21,6 +21,15 @@ class annonces extends Controller
         ]);
        return redirect('/chefDep');
     }
+    public function addProf(){
+        ModelsAnnonces::create([
+            'titre'=>$_POST['title'],
+            'resume'=>$_POST['resume'],
+            'Description'=>$_POST['disc'],
+            'id_Utilisateur'=>auth()->user()->id,
+        ]);
+       return redirect('/prof/home');
+    }
     public function edit($id){
         $annonce = ModelsAnnonces::where('id_annonce', $id)->first();
         return response()->json(['annonce' => $annonce]);
