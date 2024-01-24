@@ -120,7 +120,7 @@ function chnagerManupulation(url) {
         fetchData();
         center.style.opacity = 0;
       }else if(navButtons[index].querySelector("span").textContent === "Gérer Annonces Modules"){
-        chnagerManupulation('../annonce');
+        chnagerManupulation('annonce');
         fetchData();
         center.style.opacity = 0;
       }
@@ -140,7 +140,7 @@ function chnagerManupulation(url) {
             center.style.opacity = 0;
         }else if(event.target.classList.contains('delete')){
             deleteAnnonces(event.target);
-            chnagerManupulation('../annonce');
+            chnagerManupulation('annonce');
             fetchData();
         }
 
