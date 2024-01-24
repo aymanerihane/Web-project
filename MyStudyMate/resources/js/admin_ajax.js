@@ -197,7 +197,7 @@ function chnagerManupulation(url) {
                 var desc=document.getElementById('disc');
                 var resume=document.getElementById('resume');
                 var title=document.getElementById('title');
-                container.action='{{route("annonce.update",'+annonce.id_annonce+')}}';
+                container.action='{{ route(\'annonce.update\','+annonce.id_annonce+') }}';
                 title.value=annonce.titre;
                 resume.value=annonce.resume;
                 desc.value=annonce.Description;

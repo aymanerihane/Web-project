@@ -2,6 +2,7 @@
 <div class="signbox" >
     <form style="flex: 1;justify-content: center;" id="editAnnonce" class="formSign" method="POST">
         @csrf
+        @method('PUT')
         <div class="nom">
             <input id="title" type="text" name="title" required autofocus>
             <label class="labelf">
@@ -9,8 +10,6 @@
             </label>
 
         </div>
-        @csrf
-        @method('PUT')
         <div class="email">
             <input type="text" name="resume" name="resume" id="resume"  required >
             <label class="labelf">
