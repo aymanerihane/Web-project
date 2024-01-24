@@ -33,8 +33,8 @@
             <Label>Delegue :</Label><br>
                 <span class="custom-dropdown small">
                     <Select class="select" name="deleg" style="margin-bottom: 15px;">
-                                <option class="option" value="false">Non</option>
-                                <option class="option" value="true">Oui</option>
+                                <option class="option" value="0">Non</option>
+                                <option class="option" value="1">Oui</option>
                     </Select>
                 </span>
                 <div style="display: flex;justify-content: space-between;align-items: center;">

@@ -14,7 +14,7 @@ class etudiant extends Model
         'groupTp',
         'is_Delegue',
         'idUtilisateur',
-        'id_Filiere',
+        'idFiliere',
         'id_Classe'
     ];
 }
