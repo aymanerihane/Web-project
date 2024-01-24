@@ -13,14 +13,20 @@ class annonces extends Controller
     }
     public function add(){
         ModelsAnnonces::create([
+            'titre'=>$_POST['title'],
+            'resume'=>$_POST['resume'],
             'Description'=>$_POST['disc'],
-            'is_role'=>1,
+            'id_Utilisateur'=>auth()->user()->id,
         ]);
        return redirect('/chefDep');
     }
     public function edit($id){
         $annonce = ModelsAnnonces::where('id_annonce', $id)->first();
         return response()->json(['annonce' => $annonce]);
+    }
+    public function delete($id){
+        ModelsAnnonces::table('annonces')->where('id_annonce', $id)->delete();
+        return redirect('/chefDep');
     }
     public function update(Request $request, $id)
     {

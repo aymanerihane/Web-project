@@ -16,7 +16,7 @@ return new class extends Migration
             $table->text('titre');
             $table->text('resume');
             $table->text('Description');
-            $table->foreignId('MatriculeProf')->references('MatriculeProf')->on('professeur');
+            $table->foreignId('id_Utilisateur')->references('id')->on('users');
             $table->timestamps();
         });
     }

@@ -18,9 +18,6 @@ return new class extends Migration
             $table->boolean('is_RespoFiliere')->default(false);
 
             $table->foreignId('id_Utilisateur')->references('id')->on('users');
-
-
-
             $table->timestamps();
         });
     }
