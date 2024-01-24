@@ -3,7 +3,7 @@
     <form style="flex: 1;justify-content: center;" id="editAnnonce" class="formSign" method="POST">
         @csrf
         <div class="nom">
-            <input id="nom" type="text" name="title" required autofocus>
+            <input id="title" type="text" name="title" required autofocus>
             <label class="labelf">
                 <span style="transition-delay:0ms">T</span><span style="transition-delay:50ms">I</span><span style="transition-delay:100ms">T</span><span style="transition-delay:150ms">R</span><span style="transition-delay:200ms">E</span>
             </label>
@@ -12,7 +12,7 @@
         @csrf
         @method('PUT')
         <div class="email">
-            <input type="text" name="resume"  required >
+            <input type="text" name="resume" name="resume" id="resume"  required >
             <label class="labelf">
                 <span style="transition-delay:0ms">R</span><span style="transition-delay:50ms">E</span><span style="transition-delay:100ms">S</span><span style="transition-delay:150ms">U</span><span style="transition-delay:200ms">M</span><span style="transition-delay:250ms">E</span><span style="transition-delay:300ms">R</span>
             </label>

@@ -25,7 +25,7 @@ class annonces extends Controller
         return response()->json(['annonce' => $annonce]);
     }
     public function delete($id){
-        ModelsAnnonces::table('annonces')->where('id_annonce', $id)->delete();
+        ModelsAnnonces::where('id_annonce', $id)->delete();
         return redirect('/chefDep');
     }
     public function update(Request $request, $id)

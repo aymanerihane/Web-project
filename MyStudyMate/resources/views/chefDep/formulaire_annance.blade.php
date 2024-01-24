@@ -11,7 +11,7 @@
         </div>
         @csrf
         <div class="email">
-            <input type="text" name="resume"  required >
+            <input id="resume" type="text"   required >
             <label class="labelf">
                 <span style="transition-delay:0ms">R</span><span style="transition-delay:50ms">E</span><span style="transition-delay:100ms">S</span><span style="transition-delay:150ms">U</span><span style="transition-delay:200ms">M</span><span style="transition-delay:250ms">E</span><span style="transition-delay:300ms">R</span>
             </label>
