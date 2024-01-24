@@ -80,7 +80,7 @@ function chnagerManupulation(url) {
 
 
 
-
+        var isprof,isdeleg;
         document.addEventListener('change', ()=>{
 
             selectRole = document.getElementById("selectRole");
