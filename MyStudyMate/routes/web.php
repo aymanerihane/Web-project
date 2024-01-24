@@ -69,8 +69,14 @@ Route::get('prof/annonce', function () {
 Route::get('formAn', function () {
     return view('chefDep.formulaire_annance');
 });
+Route::get('prof/formAn', function () {
+    return view('prof.formulaire_annance');
+});
 Route::get('edit', function () {
     return view('chefDep.editAnnonce');
+});
+Route::get('prof/edit', function () {
+    return view('prof.editAnnonce');
 });
 Route::get('prof/repondreDemande', function () {
     return view('prof.repondreDemande');
