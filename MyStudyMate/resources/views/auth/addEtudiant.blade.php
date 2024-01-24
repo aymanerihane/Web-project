@@ -78,7 +78,7 @@
 
                 </div>
                 <div class="email" style="flex: 1">
-                    <input type="text" name="cne" required autofocus style="margin-bottom: 0px;">
+                    <input type="text" name="cne" required style="margin-bottom: 0px;">
                     <label class="labelf">
                         <span style="transition-delay:0ms">C</span><span style="transition-delay:50ms">N</span><span style="transition-delay:100ms">E</span>
                     </label>
@@ -98,7 +98,7 @@
                 </span>
 
                 <div class="email">
-                    <input type="text" name="cne" required autofocus>
+                    <input type="text" name="matricule" required>
                     <label class="labelf">
                         <span style="transition-delay:0ms">M</span><span style="transition-delay:50ms">A</span><span style="transition-delay:100ms">T</span><span style="transition-delay:150ms">R</span><span style="transition-delay:200ms">I</span><span style="transition-delay:250ms">C</span><span style="transition-delay:300ms">U</span><span style="transition-delay:350ms">L</span><span style="transition-delay:400ms">E</span><span style="transition-delay:450ms">
                     </label>
@@ -118,7 +118,7 @@
 
             <div class="sb">
                 <button type="submit">
-                    <div class="btnLogin"><span>{{ __('Register') }}</span></div>
+                    <div class="btnLogin"><span>REGISTER</span></div>
                   </button>
 
 

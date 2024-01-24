@@ -18,32 +18,45 @@ class addEtudiant extends Controller
 
     $validator=Validator::make($_POST, [
         'name' => ['required', 'string', 'max:255'],
-        'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-        'password' => ['required', 'string', 'min:8', 'confirmed'],
+        // 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        // 'password' => ['required', 'string', 'min:8', 'confirmed'],
     ]);
     if ($validator->fails()) {
         return redirect()->back()->withErrors($validator)->withInput();
     }
-
+    $nom=$_POST['name'].' '.$_POST['prenom'];
+    $name=str_replace(' ', '', $_POST['name']);
+    $prenom=str_replace(' ', '', $_POST['prenom']);
         User::create([
-            'name' => $_POST['name'],
-            'email' => $_POST['email'],
-            'password' => Hash::make($_POST['password']),
+            'name' => $nom,
+            'email' => $name.'.'.$prenom."@etu.uae.ac.ma",
+            // 'password' => Hash::make($_POST['password']),
             'is_role'=>$_POST['role'],
-            'is_delegue'=>$_POST['deleg'],
+            'password' => '',
         ]);
-        if($_POST['role']==1){
+        if($_POST['role']==3){
             etudiant::create([
-        'CNE' => $_POST['name'],
-        'groupTp'=> $_POST['name'],
+        'CNE' => $_POST['cne'],
+        'groupTp'=> $_POST['groupTP'],
         'is_Delegue'=> $_POST['deleg'],
-        'idUtilisateur'=> $_POST['name'],
-        'idFiliere'=> $_POST['name'],
-        'id_Classe'=> $_POST['name'],
+        'idUtilisateur'=> User::where('name', $nom)->value('id'),
+        'idFiliere'=> $_POST['filiere'],
+        'id_Classe'=> $_POST['classe'],
     ]);
+    User::where('name', $nom)->update(['password' => $_POST['cne']]);
 }
         elseif($_POST['role']==2){
-            
+            Professeur::create([
+        'MatriculeProf' => $_POST['matricule'],
+        'idUtilisateur' => User::where('name', $nom)->value('id'),
+    ]);
+       if($_POST['prof']==1){
+        Professeur::where('MatriculeProf', $_POST['matricule'])->update(['is_RespoDepart' => true]);
+       }
+       elseif($_POST['prof']==2){
+        Professeur::where('MatriculeProf', $_POST['matricule'])->update(['is_RespoFiliere' => true]);
+       }
+       User::where('name', $nom)->update(['password' => $_POST['matricule']]);
         }
         return redirect('/auth/home');
 
