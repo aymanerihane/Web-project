@@ -1,3 +1,4 @@
+
 <table id="tableMember" border="1">
     {{-- table of membres --}}
     <tr id="first-tr">
@@ -8,25 +9,15 @@
     </tr>
     {{-- Dummy row for initialization --}}
     @php
-        $allMembers = app('App\Http\Controllers\addEtudiant')->allMember();
+    $allMembers = app('App\Http\Controllers\addEtudiant')->profMember();
     @endphp
     @foreach ($allMembers as $allMember)
         <tr>
             <td>{{ $allMember->name }}</td>
             <td>{{ $allMember->email }}</td>
             <td>{{ $allMember->password }}</td>
-            <td>
-                @if ($allMember->is_role == 2 || $allMember->is_role == 3 || $allMember->is_role == 4)
-                    Professeur
-                @elseif ($allMember->is_role == 5)
-                    Etudiants
-                @else
-                    NONE
-                @endif
-            </td>
+            <td>Professeur</td>
         </tr>
     @endforeach
 
 </table>
-
-

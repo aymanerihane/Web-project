@@ -22,11 +22,12 @@ class addEtudiant extends Controller
     $members = User::where('is_role', '=', 5)->get();
     return $members;
 }
-    public function profMember()
+public function profMember()
 {
-    $members = User::where('is_role', '=', 2,'and is_role', '=', 3,'and is_role', '=', 4)->get();
+    $members = User::whereIn('is_role', [2, 3, 4])->get();
     return $members;
 }
+
 
     public function create()
     {

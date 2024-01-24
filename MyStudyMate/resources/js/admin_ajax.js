@@ -68,6 +68,19 @@ function chnagerManupulation(url) {
       }else if(navButtons[index].querySelector("span").textContent === "Liste des Menbres"){
         chnagerManupulation('list');
         center.style.opacity = 0;
+
+        var select=document.getElementById("memberType");
+        console.log(select)
+        document.addEventListener('change', ()=>{
+            select = document.getElementById("memberType");
+            if (select.value == 0) {
+                chnagerManupulation1('allMembers');
+            } else if (select.value == 1) {
+                chnagerManupulation1('etudMember');
+            } else if (select.value == 2) {
+                chnagerManupulation1('profMember');
+            }
+        });
       }else if(navButtons[index].querySelector("span").textContent === "Répondre Demandes Étudiants"){
         chnagerManupulation('repondreDemande');
         center.style.opacity = 0;
@@ -80,13 +93,13 @@ function chnagerManupulation(url) {
 
 
 
-        var isprof,isdeleg;
+        var isprof,isdeleg,value;
         document.addEventListener('change', ()=>{
 
             selectRole = document.getElementById("selectRole");
             isdeleg = document.getElementById("isdeleg");
             isprof = document.getElementById("isprof");
-            var value = selectRole.value;
+            value = selectRole.value;
 
             if(value == 3){
                 isdeleg.style.display= 'flex';
@@ -223,6 +236,27 @@ function chnagerManupulation(url) {
         if (xhr.readyState == 4 && xhr.status == 200) {
             const center = document.querySelector(".center");
             document.querySelector(".center").innerHTML = xhr.responseText;
+            setTimeout(function () {
+                center.style.opacity = 1; // Set opacity to 1 to fade in the content
+            }, 30);
+        }
+
+    };
+
+
+
+    xhr.open("GET", url, true); //erreur
+    xhr.send();
+}
+
+
+function chnagerManupulation1(url) {
+
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            const center = document.querySelector("#center");
+            document.querySelector("#center").innerHTML = xhr.responseText;
             setTimeout(function () {
                 center.style.opacity = 1; // Set opacity to 1 to fade in the content
             }, 30);

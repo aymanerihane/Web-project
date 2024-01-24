@@ -72,10 +72,13 @@ Route::get('edit', function () {
 Route::get('prof/repondreDemande', function () {
     return view('prof.repondreDemande');
 });
-Route::get('prof/allMembers', function () {
-    return view('prof.allMembers');
+Route::get('auth/allMembers', function () {
+    return view('auth.allMembers');
 });
-// Route::get('prof/repondreDemande', function () {
-//     return view('prof.allMembers');
-// });
+Route::get('auth/etudMember', function () {
+    return view('auth.etudMember');
+});
+Route::get('auth/profMember', function () {
+    return view('auth.profMember');
+});
 
