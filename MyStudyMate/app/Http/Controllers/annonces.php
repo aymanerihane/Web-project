@@ -28,9 +28,9 @@ class annonces extends Controller
     public function delete($id){
         ModelsAnnonces::where('id_annonce', $id)->delete();
     }
-    public function update(Request $request, $id)
+    public function update($id)
     {
-        $annonce = ModelsAnnonces::where('id_annonce', $id);;
+        $annonce = ModelsAnnonces::where('id_annonce', $id);
         $annonce->update([
             'titre'=>$_POST['title'],
             'resume'=>$_POST['resume'],
