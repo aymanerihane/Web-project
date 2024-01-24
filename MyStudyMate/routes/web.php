@@ -60,8 +60,11 @@ Route::get('auth/formationChoix', function () {
 Route::get('chefDep', function () {
     return view('chefDep.home');
 });
-Route::get('annonce', function () {
+Route::get('chefDep/annonce', function () {
     return view('chefDep.gererAnnonces');
+});
+Route::get('prof/annonce', function () {
+    return view('prof.gererAnnonces');
 });
 Route::get('formAn', function () {
     return view('chefDep.formulaire_annance');
