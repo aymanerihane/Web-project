@@ -74,10 +74,8 @@
                         <Label>Filiere :</Label><br>
                         <span class="custom-dropdown small" >
                             <Select class="select" name="filiere" style="margin-bottom: 15px;">
-                                {{-- <option class="option" value="1">IDAI</option>
-                                <option class="option" value="2">AD</option> --}}
                                 @php
-                    $classes = app('App\Http\Controllers\filieres')->showFilieres();
+                    $filieres = app('App\Http\Controllers\filieres')->showFilieres();
                     @endphp
                     @if($filieres->count() > 0)
                         @foreach ($filieres as $filiere)
