@@ -68,8 +68,8 @@
                         <Label>Filiere :</Label><br>
                         <span class="custom-dropdown small" >
                             <Select class="select" name="filiere" style="margin-bottom: 15px;">
-                                <option class="option" value="IDAI">IDAI</option>
-                                <option class="option" value="AD">AD</option>
+                                <option class="option" value="1">IDAI</option>
+                                <option class="option" value="2">AD</option>
                             </Select>
                         </span>
                     </div>
@@ -78,7 +78,7 @@
 
                 </div>
                 <div class="email" style="flex: 1">
-                    <input type="text" name="cne" required style="margin-bottom: 0px;">
+                    <input type="text" name="cne"  style="margin-bottom: 0px;">
                     <label class="labelf">
                         <span style="transition-delay:0ms">C</span><span style="transition-delay:50ms">N</span><span style="transition-delay:100ms">E</span>
                     </label>
@@ -98,7 +98,7 @@
                 </span>
 
                 <div class="email">
-                    <input type="text" name="matricule" required>
+                    <input type="text" name="matricule" >
                     <label class="labelf">
                         <span style="transition-delay:0ms">M</span><span style="transition-delay:50ms">A</span><span style="transition-delay:100ms">T</span><span style="transition-delay:150ms">R</span><span style="transition-delay:200ms">I</span><span style="transition-delay:250ms">C</span><span style="transition-delay:300ms">U</span><span style="transition-delay:350ms">L</span><span style="transition-delay:400ms">E</span><span style="transition-delay:450ms">
                     </label>
