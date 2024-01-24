@@ -321,3 +321,8 @@ div.menuConatiner{
     }
 }
 
+
+
+select{
+    border: 2px dashed #cccccc !important;
+}

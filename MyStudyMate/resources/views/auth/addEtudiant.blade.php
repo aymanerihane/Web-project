@@ -11,7 +11,7 @@
             </div>
             @csrf
             <div class="email">
-                <input id="email" required >
+                <input id="prenom" name="prenom" required style="margin-bottom: 10px;">
                 <label class="labelf">
                     <span style="transition-delay:0ms">P</span><span style="transition-delay:50ms">R</span><span style="transition-delay:100ms">E</span><span style="transition-delay:150ms">N</span><span style="transition-delay:200ms">O</span><span style="transition-delay:250ms">M</span>
                 </label>
@@ -37,21 +37,48 @@
                                 <option class="option" value="true">Oui</option>
                     </Select>
                 </span>
-                <Label>Groupe TP :</Label><br>
-                <span class="custom-dropdown small">
-                    <Select class="select" name="groupTP" style="margin-bottom: 15px;">
-                        <option class="option" value="1">Group 1</option>
-                        <option class="option" value="2">Group 2</option>
-                        <option class="option" value="3">Group 3</option>
-                        <option class="option" value="4">Group 4</option>
-                        <option class="option" value="5">Group 5</option>
-                        <option class="option" value="6">Group 6</option>
-                        <option class="option" value="7">Group 7</option>
-                    </Select>
-                </span>
+                <div style="display: flex;justify-content: space-between;align-items: center;">
+                    <div style="flex: 1">
 
-                <div class="email">
-                    <input type="text" name="cne" required autofocus>
+                        <Label>Groupe TP :</Label><br>
+                        <span class="custom-dropdown small" >
+                            <Select class="select" name="groupTP" style="margin-bottom: 15px;">
+                                <option class="option" value="1">Group 1</option>
+                                <option class="option" value="2">Group 2</option>
+                                <option class="option" value="3">Group 3</option>
+                                <option class="option" value="4">Group 4</option>
+                                <option class="option" value="5">Group 5</option>
+                                <option class="option" value="6">Group 6</option>
+                                <option class="option" value="7">Group 7</option>
+                            </Select>
+                        </span>
+                    </div>
+                    <div style="flex: 1">
+
+                        <Label>Classe :</Label><br>
+                        <span class="custom-dropdown small" >
+                            <Select class="select" name="classe" style="margin-bottom: 15px;">
+                                <option class="option" value="1">classe 1</option>
+                                <option class="option" value="2">classe 2</option>
+                            </Select>
+                        </span>
+                    </div>
+                    <div style="flex: 1">
+
+                        <Label>Filiere :</Label><br>
+                        <span class="custom-dropdown small" >
+                            <Select class="select" name="filiere" style="margin-bottom: 15px;">
+                                <option class="option" value="IDAI">IDAI</option>
+                                <option class="option" value="AD">AD</option>
+                            </Select>
+                        </span>
+                    </div>
+
+
+
+                </div>
+                <div class="email" style="flex: 1">
+                    <input type="text" name="cne" required autofocus style="margin-bottom: 0px;">
                     <label class="labelf">
                         <span style="transition-delay:0ms">C</span><span style="transition-delay:50ms">N</span><span style="transition-delay:100ms">E</span>
                     </label>
