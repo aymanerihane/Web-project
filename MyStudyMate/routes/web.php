@@ -33,7 +33,7 @@ Route::post('choixMode/annonces', [annonces::class, 'add'])->name('annonces');
 Route::get('/fetch-annonce', [annonces::class, 'index']);
 Route::get('/annonce/{id}/edit', [annonces::class, 'edit'])->name('annonce.edit');;
 Route::post('annonce/{id}', [annonces::class, 'update'])->name('annonce.update');
-Route::delete('/annonce/{id}', [annonces::class, 'delete'])->name('annonce.delete');;
+Route::get('/annonce/{id}', [annonces::class, 'delete'])->name('annonce.delete');;
 // web.php
 Route::get('auth/affectationSalle', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('auth.affectationSalle');
 

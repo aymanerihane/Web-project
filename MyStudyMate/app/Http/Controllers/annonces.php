@@ -23,10 +23,10 @@ class annonces extends Controller
     public function edit($id){
         $annonce = ModelsAnnonces::where('id_annonce', $id)->first();
         return response()->json(['annonce' => $annonce]);
+        return url('/chefDep');
     }
     public function delete($id){
         ModelsAnnonces::where('id_annonce', $id)->delete();
-        return redirect('/chefDep');
     }
     public function update(Request $request, $id)
     {

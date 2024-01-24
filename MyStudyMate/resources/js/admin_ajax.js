@@ -175,7 +175,7 @@ function chnagerManupulation(url) {
     function deleteAnnonces(ele){
         var id = ele.dataset.id;
         fetch('/annonce/' + id, {
-            method: 'DELETE',
+            method: 'GET',
         })
     }
   //edit data
