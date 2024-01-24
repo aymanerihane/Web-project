@@ -102,8 +102,12 @@ function chnagerManupulation(url) {
 
         })
         // selectRole = document.getElementById("selectRole");
-      }else if(navButtons[index].querySelector("span").textContent === "Gérer Annonces Département" || navButtons[index].querySelector("span").textContent === "Gérer Annonces Modules"){
+      }else if(navButtons[index].querySelector("span").textContent === "Gérer Annonces Département"){
         chnagerManupulation('annonce');
+        fetchData();
+        center.style.opacity = 0;
+      }else if(navButtons[index].querySelector("span").textContent === "Gérer Annonces Modules"){
+        chnagerManupulation('../annonce');
         fetchData();
         center.style.opacity = 0;
       }

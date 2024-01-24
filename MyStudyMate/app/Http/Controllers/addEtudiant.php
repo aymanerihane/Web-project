@@ -12,6 +12,21 @@ use PhpParser\Node\Expr\AssignOp\Concat;
 
 class addEtudiant extends Controller
 {
+    public function allMember()
+{
+    $members = User::where('is_role', '!=', 0)->get();
+    return $members;
+}
+    public function etudMember()
+{
+    $members = User::where('is_role', '=', 5)->get();
+    return $members;
+}
+    public function profMember()
+{
+    $members = User::where('is_role', '=', 2,'and is_role', '=', 3,'and is_role', '=', 4)->get();
+    return $members;
+}
 
     public function create()
     {

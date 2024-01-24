@@ -72,4 +72,10 @@ Route::get('edit', function () {
 Route::get('prof/repondreDemande', function () {
     return view('prof.repondreDemande');
 });
+Route::get('prof/allMembers', function () {
+    return view('prof.allMembers');
+});
+// Route::get('prof/repondreDemande', function () {
+//     return view('prof.allMembers');
+// });
 
