@@ -120,8 +120,7 @@ function chnagerManupulation(url) {
         fetchData();
         center.style.opacity = 0;
       }else if(navButtons[index].querySelector("span").textContent === "Gérer Annonces Modules"){
-        chnagerManupulation('annonce');
-        fetchData();
+        chnagerManupulation('prof/annonce');
         center.style.opacity = 0;
       }
     }
@@ -187,7 +186,7 @@ function chnagerManupulation(url) {
         });
     }
     // Fetch data when the page loads
-    fetchData();
+    // fetchData();
 
     //delete data
     function deleteAnnonces(ele){

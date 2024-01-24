@@ -5,12 +5,19 @@ namespace App\Http\Controllers;
 use App\Models\Annonces as ModelsAnnonces;
 use Illuminate\Http\Request;
 
+use function Laravel\Prompts\alert;
+
 class annonces extends Controller
 {
     public function index(){
         // $annonces = ModelsAnnonces::all();
         $annonces = ModelsAnnonces::where('id_Utilisateur', auth()->user()->id)->get();
         return response()->json(['annonces' => $annonces]);
+    }
+    public function showAnnonces(){
+        // $annonces = ModelsAnnonces::all();
+        $annonces = ModelsAnnonces::where('id_Utilisateur', auth()->user()->id)->get();
+        return $annonces;
     }
     public function add(){
         ModelsAnnonces::create([
@@ -19,7 +26,11 @@ class annonces extends Controller
             'Description'=>$_POST['disc'],
             'id_Utilisateur'=>auth()->user()->id,
         ]);
-       return redirect('/chefDep');
+        if($_SERVER['PHP_SELF']=='/prof/home')
+        
+       return redirect('/prof/home');
+    else
+    return redirect('/chefDep');
     }
     public function edit($id){
         $annonce = ModelsAnnonces::where('id_annonce', $id)->first();
