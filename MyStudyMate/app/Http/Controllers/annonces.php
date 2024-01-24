@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class annonces extends Controller
 {
     public function index(){
-        $annonces = ModelsAnnonces::all();
+        // $annonces = ModelsAnnonces::all();
+        $annonces = ModelsAnnonces::where('id_Utilisateur', auth()->user()->id)->get();
         return response()->json(['annonces' => $annonces]);
     }
     public function add(){

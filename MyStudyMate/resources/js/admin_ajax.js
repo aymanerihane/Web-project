@@ -148,6 +148,7 @@ function chnagerManupulation(url) {
     // Function to update the page content
     function updatePage(annonces) {
         var container = document.querySelector('.listAnnonce');
+        console.log(annonces);
         // Process and display the fetched data
         annonces.forEach(function (item) {
 
