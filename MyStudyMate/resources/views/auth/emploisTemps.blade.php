@@ -11,16 +11,20 @@
                 </div>
                     <Label>Jour:</Label><br>
                     <span class="custom-dropdown small" >
-                        <Select class="select" name="groupTP" style="margin-bottom: 15px;">
+                        <Select class="select" name="jour" style="margin-bottom: 15px;">
                             <option class="option" value="" disabled selected>Jour</option>
-                            <option class="option" value=""></option>
+                            @foreach(['LUNDI', 'MARDI', 'MERCREDI', 'JEUDI', 'VENDREDI','SAMEDI'] as $jour)
+                            <option value="{{ $jour }}">{{ $jour }}</option>
+                            @endforeach
                         </Select>
                     </span>
                     <Label>Creneau :</Label><br>
                     <span class="custom-dropdown small" >
-                        <Select class="select" name="groupTP" style="margin-bottom: 15px;">
-                            <option class="option" value="" disabled selected>XX:XX-XX:XX</option>
-                            <option class="option" value="" ></option>
+                        <Select class="select" name="heure" style="margin-bottom: 15px;">
+                            <option value="0">Heure</option>
+                            @foreach(['09h00 - 10h45', '11h00 - 12h45', '13h00 - 14h45','15h00 - 16h45','17h00 - 18h45'] as $heure)
+                            <option value="{{ $heure }}">{{ $heure }}</option>
+                            @endforeach
                         </Select>
                     </span>
 
