@@ -140,10 +140,8 @@ function chnagerManupulation(url) {
             center.style.opacity = 0;
         }else if(event.target.classList.contains('delete')){
             deleteAnnonces(event.target);
-            chnagerManupulation('annonce');
+            chnagerManupulation('../annonce');
             fetchData();
-            // history.go(0);
-
         }
 
     })
