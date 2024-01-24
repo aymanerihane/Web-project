@@ -39,7 +39,21 @@
 </div>
 <h1 class="h1">Emplois du temps</h1>
 <table>
-    <?php
+    <tr>
+        <th></th>
+        @foreach(['09h00 - 10h45', '11h00 - 12h45', '13h00 - 14h45','15h00 - 16h45','17h00 - 18h45'] as $heure)
+        <th>{{ $heure }}</th>
+        @endforeach
+    </tr>
+     @foreach(['LUNDI', 'MARDI', 'MERCREDI', 'JEUDI', 'VENDREDI','SAMEDI'] as $jour)
+     <tr value="{{ $jour }}">
+          <td >{{ $jour }}</td>
+          @foreach(['09h00 - 10h45', '11h00 - 12h45', '13h00 - 14h45','15h00 - 16h45','17h00 - 18h45'] as $heure)
+          <td value="{{ $heure }}"></td>
+          @endforeach
+    </tr>
+   @endforeach
+    {{-- <?php
         $jour = array(null, "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche");
         // $rdv["Dimanche"]["16:30"] = "Dermatologue";
         // $rdv["Lundi"]["9"] = "Mémé -_-";
@@ -62,7 +76,7 @@
             }
             echo "</tr>";
         }
-    ?>
+    ?> --}}
     </table>
 
 
