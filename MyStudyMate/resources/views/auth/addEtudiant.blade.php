@@ -19,7 +19,7 @@
             </div>
 
             <div class="salle">
-                <Label>Type :</Label><br>
+                <Label style="text-align: center">Type :</Label><br>
                 <span class="custom-dropdown small">
                     <Select id="selectRole" class="select" name="role" space>
                                 <option class="option" value="" disabled selected>Type</option>
@@ -33,8 +33,8 @@
             <Label>Delegue :</Label><br>
                 <span class="custom-dropdown small">
                     <Select class="select" name="deleg" style="margin-bottom: 15px;">
-                                <option class="option" value="0">Non</option>
-                                <option class="option" value="1">Oui</option>
+                                <option class="option" value="false">Non</option>
+                                <option class="option" value="true">Oui</option>
                     </Select>
                 </span>
                 <Label>Groupe TP :</Label><br>
@@ -66,7 +66,7 @@
                     <Select class="select" name="prof" >
                         <option class="option" value="1">Chef Departement</option>
                         <option class="option" value="2">Responsable Filiere</option>
-                        <option class="option" value="3">Aucun</option>
+                        <option class="option" value="0">Aucun</option>
                     </Select>
                 </span>
 
