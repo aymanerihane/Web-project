@@ -13,6 +13,10 @@ class Annonces extends Model
         'titre',
         'resume',
         'Description',
-        'id_Utilisateur'
+
+       'MatriculeProf ',
+      ' idFiliere',
+      'id_departement'
+
     ];
 }

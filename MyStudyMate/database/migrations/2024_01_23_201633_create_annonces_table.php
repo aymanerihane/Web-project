@@ -16,7 +16,11 @@ return new class extends Migration
             $table->text('titre');
             $table->text('resume');
             $table->text('Description');
-            $table->foreignId('id_Utilisateur')->references('id')->on('users');
+
+            $table->foreignId('MatriculeProf')->references('MatriculeProf')->on('professeur');
+            $table->foreignId('idfiliere')->references('idFiliere')->on('filieres');
+            $table->foreignId('id_departement')->references('id_departement')->on('departements');
+
             $table->timestamps();
         });
     }
