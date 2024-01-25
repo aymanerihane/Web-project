@@ -257,22 +257,6 @@ function chnagerManupulation(url) {
       }
   xhr.send();
 };
-  });
-
-
-//   ajax part
-
-function chnagerManupulation(url) {
-
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            const center = document.querySelector(".center");
-            document.querySelector(".center").innerHTML = xhr.responseText;
-            setTimeout(function () {
-                center.style.opacity = 1; // Set opacity to 1 to fade in the content
-            }, 30);
-        }
 chargerCategories();
 
     function chargerCategories() {
@@ -291,6 +275,7 @@ chargerCategories();
         fetch("emploi?filiere=" + val)
         .then(response => response.text())
             .then(rep => {
+                console.log(rep);
                 document.getElementById("emploi").innerHTML = rep;
             })
     }
@@ -298,31 +283,24 @@ chargerCategories();
     document.addEventListener('change', ()=>{
         var id=document.getElementById()
         });
-
-    };
-
+  });
 
 
-    xhr.open("GET", url, true); //erreur
-    xhr.send();
-}
+//   ajax part
 
-
-function chnagerManupulation1(url) {
+function chnagerManupulation(url) {
 
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
-            const center = document.querySelector("#center");
-            document.querySelector("#center").innerHTML = xhr.responseText;
+            const center = document.querySelector(".center");
+            document.querySelector(".center").innerHTML = xhr.responseText;
             setTimeout(function () {
                 center.style.opacity = 1; // Set opacity to 1 to fade in the content
             }, 30);
         }
 
     };
-
-
 
     xhr.open("GET", url, true); //erreur
     xhr.send();
