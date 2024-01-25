@@ -20,6 +20,11 @@ class annonces extends Controller
         $annonces = ModelsAnnonces::where('id_Utilisateur', auth()->user()->id)->get();
         return $annonces;
     }
+    public function showAllAnn(){
+        $annonces = ModelsAnnonces::all();
+        return $annonces;
+    }
+
     public function showAnnoncesEtud(){
         // Assuming you want to get the first student, adjust it based on your logic
         $etud = etudiant::where('id_Utilisateur', auth()->user()->id)->first();

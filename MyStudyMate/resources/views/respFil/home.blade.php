@@ -32,7 +32,7 @@
                     <hr/>
                 </div>
                 <div id="nav-content">
-                    <div class="nav-button btn1 active-side1 active-side"><span>Gérer Annonces</span></div>
+                    <div class="nav-button btn1 active-side1 active-side"><span>Gérer Annonces Filiere</span></div>
                     <div class="nav-button btn2"><span>Répondre Demandes Étudiants</span></div>
                     <a style="position: relative;bottom: 0px;" href="{{ url('respFil/choixMod')}}">changer Mode</a>
                     <div id="footer-nav">

@@ -36,6 +36,7 @@ Route::post('choixMode/annonces', [annonces::class, 'add'])->name('annonces');
 Route::post('demandes', [Demande::class, 'add'])->name('demandes');
 Route::post('etudiant/isdelegue', [addEtudiant::class, 'isDelegue'])->name('isdelegue');
 Route::post('prof/annonces', [annonces::class, 'addProf'])->name('profAnnonces');
+Route::post('showAllAnn', [annonces::class, 'showAllAnn'])->name('showAllAnn');
 Route::get('/fetch-annonce', [annonces::class, 'index']);
 Route::get('/annonce/{id}/edit', [annonces::class, 'edit'])->name('annonce.edit');;
 Route::post('annonce/{id}', [annonces::class, 'update'])->name('annonce.update');
@@ -140,7 +141,7 @@ Route::get('auth/AD', function () {
     return view('auth.AD');
 });
 Route::get('respFil/annonceee', function () {
-    return view('respFil.annonce');
+    return view('respFil.annonceee');
 });
 Route::get('respFil/home', function () {
     return view('respFil.home');
