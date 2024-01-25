@@ -16,6 +16,7 @@ class Demande extends Model
         'ReponseDemande',
         'statutDemande',
         'CNE',
+        'MatriculeProf',
         'id_departement'
     ];
 }

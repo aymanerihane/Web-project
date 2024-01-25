@@ -30,5 +30,8 @@ class Demande extends Controller
 
         return redirect('/etudianr/home');
     }
-
+    public function find($id){
+        $demandes = ModelsDemande::where('MatriculeProfr', $id);
+        return $demandes;
+    }
 }
