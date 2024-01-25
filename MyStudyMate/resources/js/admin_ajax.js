@@ -266,6 +266,19 @@ chargerCategories();
                 document.getElementById("filieresel").addEventListener('change', function() {
                     var fil=document.getElementById("fil");
                     fil.value=this.value;
+                    var container=document.getElementById("eform");
+                    container.innerHTML+='<Label>Module :</Label><br>\
+                    <span class="custom-dropdown small" >\
+                        <Select class="select" name="module" style="margin-bottom: 15px;">\
+                            <option value="0"></option>\
+                            @php\
+                            $modules = app('App\Http\Controllers\modules')->select(1);\
+                            @endphp\
+                            @foreach($modules as $module)\
+                            <option value="{{ $module->id_module }}">{{ $module->nom }}</option>\
+                            @endforeach\
+                        </Select>\
+                    </span>';
                     chargerProduits(this.value);
                 });
             })
