@@ -38,7 +38,7 @@
 
     </div>
     </a>
-    <a href="{{ url('chefDep')}}">
+    <a href="{{ url('respFil/home')}}">
         <div class="optionsMode">
             <div id="choix2" class="e-card  playing">
                 <div class="image"></div>

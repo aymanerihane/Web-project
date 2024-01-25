@@ -27,7 +27,7 @@ Auth::routes();
 Route::middleware(['isRole'])->group(function () {
 Route::get('auth/home', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('auth.home');
 Route::get('chefDep/choixMode', [App\Http\Controllers\chefDep\HomeController::class, 'index'])->name('chefDep.choixMode');
-Route::get('respFil/home', [App\Http\Controllers\respFill\HomeController::class, 'index'])->name('respFil.home');
+Route::get('respFil/choixMod', [App\Http\Controllers\respFill\HomeController::class, 'index'])->name('respFil.choixMod');
 Route::get('prof/home', [App\Http\Controllers\Professeur\HomeController::class, 'index'])->name('prof.home');
 Route::get('etudiant/home', [App\Http\Controllers\etudiant\HomeController::class, 'index'])->name('etudiant.home');
 Route::get('landing/home', [App\Http\Controllers\landing\HomeController::class, 'index'])->name('landing.home');
@@ -138,5 +138,11 @@ Route::get('auth/IDAI', function () {
 });
 Route::get('auth/AD', function () {
     return view('auth.AD');
+});
+Route::get('respFil/annonceee', function () {
+    return view('respFil.annonce');
+});
+Route::get('respFil/home', function () {
+    return view('respFil.home');
 });
 
