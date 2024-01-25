@@ -13,4 +13,9 @@ class Locals extends Controller
 
         return $salles;
     }
+    public function getlocal($id)
+    {
+        $local =ModelsLocals::where('id_local','=',$id)->get()->first();
+        return $local;
+}
 }

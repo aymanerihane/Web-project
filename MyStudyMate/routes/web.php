@@ -39,7 +39,7 @@ Route::get('/annonce/{id}/edit', [annonces::class, 'edit'])->name('annonce.edit'
 Route::post('annonce/{id}', [annonces::class, 'update'])->name('annonce.update');
 Route::post('prof/annonceProf/{id}', [annonces::class, 'updateProf'])->name('annonce.updateProf');
 Route::get('/annonce/{id}', [annonces::class, 'delete'])->name('annonce.delete');
-Route::get('addEmploi', [emploisDuTemps::class, 'addEmploi']);
+Route::post('/addEmploi', [emploisDuTemps::class, 'addEmploi'])->name('addEmploi');
 // web.php
 Route::get('auth/affectationSalle', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('auth.affectationSalle');
 

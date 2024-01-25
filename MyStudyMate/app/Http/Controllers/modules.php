@@ -12,4 +12,9 @@ class modules extends Controller
         $modules =ModelsModules::where('id_filiere','=',$id)->get();
         return $modules;
 }
+public function getmodule($id)
+    {
+        $module =ModelsModules::where('id_module','=',$id)->get()->first();
+        return $module;
+}
 }

@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 class emploisDuTemps extends Controller
 {
     public function addEmploi(){
-        return redirect('/auth/home');
         ModelsEmploisDuTemps::create([
             'jour'=>$_POST['jour'],
             'creneau_horaire'=>$_POST['heure'],
@@ -16,6 +15,7 @@ class emploisDuTemps extends Controller
             'id_filiere'=>$_POST['module'],
             'id_local'=>$_POST['local'],
         ]);
+        return redirect('/auth/home');
     }
     public function showEmploi()
     {
