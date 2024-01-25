@@ -11,16 +11,16 @@
             @php
                 $demandes=app('App\Http\Controllers\Demande')->find();
             @endphp
-            @foreach ( as )
-            <div class="message">
+            @foreach ($demandes as $demande)
+            <div class="message" id="mes">
                 <label class="container">
                     <input type="checkbox" name="demandes" id="">
                     <div class="line"></div>
                     <div class="line line-indicator"></div>
                 </label>
                 <div>
-                    <h3 class="NameOfEtud">Name</h3>
-                    <p class="objectDemande">object of the message</p>
+                    <h3 class="NameOfEtud">{{app('App\Http\Controllers\Demande')->findetud($demande->CNE)}}</h3>
+                    <p class="objectDemande">{{$demande->objet}}</p>
                 </div>
                 <div class="new"></div>
             </div>
@@ -30,14 +30,7 @@
     </div>
     <div class="espaceRPDEM" >
         <div class="msgDemande">
-            <div style="width: 100%;display: flex;justify-content: space-between;align-items: center;">
-                <h3 class="NameOfEtud">Name</h3>
-                <div class="time" >12/23/213 23:23</div>
 
-            </div>
-            <h4 class="email">aymane.rihane@etu.uae.ac.ma</h4>
-            <h4 class="objectDemande">object of the message</h4>
-            <p class="messageDISC">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate veniam dolorum molestias nostrum eaque iure id quia eveniet voluptatibus, non vitae tempora repudiandae sapiente sint excepturi deleniti neque fuga impedit.Amet, pariatur? Illo inventore, eligendi ab tempora asperiores reprehenderit. Ipsam aut omnis atque minima repellat at eius adipisci exercitationem ullam corporis architecto optio, voluptatibus laboriosam accusantium error, excepturi, quisquam voluptatum.</p>
         </div>
         <div class="formulaireRepondre">
             <h1 style="margin:30px 0 0 30px;">Reponse</h1>
