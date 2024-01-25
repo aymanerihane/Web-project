@@ -4,8 +4,6 @@
     <div class="demandes" >
 
             <div class="barMessage">
-                <input type="image" src="{{ asset('storage/images/trash.png') }}" alt="Submit" width="20" height="20">
-                <input type="image" src="{{ asset('storage/images/email.png') }}" alt="Submit" width="20" height="20">
             </div>
             @php
                 $demandes=app('App\Http\Controllers\Demande')->find();
@@ -27,7 +25,8 @@
 
     </div>
     <div class="espaceRPDEM" >
-        <div class="msgDemande" id="messetud">
+        <div class="msgDemande" id="messetud" style="width: 100%;
+        padding: 10px;">
 
         </div>
         <div class="formulaireRepondre">
