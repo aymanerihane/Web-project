@@ -51,7 +51,7 @@
             <form action="">
                 <textarea class="textarea" name="" id="" cols="30" rows="10"></textarea>
                 <div class="btn-conteiner">
-                    <a class="btn-content" href="#">
+                    <a class="btn-content" onclick="this.form.submit()">
                       <span class="btn-title">SEND</span>
                       <span class="icon-arrow">
                         <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
