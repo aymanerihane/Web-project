@@ -11,7 +11,7 @@
                 $demandes=app('App\Http\Controllers\Demande')->find();
             @endphp
             @foreach ($demandes as $demande)
-            <div class="message" id="mes" data-id="{{$demande->id_demande}}">
+            <div class="message mes" data-id="{{$demande->id_demande}}">
                 <label class="container">
                     <input type="checkbox" name="demandes" id="">
                     <div class="line"></div>

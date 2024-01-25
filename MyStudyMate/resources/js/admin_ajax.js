@@ -83,7 +83,9 @@ function chnagerManupulation(url) {
       }else if(navButtons[index].querySelector("span").textContent === "Répondre Demandes Étudiants"){
         chnagerManupulation('repondreDemande');
         document.querySelectorAll(".mes").forEach((ev) => {
+            console.log(ev);
             ev.addEventListener('click', function() {
+                console.log("test");
                 idm = this.dataset.id;
                 var mess = document.getElementById('mesform');
                 mess.action = 'reponse/' + idm + '';
@@ -331,24 +333,8 @@ chargerCategories();
                 document.getElementById("filieresel").addEventListener('change', function() {
                     var fil=document.getElementById("fil");
                     fil.value=this.value;
-
-                        // tmp=document.getElementById("efrom");
-                        // console.log(tmp);
-                        // tmp.innerHTML='<Label>Module :</Label><br>\
-                        // <span class="custom-dropdown small" >\
-                        // <Select class="select" name="module" style="margin-bottom: 15px;">\
-                        // <option value="0"></option>\
-                        // @php\
-                        // $modules = app("App\Http\Controllers\modules")->select('+this.value+');\
-                        // @endphp\
-                        // @foreach($modules as $module)\
-                        // <option value="{{ $module->id_module }}">{{ $module->nom }}</option>\
-                        // @endforeach\
-                        // </Select>\
-                        // </span>';
                         chargerProduits(this.value);
                         chargerModules(this.value);
-                        // Make an Ajax request to fetch modules
                     });
             })
             .catch(error => console.error('Error loading categories:', error));
