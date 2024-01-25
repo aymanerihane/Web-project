@@ -42,12 +42,27 @@ class Demande extends Controller
         return $message;
     }
     public function reponse($id){
-        $message=ModelsDemande::where('id_demande', $id)->first();
+        // $message=ModelsDemande::where('id_demande', $id)->first()->get();
+        // $message->update([
+        //     'ReponseDemande' => $_POST['reps'],
+        //     'statutDemande' => "Repondu",
+        // ]);
+        // return redirect('/prof/home');
+        $message = ModelsDemande::where('id_demande', $id)->first();
+
+    // Check if the message exists
+    if ($message) {
+        // Update the message
         $message->update([
             'ReponseDemande' => $_POST['reps'],
-            'statutDemande' => "Repondu",
+            'statutDemande' => 'Repondu',
         ]);
+
         return redirect('/prof/home');
+    } else {
+        // Return an error message if the message is not found
+        return redirect('/auth/home')->with('error', 'Message not found');
+    }
 
     }
 }
