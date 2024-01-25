@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Annonces as ModelsAnnonces;
+use App\Models\etudiant;
 use Illuminate\Http\Request;
 
 use function Laravel\Prompts\alert;
@@ -20,11 +21,9 @@ class annonces extends Controller
         return $annonces;
     }
     public function showAnnoncesEtud(){
-        $annonces = ModelsAnnonces::join('etudiant', 'annonces.id_utilisateur', '=', 'etudiant.idUtilisateur')
-                                    ->where('etudiant.idFiliere', '=', 'annonces.id_filiere')
-                                    ->where('etudiant.idUtilisateur', '=', auth()->user()->id)
-                                    ->get();
-
+        $etud = etudiant::where('id_Utilisateur', auth()->user()->id)->get();
+        $idFiliere = $etud->idFiliere;
+        $annonces = ModelsAnnonces::where('id_filiere', $idFiliere)->get();
         return $annonces;
     }
 

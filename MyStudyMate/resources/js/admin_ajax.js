@@ -270,8 +270,7 @@ chargerCategories();
                 document.getElementById("filieresel").addEventListener('change', function() {
                     var fil=document.getElementById("fil");
                     fil.value=this.value;
-                    document.addEventListener('change', ()=>{
-                        tmp=document.querySelector("#eform");
+                        tmp=document.getElementById("efrom");
                         console.log(tmp);
                         tmp.innerHTML='<Label>Module :</Label><br>\
                         <span class="custom-dropdown small" >\
@@ -284,9 +283,8 @@ chargerCategories();
                         @endforeach\
                         </Select>\
                         </span>';
+                        chargerProduits(this.value);
                     });
-                    chargerProduits(this.value);
-                });
             })
             .catch(error => console.error('Error loading categories:', error));
     }
