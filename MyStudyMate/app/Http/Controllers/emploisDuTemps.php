@@ -11,8 +11,8 @@ class emploisDuTemps extends Controller
             'jour'=>$_POST['jour'],
             'creneau_horaire'=>$_POST['heure'],
             'activite'=>$_POST['act'],
-            'id_module'=>$_POST['filiere'],
-            'id_filiere'=>$_POST['module'],
+            'id_module'=>$_POST['module'],
+            'id_filiere'=>$_POST['filiere'],
             'id_local'=>$_POST['local'],
         ]);
         return redirect('/auth/home');
