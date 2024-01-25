@@ -13,10 +13,8 @@ class Annonces extends Model
         'titre',
         'resume',
         'Description',
-
        'MatriculeProf ',
       ' idFiliere',
       'id_departement'
-
     ];
 }

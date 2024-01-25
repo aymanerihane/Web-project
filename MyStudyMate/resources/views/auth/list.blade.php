@@ -1,12 +1,19 @@
-@vite(['resources/js/annonce.js'])
-<h1 class="h1">Liste des membres</h1>
+<h1 class="h1">Tableau des Salles et departement d'affectation</h1>
+<table border="1">
+    {{-- table of menberes --}}
+    <tr>
+        <th>NOM</th>
+        <th>PRENOM</th>
+        <th>ROLE</th>
+        <th>Is Delegue</th>
+        <th>Is Chef d'epartement</th>
+    </tr>
+    <tr>
+        <td>NOM</td>
+        <td>PRENOM</td>
+        <td>ROLE</td>
+        <td>Is Delegue</td>
+        <td>Is Chef d'epartement</td>
+    </tr>
+</table>
 
-<label>Type de Membre :</label><br>
-<span class="custom-dropdown small" style="margin-bottom: 35px;">
-    <select id="memberType" name="memberType" class="select">
-        <option value="0">All</option>
-        <option value="1">Etudiant</option>
-        <option value="2">Professeur</option>
-    </select>
-</span>
-<div id="center"> @include('auth.allMembers')</div>

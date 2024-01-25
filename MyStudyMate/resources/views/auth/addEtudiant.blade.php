@@ -11,7 +11,7 @@
             </div>
             @csrf
             <div class="email">
-                <input id="prenom" name="prenom" required style="margin-bottom: 10px;">
+                <input id="email" required >
                 <label class="labelf">
                     <span style="transition-delay:0ms">P</span><span style="transition-delay:50ms">R</span><span style="transition-delay:100ms">E</span><span style="transition-delay:150ms">N</span><span style="transition-delay:200ms">O</span><span style="transition-delay:250ms">M</span>
                 </label>
@@ -19,7 +19,7 @@
             </div>
 
             <div class="salle">
-                <Label style="text-align: center">Type :</Label><br>
+                <Label>Type :</Label><br>
                 <span class="custom-dropdown small">
                     <Select id="selectRole" class="select" name="role" space>
                                 <option class="option" value="" disabled selected>Type</option>
@@ -29,92 +29,25 @@
                     </Select>
                 </span>
             </div>
-            <div class="salle" id="isdeleg" style="display: none;flex-direction: column;align-items: center;">
+            <div class="salle" id="isdeleg">
             <Label>Delegue :</Label><br>
                 <span class="custom-dropdown small">
-                    <Select class="select" name="deleg" style="margin-bottom: 15px;">
+                    <Select class="select" name="deleg">
                                 <option class="option" value="0">Non</option>
                                 <option class="option" value="1">Oui</option>
                     </Select>
                 </span>
-                <div style="display: flex;justify-content: space-between;align-items: center;">
-                    <div style="flex: 1">
-
-                        <Label>Groupe TP :</Label><br>
-                        <span class="custom-dropdown small" >
-                            <Select class="select" name="groupTP" style="margin-bottom: 15px;">
-                                <option class="option" value="1">Group 1</option>
-                                <option class="option" value="2">Group 2</option>
-                                <option class="option" value="3">Group 3</option>
-                                <option class="option" value="4">Group 4</option>
-                                <option class="option" value="5">Group 5</option>
-                                <option class="option" value="6">Group 6</option>
-                                <option class="option" value="7">Group 7</option>
-                            </Select>
-                        </span>
-                    </div>
-                    <div style="flex: 1">
-
-                        <Label>Classe :</Label><br>
-                        <span class="custom-dropdown small" >
-                            <Select class="select" name="classe" style="margin-bottom: 15px;">
-                                @php
-                    $classes = app('App\Http\Controllers\classes')->showClasses();
-                    @endphp
-                    @if($classes->count() > 0)
-                        @foreach ($classes as $classe)
-                            <option class="option" value="{{ $classe->id_classe }}">{{ $classe->id_classe }}</option>
-                        @endforeach
-                            </Select>
-                            @endif
-                        </span>
-                    </div>
-                    <div style="flex: 1">
-
-                        <Label>Filiere :</Label><br>
-                        <span class="custom-dropdown small" >
-                            <Select class="select" name="filiere" style="margin-bottom: 15px;">
-                                @php
-                    $filieres = app('App\Http\Controllers\filieres')->showFilieres();
-                    @endphp
-                    @if($filieres->count() > 0)
-                        @foreach ($filieres as $filiere)
-                            <option class="option" value="{{ $filiere->id_filiere }}">{{ $filiere->nom }}</option>
-                        @endforeach
-                            </Select>
-                            @endif
-                        </span>
-                    </div>
-
-
-
-                </div>
-                <div class="email" style="flex: 1">
-                    <input type="text" name="cne"  style="margin-bottom: 0px;">
-                    <label class="labelf">
-                        <span style="transition-delay:0ms">C</span><span style="transition-delay:50ms">N</span><span style="transition-delay:100ms">E</span>
-                    </label>
-                </div>
 
             </div>
-
-
-            <div class="salle" id="isprof" style="display: none;flex-direction: column;align-items: center;">
+            <div class="salle" id="isprof">
             <Label>ROLE :</Label><br>
-                <span class="custom-dropdown small" style="margin-bottom: 35px;">
-                    <Select class="select" name="prof" >
+                <span class="custom-dropdown small">
+                    <Select class="select" name="prof">
                         <option class="option" value="1">Chef Departement</option>
                         <option class="option" value="2">Responsable Filiere</option>
-                        <option class="option" value="0">Aucun</option>
+                        <option class="option" value="3">Aucun</option>
                     </Select>
                 </span>
-
-                <div class="email">
-                    <input type="text" name="matricule" >
-                    <label class="labelf">
-                        <span style="transition-delay:0ms">M</span><span style="transition-delay:50ms">A</span><span style="transition-delay:100ms">T</span><span style="transition-delay:150ms">R</span><span style="transition-delay:200ms">I</span><span style="transition-delay:250ms">C</span><span style="transition-delay:300ms">U</span><span style="transition-delay:350ms">L</span><span style="transition-delay:400ms">E</span><span style="transition-delay:450ms">
-                    </label>
-                </div>
 
             </div>
             @error('email')
@@ -130,7 +63,7 @@
 
             <div class="sb">
                 <button type="submit">
-                    <div class="btnLogin"><span>REGISTER</span></div>
+                    <div class="btnLogin"><span>{{ __('Register') }}</span></div>
                   </button>
 
 

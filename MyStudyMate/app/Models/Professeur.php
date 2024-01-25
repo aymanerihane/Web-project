@@ -12,6 +12,6 @@ class Professeur extends Model
         'MatriculeProf',
         'is_RespoDepart',
         'is_RespoFiliere',
-        'id_Utilisateur'
+        'idUtilisateur'
     ];
 }
