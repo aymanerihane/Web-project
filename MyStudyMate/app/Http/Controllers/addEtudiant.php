@@ -54,8 +54,8 @@ public function profMember()
         'CNE' => $_POST['cne'],
         'groupTp'=> $_POST['groupTP'],
         'is_Delegue'=> $_POST['deleg'],
-        'idUtilisateur'=> User::where('name', $nom)->value('id'),
-        'idFiliere'=> $_POST['filiere'],
+        'id_Utilisateur'=> User::where('name', $nom)->value('id'),
+        'id_Filiere'=> $_POST['filiere'],
         'id_Classe'=> $_POST['classe'],
     ]);
     User::where('name', $nom)->update(['password' => $_POST['cne']]);
