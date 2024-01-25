@@ -128,8 +128,7 @@ function chnagerManupulation(url) {
         console.log('dsd')
         chnagerManupulation('Demandes');
         var select=document.getElementById("DemandesType");
-        document.addEventListener('change', ()=>{
-            select = document.getElementById("DemandesType");
+        select.addEventListener('change', ()=>{
             console.log(select)
             if (select.value == 0) {
                 chnagerManupulation1('demandesTp');
