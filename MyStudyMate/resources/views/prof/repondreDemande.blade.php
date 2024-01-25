@@ -8,6 +8,10 @@
                 <input type="image" src="{{ asset('storage/images/trash.png') }}" alt="Submit" width="20" height="20">
                 <input type="image" src="{{ asset('storage/images/email.png') }}" alt="Submit" width="20" height="20">
             </div>
+            @php
+                $demandes=app('App\Http\Controllers\Demande')->find();
+            @endphp
+            @foreach ( as )
             <div class="message">
                 <label class="container">
                     <input type="checkbox" name="demandes" id="">
@@ -20,18 +24,7 @@
                 </div>
                 <div class="new"></div>
             </div>
-            <div class="message">
-                <label class="container">
-                    <input type="checkbox" name="demandes" id="">
-                    <div class="line"></div>
-                    <div class="line line-indicator"></div>
-                </label>
-                <div>
-                    <h3 class="NameOfEtud">Name</h3>
-                    <p class="objectDemande">object of the message</p>
-                </div>
-                <div class="new"></div>
-            </div>
+            @endforeach
         </form>
 
     </div>
