@@ -32,7 +32,6 @@
              20.3676C11.9347 20.5316 11.1396 20.4203 10.4684 20.0413H10.4676Z"></path></svg><br>
             Prof
           <br>
-          <div class="name">MikeAndrewDesigner</div>
             </div>
           </div>
 
@@ -68,7 +67,6 @@
                  20.3676C11.9347 20.5316 11.1396 20.4203 10.4684 20.0413H10.4676Z"></path></svg><br>
                 Chef Departement
               <br>
-              <div class="name">MikeAndrewDesigner</div>
                 </div>
               </div>
 

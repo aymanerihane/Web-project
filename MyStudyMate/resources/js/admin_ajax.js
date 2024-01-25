@@ -142,12 +142,7 @@ function chnagerManupulation(url) {
       }else if(navButtons[index].querySelector("span").textContent === "Gérer Annonces Filiere"){
         chnagerManupulation('annonceee');
         center.style.opacity = 0;
-      }
-    //   else if(navButtons[index].querySelector("span").textContent === "Annonces des Professeurs"){
-    //     chnagerManupulation('annonceProf');
-    //     center.style.opacity = 0;
-    //   }
-      else if(navButtons[index].querySelector("span").textContent === "Demandes"){
+      }else if(navButtons[index].querySelector("span").textContent === "Demandes"){
         console.log('dsd')
         chnagerManupulation('Demandes');
         var select=document.getElementById("DemandesType");

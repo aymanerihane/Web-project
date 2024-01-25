@@ -16,9 +16,9 @@
             <td>{{ $allMember->email }}</td>
             <td>{{ $allMember->password }}</td>
             <td>
-                @if ($allMember->is_role == 2 || $allMember->is_role == 3 || $allMember->is_role == 4)
+                @if ($allMember->is_role == 2)
                     Professeur
-                @elseif ($allMember->is_role == 5)
+                @elseif ($allMember->is_role == 3)
                     Etudiants
                 @else
                     NONE

@@ -24,7 +24,7 @@ class addEtudiant extends Controller
 }
 public function profMember()
 {
-    $members = User::whereIn('is_role', [2, 4])->get();
+    $members = User::whereIn('is_role', 2)->get();
     return $members;
 }
 public function isDelegue()

@@ -89,7 +89,7 @@
 
 
                 </div>
-                <div class="email" style="flex: 1">
+                <div class="email" style="flex: 1;margin-top: 20px;">
                     <input type="text" name="cne"  style="margin-bottom: 0px;">
                     <label class="labelf">
                         <span style="transition-delay:0ms">C</span><span style="transition-delay:50ms">N</span><span style="transition-delay:100ms">E</span>

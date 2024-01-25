@@ -37,8 +37,5 @@
         <div class="btnLogin"><span>Associer</span></div>
     </button>
 </div>
-<h1 class="h1">Tableau des Salles et departement d'affectation</h1>
-{{-- <table>
-table of saleles and departement
-</table> --}}
+
 

@@ -85,8 +85,6 @@
                                 ?>
                             <li><a href="{{ route('login') }}">Sign in</a></li>
 
-
-                            <li><a href="{{ route('register') }}">Sign up</a></li>
                             <?php }
                             ?>
 
