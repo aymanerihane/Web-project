@@ -273,6 +273,31 @@ function chnagerManupulation(url) {
                 center.style.opacity = 1; // Set opacity to 1 to fade in the content
             }, 30);
         }
+chargerCategories();
+
+    function chargerCategories() {
+        fetch("emploisTemps")
+            .then(response => response.text())
+            .then(rep => {;
+                document.getElementById("filieresel").addEventListener('change', function() {
+                    console.log(this.value);
+                    chargerProduits(this.value);
+                });
+            })
+            .catch(error => console.error('Error loading categories:', error));
+    }
+
+    function chargerProduits(val) {
+        fetch("emploi?filiere=" + val)
+        .then(response => response.text())
+            .then(rep => {
+                document.getElementById("emploi").innerHTML = rep;
+            })
+    }
+
+    document.addEventListener('change', ()=>{
+        var id=document.getElementById()
+        });
 
     };
 

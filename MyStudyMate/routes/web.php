@@ -40,7 +40,9 @@ Route::get('/annonce/{id}', [annonces::class, 'delete'])->name('annonce.delete')
 Route::get('auth/affectationSalle', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('auth.affectationSalle');
 
 });
-
+Route::get('auth/emploi', function () {
+    return view('auth.emploi');
+});
 Route::get('auth/affectationSalle', function () {
     return view('auth.affectationSalle');
 });

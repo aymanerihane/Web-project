@@ -11,5 +11,10 @@ class emploisDuTemps extends Controller
         $emplois =ModelsEmploisDuTemps::all();
     return $emplois;
 }
+    public function select($id)
+    {
+        $emplois =ModelsEmploisDuTemps::where('id_filiere','=',$id)->get();
+        return $emplois;
+}
 
 }

@@ -1,4 +1,18 @@
-
+<Label>Filieres :</Label><br>
+                    <span class="custom-dropdown small" >
+                        <Select class="select" name="jour" style="margin-bottom: 15px;" id="filieresel" >
+                            <option class="option" value="" disabled selected></option>
+                            @php
+                    $filieres = app('App\Http\Controllers\filieres')->showFilieres();
+                    @endphp
+                    @if($filieres->count() > 0)
+                        @foreach ($filieres as $filiere)
+                            <option class="option" value="{{ $filiere->id_filiere }}">{{ $filiere->nom }}</option>
+                        @endforeach
+                            </Select>
+                            @endif
+                        </Select>
+                    </span>
 <div class="signbox" style="position: relative;margin-bottom:76px">
     <form style="width:100%;" class="formSign" method="POST" action="">
             <div style="display: flex;flex-direction:column;justify-content: space-between;align-items: center;">
@@ -38,45 +52,6 @@
     </form>
 </div>
 <h1 class="h1">Emplois du temps</h1>
-<table>
-    <tr>
-        <th></th>
-        @foreach(['09h00 - 10h45', '11h00 - 12h45', '13h00 - 14h45','15h00 - 16h45','17h00 - 18h45'] as $heure)
-        <th>{{ $heure }}</th>
-        @endforeach
-    </tr>
-     @foreach(['LUNDI', 'MARDI', 'MERCREDI', 'JEUDI', 'VENDREDI','SAMEDI'] as $jour)
-     <tr value="{{ $jour }}">
-          <td >{{ $jour }}</td>
-          @foreach(['09h00 - 10h45', '11h00 - 12h45', '13h00 - 14h45','15h00 - 16h45','17h00 - 18h45'] as $heure)
-          <td value="{{ $heure }}"></td>
-          @endforeach
-    </tr>
-   @endforeach
-    {{-- <?php
-        $jour = array(null, "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche");
-        // $rdv["Dimanche"]["16:30"] = "Dermatologue";
-        // $rdv["Lundi"]["9"] = "Mémé -_-";
-        echo "<tr><th>Heure</th>";
-        for($x = 1; $x < 8; $x++)
-            echo "<th>".$jour[$x]."</th>";
-        echo "</tr>";
-        for($j = 9; $j < 19; $j += 0.75) {
-            echo "<tr>";
-            for($i = 0; $i < 7; $i++) {
-                if($i == 0) {
-                    $heure = str_replace(".75", ":45", $j);
-                    $heure = str_replace(".5", ":30", $j);echo "<td class=\"time\">".$heure."</td>";
-                }
-                echo "<td>";
-                if(isset($rdv[$jour[$i+1]][$heure])) {
-                    echo $rdv[$jour[$i+1]][$heure];
-                }
-                echo "</td>";
-            }
-            echo "</tr>";
-        }
-    ?> --}}
-    </table>
+<div id="emploi">
 
-
+</div>
