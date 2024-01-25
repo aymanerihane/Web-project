@@ -277,6 +277,7 @@ chargerCategories();
                         <Select class="select" name="module" style="margin-bottom: 15px;">\
                         <option value="0"></option>\
                         @php\
+                        $modules = app("App\Http\Controllers\modules")->select('+this.value+');\
                         @endphp\
                         @foreach($modules as $module)\
                         <option value="{{ $module->id_module }}">{{ $module->nom }}</option>\
