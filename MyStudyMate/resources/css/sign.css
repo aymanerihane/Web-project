@@ -171,7 +171,7 @@ span.invalid{
 }
 label.labelf {
     position: absolute;
-    top: 4px;
+    top: 0px;
     left: 0;
     pointer-events: none;
     z-index: 1;

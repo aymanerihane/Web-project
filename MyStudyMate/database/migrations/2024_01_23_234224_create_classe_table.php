@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('modules', function (Blueprint $table) {
-            $table->id('id_module');
-            $table->string('nom');
-            $table->foreignId('MatriculeProf')->references('MatriculeProf')->on('professeur');
+
+        Schema::create('classes', function (Blueprint $table) {
+            $table->id('id_classe');
+            $table->integer('nbrEtudiants');
+            $table->foreignId('id_Module')->references('id_module')->on('modules');
             $table->foreignId('id_filiere')->references('id_filiere')->on('filieres');
+
             $table->timestamps();
         });
     }
@@ -25,6 +27,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('modules');
+
+        Schema::dropIfExists('classe');
     }
 };

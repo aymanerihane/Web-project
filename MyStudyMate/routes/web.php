@@ -30,10 +30,12 @@ Route::get('etudiant/home', [App\Http\Controllers\etudiant\HomeController::class
 Route::get('landing/home', [App\Http\Controllers\landing\HomeController::class, 'index'])->name('landing.home');
 Route::post('auth/addEtudiant', [addEtudiant::class, 'create'])->name('auth.addEtudiant');
 Route::post('choixMode/annonces', [annonces::class, 'add'])->name('annonces');
+Route::post('prof/annonces', [annonces::class, 'addProf'])->name('profAnnonces');
 Route::get('/fetch-annonce', [annonces::class, 'index']);
 Route::get('/annonce/{id}/edit', [annonces::class, 'edit'])->name('annonce.edit');;
-Route::put('/annonce/{id}', [annonces::class, 'update'])->name('annonce.update');
-Route::delete('/annonce/{id}', [annonces::class, 'destroy'])->name('annonce.destroy');;
+Route::post('annonce/{id}', [annonces::class, 'update'])->name('annonce.update');
+Route::post('prof/annonceProf/{id}', [annonces::class, 'updateProf'])->name('annonce.updateProf');
+Route::get('/annonce/{id}', [annonces::class, 'delete'])->name('annonce.delete');;
 // web.php
 Route::get('auth/affectationSalle', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('auth.affectationSalle');
 
@@ -54,20 +56,40 @@ Route::get('auth/list', function () {
 Route::get('auth/formationChoix', function () {
     return view('auth.formationChoix');
 });
-
+    // Route::get('auth/choixSousFil', function () {
+    //     return view('auth.choixSousFil');
+    // });
 Route::get('chefDep', function () {
     return view('chefDep.home');
 });
-Route::get('annonce', function () {
+Route::get('chefDep/annonce', function () {
     return view('chefDep.gererAnnonces');
+});
+Route::get('prof/annonce', function () {
+    return view('prof.gererAnnonces');
 });
 Route::get('formAn', function () {
     return view('chefDep.formulaire_annance');
 });
+Route::get('prof/formAn', function () {
+    return view('prof.formulaire_annance');
+});
 Route::get('edit', function () {
     return view('chefDep.editAnnonce');
 });
+Route::get('prof/edit', function () {
+    return view('prof.editAnnonce');
+});
 Route::get('prof/repondreDemande', function () {
     return view('prof.repondreDemande');
+});
+Route::get('auth/allMembers', function () {
+    return view('auth.allMembers');
+});
+Route::get('auth/etudMember', function () {
+    return view('auth.etudMember');
+});
+Route::get('auth/profMember', function () {
+    return view('auth.profMember');
 });
 

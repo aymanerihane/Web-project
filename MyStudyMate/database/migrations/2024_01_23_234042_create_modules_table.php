@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Professeurs', function (Blueprint $table) {
-
-            $table->id('MatriculeProf'); // clé primaire
-            $table->boolean('is_RespoDepart')->default(false);
-            $table->boolean('is_RespoFiliere')->default(false);
-
-            $table->foreignId('id_Utilisateur')->references('id')->on('users');
+        Schema::create('modules', function (Blueprint $table) {
+            $table->id('id_module');
+            $table->string('nom');
+            $table->foreignId('MatriculeProf')->references('MatriculeProf')->on('Professeurs');
+            $table->foreignId('id_filiere')->references('id_filiere')->on('filieres');
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('Professeur');
+        Schema::dropIfExists('modules');
     }
 };
