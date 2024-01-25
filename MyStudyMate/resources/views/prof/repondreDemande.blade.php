@@ -2,7 +2,6 @@
 <div class="body">
 
     <div class="demandes" >
-        <form action="">
 
             <div class="barMessage">
                 <input type="image" src="{{ asset('storage/images/trash.png') }}" alt="Submit" width="20" height="20">
@@ -25,7 +24,6 @@
                 <div class="new"></div>
             </div>
             @endforeach
-        </form>
 
     </div>
     <div class="espaceRPDEM" >
@@ -34,10 +32,10 @@
         </div>
         <div class="formulaireRepondre">
             <h1 style="margin:30px 0 0 30px;">Reponse</h1>
-            <form action="">
-                <textarea class="textarea" name="" id="" cols="30" rows="10"></textarea>
+            <form id="mesform" method="POST" >
+                <textarea class="textarea" name="reps" id="" cols="30" rows="10"></textarea>
                 <div class="btn-conteiner">
-                    <a class="btn-content" onclick="this.form.submit()">
+                    <button type="submit" class="btn-content" >
                       <span class="btn-title">SEND</span>
                       <span class="icon-arrow">
                         <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -48,7 +46,7 @@
                           </g>
                         </svg>
                       </span>
-                    </a>
+                    </button>
                   </div>
             </form>
         </div>

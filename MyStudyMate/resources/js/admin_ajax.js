@@ -330,8 +330,10 @@ chargerCategories();
         })
     }
     document.getElementById("mes").addEventListener('click', function() {
-        $id=this.dataset.id;
-        fetch("message?etud=" + val)
+        idm=this.dataset.id;
+        var mess=document.getElementById('mesform');
+        mess.action='reponse/'+idm+'';
+        fetch("message?etud=" + idm)
         .then(response => response.text())
         .then(rep => {
             document.getElementById("messetud").innerHTML = rep;

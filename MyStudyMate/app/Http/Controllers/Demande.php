@@ -41,7 +41,13 @@ class Demande extends Controller
         return $idetud->nom;
     }
     public function findmessage($id){
-        $message=etudiant::where('id_demande', $id)->first();
+        $message=ModelsDemande::where('id_demande', $id)->first();
         return $message;
+    }
+    public function reponse($id){
+        $message=ModelsDemande::where('id_demande', $id)->first();
+        $message->update([
+            'ReponseDemande' => $_POST['reps'],
+        ]);
     }
 }
