@@ -44,6 +44,9 @@ Route::get('addEmploi', [emploisDuTemps::class, 'addEmploi']);
 Route::get('auth/affectationSalle', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('auth.affectationSalle');
 
 });
+Route::get('auth/formemploi', function () {
+    return view('auth.formemploi');
+});
 Route::get('auth/emploi', function () {
     return view('auth.emploi');
 });
