@@ -1,4 +1,3 @@
-
 @vite(["resources/css/demande.css"])
 
 <form style="width:100%;" class="formSign" method="POST" action="{{ route('demandes')}}" id="demandeForm">

@@ -6,10 +6,10 @@
         <option value="0">Demande changement groupe Tp</option>
         <option value="2">Demandes Rendez-vous</option>
         <option value="3">Justifier Absence</option>
-        @php
-        $isdelle = app('App\Http\Controllers\addEtudiant')->isDelegue();
-        @endphp
-        @if ($isdelle)
+            @php
+            $isdelle = app('App\Http\Controllers\addEtudiant')->isDelegue();
+            @endphp
+            @if ($isdelle)
         <option value="4">Signaler Incidents Quotidiens</option>
         <option value="5">Signaler Pannes Matérielles</option>
         @endif

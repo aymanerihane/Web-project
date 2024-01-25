@@ -121,4 +121,13 @@ Route::get('etudiant/demandeLettre', function () {
 Route::get('etudiant/demandesTp', function () {
     return view('etudiant.demandesTp');
 });
+Route::get('etudiant/justify', function () {
+    return view('etudiant.justify');
+});
+Route::get('etudiant/signalMate', function () {
+    return view('etudiant.signalMate');
+});
+Route::get('etudiant/signalInci', function () {
+    return view('etudiant.signalInci');
+});
 

@@ -14,7 +14,7 @@ class Demande extends Controller
         if (!$etud) {
             // Handle the case where no student is found for the authenticated user
             // You might want to redirect or display an error message
-            return redirect('/prof/home')->with('error', 'No student found for the authenticated user.');
+            return redirect('/etudiant/home')->with('error', 'No student found for the authenticated user.');
         }
 
         $cne = $etud->CNE;
@@ -28,7 +28,7 @@ class Demande extends Controller
             'CNE' => $cne,
         ]);
 
-        return redirect('/etudianr/home');
+        return redirect('/etudiant/home');
     }
     public function find($id){
         $demandes = ModelsDemande::where('MatriculeProfr', $id);

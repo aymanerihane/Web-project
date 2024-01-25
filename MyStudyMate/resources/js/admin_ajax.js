@@ -137,6 +137,12 @@ function chnagerManupulation(url) {
                 chnagerManupulation1('demandeLettre');
             } else if (select.value == 2) {
                 chnagerManupulation1('demandeRendezVous');
+            } else if (select.value == 3) {
+                chnagerManupulation1('justify');
+            } else if (select.value == 4) {
+                chnagerManupulation1('signalInci');
+            } else if (select.value == 5) {
+                chnagerManupulation1('signalMate');
             }
         });
         center.style.opacity = 0;
