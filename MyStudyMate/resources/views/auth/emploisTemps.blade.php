@@ -13,7 +13,7 @@
                             @endif
                         </Select>
                     </span>
-<div class="signbox" id="efrom" style="position: relative;margin-bottom:76px">
+<div class="signbox"  style="position: relative;margin-bottom:76px">
     <form style="width:100%;" class="formSign" method="POST" action="addEmploi">
         <input type="hidden" id="fil" name="filiere">
             <div style="display: flex;flex-direction:column;justify-content: space-between;align-items: center;">
@@ -56,7 +56,8 @@
                             @endforeach
                         </Select>
                     </span>
-                    <Label>Module :</Label><br>
+                    <div id="efrom"> </div>
+                    {{-- <Label>Module :</Label><br>
                     <span class="custom-dropdown small" >
                         <Select class="select" name="module" style="margin-bottom: 15px;">
                             <option value="0"></option>
@@ -67,7 +68,7 @@
                             <option value="{{ $module->id_module }}">{{ $module->nom }}</option>
                             @endforeach
                         </Select>
-                    </span>
+                    </span> --}}
                 <div class="sb">
                     <button type="submit">
                         <div style="margin-bottom: 0" class="btnLogin"><span>ADD</span></div>
