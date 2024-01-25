@@ -32,7 +32,7 @@
         </div>
         <div class="formulaireRepondre">
             <h1 style="margin:30px 0 0 30px;">Reponse</h1>
-            <form id="mesform" method="POST" >
+            <form id="mesform" method="POST">
                 @csrf
                 <textarea class="textarea" name="reps" id="" cols="30" rows="10"></textarea>
                 <div class="btn-conteiner">
