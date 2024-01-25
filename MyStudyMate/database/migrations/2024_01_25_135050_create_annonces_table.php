@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('resume');
             $table->text('Description');
             $table->foreignId('id_Utilisateur')->references('id')->on('users');
+            $table->foreignId('id_filiere')->references('id_filiere')->on('filieres');
             $table->timestamps();
         });
     }

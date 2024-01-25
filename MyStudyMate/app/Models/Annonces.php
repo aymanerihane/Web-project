@@ -13,6 +13,7 @@ class Annonces extends Model
         'titre',
         'resume',
         'Description',
-        'id_Utilisateur'
+        'id_Utilisateur',
+        'id_filiere'
     ];
 }

@@ -24,20 +24,35 @@
             </label>
 
         </div>
+        <Label>Filieres :</Label><br>
+                    <span class="custom-dropdown small" >
+                        <Select class="select" name="filiere" style="margin-bottom: 15px;" id="filieresel" >
+                            <option class="option" value="" disabled selected></option>
+                            @php
+                    $filieres = app('App\Http\Controllers\filieres')->showFilieres();
+                    @endphp
+                    @if($filieres->count() > 0)
+                        @foreach ($filieres as $filiere)
+                            <option class="option" value="{{ $filiere->id_filiere }}">{{ $filiere->nom }}</option>
+                        @endforeach
+                            </Select>
+                            @endif
+                        </Select>
+                    </span>
 
-            <div class="zone">
+        <div class="zone">
 
-                <div id="dropZ">
-                  <div>Drag and drop your file here</div>
-                  <span>OR</span>
-                  <div class="selectFile">
+            <div id="dropZ">
+                <div>Drag and drop your file here</div>
+                <span>OR</span>
+                <div class="selectFile">
                     {{-- <label for="file">Select file</label> --}}
                     <input type="file" name="files[]" id="fileInput" multiple>
-                  </div>
-                  <p>File size limit : 10 MB</p>
                 </div>
+                <p>File size limit : 10 MB</p>
+            </div>
 
-              </div>
+        </div>
 
         <div class="sb">
             <button type="submit">

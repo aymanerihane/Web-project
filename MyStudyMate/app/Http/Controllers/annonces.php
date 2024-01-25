@@ -19,11 +19,21 @@ class annonces extends Controller
         $annonces = ModelsAnnonces::where('id_Utilisateur', auth()->user()->id)->get();
         return $annonces;
     }
+    public function showAnnoncesEtud(){
+        $annonces = ModelsAnnonces::join('etudiant', 'annonces.id_utilisateur', '=', 'etudiant.idUtilisateur')
+                                    ->where('etudiant.idFiliere', '=', 'annonces.id_filiere')
+                                    ->where('etudiant.idUtilisateur', '=', auth()->user()->id)
+                                    ->get();
+
+        return $annonces;
+    }
+
     public function add(){
         ModelsAnnonces::create([
             'titre'=>$_POST['title'],
             'resume'=>$_POST['resume'],
             'Description'=>$_POST['disc'],
+            'id_filiere'=>$_POST['filiere'],
             'id_Utilisateur'=>auth()->user()->id,
         ]);
         if($_SERVER['PHP_SELF']=='/prof/home')
@@ -37,6 +47,7 @@ class annonces extends Controller
             'titre'=>$_POST['title'],
             'resume'=>$_POST['resume'],
             'Description'=>$_POST['disc'],
+            'id_filiere'=>$_POST['filiere'],
             'id_Utilisateur'=>auth()->user()->id,
         ]);
        return redirect('/prof/home');
