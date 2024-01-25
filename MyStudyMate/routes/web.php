@@ -132,4 +132,10 @@ Route::get('etudiant/signalMate', function () {
 Route::get('etudiant/signalInci', function () {
     return view('etudiant.signalInci');
 });
+// Route::get('auth/', function () {
+//     return view('auth.signalInci');
+// });
+// Route::get('auth/signalInci', function () {
+//     return view('auth.signalInci');
+// });
 
