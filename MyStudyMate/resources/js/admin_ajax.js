@@ -260,25 +260,28 @@ function chnagerManupulation(url) {
 chargerCategories();
 
     function chargerCategories() {
+        var tmp;
         fetch("emploisTemps")
             .then(response => response.text())
-            .then(rep => {;
+            .then(rep => {
                 document.getElementById("filieresel").addEventListener('change', function() {
                     var fil=document.getElementById("fil");
                     fil.value=this.value;
-                    var container=document.getElementById("eform");
-                    container.innerHTML+='<Label>Module :</Label><br>\
-                    <span class="custom-dropdown small" >\
+                    document.addEventListener('change', ()=>{
+                        tmp=document.querySelector("#eform");
+                        console.log(tmp);
+                        tmp.innerHTML='<Label>Module :</Label><br>\
+                        <span class="custom-dropdown small" >\
                         <Select class="select" name="module" style="margin-bottom: 15px;">\
-                            <option value="0"></option>\
-                            @php\
-                            $modules = app('App\Http\Controllers\modules')->select(1);\
-                            @endphp\
-                            @foreach($modules as $module)\
-                            <option value="{{ $module->id_module }}">{{ $module->nom }}</option>\
-                            @endforeach\
+                        <option value="0"></option>\
+                        @php\
+                        @endphp\
+                        @foreach($modules as $module)\
+                        <option value="{{ $module->id_module }}">{{ $module->nom }}</option>\
+                        @endforeach\
                         </Select>\
-                    </span>';
+                        </span>';
+                    });
                     chargerProduits(this.value);
                 });
             })
