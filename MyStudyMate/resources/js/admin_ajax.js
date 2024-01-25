@@ -124,6 +124,22 @@ function chnagerManupulation(url) {
       }else if(navButtons[index].querySelector("span").textContent === "Annonces des Professeurs"){
         chnagerManupulation('annonceProf');
         center.style.opacity = 0;
+      }else if(navButtons[index].querySelector("span").textContent === "Demandes"){
+        console.log('dsd')
+        chnagerManupulation('Demandes');
+        var select=document.getElementById("DemandesType");
+        document.addEventListener('change', ()=>{
+            select = document.getElementById("DemandesType");
+            console.log(select)
+            if (select.value == 0) {
+                chnagerManupulation1('demandesTp');
+            } else if (select.value == 1) {
+                chnagerManupulation1('demandeLettre');
+            } else if (select.value == 2) {
+                chnagerManupulation1('demandeRendezVous');
+            }
+        });
+        center.style.opacity = 0;
       }
     }
 
@@ -319,6 +335,25 @@ function chnagerManupulation(url) {
         }
 
     };
+
+    xhr.open("GET", url, true); //erreur
+    xhr.send();
+}
+function chnagerManupulation1(url) {
+
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            const center = document.querySelector("#center");
+            document.querySelector("#center").innerHTML = xhr.responseText;
+            setTimeout(function () {
+                center.style.opacity = 1; // Set opacity to 1 to fade in the content
+            }, 30);
+        }
+
+    };
+
+
 
     xhr.open("GET", url, true); //erreur
     xhr.send();

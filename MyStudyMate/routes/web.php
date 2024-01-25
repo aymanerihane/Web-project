@@ -101,4 +101,16 @@ Route::get('auth/profMember', function () {
 Route::get('etudiant/annonceProf', function () {
     return view('etudiant.annonceProf');
 });
+Route::get('etudiant/Demandes', function () {
+    return view('etudiant.Demandes');
+});
+Route::get('etudiant/demandeRendezVous', function () {
+    return view('etudiant.demandeRendezVous');
+});
+Route::get('etudiant/demandeLettre', function () {
+    return view('etudiant.demandeLettre');
+});
+Route::get('etudiant/demandesTp', function () {
+    return view('etudiant.demandesTp');
+});
 
