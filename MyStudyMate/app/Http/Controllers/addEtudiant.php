@@ -27,6 +27,18 @@ public function profMember()
     $members = User::whereIn('is_role', [2, 4])->get();
     return $members;
 }
+public function isDelegue()
+{
+    $etud = Etudiant::where('id_Utilisateur', auth()->user()->id)->first();
+
+    if ($etud) {
+        $isDel = $etud->is_Delegue;
+        return $isDel;
+    }
+
+    return false;
+}
+
 
 
     public function create()
