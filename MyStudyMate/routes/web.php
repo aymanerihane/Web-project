@@ -33,9 +33,7 @@ Route::get('landing/home', [App\Http\Controllers\landing\HomeController::class, 
 Route::post('auth/addEtudiant', [addEtudiant::class, 'create'])->name('auth.addEtudiant');
 Route::post('choixMode/annonces', [annonces::class, 'add'])->name('annonces');
 Route::post('etudiant/demande', [Demande::class, 'add'])->name('demandes');
-
 Route::post('etudiant/isdelegue', [addEtudiant::class, 'isDelegue'])->name('isdelegue');
-
 Route::post('prof/annonces', [annonces::class, 'addProf'])->name('profAnnonces');
 Route::get('/fetch-annonce', [annonces::class, 'index']);
 Route::get('/annonce/{id}/edit', [annonces::class, 'edit'])->name('annonce.edit');;
@@ -46,6 +44,9 @@ Route::post('/addEmploi', [emploisDuTemps::class, 'addEmploi'])->name('addEmploi
 // web.php
 Route::get('auth/affectationSalle', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('auth.affectationSalle');
 
+});
+Route::get('prof/home/message', function () {
+    return view('prof.message');
 });
 Route::get('auth/formemploi', function () {
     return view('auth.formemploi');

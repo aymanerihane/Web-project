@@ -329,7 +329,15 @@ chargerCategories();
 
         })
     }
+    document.getElementById("mes").addEventListener('click', function() {
+        $id=this.dataset.id;
+        fetch("message?etud=" + val)
+        .then(response => response.text())
+        .then(rep => {
+            document.getElementById("messetud").innerHTML = rep;
 
+        })
+    });
 
 
   });

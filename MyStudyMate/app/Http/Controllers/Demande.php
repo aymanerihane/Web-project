@@ -29,7 +29,7 @@ class Demande extends Controller
             'CNE' => $cne,
         ]);
 
-        return redirect('/etudianr/home');
+        return redirect('/etudiant/home');
     }
     public function find(){
         $idprof=Professeur::where('id_Utilisateur', auth()->user()->id)->first();
@@ -39,5 +39,9 @@ class Demande extends Controller
     public function findetud($id){
         $idetud=etudiant::where('CNE', $id)->first();
         return $idetud->nom;
+    }
+    public function findmessage($id){
+        $message=etudiant::where('id_demande', $id)->first();
+        return $message;
     }
 }

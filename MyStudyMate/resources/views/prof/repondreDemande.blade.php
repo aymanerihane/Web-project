@@ -12,7 +12,7 @@
                 $demandes=app('App\Http\Controllers\Demande')->find();
             @endphp
             @foreach ($demandes as $demande)
-            <div class="message" id="mes">
+            <div class="message" id="mes" data-id="{{$demande->id_demande}}">
                 <label class="container">
                     <input type="checkbox" name="demandes" id="">
                     <div class="line"></div>
@@ -20,7 +20,7 @@
                 </label>
                 <div>
                     <h3 class="NameOfEtud">{{app('App\Http\Controllers\Demande')->findetud($demande->CNE)}}</h3>
-                    <p class="objectDemande">{{$demande->objet}}</p>
+                    <p class="objectDemande">{{$demande->DescripDemande}}</p>
                 </div>
                 <div class="new"></div>
             </div>
@@ -29,7 +29,7 @@
 
     </div>
     <div class="espaceRPDEM" >
-        <div class="msgDemande">
+        <div class="msgDemande" id="messetud">
 
         </div>
         <div class="formulaireRepondre">
