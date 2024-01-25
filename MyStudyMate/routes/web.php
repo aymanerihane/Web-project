@@ -4,6 +4,7 @@ use App\Http\Controllers\addEtudiant;
 use App\Http\Controllers\emploisDuTemps;
 use App\Http\Controllers\annonces;
 use App\Http\Controllers\Demande;
+use App\Models\Demande as ModelsDemande;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -132,10 +133,10 @@ Route::get('etudiant/signalMate', function () {
 Route::get('etudiant/signalInci', function () {
     return view('etudiant.signalInci');
 });
-// Route::get('auth/', function () {
-//     return view('auth.signalInci');
-// });
-// Route::get('auth/signalInci', function () {
-//     return view('auth.signalInci');
-// });
+Route::get('auth/IDAI', function () {
+    return view('auth.IDAI');
+});
+Route::get('auth/AD', function () {
+    return view('auth.AD');
+});
 

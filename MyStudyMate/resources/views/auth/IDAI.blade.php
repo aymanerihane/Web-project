@@ -1,4 +1,4 @@
-@vite(['resources/css/filiereDis.css'])
+@vite(['resources/css/filiereDis.css','resources/js/ffili.js'])
 
 <h1 class="heading">Filieres:</h1>
 
@@ -12,16 +12,16 @@
             </div>
           </div>
     <div class="contenufilier">
-        <table>
-            <tr id="header">
-                <th onclick="toggleColumn(0)">Objectifs</th>
-                <th onclick="toggleColumn(1)">Programme</th>
-                <th onclick="toggleColumn(2)">Competence visée</th>
-                <th onclick="toggleColumn(3)">Coordinateur</th>
+        <table class="table">
+            <tr id="header tr">
+                <th class="th th1">Objectifs</th>
+                <th class="th th2">Programme</th>
+                <th class="th th3">Competence visée</th>
+                <th class="th th4">Coordinateur</th>
             </tr>
 
-            <tr class="table-row">
-                <td>
+            <tr class="table-row tr">
+                <td class="td" style="display: none">
                     La Licence Science et Technique permet en Ingénierie de développement d’applications informatiques aux étudiants :
                     <ul>
                         <li>d'avoir une culture de base scientifique,</li>
@@ -31,7 +31,7 @@
                         <li>d’avoir une culture d’entreprise suffisante pour se faire une idée concrète sur le monde du travail.</li>
                     </ul>
                 </td>
-                <td>
+                <td class="td" style="display: none">
 
 
                             <p>Semestre 5</p>
@@ -59,12 +59,12 @@
 
 
                 </td>
-                <td>Technicien supérieur en développement d’application en C++ et JAVA
+                <td class="td" style="display: none">Technicien supérieur en développement d’application en C++ et JAVA
                     Technicien supérieur en réseaux locaux : installation, configuration et administration des réseaux locaux
                     Technicien supérieur en SGBD R : installation, configuration et administration des SGBD
                     WebMaster et développeur de sites web dynamiques
                     Poursuivre des études supérieures en Informatique</td>
-                <td>Coordinnateur : Pr.KOUNAIDI Mohamed :               m.kounaidi@@uae.ac.ma</td>
+                <td class="td" style="display: none">Coordinnateur : Pr.KOUNAIDI Mohamed :               m.kounaidi@@uae.ac.ma</td>
             </tr>
         </table>
     </div>
@@ -75,38 +75,3 @@
 
 
 
-      <script>
-          document.addEventListener('DOMContentLoaded', function () {
-              // Masquer toutes les cellules de données sauf les en-têtes
-              var dataCells = document.querySelectorAll('.contenufilier td');
-              dataCells.forEach(function (cell) {
-                  cell.classList.add('hidden');
-              });
-          });
-
-          function toggleColumn(columnIndex) {
-              var table = document.querySelector('.contenufilier table');
-              var rows = table.querySelectorAll('.table-row');
-
-              // Retirez la classe 'active' de toutes les cellules du header
-              var headerCells = document.getElementById('header').querySelectorAll('th');
-              headerCells.forEach(function (cell) {
-                  cell.classList.remove('active');
-              });
-
-              // Ajoutez la classe 'active' à la cellule du header cliquée
-              headerCells[columnIndex].classList.add('active');
-
-              // Parcours chaque ligne et masque les cellules non désirées
-              rows.forEach(function (row) {
-                  var cells = row.children;
-                  for (var i = 0; i < cells.length; i++) {
-                      if (i === columnIndex) {
-                          cells[i].classList.remove('hidden');
-                      } else {
-                          cells[i].classList.add('hidden');
-                      }
-                  }
-              });
-          }
-      </script>

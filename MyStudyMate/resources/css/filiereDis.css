@@ -1,13 +1,6 @@
-#service {
-    display: -ms-grid;
-    display: grid;
-    place-items: center;
-    min-height: 100vh;
-    width: 100vw;
-    background:rgb(15 16 143 /70%);
-  }
 
-  #service .heading {
+
+   .heading {
     font-size: 4rem;
     padding-top: 5rem;
     margin: 2rem 0;
@@ -16,24 +9,13 @@
     position: relative;
   }
 
-  #service .heading::after {
-    content: '';
-    position: absolute;
-    bottom: -1.5rem;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    height: .3rem;
-    width: 60%;
-    border-radius: 5rem;
-    background: #333;
-  }
 
-  #service .box-container {
+
+   .box-container {
     width: 90%;
   }
 
-  #service .box-container .box {
+   .box-container .box {
     background: #fff;
     max-width: 60rem;
     border-radius: .5rem;
@@ -53,25 +35,25 @@
   }
 
 
-  #service .box-container .box .info {
+   .box-container .box .info {
     padding-left: 2.5rem;
     border-left: 0.4rem solid rgb(15 16 143 /70%);
   }
 
-  #service .box-container .box .info h2 {
+   .box-container .box .info h2 {
     font-size: 3rem;
     color: rgb(15 16 143 /70%);
   }
 
-  #service .box-container .box .info p {
+   .box-container .box .info p {
     font-size: 1.5rem;
     color: #333;
   }
 
-  #service .box-container .box:nth-child(2) {
+   .box-container .box:nth-child(2) {
     float: right;
   }
-  table {
+  .table {
 
     right: 0;
      background-color: #fff;
@@ -82,13 +64,13 @@
      box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
  }
 
- tr {
+ .tr {
      transition: all .2s ease-in;
      cursor: pointer;
  }
 
- th,
- td {
+ .th,
+ .td {
      padding: 12px;
      text-align: left;
      border-bottom: 1px solid #ddd;
@@ -100,7 +82,7 @@
 
 
 
- .contenufilier .table-row td.active {
+ .contenufilier .table-row .td.active {
      background-color: #e0e0e0;
 
          width: 100%;
@@ -108,15 +90,15 @@
  }
 
 
- .contenufilier .hidden {
+.hidden {
      display: none;
  }
 
- .contenufilier table {
+ .contenufilier .table {
      width: 100%;
      border-collapse: collapse;
  }
-  .contenufilier th {
+  .contenufilier .th {
      cursor: pointer;
      box-sizing: border-box;
  }
@@ -126,3 +108,5 @@
      width: 100%;
  }
 */
+
+

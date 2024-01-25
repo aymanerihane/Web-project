@@ -82,6 +82,19 @@ function chnagerManupulation(url) {
         });
       }else if(navButtons[index].querySelector("span").textContent === "Répondre Demandes Étudiants"){
         chnagerManupulation('repondreDemande');
+        document.querySelectorAll(".mes").forEach((ev) => {
+            ev.addEventListener('click', function() {
+                idm = this.dataset.id;
+                var mess = document.getElementById('mesform');
+                mess.action = 'reponse/' + idm + '';
+                fetch("message?etud=" + idm)
+                    .then(response => response.text())
+                    .then(rep => {
+                        document.getElementById("messetud").innerHTML = rep;
+                    });
+            });
+        });
+
         center.style.opacity = 0;
       }else if(navButtons[index].querySelector("span").textContent === "Ajouter et modifier le contenu d'une filière"){
         chnagerManupulation('formationChoix');
@@ -174,6 +187,33 @@ function chnagerManupulation(url) {
             deleteAnnonces(event.target);
             chnagerManupulation('annonce');
             fetchData();
+        }else if(event.target.classList.contains('idai')){
+            console.log("22");
+        chnagerManupulation('IDAI');
+
+        // Masquer toutes les cellules de données sauf les en-têtes
+        // var dataCells = document.querySelectorAll('.td');
+        // dataCells.forEach(function (cell) {
+        //     cell.classList.add('hidden');
+        // });
+
+        document.addEventListener('click', (event) => {
+            console.log(event.target);
+            if (event.target.classList.contains('th1')) {
+                console.log(event.target);
+                toggleColumn(0);
+            } else if (event.target.classList.contains('th2')) {
+                toggleColumn(1);
+            } else if (event.target.classList.contains('th3')) {
+                toggleColumn(2);
+            } else if (event.target.classList.contains('th4')) {
+                toggleColumn(3);
+            }
+        });
+        }else if(event.target.classList.contains('ad')){
+            console.log("asdasd")
+            chnagerManupulation('AD');
+
         }
 
     })
@@ -328,17 +368,7 @@ chargerCategories();
 
         })
     }
-    document.getElementById("mes").addEventListener('click', function() {
-        idm=this.dataset.id;
-        var mess=document.getElementById('mesform');
-        mess.action='reponse/'+idm+'';
-        fetch("message?etud=" + idm)
-        .then(response => response.text())
-        .then(rep => {
-            document.getElementById("messetud").innerHTML = rep;
 
-        })
-    });
 
 
   });
@@ -381,4 +411,32 @@ function chnagerManupulation1(url) {
 
     xhr.open("GET", url, true); //erreur
     xhr.send();
+}
+
+
+
+function toggleColumn(columnIndex) {
+    var table = document.querySelector('.contenufilier .table');
+    var rows = table.querySelectorAll('.table-row');
+
+    // Retirez la classe 'active' de toutes les cellules du header
+    var headerCells = document.querySelectorAll('.th');
+    headerCells.forEach(function (cell) {
+        cell.classList.remove('active');
+    });
+
+    // Ajoutez la classe 'active' à la cellule du header cliquée
+    headerCells[columnIndex].classList.add('active');
+
+    // Parcours chaque ligne et masque les cellules non désirées
+    rows.forEach(function (row) {
+        var cells = row.children;
+        for (var i = 0; i < cells.length; i++) {
+            if (i === columnIndex) {
+                cells[i].style.display= 'block';
+            } else {
+                cells[i].style.display= 'none';
+            }
+        }
+    });
 }
