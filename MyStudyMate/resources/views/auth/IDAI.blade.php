@@ -21,7 +21,7 @@
             </tr>
 
             <tr class="table-row tr">
-                <td class="td" colspan=4 style="display: none">
+                <td class="td" colspan="4">
                     La Licence Science et Technique permet en Ingénierie de développement d’applications informatiques aux étudiants :
                     <ul>
                         <li>d'avoir une culture de base scientifique,</li>
