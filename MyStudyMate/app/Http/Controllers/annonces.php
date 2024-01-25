@@ -21,11 +21,20 @@ class annonces extends Controller
         return $annonces;
     }
     public function showAnnoncesEtud(){
-        $etud = etudiant::where('id_Utilisateur', auth()->user()->id)->get();
+        // Assuming you want to get the first student, adjust it based on your logic
+        $etud = etudiant::where('id_Utilisateur', auth()->user()->id)->first();
+
+        if (!$etud) {
+            // Handle the case where no student is found
+            return [];
+        }
+
         $idFiliere = $etud->idFiliere;
+
         $annonces = ModelsAnnonces::where('id_filiere', $idFiliere)->get();
         return $annonces;
     }
+
 
     public function add(){
         ModelsAnnonces::create([
