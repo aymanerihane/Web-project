@@ -5,7 +5,7 @@
                     @endphp
                     @if($filieres->count() > 0)
                         @foreach ($filieres as $filiere)
-                            <div class="optionsMode filierech" data-id="{{ $filiere->id_filiere }}">
+                            <div class="optionsMode filierech {{ $filiere->nom }}" data-id="{{ $filiere->id_filiere }}">
                                 <div class=" {{ $filiere->nom }}" style="background-color: transparent:z-index: 999;">
 
                                     <div id="choix1" class="e-card playing cardW {{ $filiere->nom }}">

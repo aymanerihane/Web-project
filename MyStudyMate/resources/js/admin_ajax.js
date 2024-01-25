@@ -214,6 +214,19 @@ function chnagerManupulation(url) {
         }else if(event.target.classList.contains('ad')){
             console.log("asdasd")
             chnagerManupulation('AD');
+            document.addEventListener('click', (event) => {
+                console.log(event.target);
+                if (event.target.classList.contains('th1')) {
+                    console.log(event.target);
+                    toggleColumn(0);
+                } else if (event.target.classList.contains('th2')) {
+                    toggleColumn(1);
+                } else if (event.target.classList.contains('th3')) {
+                    toggleColumn(2);
+                } else if (event.target.classList.contains('th4')) {
+                    toggleColumn(3);
+                }
+            });
 
         }
 
@@ -418,7 +431,7 @@ function toggleColumn(columnIndex) {
         var cells = row.children;
         for (var i = 0; i < cells.length; i++) {
             if (i === columnIndex) {
-                cells[i].style.display= 'block';
+                cells[i].style.display= '';
             } else {
                 cells[i].style.display= 'none';
             }

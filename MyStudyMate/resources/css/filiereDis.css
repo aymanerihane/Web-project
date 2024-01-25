@@ -1,5 +1,8 @@
 
-
+li{
+    margin: 10px;
+    list-style-type: circle !important;
+}
    .heading {
     font-size: 4rem;
     padding-top: 5rem;
@@ -99,9 +102,13 @@
      border-collapse: collapse;
  }
   .contenufilier .th {
-     cursor: pointer;
      box-sizing: border-box;
  }
+  .contenufilier .th:hover {
+     cursor: pointer;
+     background-color: #7f7e7e;
+ }
+
  /*
   .contenufilier td.active {
 
