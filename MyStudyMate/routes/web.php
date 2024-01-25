@@ -39,7 +39,7 @@ Route::post('prof/annonces', [annonces::class, 'addProf'])->name('profAnnonces')
 Route::get('/fetch-annonce', [annonces::class, 'index']);
 Route::get('/annonce/{id}/edit', [annonces::class, 'edit'])->name('annonce.edit');;
 Route::post('annonce/{id}', [annonces::class, 'update'])->name('annonce.update');
-Route::post('reponse/{id}', [Demande::class, 'reponse']);
+Route::post('prof/reponse/{id}', [Demande::class, 'reponse']);
 Route::post('prof/annonceProf/{id}', [annonces::class, 'updateProf'])->name('annonce.updateProf');
 Route::get('/annonce/{id}', [annonces::class, 'delete'])->name('annonce.delete');
 Route::post('/addEmploi', [emploisDuTemps::class, 'addEmploi'])->name('addEmploi');
@@ -47,7 +47,7 @@ Route::post('/addEmploi', [emploisDuTemps::class, 'addEmploi'])->name('addEmploi
 Route::get('auth/affectationSalle', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('auth.affectationSalle');
 
 });
-Route::get('prof/home/message', function () {
+Route::get('prof/message', function () {
     return view('prof.message');
 });
 Route::get('auth/formemploi', function () {

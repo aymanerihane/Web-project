@@ -10,5 +10,5 @@ $message=app('App\Http\Controllers\Demande')->findmessage($id);
 
 </div>
 <h4 class="email">aymane.rihane@etu.uae.ac.ma</h4>
-<h4 class="objectDemande">{{$message->DescripDemande}}</h4>
-<p class="messageDISC">{{$message->objet}}</p>
+<h4 class="objectDemande">{{$message->objet}}</h4>
+<p class="messageDISC">{{$message->DescripDemande}}</p>

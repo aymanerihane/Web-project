@@ -84,8 +84,8 @@ function chnagerManupulation(url) {
         chnagerManupulation('repondreDemande');
         document.addEventListener('click',(event)=>{
             if(event.target.classList.contains('mes')){
-                console.log("test");
-                idm = this.dataset.id;
+                console.log(event.target.dataset.id);
+               var idm = event.target.dataset.id;
                 var mess = document.getElementById('mesform');
                 mess.action = 'reponse/' + idm + '';
                 fetch("message?etud=" + idm)

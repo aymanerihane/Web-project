@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Demande as ModelsDemande;
 use App\Models\etudiant;
+use App\Models\User;
 use App\Models\Professeur;
 use Illuminate\Http\Request;
 
@@ -33,7 +34,8 @@ class Demande extends Controller
     }
     public function findetud($id){
         $idetud=etudiant::where('CNE', $id)->first();
-        return $idetud->nom;
+        $iduser=User::where('id', $idetud->id_Utilisateur)->first();
+        return $iduser->name;
     }
     public function findmessage($id){
         $message=ModelsDemande::where('id_demande', $id)->first();
