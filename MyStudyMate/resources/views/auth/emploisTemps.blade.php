@@ -1,6 +1,6 @@
 <Label>Filieres :</Label><br>
                     <span class="custom-dropdown small" >
-                        <Select class="select" name="jour" style="margin-bottom: 15px;" id="filieresel" >
+                        <Select class="select"  style="margin-bottom: 15px;" id="filieresel" >
                             <option class="option" value="" disabled selected></option>
                             @php
                     $filieres = app('App\Http\Controllers\filieres')->showFilieres();
@@ -14,15 +14,9 @@
                         </Select>
                     </span>
 <div class="signbox" style="position: relative;margin-bottom:76px">
-    <form style="width:100%;" class="formSign" method="POST" action="">
+    <form style="width:100%;" class="formSign" method="POST" action="addEmploi">
+        <input type="hidden" id="fil" name="filiere">
             <div style="display: flex;flex-direction:column;justify-content: space-between;align-items: center;">
-
-                <div class="email">
-                    <input id="titleEmplois" type="text" name="titleEmplois" required >
-                    <label class="labelf">
-                        <span style="transition-delay:0ms">T</span><span style="transition-delay:50ms">I</span><span style="transition-delay:100ms">T</span><span style="transition-delay:150ms">R</span><span style="transition-delay:200ms">E</span>
-
-                </div>
                     <Label>Jour:</Label><br>
                     <span class="custom-dropdown small" >
                         <Select class="select" name="jour" style="margin-bottom: 15px;">
@@ -41,7 +35,39 @@
                             @endforeach
                         </Select>
                     </span>
-
+                    <Label>Local :</Label><br>
+                    <span class="custom-dropdown small" >
+                        <Select class="select" name="local" style="margin-bottom: 15px;">
+                            <option value="0">Salle</option>
+                            @php
+                    $salles = app('App\Http\Controllers\Locals')->showlocals();
+                    @endphp
+                            @foreach($salles as $salle)
+                            <option value="{{ $salle->id_local }}">{{ $salle->nom }}</option>
+                            @endforeach
+                        </Select>
+                    </span>
+                    <Label>Activite :</Label><br>
+                    <span class="custom-dropdown small" >
+                        <Select class="select" name="act" style="margin-bottom: 15px;">
+                            <option value="0"></option>
+                            @foreach(['Cours', 'TD', 'TP'] as $act)
+                            <option value="{{ $act }}">{{ $act }}</option>
+                            @endforeach
+                        </Select>
+                    </span>
+                    <Label>Module :</Label><br>
+                    <span class="custom-dropdown small" >
+                        <Select class="select" name="module" style="margin-bottom: 15px;">
+                            <option value="0"></option>
+                            @php
+                            $modules = app('App\Http\Controllers\modules')->select(1);
+                            @endphp
+                            @foreach($modules as $module)
+                            <option value="{{ $module->id_module }}">{{ $act }}</option>
+                            @endforeach
+                        </Select>
+                    </span>
                 <div class="sb">
                     <button type="submit">
                         <div style="margin-bottom: 0" class="btnLogin"><span>ADD</span></div>

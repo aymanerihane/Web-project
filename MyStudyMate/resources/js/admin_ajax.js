@@ -264,7 +264,8 @@ chargerCategories();
             .then(response => response.text())
             .then(rep => {;
                 document.getElementById("filieresel").addEventListener('change', function() {
-                    console.log(this.value);
+                    var fil=document.getElementById("fil");
+                    fil.value=this.value;
                     chargerProduits(this.value);
                 });
             })
@@ -275,14 +276,13 @@ chargerCategories();
         fetch("emploi?filiere=" + val)
         .then(response => response.text())
             .then(rep => {
-                console.log(rep);
                 document.getElementById("emploi").innerHTML = rep;
             })
     }
 
-    document.addEventListener('change', ()=>{
-        var id=document.getElementById()
-        });
+    // document.addEventListener('change', ()=>{
+    //     var id=document.getElementById('filieresel')
+    //     });
   });
 
 

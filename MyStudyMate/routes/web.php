@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\addEtudiant;
+use App\Http\Controllers\emploisDuTemps;
 use App\Http\Controllers\annonces;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -35,7 +36,8 @@ Route::get('/fetch-annonce', [annonces::class, 'index']);
 Route::get('/annonce/{id}/edit', [annonces::class, 'edit'])->name('annonce.edit');;
 Route::post('annonce/{id}', [annonces::class, 'update'])->name('annonce.update');
 Route::post('prof/annonceProf/{id}', [annonces::class, 'updateProf'])->name('annonce.updateProf');
-Route::get('/annonce/{id}', [annonces::class, 'delete'])->name('annonce.delete');;
+Route::get('/annonce/{id}', [annonces::class, 'delete'])->name('annonce.delete');
+Route::get('addEmploi', [emploisDuTemps::class, 'addEmploi']);
 // web.php
 Route::get('auth/affectationSalle', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('auth.affectationSalle');
 
