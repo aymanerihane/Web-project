@@ -32,8 +32,15 @@ Route::post('auth/addEtudiant', [addEtudiant::class, 'create'])->name('auth.addE
 Route::post('choixMode/annonces', [annonces::class, 'add'])->name('annonces');
 Route::get('/fetch-annonce', [annonces::class, 'index']);
 Route::get('/annonce/{id}/edit', [annonces::class, 'edit'])->name('annonce.edit');;
+<<<<<<< Updated upstream
 Route::put('/annonce/{id}', [annonces::class, 'update'])->name('annonce.update');
 Route::delete('/annonce/{id}', [annonces::class, 'destroy'])->name('annonce.destroy');;
+=======
+Route::post('annonce/{id}', [annonces::class, 'update'])->name('annonce.update');
+Route::post('prof/annonceProf/{id}', [annonces::class, 'updateProf'])->name('annonce.updateProf');
+Route::get('/annonce/{id}', [annonces::class, 'delete'])->name('annonce.delete');
+// Route::get('/emploi/{id}', [emploisDuTemps::class, 'select']);
+>>>>>>> Stashed changes
 // web.php
 Route::get('auth/affectationSalle', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('auth.affectationSalle');
 

@@ -231,6 +231,37 @@ function chnagerManupulation(url) {
         }
     xhr.send();
 };
+<<<<<<< Updated upstream
+=======
+  //edit data
+  function editannonceProf(ele) {
+    console.log("test");
+      var id = ele.dataset.id;
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', '/annonce/'+ id +'/edit', true);
+      xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+              // Handle the response data and update the page
+              var responseData = JSON.parse(xhr.responseText);
+              console.log(responseData.annonce);
+              editProf(responseData.annonce);
+          }
+      };
+          function editProf(annonce){
+            console.log(annonce);
+              var container=document.getElementById('editAnnonce');
+              var desc=document.getElementById('disc');
+              var resume=document.getElementById('resume');
+              var title=document.getElementById('title');
+              container.action='annonceProf/'+annonce.id_annonce+'';
+              title.value=annonce.titre;
+              resume.value=annonce.resume;
+              desc.value=annonce.Description;
+      }
+  xhr.send();
+};
+
+>>>>>>> Stashed changes
   });
 
 
@@ -255,3 +286,29 @@ function chnagerManupulation(url) {
     xhr.open("GET", url, true); //erreur
     xhr.send();
 }
+<<<<<<< Updated upstream
+=======
+
+
+function chnagerManupulation1(url) {
+
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            const center = document.querySelector("#center");
+            document.querySelector("#center").innerHTML = xhr.responseText;
+            setTimeout(function () {
+                center.style.opacity = 1; // Set opacity to 1 to fade in the content
+            }, 30);
+        }
+
+    };
+
+
+
+    xhr.open("GET", url, true); //erreur
+    xhr.send();
+}
+
+
+>>>>>>> Stashed changes
