@@ -7,6 +7,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 /* Scrollbar Styling for both horizontal and vertical scrollbars */
 ::-webkit-scrollbar {
@@ -35,7 +36,6 @@ body{
     font-family: 'Poppins', sans-serif;
     width: 100%;
     height: 100vh;
-    overflow: hidden;
 }
 /* position the header */
 .header-container{

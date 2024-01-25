@@ -19,6 +19,11 @@ class annonces extends Controller
         $annonces = ModelsAnnonces::where('id_Utilisateur', auth()->user()->id)->get();
         return $annonces;
     }
+    // public function showAnnoncesEtud(){
+    //     // $annonces = ModelsAnnonces::all();
+    //     $annonces = ModelsAnnonces::where('', auth()->user()->id)->get();
+    //     return $annonces;
+    // }
     public function add(){
         ModelsAnnonces::create([
             'titre'=>$_POST['title'],

@@ -121,7 +121,9 @@ function chnagerManupulation(url) {
       }else if(navButtons[index].querySelector("span").textContent === "Gérer Annonces Modules"){
         chnagerManupulation('annonce');
         center.style.opacity = 0;
-      }
+      }else if(navButtons[index].querySelector("span").textContent === "Annonces des Professeurs"){
+        chnagerManupulation('annonceProf');
+        center.style.opacity = 0;}
     }
 
     // Add event listeners to each nav button
