@@ -531,9 +531,9 @@ padding:  10px 15px;
 <div class="text">
     <div class="content">
         <h2>
-            Welcoom to MystudyMate's HOME
+            Bienvenue sur MyStudyMate
         </h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error ipsam autem quia recusandae amet laborum, placeat, a dicta dolorem molestias molestiae. Error aspernatur illum rem iste repellat alias debitis quasi!</p>
+        <p>Votre Porte d'Entrée vers l'Excellence Académique !</p>
     </div>
 </div>
 </div>
@@ -575,7 +575,7 @@ padding:  10px 15px;
 <!-- formation section ends -->
 
 <!-- service section starts  -->
-
+<!--
 <section id="service">
 
 <h1 class="heading">Service</h1>
@@ -609,7 +609,7 @@ padding:  10px 15px;
 </div>
 
 </section>
-
+-->
 <!-- service section ends -->
 
 <!-- footer -->
