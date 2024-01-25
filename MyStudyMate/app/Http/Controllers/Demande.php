@@ -11,15 +11,7 @@ class Demande extends Controller
 {
     public function add(){
         $etud = etudiant::where('id_utilisiteur', auth()->user()->id)->first();
-
-        if (!$etud) {
-            // Handle the case where no student is found for the authenticated user
-            // You might want to redirect or display an error message
-            return redirect('/prof/home')->with('error', 'No student found for the authenticated user.');
-        }
-
         $cne = $etud->CNE;
-
         ModelsDemande::create([
             'objet' => $_POST['object'],
             'TypeDemande' => $_POST['object'], // Assuming 'TypeDemande' should be assigned a different value
@@ -48,6 +40,7 @@ class Demande extends Controller
         $message=ModelsDemande::where('id_demande', $id)->first();
         $message->update([
             'ReponseDemande' => $_POST['reps'],
+            'statutDemande' => "Repondu",
         ]);
     }
 }
