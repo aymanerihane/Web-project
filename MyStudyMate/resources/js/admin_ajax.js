@@ -82,9 +82,8 @@ function chnagerManupulation(url) {
         });
       }else if(navButtons[index].querySelector("span").textContent === "Répondre Demandes Étudiants"){
         chnagerManupulation('repondreDemande');
-        document.querySelectorAll(".mes").forEach((ev) => {
-            console.log(ev);
-            ev.addEventListener('click', function() {
+        document.addEventListener('click',(event)=>{
+            if(event.target.classList.contains('mes')){
                 console.log("test");
                 idm = this.dataset.id;
                 var mess = document.getElementById('mesform');
@@ -94,8 +93,8 @@ function chnagerManupulation(url) {
                     .then(rep => {
                         document.getElementById("messetud").innerHTML = rep;
                     });
-            });
-        });
+            }
+        })
 
         center.style.opacity = 0;
       }else if(navButtons[index].querySelector("span").textContent === "Ajouter et modifier le contenu d'une filière"){

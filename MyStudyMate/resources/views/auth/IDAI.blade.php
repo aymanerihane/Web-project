@@ -21,7 +21,7 @@
             </tr>
 
             <tr class="table-row tr">
-                <td class="td" style="display: none">
+                <td class="td" colspan=4 style="display: none">
                     La Licence Science et Technique permet en Ingénierie de développement d’applications informatiques aux étudiants :
                     <ul>
                         <li>d'avoir une culture de base scientifique,</li>
@@ -31,7 +31,7 @@
                         <li>d’avoir une culture d’entreprise suffisante pour se faire une idée concrète sur le monde du travail.</li>
                     </ul>
                 </td>
-                <td class="td" style="display: none">
+                <td class="td" colspan="4" style="display: none">
 
 
                             <p>Semestre 5</p>
@@ -59,12 +59,12 @@
 
 
                 </td>
-                <td class="td" style="display: none">Technicien supérieur en développement d’application en C++ et JAVA
+                <td class="td" colspan="4" style="display: none">Technicien supérieur en développement d’application en C++ et JAVA
                     Technicien supérieur en réseaux locaux : installation, configuration et administration des réseaux locaux
                     Technicien supérieur en SGBD R : installation, configuration et administration des SGBD
                     WebMaster et développeur de sites web dynamiques
                     Poursuivre des études supérieures en Informatique</td>
-                <td class="td" style="display: none">Coordinnateur : Pr.KOUNAIDI Mohamed :               m.kounaidi@@uae.ac.ma</td>
+                <td class="td" colspan="4" style="display: none">Coordinnateur : Pr.KOUNAIDI Mohamed :               m.kounaidi@@uae.ac.ma</td>
             </tr>
         </table>
     </div>
