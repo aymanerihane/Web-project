@@ -97,3 +97,8 @@ Route::get('auth/profMember', function () {
     return view('auth.profMember');
 });
 
+
+Route::get('etudiant/annonceProf', function () {
+    return view('etudiant.annonceProf');
+});
+
