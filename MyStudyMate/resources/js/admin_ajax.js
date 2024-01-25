@@ -286,37 +286,46 @@ chargerCategories();
                 document.getElementById("filieresel").addEventListener('change', function() {
                     var fil=document.getElementById("fil");
                     fil.value=this.value;
-                        tmp=document.getElementById("efrom");
-                        console.log(tmp);
-                        tmp.innerHTML='<Label>Module :</Label><br>\
-                        <span class="custom-dropdown small" >\
-                        <Select class="select" name="module" style="margin-bottom: 15px;">\
-                        <option value="0"></option>\
-                        @php\
-                        $modules = app("App\Http\Controllers\modules")->select('+this.value+');\
-                        @endphp\
-                        @foreach($modules as $module)\
-                        <option value="{{ $module->id_module }}">{{ $module->nom }}</option>\
-                        @endforeach\
-                        </Select>\
-                        </span>';
+
+                        // tmp=document.getElementById("efrom");
+                        // console.log(tmp);
+                        // tmp.innerHTML='<Label>Module :</Label><br>\
+                        // <span class="custom-dropdown small" >\
+                        // <Select class="select" name="module" style="margin-bottom: 15px;">\
+                        // <option value="0"></option>\
+                        // @php\
+                        // $modules = app("App\Http\Controllers\modules")->select('+this.value+');\
+                        // @endphp\
+                        // @foreach($modules as $module)\
+                        // <option value="{{ $module->id_module }}">{{ $module->nom }}</option>\
+                        // @endforeach\
+                        // </Select>\
+                        // </span>';
                         chargerProduits(this.value);
+                        chargerModules(this.value);
+                        // Make an Ajax request to fetch modules
                     });
             })
             .catch(error => console.error('Error loading categories:', error));
     }
-
     function chargerProduits(val) {
         fetch("emploi?filiere=" + val)
         .then(response => response.text())
-            .then(rep => {
-                document.getElementById("emploi").innerHTML = rep;
-            })
+        .then(rep => {
+            document.getElementById("emploi").innerHTML = rep;
+        })
+    }
+    function chargerModules(val) {
+        fetch("formemploi?module=" + val)
+        .then(response => response.text())
+        .then(rep => {
+            document.getElementById("efrom").innerHTML = rep;
+
+        })
     }
 
-    // document.addEventListener('change', ()=>{
-    //     var id=document.getElementById('filieresel')
-    //     });
+
+
   });
 
 
