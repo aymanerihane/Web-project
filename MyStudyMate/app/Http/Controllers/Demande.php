@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class Demande extends Controller
 {
     public function add(){
-        $etud = etudiant::where('id_utilisiteur', auth()->user()->id)->first();
+        $etud = etudiant::where('id_Utilisateur', auth()->user()->id)->first();
         $cne = $etud->CNE;
         ModelsDemande::create([
             'objet' => $_POST['object'],
@@ -19,13 +19,16 @@ class Demande extends Controller
             'statutDemande' => "en attente", // Fixed the typo in "en attend"
             'ReponseDemande' => "",
             'CNE' => $cne,
+            'MatriculeProf' => 6878,
+            'id_departement' => 1,
         ]);
 
         return redirect('/etudiant/home');
     }
     public function find(){
-        $idprof=Professeur::where('id_Utilisateur', auth()->user()->id)->first();
-        $demandes = ModelsDemande::where('MatriculeProfr', $idprof);
+        $prof=Professeur::where('id_Utilisateur', auth()->user()->id)->first();
+        $idprof=$prof->MatriculeProf;
+        $demandes = ModelsDemande::where('MatriculeProf', $idprof)->get();
         return $demandes;
     }
     public function findetud($id){

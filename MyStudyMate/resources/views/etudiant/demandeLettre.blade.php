@@ -3,7 +3,8 @@
 
         <form style="width:100%;" class="formSign" method="POST" action="{{ route('demandes')}}" id="demandeForm">
             @csrf <!-- CSRF token -->
-            <input type="hidden" id="fil" name="filiere">
+            <input type="hidden" id="" name="prof" value="">
+            <input type="hidden" id="" name="dep" value="">
 
             <div style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
                 <input type="hidden" value="Demander lettre Recommandation" name="object">
