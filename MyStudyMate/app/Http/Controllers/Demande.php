@@ -47,5 +47,7 @@ class Demande extends Controller
             'ReponseDemande' => $_POST['reps'],
             'statutDemande' => "Repondu",
         ]);
+        return redirect('/prof/home');
+
     }
 }
