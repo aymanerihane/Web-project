@@ -50,4 +50,7 @@ class emploisDuTemps extends Controller
         $emplois =ModelsEmploisDuTemps::where('id_filiere','=',$id)->get();
         return $emplois;
 }
+public function delete($id){
+    ModelsEmploisDuTemps::where('id_emploi', $id)->delete();
+}
 }

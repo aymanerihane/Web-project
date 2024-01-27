@@ -30,9 +30,9 @@ $emplois=app('App\Http\Controllers\emploisDuTemps')->select($id);
                     }
                 @endphp
                 @if($emploiFound)
-                    <td value="{{ $heure }}">{{ $m->nom }} <br> {{ $emploi->activite }} <br> {{ $l->nom }}</td>
+                    <td data-id="{{ $emploi->id_emploi }}" class="supemp">{{ $m->nom }} <br> {{ $emploi->activite }} <br> {{ $l->nom }}</td>
                 @else
-                    <td value="{{ $heure }}"></td>
+                    <td value=""></td>
                 @endif
             @endforeach
         </tr>

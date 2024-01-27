@@ -367,6 +367,7 @@ chargerCategories();
                     });
 
                     document.getElementById('submitemp').addEventListener('click', submitForm);
+
             })
             .catch(error => console.error('Error loading categories:', error));
     }
@@ -382,7 +383,14 @@ chargerCategories();
         .then(response => response.text())
         .then(rep => {
             document.getElementById("efrom").innerHTML = rep;
-
+            var supButtons = document.querySelectorAll(".supemp");
+                supButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    var id = this.dataset.id;
+                    deleteemp(id);
+                    chargerProduits(id);
+                });
+            });
         })
     }
 
@@ -429,6 +437,12 @@ chargerCategories();
     function deletesalle(ele){
         var id = ele;
         fetch('/salle/' + id, {
+            method: 'GET',
+        })
+    }
+    function deleteemp(ele){
+        var id = ele;
+        fetch('/emploi/' + id, {
             method: 'GET',
         })
     }

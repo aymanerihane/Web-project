@@ -70,7 +70,7 @@ public function isDelegue()
         'id_Filiere'=> $_POST['filiere'],
         'id_Classe'=> $_POST['classe'],
     ]);
-    User::where('name', $nom)->update(['password' => $_POST['cne']]);
+    User::where('name', $nom)->update(['password' => Hash::make($_POST['cne'])]);
 }
         elseif($_POST['role']==2){
             Professeur::create([
@@ -83,7 +83,7 @@ public function isDelegue()
        elseif($_POST['prof']==2){
         Professeur::where('MatriculeProf', $_POST['matricule'])->update(['is_RespoFiliere' => true]);
        }
-       User::where('name', $nom)->update(['password' => $_POST['matricule']]);
+       User::where('name', $nom)->update(['password' => Hash::make($_POST['matricule'])]);
         }
         return redirect('/auth/home');
 

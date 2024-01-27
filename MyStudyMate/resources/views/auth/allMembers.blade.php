@@ -14,7 +14,11 @@
         <tr>
             <td>{{ $allMember->name }}</td>
             <td>{{ $allMember->email }}</td>
-            <td>{{ $allMember->password }}</td>
+            @if ($allMember->is_role == 2)
+            <td>{{ $allMember->MatriculeProf }}</td>
+            @elseif ($allMember->is_role == 3)
+            <td>{{ $allMember->CNE }}</td>
+                @endif
             <td>
                 @if ($allMember->is_role == 2)
                     Professeur
