@@ -71,7 +71,7 @@ function chnagerManupulation(url) {
         setTimeout(function () {
             document.getElementById("affectbut").addEventListener('click', function () {
                 affectsalle();
-                chargersalles("libre");
+                fetchAffectationSalle();
             });
         }, 2000);
 
@@ -421,7 +421,7 @@ chargerCategories();
                 button.addEventListener('click', function () {
                     var nom = this.dataset.id;
                     deletesalle(nom);
-                    chargersalles("libre");
+                     fetchAffectationSalle();
                 });
             });
         })
@@ -431,6 +431,29 @@ chargerCategories();
         fetch('/salle/' + id, {
             method: 'GET',
         })
+    }
+    function fetchAffectationSalle() {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                const center = document.querySelector(".center");
+                center.innerHTML = xhr.responseText;
+                setTimeout(function () {
+                    center.style.opacity = 1; // Set opacity to 1 to fade in the content
+                }, 30);
+            }
+            chargersalles("libre");
+                document.getElementById("depart").addEventListener('change', function () {
+                    chargersalles(this.value);
+                });
+                document.getElementById("affectbut").addEventListener('click', function () {
+                    affectsalle();
+                    fetchAffectationSalle();
+                });
+        };
+
+        xhr.open("GET", 'affectationSalle', true);
+        xhr.send();
     }
   });
 
@@ -465,10 +488,8 @@ function chnagerManupulation1(url) {
                 center.style.opacity = 1; // Set opacity to 1 to fade in the content
             }, 30);
         }
-
+        ;
     };
-
-
 
     xhr.open("GET", url, true); //erreur
     xhr.send();
