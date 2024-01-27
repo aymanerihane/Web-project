@@ -26,7 +26,7 @@
         </div>
         <Label>Filieres :</Label><br>
                     <span class="custom-dropdown small" >
-                        <Select class="select" name="filiere" style="margin-bottom: 15px;" id="filieresel" >
+                        <Select class="select" name="filiere" style="margin-bottom: 15px;" id="filieresel" required>
                             <option class="option" value="" disabled selected></option>
                             @php
                     $filieres = app('App\Http\Controllers\filieres')->showFilieres();

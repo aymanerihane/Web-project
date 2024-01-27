@@ -16,7 +16,7 @@
                     <div class="line line-indicator"></div>
                 </label>
                 <div>
-                    <h3 class="NameOfEtud mes" data-id="{{$demande->id_demande}}">{{app('App\Http\Controllers\Demande')->findetud($demande->CNE)}}</h3>
+                    <h3 class="NameOfEtud mes" data-id="{{$demande->id_demande}}">{{app('App\Http\Controllers\Demande')->findetud($demande->CNE)->name}}</h3>
                     <p class="objectDemande mes" data-id="{{$demande->id_demande}}">{{$demande->DescripDemande}}</p>
                 </div>
                 <div class="new"></div>

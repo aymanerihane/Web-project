@@ -12,4 +12,10 @@ class filieres extends Controller
 
         return $filieres;
     }
+    public function findfil($id)
+    {
+    $filiere =ModelsFilieres::where('id_filiere',$id)->first();
+
+        return $filiere;
+    }
 }

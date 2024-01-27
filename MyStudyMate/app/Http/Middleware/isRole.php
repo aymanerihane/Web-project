@@ -32,7 +32,7 @@ class isRole
                 return redirect()->route('respFil.home');
             }
             elseif (auth()->user()->is_role == 4 && $routename!='prof.home'){
-                return redirect()->route('prof.home');
+                // return redirect()->route('prof.home');
             }elseif (auth()->user()->is_role == 5 && $routename!='etudiant.home'){
                 // return redirect()->route('etudiant.home');
             }

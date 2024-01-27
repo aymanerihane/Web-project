@@ -110,6 +110,12 @@ Route::get('auth/profMember', function () {
 });
 
 
+Route::get('etudiant/information', function () {
+    return view('etudiant.information');
+});
+Route::get('etudiant/emploisTemps', function () {
+    return view('etudiant.emploisTemps');
+});
 Route::get('etudiant/annonceProf', function () {
     return view('etudiant.annonceProf');
 });

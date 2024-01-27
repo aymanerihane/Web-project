@@ -17,7 +17,7 @@ class Demande extends Controller
             'objet' => $_POST['object'],
             'TypeDemande' => $_POST['object'], // Assuming 'TypeDemande' should be assigned a different value
             'DescripDemande' => $_POST['discDem'],
-            'statutDemande' => "en attente", // Fixed the typo in "en attend"
+            'statutDemande' => "En attente", // Fixed the typo in "en attend"
             'ReponseDemande' => "",
             'CNE' => $cne,
             'MatriculeProf' => 6878,
@@ -30,39 +30,23 @@ class Demande extends Controller
         $prof=Professeur::where('id_Utilisateur', auth()->user()->id)->first();
         $idprof=$prof->MatriculeProf;
         $demandes = ModelsDemande::where('MatriculeProf', $idprof)->get();
+        $demandes = ModelsDemande::where('statutDemande', 'En attente')->get();
         return $demandes;
     }
     public function findetud($id){
         $idetud=etudiant::where('CNE', $id)->first();
         $iduser=User::where('id', $idetud->id_Utilisateur)->first();
-        return $iduser->name;
+        return $iduser;
     }
     public function findmessage($id){
         $message=ModelsDemande::where('id_demande', $id)->first();
         return $message;
     }
     public function reponse($id){
-        // $message=ModelsDemande::where('id_demande', $id)->first()->get();
-        // $message->update([
-        //     'ReponseDemande' => $_POST['reps'],
-        //     'statutDemande' => "Repondu",
-        // ]);
-        // return redirect('/prof/home');
-        $message = ModelsDemande::where('id_demande', $id)->first();
-
-    // Check if the message exists
-    if ($message) {
-        // Update the message
-        $message->update([
-            'ReponseDemande' => $_POST['reps'],
-            'statutDemande' => 'Repondu',
-        ]);
-
-        return redirect('/prof/home');
-    } else {
-        // Return an error message if the message is not found
-        return redirect('/auth/home')->with('error', 'Message not found');
-    }
-
-    }
+    ModelsDemande::where('id_demande', $id)->update([
+                'ReponseDemande' => $_POST['reps'],
+                'statutDemande' => 'Approuvée',
+            ]);
+            return redirect('/prof/home');
+     }
 }

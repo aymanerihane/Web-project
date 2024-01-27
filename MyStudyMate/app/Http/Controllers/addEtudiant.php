@@ -88,4 +88,10 @@ public function isDelegue()
         return redirect('/auth/home');
 
 }
+function findetud(){
+    return etudiant::where('id_Utilisateur',auth()->user()->id)->first();
+}
+function finduser($id){
+    return User::where('id',$id)->first();
+}
 }

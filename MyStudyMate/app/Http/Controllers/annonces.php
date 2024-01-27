@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Annonces as ModelsAnnonces;
 use App\Models\etudiant;
+use App\Models\Professeur;
 use Illuminate\Http\Request;
 
 use function Laravel\Prompts\alert;
@@ -28,14 +29,7 @@ class annonces extends Controller
     public function showAnnoncesEtud(){
         // Assuming you want to get the first student, adjust it based on your logic
         $etud = etudiant::where('id_Utilisateur', auth()->user()->id)->first();
-
-        if (!$etud) {
-            // Handle the case where no student is found
-            return [];
-        }
-
-        $idFiliere = $etud->idFiliere;
-
+        $idFiliere = $etud->id_Filiere;
         $annonces = ModelsAnnonces::where('id_filiere', $idFiliere)->get();
         return $annonces;
     }
@@ -92,5 +86,5 @@ class annonces extends Controller
         ]);
         return redirect('/prof/home');
     }
-
+    
 }

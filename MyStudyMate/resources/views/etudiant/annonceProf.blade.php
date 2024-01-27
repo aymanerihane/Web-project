@@ -11,6 +11,7 @@
                 <div class="imgholder">
                     {{-- You can add an image here if needed --}}
                 </div>
+                <h1 class="text-card" style="width: 100%;">{{ app('App\Http\Controllers\addetudiant')->finduser($annonce->id_Utilisateur)->name}}</h1>
                 <div class="containerAnnonceText" style="width: 100%;">
                     <h1 class="head-card">{{ $annonce->titre }}</h1>
                     <p class="text-card" style="width: 100%;">{{ $annonce->resume }}</p>
