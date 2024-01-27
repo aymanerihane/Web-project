@@ -12,4 +12,9 @@ class Departements extends Controller
 
         return $departements;
     }
+    public function finddep($id)
+    {
+    $departement =ModelsDepartements::where('id_departement',$id)->first();
+        return $departement;
+    }
 }

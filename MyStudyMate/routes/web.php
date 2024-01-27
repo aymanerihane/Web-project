@@ -69,6 +69,9 @@ Route::get('auth/emploisTemps', function () {
 Route::get('auth/list', function () {
     return view('auth.list');
 });
+Route::get('auth/lissalle', function () {
+    return view('auth.lissalle');
+});
 Route::get('auth/formationChoix', function () {
     return view('auth.formationChoix');
 });

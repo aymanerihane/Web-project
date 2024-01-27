@@ -36,6 +36,22 @@
     <button class="asso">
         <div class="btnLogin"><span>Associer</span></div>
     </button>
-</div>
-
-
+</div><br>
+<h1 class="h1">Liste des salle</h1>
+<Label>Departements :</Label><br>
+                    <span class="custom-dropdown small" >
+                        <Select class="select"  style="margin-bottom: 15px;" id="depart">
+                            <option class="option" value="2" disabled selected></option>
+                            <option class="option" value="0" >All</option>
+                            @php
+                    $departs = app('App\Http\Controllers\Departements')->showDepartements();
+                    @endphp
+                    @if($departs->count() > 0)
+                        @foreach ($departs as $depart)
+                            <option class="option" value="{{ $depart->id_departement }}">{{ $depart->nom }}</option>
+                        @endforeach
+                            </Select>
+                            @endif
+                        </Select>
+                    </span>
+<div id="tabsalle"></div>

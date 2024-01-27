@@ -62,6 +62,12 @@ function chnagerManupulation(url) {
       if(navButtons[index].querySelector("span").textContent === "Affectation des Salle"){
         chnagerManupulation('affectationSalle');
         center.style.opacity = 0;
+        setTimeout(function () {
+            document.getElementById("depart").addEventListener('change', function () {
+                chargersalles(this.value);
+            });
+        }, 2000);
+        chargersalles(0);
       }else if(navButtons[index].querySelector("span").textContent === "Gestion des emplois du temps"){
         chnagerManupulation('emploisTemps');
         center.style.opacity = 0;
@@ -352,6 +358,7 @@ chargerCategories();
                         chargerProduits(this.value);
                         chargerModules(this.value);
                     });
+
                     document.getElementById('submitemp').addEventListener('click', submitForm);
             })
             .catch(error => console.error('Error loading categories:', error));
@@ -371,6 +378,7 @@ chargerCategories();
 
         })
     }
+
     function submitForm() {
                 // Get form data
                 var formData = new FormData(document.getElementById('formemp'));
@@ -386,7 +394,14 @@ chargerCategories();
                             chargerProduits(fil.value);
                             chargerModules(fil.value);
     }
+    function chargersalles(val) {
+        fetch("lissalle?salle=" + val)
+        .then(response => response.text())
+        .then(rep => {
+            document.getElementById("tabsalle").innerHTML = rep;
 
+        })
+    }
   });
 
 
