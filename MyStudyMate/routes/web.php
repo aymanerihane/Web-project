@@ -46,6 +46,7 @@ Route::post('prof/annonceProf/{id}', [annonces::class, 'updateProf'])->name('ann
 Route::get('/annonce/{id}', [annonces::class, 'delete'])->name('annonce.delete');
 Route::post('/addEmploi', [emploisDuTemps::class, 'addEmploi'])->name('addEmploi');
 Route::post('/afctsalle', [Locals::class, 'afctsalle'])->name('afctsalle');
+Route::get('/salle/{id}', [Locals::class, 'delete']);
 // web.php
 Route::get('auth/affectationSalle', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('auth.affectationSalle');
 

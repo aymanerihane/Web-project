@@ -3,7 +3,7 @@
     <form id="afctform">
         @csrf
     <div class="gestion">
-        <div class="salle">
+        <div class="salle" id="salafct">
                 <Label>Salle :</Label><br>
                 <span class="custom-dropdown small">
                     <Select class="select" name="nom">
@@ -62,6 +62,7 @@
                     <span class="custom-dropdown small" >
                         <Select class="select"  style="margin-bottom: 15px;" id="depart">
                             <option class="option" value="2" disabled selected></option>
+                            <option class="option" value="libre" >Salles libres</option>
                             <option class="option" value="0" >All</option>
                             @php
                     $departs = app('App\Http\Controllers\Departements')->showDepartements();

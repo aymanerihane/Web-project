@@ -67,12 +67,14 @@ function chnagerManupulation(url) {
                 chargersalles(this.value);
             });
         }, 2000);
-        chargersalles(0);
+        chargersalles("libre");
         setTimeout(function () {
             document.getElementById("affectbut").addEventListener('click', function () {
                 affectsalle();
+                chargersalles("libre");
             });
         }, 2000);
+
       }else if(navButtons[index].querySelector("span").textContent === "Gestion des emplois du temps"){
         chnagerManupulation('emploisTemps');
         center.style.opacity = 0;
@@ -414,7 +416,20 @@ chargerCategories();
         .then(response => response.text())
         .then(rep => {
             document.getElementById("tabsalle").innerHTML = rep;
-
+                var supButtons = document.querySelectorAll(".supsal");
+                supButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    var nom = this.dataset.id;
+                    deletesalle(nom);
+                    chargersalles("libre");
+                });
+            });
+        })
+    }
+    function deletesalle(ele){
+        var id = ele;
+        fetch('/salle/' + id, {
+            method: 'GET',
         })
     }
   });
