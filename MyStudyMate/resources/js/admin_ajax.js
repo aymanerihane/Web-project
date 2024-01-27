@@ -65,6 +65,7 @@ function chnagerManupulation(url) {
       }else if(navButtons[index].querySelector("span").textContent === "Gestion des emplois du temps"){
         chnagerManupulation('emploisTemps');
         center.style.opacity = 0;
+        chargerCategories();
       }else if(navButtons[index].querySelector("span").textContent === "Liste des Menbres"){
         chnagerManupulation('list');
         center.style.opacity = 0;
@@ -165,7 +166,6 @@ function chnagerManupulation(url) {
         center.style.opacity = 0;
       }
     }
-
     // Add event listeners to each nav button
     navButtons.forEach((button, index) => {
       button.addEventListener("click", () => handleActive(index));
@@ -352,6 +352,7 @@ chargerCategories();
                         chargerProduits(this.value);
                         chargerModules(this.value);
                     });
+                    document.getElementById('submitemp').addEventListener('click', submitForm);
             })
             .catch(error => console.error('Error loading categories:', error));
     }
@@ -370,8 +371,21 @@ chargerCategories();
 
         })
     }
+    function submitForm() {
+                // Get form data
+                var formData = new FormData(document.getElementById('formemp'));
 
-
+                // AJAX request using fetch
+                fetch('/addEmploi', {
+                    method: 'POST',
+                    body: formData
+                })
+                var fil=document.getElementById("filieresel");
+                var tmp=document.getElementById("fil");
+                tmp.value=fil.value;
+                            chargerProduits(fil.value);
+                            chargerModules(fil.value);
+    }
 
   });
 
@@ -442,3 +456,4 @@ function toggleColumn(columnIndex) {
         }
     });
 }
+

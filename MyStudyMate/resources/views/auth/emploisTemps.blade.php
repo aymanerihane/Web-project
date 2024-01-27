@@ -14,13 +14,13 @@
                         </Select>
                     </span>
                     <div class="signbox"  style="position: relative;margin-bottom:76px">
-                        <form style="width:100%;" class="formSign" method="POST" action="{{ route('addEmploi')}}">
+                        <form style="width:100%;" class="formSign" id="formemp">
                             @csrf
-                            <input type="hidden" id="fil" name="filiere">
+                            <input type="hidden" id="fil" name="filiere" required>
                                 <div style="display: flex;flex-direction:column;justify-content: space-between;align-items: center;">
                                         <Label>Jour:</Label><br>
                                         <span class="custom-dropdown small" >
-                                            <Select class="select" name="jour" style="margin-bottom: 15px;">
+                                            <Select class="select" name="jour" style="margin-bottom: 15px;" required>
                                                 <option class="option" value="" disabled selected>Jour</option>
                                                 @foreach(['LUNDI', 'MARDI', 'MERCREDI', 'JEUDI', 'VENDREDI','SAMEDI'] as $jour)
                                                 <option value="{{ $jour }}">{{ $jour }}</option>
@@ -30,7 +30,7 @@
                                         @csrf
                                         <Label>Creneau :</Label><br>
                                         <span class="custom-dropdown small" >
-                                            <Select class="select" name="heure" style="margin-bottom: 15px;">
+                                            <Select class="select" name="heure" style="margin-bottom: 15px;" required>
                                                 <option value="0">Heure</option>
                                                 @foreach(['09h00 - 10h45', '11h00 - 12h45', '13h00 - 14h45','15h00 - 16h45','17h00 - 18h45'] as $heure)
                                                 <option value="{{ $heure }}">{{ $heure }}</option>
@@ -39,7 +39,7 @@
                                         </span>
                                         <Label>Local :</Label><br>
                                         <span class="custom-dropdown small" >
-                                            <Select class="select" name="local" style="margin-bottom: 15px;">
+                                            <Select class="select" name="local" style="margin-bottom: 15px;" required>
                                                 <option value="0">Salle</option>
                                                 @php
                                         $salles = app('App\Http\Controllers\Locals')->showlocals();
@@ -51,7 +51,7 @@
                                         </span>
                                         <Label>Activite :</Label><br>
                                         <span class="custom-dropdown small" >
-                                            <Select class="select" name="act" style="margin-bottom: 15px;">
+                                            <Select class="select" name="act" style="margin-bottom: 15px;" required>
                                                 <option value="0"></option>
                                                 @foreach(['Cours', 'TD', 'TP'] as $act)
                                                 <option value="{{ $act }}">{{ $act }}</option>
@@ -61,7 +61,7 @@
                                         <div id="efrom"> </div>
 
                                     <div class="sb">
-                                        <button type="submit">
+                                        <button type="button" id="submitemp">
                                             <div style="margin-bottom: 0" class="btnLogin"><span>ADD</span></div>
                                             </button>
 

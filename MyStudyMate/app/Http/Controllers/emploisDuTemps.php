@@ -6,17 +6,35 @@ use Illuminate\Http\Request;
 
 class emploisDuTemps extends Controller
 {
-    public function addEmploi(){
+    public function addEmploi()
+{
+    // Check if a record already exists for the same 'jour' and 'creneau_horaire'
+    $existingEmploi = ModelsEmploisDuTemps::where('jour', $_POST['jour'])
+        ->where('creneau_horaire', $_POST['heure'])
+        ->first();
+        if ($existingEmploi) {
+        $existingEmploi = ModelsEmploisDuTemps::where('jour', $_POST['jour'])
+            ->where('creneau_horaire', $_POST['heure'])
+            ->update([
+                'activite' => $_POST['act'],
+                'id_module' => $_POST['module'],
+                'id_filiere' => $_POST['filiere'],
+                'id_local' => $_POST['local'],
+            ]);
+    } else {
+        // Create a new record
         ModelsEmploisDuTemps::create([
-            'jour'=>$_POST['jour'],
-            'creneau_horaire'=>$_POST['heure'],
-            'activite'=>$_POST['act'],
-            'id_module'=>$_POST['module'],
-            'id_filiere'=>$_POST['filiere'],
-            'id_local'=>$_POST['local'],
+            'jour' => $_POST['jour'],
+            'creneau_horaire' => $_POST['heure'],
+            'activite' => $_POST['act'],
+            'id_module' => $_POST['module'],
+            'id_filiere' => $_POST['filiere'],
+            'id_local' => $_POST['local'],
         ]);
-        return redirect('/auth/home');
     }
+
+    return redirect('/auth/home');
+}
     public function showEmploi()
     {
         $emplois =ModelsEmploisDuTemps::all();
