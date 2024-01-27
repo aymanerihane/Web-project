@@ -1,41 +1,61 @@
 
 <div class="manup">
+    <form id="afctform">
+        @csrf
     <div class="gestion">
         <div class="salle">
-            <Label>Salle :</Label><br>
-            <span class="custom-dropdown small">
-                <Select class="select">
-                    @php
-                    $salles = app('App\Http\Controllers\Locals')->showLocals();
-                    @endphp
-                    @if($salles->count() > 0)
+                <Label>Salle :</Label><br>
+                <span class="custom-dropdown small">
+                    <Select class="select" name="nom">
+                        @php
+                            $salles = array();
+
+                         for ($i = 1; $i <= 10; $i++) {
+                            if(app('App\Http\Controllers\Locals')->checklocal('salle'.$i))
+                          $salles[] = 'salle' . $i;
+                        else
+                        continue;
+                         }
+                        @endphp
+                        @if (count($salles)>0)
                         @foreach ($salles as $salle)
-                            <option class="option" value="{{ $salle->id_salle }}">{{ $salle->nom }}</option>
+                            <option class="option" value="{{ $salle }}">{{ $salle }}</option>
                         @endforeach
-                    @else
+                        @else
                         <option value="">aucune salle n'est disponible</option>
-                    @endif
+                        @endif
+                    </Select>
+                </span>
+        </div>
+        <div class="salle">
+            <Label>Type :</Label><br>
+            <span class="custom-dropdown small">
+                <Select class="select" name="type">
+                    @foreach (['Cours','TD','TP'] as $type)
+                        <option class="option" value="{{ $type }}" >{{ $type }}</option>
+                    @endforeach
                 </Select>
             </span>
-        </div>
+    </div>
         <div class="departement">
             <Label>Département</Label><br>
             <span class="custom-dropdown small">
-                <select>
+                <select name="dep">
                     @php
                     $departements = app('App\Http\Controllers\Departements')->showDepartements();
                     @endphp
                     @foreach ($departements as $departement)
-                        <option class="option" value="{{ $departement->id_departement }}">{{ $departement->nom }}</option>
+                    <option class="option" value="{{ $departement->id_departement }}">{{ $departement->nom }}</option>
                     @endforeach
                 </select>
             </span>
         </div>
 
     </div>
-    <button class="asso">
+    <button class="asso" type="button" id="affectbut">
         <div class="btnLogin"><span>Associer</span></div>
     </button>
+</form>
 </div><br>
 <h1 class="h1">Liste des salle</h1>
 <Label>Departements :</Label><br>

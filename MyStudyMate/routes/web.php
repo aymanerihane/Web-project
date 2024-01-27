@@ -4,6 +4,7 @@ use App\Http\Controllers\addEtudiant;
 use App\Http\Controllers\emploisDuTemps;
 use App\Http\Controllers\annonces;
 use App\Http\Controllers\Demande;
+use App\Http\Controllers\Locals;
 use App\Models\Demande as ModelsDemande;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -44,6 +45,7 @@ Route::post('prof/reponse/{id}', [Demande::class, 'reponse']);
 Route::post('prof/annonceProf/{id}', [annonces::class, 'updateProf'])->name('annonce.updateProf');
 Route::get('/annonce/{id}', [annonces::class, 'delete'])->name('annonce.delete');
 Route::post('/addEmploi', [emploisDuTemps::class, 'addEmploi'])->name('addEmploi');
+Route::post('/afctsalle', [Locals::class, 'afctsalle'])->name('afctsalle');
 // web.php
 Route::get('auth/affectationSalle', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('auth.affectationSalle');
 

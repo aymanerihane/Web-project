@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('locals', function (Blueprint $table) {
-            $table->id('id_local'); // clé primaire
+            $table->id('id_local')->unique(); // clé primaire
             $table->string('nom');
             $table->string('type'); // Salle de cours, Salle TP, etc.
             // clé étrangère vers le département

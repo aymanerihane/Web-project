@@ -68,6 +68,11 @@ function chnagerManupulation(url) {
             });
         }, 2000);
         chargersalles(0);
+        setTimeout(function () {
+            document.getElementById("affectbut").addEventListener('click', function () {
+                affectsalle();
+            });
+        }, 2000);
       }else if(navButtons[index].querySelector("span").textContent === "Gestion des emplois du temps"){
         chnagerManupulation('emploisTemps');
         center.style.opacity = 0;
@@ -393,6 +398,16 @@ chargerCategories();
                 tmp.value=fil.value;
                             chargerProduits(fil.value);
                             chargerModules(fil.value);
+    }
+    function affectsalle() {
+                // Get form data
+                var formData = new FormData(document.getElementById('afctform'));
+
+                // AJAX request using fetch
+                fetch('/afctsalle', {
+                    method: 'POST',
+                    body: formData
+                })
     }
     function chargersalles(val) {
         fetch("lissalle?salle=" + val)
