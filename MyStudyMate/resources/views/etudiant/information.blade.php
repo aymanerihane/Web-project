@@ -1,13 +1,13 @@
 @php
     $etud=app('App\Http\Controllers\addetudiant')->findetud();
 @endphp
-<table>
+<table  id="tableMember" border="1">
     <tr>
-        <td>Nom</td>
+        <th>Nom</th>
         <td>{{auth()->user()->name}}</td>
     </tr>
     <tr>
-        <td>CNE</td>
+        <th>CNE</th>
         <td>{{$etud->CNE}}</td>
     </tr>
     <tr>
@@ -15,7 +15,7 @@
         <td>{{app('App\Http\Controllers\filieres')->findfil($etud->id_Filiere)->nom}}</td>
     </tr>
         <tr>
-            <td>Email</td>
+            <th>Email</th>
         <td>{{auth()->user()->email}}</td>
     </tr>
 </table>
