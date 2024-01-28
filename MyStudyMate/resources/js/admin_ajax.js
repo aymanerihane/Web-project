@@ -388,7 +388,7 @@ chargerCategories();
                 button.addEventListener('click', function () {
                     var id = this.dataset.id;
                     deleteemp(id);
-                    chargerProduits(id);
+                    chargerProduits(val);
                 });
             });
         })
