@@ -5,7 +5,7 @@
                     @endphp
                     @if($filieres->count() > 0)
                         @foreach ($formations as $formation)
-                        <a href="{{url(auth/filiereChoix)."?idFormation={{$formation->id}}"}}"><div class="optionsMode filierech {{ $formation->nom }}" data-id="{{ $formation->id_filiere }}">
+                        <a href="{{url(auth/filiereChoix)}}?idFormation={{$formation->id}}"><div class="optionsMode filierech {{ $formation->nom }}" data-id="{{ $formation->id_filiere }}">
                                 <div class=" {{ $formation->nom }}" style="background-color: transparent:z-index: 999;">
 
                                     <div id="choix1" class="e-card playing cardW {{ $formation->nom }}">
