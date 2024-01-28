@@ -159,4 +159,10 @@ Route::get('respFil/annonceee', function () {
 Route::get('respFil/home', function () {
     return view('respFil.home');
 });
+Route::get('auth/filiereChoix', function () {
+    return view('auth.filiereChoix');
+});
+Route::get('auth/filierePage', function () {
+    return view('auth.filierePage');
+});
 
