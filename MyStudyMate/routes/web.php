@@ -178,4 +178,7 @@ Route::get('auth/tpetud', function () {
 Route::get('auth/addClasse', function () {
     return view('auth.addClasse');
 });
+Route::get('auth/listeClasse', function () {
+    return view('auth.listeClasse');
+});
 

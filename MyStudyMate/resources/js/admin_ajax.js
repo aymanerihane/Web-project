@@ -84,6 +84,18 @@ function chnagerManupulation(url) {
       }else if(navButtons[index].querySelector("span").textContent === "Ajouter Classe"){
         chnagerManupulation('addClasse');
         center.style.opacity = 0;
+        setTimeout(function () {
+        document.getElementById('listCla').addEventListener('change',function () {
+            // if(event.target.classList.contains('listCla'))
+            var value = this.value;
+            console.log(value);
+            fetch('listeClasse?class='+value)
+            .then(response => response.text())
+            .then(rep => {
+                document.getElementById("tabclasse").innerHTML = rep;
+            });
+        });
+    }, 2000);
       }else if(navButtons[index].querySelector("span").textContent === "Gestion des emplois du temps"){
         chnagerManupulation('emploisTemps');
         center.style.opacity = 0;

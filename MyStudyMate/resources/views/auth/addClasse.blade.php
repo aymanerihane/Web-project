@@ -41,7 +41,7 @@
 <h1 class="h1">Liste des classe</h1>
 <Label>Filiere :</Label><br>
                     <span class="custom-dropdown small" >
-                        <Select class="select"  style="margin-bottom: 15px;" id="depart">
+                        <Select class="select" id="listCla"  style="margin-bottom: 15px;" >
                             <option class="option" value="2" disabled selected>Filiere</option>
                             @php
                     $filieres = app('App\Http\Controllers\filieres')->showFilieres();
@@ -49,12 +49,13 @@
                     @if($filieres->count() > 0)
                     @foreach ($filieres as $filiere)
                             <option class="option" value="{{ $filiere->id_filiere }}">{{ $filiere->nom }}</option>
+                            {{-- echo $filiere->id_filiere; --}}
                         @endforeach
-                            </Select>
-                            @endif
+                        @endif
                         </Select>
                     </span>
 
 
 
-<div id="tabsalle"></div>
+
+<div id="tabclasse"></div>

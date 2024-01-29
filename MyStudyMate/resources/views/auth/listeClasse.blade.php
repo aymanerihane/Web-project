@@ -1,7 +1,11 @@
+@php
+    if(isset($_GET['class'])){
+        $id = $_GET['class'];
+        $classes = app('App\Http\Controllers\classes')->showClasfil($id);
+    }
+@endphp
+
 <table>
-    @php
-    $classes = app('App\Http\Controllers\classes')->showClasses();
-    @endphp
     @if($classes->count() > 0)
         @foreach ($classes as $classe)
             <tr>
