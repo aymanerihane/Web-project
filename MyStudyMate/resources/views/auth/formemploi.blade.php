@@ -3,9 +3,21 @@
     if(isset($_GET['module'])){
 $id=$_GET['module'];
 $modules = app('App\Http\Controllers\modules')->select($id);
+$fil = app('App\Http\Controllers\filieres')->findfil($id);
 }
 @endphp
-
+<Label>Local :</Label><br>
+                                        <span class="custom-dropdown small" >
+                                            <Select class="select" name="local" style="margin-bottom: 15px;" required>
+                                                <option value="0">Salle</option>
+                                                @php
+                                        $salles = app('App\Http\Controllers\Locals')->getlocaldep($fil->id_departement);
+                                        @endphp
+                                                @foreach($salles as $salle)
+                                                <option value="{{ $salle->id_local }}">{{ $salle->nom }}</option>
+                                                @endforeach
+                                            </Select>
+                                        </span>
 <Label>Module :</Label><br>
      <span class="custom-dropdown small" >
      <Select class="select" name="module" style="margin-bottom: 15px;">

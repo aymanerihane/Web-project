@@ -37,18 +37,7 @@
                                                 @endforeach
                                             </Select>
                                         </span>
-                                        <Label>Local :</Label><br>
-                                        <span class="custom-dropdown small" >
-                                            <Select class="select" name="local" style="margin-bottom: 15px;" required>
-                                                <option value="0">Salle</option>
-                                                @php
-                                        $salles = app('App\Http\Controllers\Locals')->showlocals();
-                                        @endphp
-                                                @foreach($salles as $salle)
-                                                <option value="{{ $salle->id_local }}">{{ $salle->nom }}</option>
-                                                @endforeach
-                                            </Select>
-                                        </span>
+                                        
                                         <Label>Activite :</Label><br>
                                         <span class="custom-dropdown small" >
                                             <Select class="select" name="act" style="margin-bottom: 15px;" required>
