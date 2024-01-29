@@ -22,4 +22,10 @@
         <p>No announcements available.</p>
     @endif
 </div>
+<div>
+    <div class="overlay"></div>
+    <div class="box">
+
+    </div>
+</div>
 <script src="https://kit.fontawesome.com/e9d0d16c17.js" crossorigin="anonymous"></script>

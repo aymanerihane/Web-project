@@ -34,7 +34,7 @@ else {
         <td>{{ $salle }}</td>
         <td>{{ $test }}</td>
         @if ($test=="Oui")
-        <td class="supsal" data-id="{{$salle}}">Supprimer Association</td>
+        <td class="supsal" data-id="{{$salle}}">X</td>
         @endif
     </tr>
     @endforeach
