@@ -143,6 +143,26 @@ function chnagerManupulation(url) {
                             document.getElementById("modeetud").innerHTML = rep;
                         });
             });
+
+            setTimeout(function () {
+                document.getElementById("classetudfor").addEventListener('change', function () {
+                    fetch("classeetud?filiere=" + this.value)
+                        .then(response => response.text())
+                        .then(rep => {
+                            document.getElementById("classeetud").innerHTML = rep;
+                        });
+            });
+            }, 1000);
+            setTimeout(function () {
+                document.getElementById("classetud").addEventListener('change', function () {
+                    fetch("tpetud?classe=" + this.value)
+                        .then(response => response.text())
+                        .then(rep => {
+                            document.getElementById("tpetud").innerHTML = rep;
+                        });
+            });
+            }, 1000);
+
             }else if(value ==2){
 
                 isprof.style.display= 'flex';

@@ -169,4 +169,7 @@ Route::get('auth/filierePage', function () {
 Route::get('auth/modeetud', function () {
     return view('auth.modeetud');
 });
+Route::get('auth/classeetud', function () {
+    return view('auth.classeetud');
+});
 
