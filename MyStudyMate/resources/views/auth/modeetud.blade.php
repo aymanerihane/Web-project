@@ -10,6 +10,8 @@ $filieres=app('App\Http\Controllers\filieres')->findfilfor($id);
 <Label>Filiere :</Label><br>
 <span class="custom-dropdown small" >
     <Select class="select" name="filiere" style="margin-bottom: 15px;" id="classetudfor">
+        <option class="option" value=""></option>
+
 @if($filieres->count() > 0)
 @foreach ($filieres as $filiere)
     <option class="option" value="{{ $filiere->id_filiere }}">{{ $filiere->nom }}</option>

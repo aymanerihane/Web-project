@@ -8,6 +8,8 @@ $classe=app('App\Http\Controllers\classes')->getclasse($id);
 <Label>Groupe TP :</Label><br>
 <span class="custom-dropdown small" >
     <Select class="select" name="groupTP" style="margin-bottom: 15px;">
+        <option class="option" value=""></option>
+
         @php
         $grptp = array();
         $nbr=$classe->nbrEtudiants/4;
@@ -18,7 +20,6 @@ $classe=app('App\Http\Controllers\classes')->getclasse($id);
     continue;
      }
     @endphp
-    @if (count($groupes)>0)
     @foreach ($groupes as $groupe)
         <option class="option" value="{{ $groupe }}">{{ $groupe }}</option>
     @endforeach

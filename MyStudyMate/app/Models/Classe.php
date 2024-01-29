@@ -10,8 +10,8 @@ class Classe extends Model
     use HasFactory;
     protected $fillable = [
         'id_classe',
+        'nom',
         'nbrEtudiant',
-        'id_Module',
         'id_Filiere'
     ];
 }

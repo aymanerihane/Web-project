@@ -172,4 +172,7 @@ Route::get('auth/modeetud', function () {
 Route::get('auth/classeetud', function () {
     return view('auth.classeetud');
 });
+Route::get('auth/tpetud', function () {
+    return view('auth.tpetud');
+});
 

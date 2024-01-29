@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('contenuFiliere');
             $table->foreignId('id_RespoFiliere')->references('MatriculeProf')->on('Professeurs');
             $table->foreignId('id_departement')->references('id_departement')->on('departements');
-            $table->foreignId('id_formation')->references('id_formation')->on('formation');
+            $table->foreignId('id_formation')->references('id_formation')->on('formations');
             $table->timestamps();
         });
 

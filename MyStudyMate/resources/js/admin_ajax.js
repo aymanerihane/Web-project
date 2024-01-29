@@ -154,7 +154,7 @@ function chnagerManupulation(url) {
             });
             }, 1000);
             setTimeout(function () {
-                document.getElementById("classetud").addEventListener('change', function () {
+                document.getElementById("tpetudfor").addEventListener('change', function () {
                     fetch("tpetud?classe=" + this.value)
                         .then(response => response.text())
                         .then(rep => {

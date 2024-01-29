@@ -44,6 +44,7 @@
 $formations=app('App\Http\Controllers\formation')->showFormation();
 @endphp
 <Select class="select"  id="etudfor" style="margin-bottom: 15px;">
+    <option class="option" value=""></option>
 @foreach ($formations as $formation)
 <option class="option" value="{{$formation->id_formation}}">{{$formation->nomformation}}</option>
 @endforeach

@@ -14,8 +14,8 @@ return new class extends Migration
 
         Schema::create('classes', function (Blueprint $table) {
             $table->id('id_classe');
+            $table->string('nom');
             $table->integer('nbrEtudiants');
-            $table->foreignId('id_Module')->references('id_module')->on('modules');
             $table->foreignId('id_filiere')->references('id_filiere')->on('filieres');
 
             $table->timestamps();
