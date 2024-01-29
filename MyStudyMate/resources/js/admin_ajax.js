@@ -75,6 +75,12 @@ function chnagerManupulation(url) {
             });
         }, 2000);
 
+      }else if(navButtons[index].querySelector("span").textContent === "Information"){
+        chnagerManupulation('information');
+        center.style.opacity = 0;
+      }else if(navButtons[index].querySelector("span").textContent === "Emplois du Temps"){
+        chnagerManupulation('emploisTemps');
+        center.style.opacity = 0;
       }else if(navButtons[index].querySelector("span").textContent === "Gestion des emplois du temps"){
         chnagerManupulation('emploisTemps');
         center.style.opacity = 0;
@@ -156,6 +162,9 @@ function chnagerManupulation(url) {
       }else if(navButtons[index].querySelector("span").textContent === "Gérer Annonces Filiere"){
         chnagerManupulation('annonceee');
         center.style.opacity = 0;
+      }else if(navButtons[index].querySelector("span").textContent === "Justifier Absence"){
+        chnagerManupulation('justify');
+        center.style.opacity = 0;
       }else if(navButtons[index].querySelector("span").textContent === "Demandes"){
         console.log('dsd')
         chnagerManupulation('Demandes');
@@ -168,9 +177,7 @@ function chnagerManupulation(url) {
                 chnagerManupulation1('demandeLettre');
             } else if (select.value == 2) {
                 chnagerManupulation1('demandeRendezVous');
-            } else if (select.value == 3) {
-                chnagerManupulation1('justify');
-            } else if (select.value == 4) {
+            }else if (select.value == 4) {
                 chnagerManupulation1('signalInci');
             } else if (select.value == 5) {
                 chnagerManupulation1('signalMate');

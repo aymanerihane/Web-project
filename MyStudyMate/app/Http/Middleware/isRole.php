@@ -20,22 +20,22 @@ class isRole
             if(auth()->user()->is_role == 1 && $routename!='auth.home') {
                 return redirect()->route('auth.home');
             }
-            elseif (auth()->user()->is_role == 2 ){
-                // if($_SERVER['PHP_SELF']='/chefDep' && $_SERVER["REQUEST_METHOD"]=='POST'){
-                // }
-                // elseif($routename!='chefDep.choixMode' && $routename!='prof.home' && $routename!='chefDep')
-                //     return redirect()->route('chefDep.choixMode');
-                // elseif($routename=='prof.home' && $routename=='chefDep')
-                //  return redirect()->route('chefDep.choixMode');
-            }
-            elseif (auth()->user()->is_role == 3 && $routename!='respFil.home'){
-                return redirect()->route('respFil.home');
-            }
-            elseif (auth()->user()->is_role == 4 && $routename!='prof.home'){
-                // return redirect()->route('prof.home');
-            }elseif (auth()->user()->is_role == 5 && $routename!='etudiant.home'){
-                // return redirect()->route('etudiant.home');
-            }
+            // elseif (auth()->user()->is_role == 2 ){
+            //     // if($_SERVER['PHP_SELF']='/chefDep' && $_SERVER["REQUEST_METHOD"]=='POST'){
+            //     // }
+            //     // elseif($routename!='chefDep.choixMode' && $routename!='prof.home' && $routename!='chefDep')
+            //     //     return redirect()->route('chefDep.choixMode');
+            //     // elseif($routename=='prof.home' && $routename=='chefDep')
+            //     //  return redirect()->route('chefDep.choixMode');
+            // }
+            // elseif (auth()->user()->is_role == 3 && $routename!='respFil.home'){
+            //     return redirect()->route('respFil.home');
+            // }
+            // elseif (auth()->user()->is_role == 4 && $routename!='prof.home'){
+            //     // return redirect()->route('prof.home');
+            // }elseif (auth()->user()->is_role == 5 && $routename!='etudiant.home'){
+            //     // return redirect()->route('etudiant.home');
+            // }
             return $next($request);
         }
     }

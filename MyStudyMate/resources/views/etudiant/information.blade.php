@@ -1,3 +1,8 @@
+<style>
+    tr{
+        height: 100px;
+    }
+</style>
 @php
     $etud=app('App\Http\Controllers\addetudiant')->findetud();
 @endphp
@@ -11,7 +16,7 @@
         <td>{{$etud->CNE}}</td>
     </tr>
     <tr>
-        <td>Filliere</td>
+        <th>Filliere</th>
         <td>{{app('App\Http\Controllers\filieres')->findfil($etud->id_Filiere)->nom}}</td>
     </tr>
         <tr>

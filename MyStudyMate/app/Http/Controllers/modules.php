@@ -16,5 +16,5 @@ public function getmodule($id)
     {
         $module =ModelsModules::where('id_module','=',$id)->get()->first();
         return $module;
-}
+    }
 }

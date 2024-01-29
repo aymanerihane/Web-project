@@ -7,7 +7,7 @@
 
     @if(is_countable($annonces) && count($annonces) > 0)
         @foreach ($annonces as $annonce)
-            <div class="annonce-card">
+            <div class="annonce-card" style="display: flex;flex-direction: column;align-items: center;justify-content: center;">
                 <div class="imgholder">
                     {{-- You can add an image here if needed --}}
                 </div>

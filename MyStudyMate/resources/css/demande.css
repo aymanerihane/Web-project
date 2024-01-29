@@ -135,15 +135,16 @@
 
   /* submit styling */
   .btn-conteiner {
-    display: flex;
-    justify-content: center;
-    --color-text: #ffffff;
-    --color-background: #a58e6a;
-    --color-outline: #ff145b80;
-    --color-shadow: #00000080;
-  }
+      display: flex;
+      justify-content: center;
+      --color-text: #ffffff;
+      --color-background: #a58e6a;
+      --color-outline: #ff145b80;
+      --color-shadow: #00000080;
+    }
 
-  .btn-content {
+    .btn-content {
+      cursor: pointer;
     display: flex;
     align-items: center;
     padding: 2px 18px;
