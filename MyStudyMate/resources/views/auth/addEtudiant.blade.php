@@ -54,9 +54,26 @@
                     </div>
                     <div id="modeetud">
 
-                    </div>
 
 
+
+
+                </div>
+                <div style="flex: 1">
+
+                    <Label>Filiere :</Label><br>
+                    <span class="custom-dropdown small" >
+                        <Select class="select" name="filiere" style="margin-bottom: 15px;">
+                            @php
+                $filieres = app('App\Http\Controllers\filieres')->showFilieres();
+                @endphp
+                @if($filieres->count() > 0)
+                    @foreach ($filieres as $filiere)
+                        <option class="option" value="{{ $filiere->id_filiere }}">{{ $filiere->nom }}</option>
+                    @endforeach
+                    @endif
+                </Select>
+                    </span>
                 </div>
                 <div class="email" style="flex: 1;margin-top: 20px;">
                     <input type="text" name="cne"  style="margin-bottom: 0px;">
@@ -106,11 +123,4 @@
             </div>
         </form>
     </div>
-{{-- @php
-    if($_SERVER['REQUEST_METHOD']=="POST"){
-        $name=$_POST['name'];
-        $password=$_POST['password'];
-        $isRole=4;
 
-    }
-@endphp --}}
