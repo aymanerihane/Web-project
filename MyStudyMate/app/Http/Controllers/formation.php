@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Formation as ModelsFilieres;
+use App\Models\Formation as ModelsFormation;
 use Illuminate\Http\Request;
 
 class formation extends Controller
 {
     public function showFormation()
     {
-    $formation =ModelsFilieres::all();
+    $formation =ModelsFormation::all();
 
         return $formation;
     }

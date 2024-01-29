@@ -210,7 +210,20 @@ function chnagerManupulation(url) {
 
     })
     document.addEventListener('click', (event) => {
-        console.log(event.target);
+        var supButtons = document.querySelectorAll(".forchoix");
+                supButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    var id = this.dataset.id;
+                    chnagerManupulation('filiereChoix?formation=' + id);
+                });
+            });
+        var tmp = document.querySelectorAll(".filchoix");
+                tmp.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    var id = this.dataset.id;
+                    chnagerManupulation('filierePage?idFiliere=' + id);
+                });
+            });
         if (event.target.classList.contains('th1')) {
             console.log(event.target);
             toggleColumn(0);
