@@ -166,4 +166,7 @@ Route::get('auth/filiereChoix', function () {
 Route::get('auth/filierePage', function () {
     return view('auth.filierePage');
 });
+Route::get('auth/modeetud', function () {
+    return view('auth.modeetud');
+});
 

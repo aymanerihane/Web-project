@@ -125,8 +125,6 @@ function chnagerManupulation(url) {
         chnagerManupulation('addEtudiant');
         center.style.opacity = 0;
 
-
-
         var isprof,isdeleg,value;
         document.addEventListener('change', ()=>{
 
@@ -138,6 +136,13 @@ function chnagerManupulation(url) {
             if(value == 3){
                 isdeleg.style.display= 'flex';
                 isprof.style.display= 'none';
+                document.getElementById("etudfor").addEventListener('change', function () {
+                    fetch("modeetud?formation=" + this.value)
+                        .then(response => response.text())
+                        .then(rep => {
+                            document.getElementById("modeetud").innerHTML = rep;
+                        });
+            });
             }else if(value ==2){
 
                 isprof.style.display= 'flex';

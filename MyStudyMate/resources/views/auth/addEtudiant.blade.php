@@ -40,52 +40,21 @@
                 <div style="display: flex;justify-content: space-between;align-items: center;">
                     <div style="flex: 1">
 
-                        <Label>Groupe TP :</Label><br>
+                        <Label>Formation :</Label><br>
                         <span class="custom-dropdown small" >
-                            <Select class="select" name="groupTP" style="margin-bottom: 15px;">
-                                <option class="option" value="1">Group 1</option>
-                                <option class="option" value="2">Group 2</option>
-                                <option class="option" value="3">Group 3</option>
-                                <option class="option" value="4">Group 4</option>
-                                <option class="option" value="5">Group 5</option>
-                                <option class="option" value="6">Group 6</option>
-                                <option class="option" value="7">Group 7</option>
+                            @php
+                                $formations=app('App\Http\Controllers\formation')->showFormation();
+                            @endphp
+                            <Select class="select"  id="etudfor" style="margin-bottom: 15px;">
+                                @foreach ($formations as $formation)
+                                <option class="option" value="{{$formation->id_formation}}">{{$formation->nomformation}}</option>
+                                @endforeach
                             </Select>
                         </span>
                     </div>
-                    <div style="flex: 1">
+                    <div id="modeetud">
 
-                        <Label>Classe :</Label><br>
-                        <span class="custom-dropdown small" >
-                            <Select class="select" name="classe" style="margin-bottom: 15px;">
-                                @php
-                    $classes = app('App\Http\Controllers\classes')->showClasses();
-                    @endphp
-                    @if($classes->count() > 0)
-                        @foreach ($classes as $classe)
-                            <option class="option" value="{{ $classe->id_classe }}">{{ $classe->id_classe }}</option>
-                        @endforeach
-                            </Select>
-                            @endif
-                        </span>
                     </div>
-                    <div style="flex: 1">
-
-                        <Label>Filiere :</Label><br>
-                        <span class="custom-dropdown small" >
-                            <Select class="select" name="filiere" style="margin-bottom: 15px;">
-                                @php
-                    $filieres = app('App\Http\Controllers\filieres')->showFilieres();
-                    @endphp
-                    @if($filieres->count() > 0)
-                        @foreach ($filieres as $filiere)
-                            <option class="option" value="{{ $filiere->id_filiere }}">{{ $filiere->nom }}</option>
-                        @endforeach
-                            </Select>
-                            @endif
-                        </span>
-                    </div>
-
 
 
                 </div>
