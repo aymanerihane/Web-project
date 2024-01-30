@@ -13,7 +13,7 @@
     {{-- @if (count(allMembers)>0) --}}
     @foreach ($allMembers as $allMember)
     @php
-        $etud = app('App\Http\Controllers\addEtudiant')->findetude($allMember->id_Utilisateur);
+        $etud = app('App\Http\Controllers\addEtudiant')->findetude($allMember->id);
     @endphp
         <tr>
             <td>{{ $allMember->name }}</td>

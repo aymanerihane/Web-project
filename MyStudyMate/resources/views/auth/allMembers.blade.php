@@ -15,9 +15,15 @@
             <td>{{ $allMember->name }}</td>
             <td>{{ $allMember->email }}</td>
             @if ($allMember->is_role == 2)
-            <td>{{ $allMember->MatriculeProf }}</td>
+            @php
+        $prof = app('App\Http\Controllers\addEtudiant')->findprofe($allMember->id);
+           @endphp
+            <td>{{ $prof->MatriculeProf }}</td>
             @elseif ($allMember->is_role == 3)
-            <td>{{ $allMember->CNE }}</td>
+            @php
+        $etud = app('App\Http\Controllers\addEtudiant')->findetude($allMember->id);
+            @endphp
+            <td>{{ $etud->CNE }}</td>
                 @endif
             <td>
                 @if ($allMember->is_role == 2)

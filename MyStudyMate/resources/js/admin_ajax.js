@@ -226,7 +226,6 @@ function chnagerManupulation(url) {
         chnagerManupulation('justify');
         center.style.opacity = 0;
       }else if(navButtons[index].querySelector("span").textContent === "Demandes"){
-        console.log('dsd')
         chnagerManupulation('Demandes');
         setTimeout(function () {
             var select=document.getElementById("DemandesType");
@@ -268,15 +267,12 @@ function chnagerManupulation(url) {
             chnagerManupulation('edit');
             editannonceProf(event.target);
             }
-
             center.style.opacity = 0;
         }else if(event.target.classList.contains('delete')){
             deleteAnnonces(event.target);
             chnagerManupulation('annonce');
             fetchData();
         }
-
-
     })
     document.addEventListener('click', (event) => {
         var supButtons = document.querySelectorAll(".forchoix");

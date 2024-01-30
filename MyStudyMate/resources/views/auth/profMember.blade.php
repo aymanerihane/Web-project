@@ -12,10 +12,13 @@
     $allMembers = app('App\Http\Controllers\addEtudiant')->profMember();
     @endphp
     @foreach ($allMembers as $allMember)
+    @php
+    $prof = app('App\Http\Controllers\addEtudiant')->findprofe($allMember->id);
+       @endphp
         <tr>
             <td>{{ $allMember->name }}</td>
             <td>{{ $allMember->email }}</td>
-            <td>{{ $allMember->password }}</td>
+            <td>{{ $prof->MatriculeProf }}</td>
             <td>Professeur</td>
         </tr>
     @endforeach
