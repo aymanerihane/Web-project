@@ -183,4 +183,7 @@ Route::get('auth/addClasse', function () {
 Route::get('auth/listeClasse', function () {
     return view('auth.listeClasse');
 });
+Route::get('auth/ajouterfiliere', function () {
+    return view('auth.ajouterfiliere');
+});
 

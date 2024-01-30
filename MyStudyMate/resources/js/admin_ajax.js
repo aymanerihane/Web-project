@@ -81,6 +81,9 @@ function chnagerManupulation(url) {
       }else if(navButtons[index].querySelector("span").textContent === "Emplois du Temps"){
         chnagerManupulation('emploisTemps');
         center.style.opacity = 0;
+      }else if(navButtons[index].querySelector("span").textContent === "Ajouter Filiere"){
+        chnagerManupulation('ajouterfiliere');
+        center.style.opacity = 0;
       }else if(navButtons[index].querySelector("span").textContent === "Ajouter Classe"){
         chnagerManupulation('addClasse');
         center.style.opacity = 0;

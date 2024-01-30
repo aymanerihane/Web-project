@@ -19,7 +19,7 @@
 <div style="width: 100%;display:flex;justify-content: center;">
 
     <div class="departement">
-        <Label>filiere</Label><br>
+        <Label>Departements</Label><br>
         <span class="custom-dropdown small">
             <select name="departement" required>
                 @php
