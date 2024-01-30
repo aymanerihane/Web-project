@@ -11,7 +11,6 @@ $classes=app('App\Http\Controllers\classes')->showclasfil($id);
 <span class="custom-dropdown small" >
     <Select class="select" name="classe" style="margin-bottom: 15px;" id="tpetudfor">
         <option class="option" value=""></option>
-
 @if($classes->count() > 0)
 @foreach ($classes as $classe)
     <option class="option" value="{{ $classe->id_classe }}">{{ $classe->nom }}</option>

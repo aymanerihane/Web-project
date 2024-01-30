@@ -1,13 +1,20 @@
 @vite(['resources/css/profCard.css','resources/js/cardprof.js'])
 {{-- <div class="flex"> --}}
     {{-- men hna tal fin hatl9a lcoment akhor ra exemple hna hadir foreach --}}
+    @php
+        $etud=app('App\Http\Controllers\addEtudiant')->findetud();
+        $modules=app('App\Http\Controllers\modules')->select($etud->id_Filiere);
+    @endphp
     <div class="radio-inputs" style="width: 100%">
 
-
-
+        @foreach ($modules as $module)
+        @php
+            $prof=app('App\Http\Controllers\addEtudiant')->findprof($module->MatriculeProf);
+            $user=app('App\Http\Controllers\addEtudiant')->finduser($prof->id_Utilisateur);
+        @endphp
 		<label>
-			<input class="radio-input" type="radio" name="engine">
-				<span class="radio-tile">
+            <input class="radio-input" type="radio" name="engine">
+            <span class="radio-tile">
 					<span class="radio-icon">
 						<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="1855 26 66 77" height="77px" width="66px">
                             <g transform="translate(1855.000000, 26.000000)" fill-rule="evenodd" fill="none" stroke-width="1" stroke="none" id="Page-1">
@@ -18,13 +25,14 @@
                             </g>
                         </svg>
 					</span>
-					<span class="radio-label">PR. Ait Kbir</span>
+					<span class="radio-label">PR. {{$user->name}}</span>
 				</span>
-		</label>
+            </label>
+            @endforeach
 
 
 
-</div>
+        </div>
 
 </div>
 <label>Type Demandess :</label><br>

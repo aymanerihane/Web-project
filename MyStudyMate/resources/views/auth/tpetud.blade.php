@@ -14,7 +14,7 @@ $classe=app('App\Http\Controllers\classes')->getclasse($id);
         $grptp = array();
         $nbr=$classe->nbrEtudiants/4;
      for ($i = 1; $i <= $nbr; $i++) {
-        if(app('App\Http\Controllers\Locals')->checklocal('groupe'.$i,$classe->id_classe))
+        if(app('App\Http\Controllers\classes')->checksalle('groupe'.$i,$classe->id_classe))
       $groupes[] = 'groupe' . $i;
     else
     continue;

@@ -3,7 +3,7 @@
     <form id="afctform">
         @csrf
     <div class="gestion">
-        <div class="salle" id="salafct">
+        <div class="salle">
                 <Label>Nom classe :</Label><br>
                 <input type="text" name=nomClasse>
 
@@ -32,7 +32,7 @@
         </span>
     </div>
 </div>
-    <button class="asso" type="button" id="affectbut" style="width: 100%;display:flex;justify-content: center;">
+    <button class="asso" type="button" id="affectclasse" style="width: 100%;display:flex;justify-content: center;">
         <div class="btnLogin"><span>ADD</span></div>
     </button>
 </form>

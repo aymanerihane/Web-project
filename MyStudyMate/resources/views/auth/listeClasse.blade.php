@@ -4,18 +4,20 @@
         $classes = app('App\Http\Controllers\classes')->showClasfil($id);
     }
 @endphp
-
+<input id="filid" value="{{$id}}" hidden>
 <table>
     @if($classes->count() > 0)
-        @foreach ($classes as $classe)
+    <tr>
+        <th>Nom</th>
+        <th>Nombre etudiant</th>
+        <th>Suprimer</th>
+    </tr>
+    @foreach ($classes as $classe)
             <tr>
-                <th>Nom</th>
-                <th>Nombre etudiant</th>
-                <th>Suprimer</th>
+                <td>{{ $classe->nom }}</td>
+                <td>{{ $classe->nbrEtudiants }}</td>
+                <td class="supclass" data-id="{{$classe->id_classe}}" >X</td>
             </tr>
-            <td>{{ $classe->nom }}</td>
-            <td>{{ $classe->nbrEtudiant }}</td>
-            <td>X</td>
         @endforeach
         @else
             <tr>

@@ -94,4 +94,7 @@ function findetud(){
 function finduser($id){
     return User::where('id',$id)->first();
 }
+function findprof($id){
+    return Professeur::where('MatriculeProf',$id)->first();
+}
 }

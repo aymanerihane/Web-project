@@ -4,6 +4,7 @@ use App\Http\Controllers\addEtudiant;
 use App\Http\Controllers\emploisDuTemps;
 use App\Http\Controllers\annonces;
 use App\Http\Controllers\Demande;
+use App\Http\Controllers\classes;
 use App\Http\Controllers\Locals;
 use App\Models\Demande as ModelsDemande;
 use Illuminate\Support\Facades\Auth;
@@ -46,12 +47,13 @@ Route::post('prof/annonceProf/{id}', [annonces::class, 'updateProf'])->name('ann
 Route::get('/annonce/{id}', [annonces::class, 'delete'])->name('annonce.delete');
 Route::post('/addEmploi', [emploisDuTemps::class, 'addEmploi'])->name('addEmploi');
 Route::post('/afctsalle', [Locals::class, 'afctsalle'])->name('afctsalle');
+Route::post('/afctclasse', [classes::class, 'afctclasse'])->name('afctclasse');
 Route::get('/salle/{id}', [Locals::class, 'delete']);
+Route::get('/classe/{id}', [classes::class, 'delete']);
 Route::get('/emploi/{id}', [emploisDuTemps::class, 'delete']);
 Route::get('etudiant/showAbscence', [emploisDuTemps::class, 'showAbscence'])->name('showAbscence');
 // web.php
 Route::get('auth/affectationSalle', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('auth.affectationSalle');
-
 });
 Route::get('prof/message', function () {
     return view('prof.message');

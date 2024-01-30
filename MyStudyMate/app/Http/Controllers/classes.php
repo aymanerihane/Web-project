@@ -31,14 +31,21 @@ class classes extends Controller
 
         return $classes;
     }
-    public function checksalle($nom,$id)
+    public function checksalle($nom, $id)
 {
-    $etuds = etudiant::where('id_classe', $id)->get();
-    $nb=count($etuds->where('groupeTp', $nom));
-        if($nb<4){
-            return null;
-    }
-    else
-    return null;
+    $nb = etudiant::where('id_classe', $id)->where('groupTp', $nom)->count();
+
+    return $nb < 4;
+}
+public function afctclasse()
+    {
+    ModelsClasses::create([
+        'nom' => $_POST['nomClasse'],
+        'nbrEtudiants' => $_POST['nbrEtud'],
+        'id_Filiere' => $_POST['fil'],
+    ]);
+}
+public function delete($id){
+    ModelsClasses::where('id_classe', $id)->delete();
 }
 }

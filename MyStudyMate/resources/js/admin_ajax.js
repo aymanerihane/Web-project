@@ -85,6 +85,17 @@ function chnagerManupulation(url) {
         chnagerManupulation('addClasse');
         center.style.opacity = 0;
         setTimeout(function () {
+            document.getElementById("affectclasse").addEventListener('click', function () {
+                var formData = new FormData(document.getElementById('afctform'));
+                // AJAX request using fetch
+                fetch('/afctclasse', {
+                    method: 'POST',
+                    body: formData
+                })
+                fetchAffectationclasse(formData.get('fil'));
+            });
+        }, 2000)
+        setTimeout(function () {
         document.getElementById('listCla').addEventListener('change',function () {
             // if(event.target.classList.contains('listCla'))
             var value = this.value;
@@ -93,6 +104,15 @@ function chnagerManupulation(url) {
             .then(response => response.text())
             .then(rep => {
                 document.getElementById("tabclasse").innerHTML = rep;
+                var supButtons = document.querySelectorAll(".supclass");
+                supButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    var id = this.dataset.id;
+                    var fil = document.getElementById('filid');
+                    deleteclasse(id);
+                    fetchAffectationclasse(fil);
+                });
+            });
             });
         });
     }, 2000);
@@ -474,6 +494,12 @@ chargerCategories();
             method: 'GET',
         })
     }
+    function deleteclasse(ele){
+        var id = ele;
+        fetch('/classe/' + id, {
+            method: 'GET',
+        })
+    }
     function deleteemp(ele){
         var id = ele;
         fetch('/emploi/' + id, {
@@ -502,6 +528,22 @@ chargerCategories();
 
         xhr.open("GET", 'affectationSalle', true);
         xhr.send();
+    }
+    function fetchAffectationclasse(value) {
+                fetch('listeClasse?class='+value)
+                .then(response => response.text())
+                .then(rep => {
+                    document.getElementById("tabclasse").innerHTML = rep;
+                    var supButtons = document.querySelectorAll(".supclass");
+                    supButtons.forEach(function (button) {
+                    button.addEventListener('click', function () {
+                        var id = this.dataset.id;
+                        var fil = document.getElementById('filid');
+                        deleteclasse(id);
+                      fetchAffectationclasse(fil.value);
+                    });
+                });
+                });
     }
   });
 

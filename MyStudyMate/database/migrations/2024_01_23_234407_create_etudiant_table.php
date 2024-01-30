@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('etudiants', function (Blueprint $table) {
 
             $table->id('CNE'); // clé primaire
-            $table->unsignedInteger('groupTp');
+            $table->string('groupTp');
             $table->boolean('is_Delegue')->default(false);
 
             $table->foreignID('id_Utilisateur')->references('id')->on('users');

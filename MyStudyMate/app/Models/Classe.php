@@ -11,7 +11,7 @@ class Classe extends Model
     protected $fillable = [
         'id_classe',
         'nom',
-        'nbrEtudiant',
+        'nbrEtudiants',
         'id_Filiere'
     ];
 }
