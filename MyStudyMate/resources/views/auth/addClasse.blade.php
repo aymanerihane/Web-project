@@ -5,12 +5,12 @@
     <div class="gestion">
         <div class="salle">
                 <Label>Nom classe :</Label><br>
-                <input type="text" name=nomClasse>
+                <input type="text" name="nomClasse" required>
 
         </div>
         <div class="salle">
             <Label>Nombre etudiant du salle :</Label><br>
-            <input type="number" name="nbrEtud">
+            <input type="number" name="nbrEtud" required>
 
     </div>
 
@@ -21,7 +21,7 @@
     <div class="departement">
         <Label>filiere</Label><br>
         <span class="custom-dropdown small">
-            <select name="fil">
+            <select name="fil" required>
                 @php
                 $filieres = app('App\Http\Controllers\filieres')->showFilieres();
                 @endphp

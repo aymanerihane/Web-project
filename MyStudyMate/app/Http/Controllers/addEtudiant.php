@@ -91,6 +91,9 @@ public function isDelegue()
 function findetud(){
     return etudiant::where('id_Utilisateur',auth()->user()->id)->first();
 }
+function findetude($id){
+    return etudiant::where('id_Utilisateur',$id)->first();
+}
 function finduser($id){
     return User::where('id',$id)->first();
 }

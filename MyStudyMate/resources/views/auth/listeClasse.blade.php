@@ -16,7 +16,7 @@
             <tr>
                 <td>{{ $classe->nom }}</td>
                 <td>{{ $classe->nbrEtudiants }}</td>
-                <td class="supclass" data-id="{{$classe->id_classe}}" >X</td>
+                <td class="supclass" data-id="{{$classe->id_classe}}" style="cursor: pointer">X</td>
             </tr>
         @endforeach
         @else
