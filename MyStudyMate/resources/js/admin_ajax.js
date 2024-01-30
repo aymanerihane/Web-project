@@ -228,21 +228,23 @@ function chnagerManupulation(url) {
       }else if(navButtons[index].querySelector("span").textContent === "Demandes"){
         console.log('dsd')
         chnagerManupulation('Demandes');
-        var select=document.getElementById("DemandesType");
-        select.addEventListener('change', ()=>{
+        setTimeout(function () {
+            var select=document.getElementById("DemandesType");
             console.log(select)
-            if (select.value == 0) {
-                chnagerManupulation1('demandesTp');
-            } else if (select.value == 1) {
-                chnagerManupulation1('demandeLettre');
-            } else if (select.value == 2) {
-                chnagerManupulation1('demandeRendezVous');
-            }else if (select.value == 4) {
-                chnagerManupulation1('signalInci');
-            } else if (select.value == 5) {
-                chnagerManupulation1('signalMate');
-            }
-        });
+            select.addEventListener('change',function(){
+                if (select.value == 0) {
+                    chnagerManupulation1('demandesTp');
+                } else if (select.value == 1) {
+                    chnagerManupulation1('demandeLettre');
+                } else if (select.value == 2) {
+                    chnagerManupulation1('demandeRendezVous');
+                }else if (select.value == 4) {
+                    chnagerManupulation1('signalInci');
+                } else if (select.value == 5) {
+                    chnagerManupulation1('signalMate');
+                }
+            });
+        }, 1200);
         center.style.opacity = 0;
       }
     }

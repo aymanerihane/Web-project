@@ -203,7 +203,7 @@
     opacity: 1;
     direction: ltr;
     position: absolute;
-    bottom: 14px;
+    bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -269,7 +269,7 @@
     margin: -16px 0;
     padding: 16px 0;
     position: relative;
-    height: 100%;
+    max-height: 80%;
     flex: 1;
     width: var(--navbar-width);
     background: var(--fourthcoloy);

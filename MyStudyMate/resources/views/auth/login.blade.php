@@ -50,11 +50,11 @@
                 <button>
                     <div class="btnLogin"><span>{{ __('Login') }}</span></div>
                   </button>
-                @if (Route::has('password.request'))
+                {{-- @if (Route::has('password.request'))
                     <a class="pasForget" href="{{ route('password.request') }}">
                         {{ __('Forgot Your Password?') }}
                     </a>
-                @endif
+                @endif --}}
 
             </div>
         </form>
