@@ -100,4 +100,7 @@ function finduser($id){
 function findprof($id){
     return Professeur::where('MatriculeProf',$id)->first();
 }
+function findprofe($id){
+    return Professeur::where('id_Utilisateur',$id)->first();
+}
 }
