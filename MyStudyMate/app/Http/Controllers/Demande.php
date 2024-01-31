@@ -33,6 +33,11 @@ class Demande extends Controller
         $demandes = ModelsDemande::where('statutDemande', 'En attente')->get();
         return $demandes;
     }
+    public function etuddemande(){
+        $etud=etudiant::where('id_Utilisateur', auth()->user()->id)->first();
+        $demandes = ModelsDemande::where('CNE', $etud->CNE)->get();
+        return $demandes;
+    }
     public function findetud($id){
         $idetud=etudiant::where('CNE', $id)->first();
         $iduser=User::where('id', $idetud->id_Utilisateur)->first();
