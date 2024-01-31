@@ -23,4 +23,19 @@ class filieres extends Controller
     $filiere =ModelsFilieres::where('id_formation',$id)->get();
         return $filiere;
     }
+    public function findfilfor($id)
+    {
+    $filiere =ModelsFilieres::where('id_departement',$id)->get();
+        return $filiere;
+    }
+    public function create()
+    {
+    ModelsFilieres::create([
+        'nom' =>,
+        'contenuFiliere',
+        'id_RespoFiliere',
+        'id_departement'
+    ]);
+    }
+
 }

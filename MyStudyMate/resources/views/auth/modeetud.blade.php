@@ -7,7 +7,7 @@ $filieres=app('App\Http\Controllers\filieres')->findfilfor($id);
 
 <div style="flex: 1">
 
-<Label>Filiere :</Label><br>
+<Label>Filieres :</Label><br>
 <span class="custom-dropdown small" >
     <Select class="select" name="filiere" style="margin-bottom: 15px;" id="classetudfor">
         <option class="option" value=""></option>
