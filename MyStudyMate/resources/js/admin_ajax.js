@@ -87,6 +87,9 @@ function chnagerManupulation(url) {
       }else if(navButtons[index].querySelector("span").textContent === "Ajouter Module"){
         chnagerManupulation('addModule');
         center.style.opacity = 0;
+      }else if(navButtons[index].querySelector("span").textContent === "Etat Demande"){
+        chnagerManupulation('etatDemande');
+        center.style.opacity = 0;
       }else if(navButtons[index].querySelector("span").textContent === "Ajouter Classe"){
         chnagerManupulation('addClasse');
         center.style.opacity = 0;

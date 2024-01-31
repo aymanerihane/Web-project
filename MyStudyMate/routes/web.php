@@ -141,6 +141,9 @@ Route::get('etudiant/demandeLettre', function () {
 Route::get('etudiant/demandesTp', function () {
     return view('etudiant.demandesTp');
 });
+Route::get('etudiant/etatDemande', function () {
+    return view('etudiant.etatDemande');
+});
 Route::get('etudiant/justify', function () {
     return view('etudiant.justify');
 });

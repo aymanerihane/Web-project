@@ -8,12 +8,11 @@
 
             <div style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
                 <input type="hidden" value="Demander lettre Recommandation" name="object">
-                <h1>Demandes</h1>
-                <textarea class="textarea" name="discDem" id="" cols="30" rows="10"></textarea>
+
 
                 <div class="btn-conteiner">
                     <button type="submit" class="btn-content" style="background: #000">
-                        <span class="btn-title">SEND</span>
+                        <span class="btn-title">SEND DEmande Lettre</span>
                         <span class="icon-arrow">
                             <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

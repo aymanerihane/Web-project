@@ -20,6 +20,7 @@
                     <hr class="hr"/>
                     <div class="nav-button btn5"><span>Justifier Absence</span></div>
                     <div class="nav-button btn6"><span>Information</span></div>
+                    <div class="nav-button btn7"><span>Etat Demande</span></div>
                     {{-- <div class="nav-button btn6"><span>Demander Changement Groupe TP</span></div> --}}
                     {{-- <div class="nav-button btn7"><span>Signaler Pannes Matérielles</span></div><!-- just for deleguer --> --}}
                      {{-- <div class="nav-button btn8"><span>Signaler Incidents Quotidiens</span></div><!-- just for deleguer --> --}}
