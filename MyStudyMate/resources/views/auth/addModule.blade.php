@@ -23,10 +23,10 @@
         <span class="custom-dropdown small">
             <select name="departement" required>
                 @php
-                $departements = app('App\Http\Controllers\Departements')->showDepartements();
+                $filieres = app('App\Http\Controllers\filieres')->showFilieres();
                 @endphp
-                @foreach ($departements as $departement)
-                <option class="option" value="{{ $departement->id_departement }}">{{ $departement->nom }}</option>
+                @foreach ($filieres as $filiere)
+                <option class="option" value="{{ $filiere->id_filiere }}">{{ $filiere->nom }}</option>
                 @endforeach
             </select>
         </span>
@@ -54,7 +54,24 @@
 </form>
 
 </div><br>
-<h1 class="h1">Liste des Filiere</h1>
+<h1 class="h1">Liste des Module</h1>
+
+<Label>Filiere :</Label><br>
+                    <span class="custom-dropdown small" >
+                        <Select class="select" id="listCla"  style="margin-bottom: 15px;" >
+                            <option class="option" value="2" disabled selected>Filiere</option>
+                            @php
+                    $filieres = app('App\Http\Controllers\filieres')->showFilieres();
+                    @endphp
+                    @if($filieres->count() > 0)
+                    @foreach ($filieres as $filiere)
+                            <option class="option" value="{{ $filiere->id_filiere }}">{{ $filiere->nom }}</option>
+                            {{-- echo $filiere->id_filiere; --}}
+                        @endforeach
+                        @endif
+                        </Select>
+                    </span>
+
 
 
 
