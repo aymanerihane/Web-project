@@ -6,6 +6,7 @@ use App\Http\Controllers\annonces;
 use App\Http\Controllers\Demande;
 use App\Http\Controllers\classes;
 use App\Http\Controllers\filieres;
+use App\Http\Controllers\Modules;
 use App\Http\Controllers\Locals;
 use App\Models\Demande as ModelsDemande;
 use Illuminate\Support\Facades\Auth;
@@ -53,7 +54,9 @@ Route::get('/salle/{id}', [Locals::class, 'delete']);
 Route::get('/classe/{id}', [classes::class, 'delete']);
 Route::get('/emploi/{id}', [emploisDuTemps::class, 'delete']);
 Route::get('etudiant/showAbscence', [emploisDuTemps::class, 'showAbscence'])->name('showAbscence');
-Route::post('filieres', [filieres::class, 'create'])->name('filiere');
+Route::post('filiere', [filieres::class, 'create'])->name('filiere');
+Route::post('module', [Modules::class, 'create'])->name('module');
+Route::get('/module/{id}', [Modules::class, 'delete']);
 // web.php
 Route::get('auth/affectationSalle', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('auth.affectationSalle');
 });
@@ -197,4 +200,11 @@ Route::get('auth/addModule', function () {
 Route::get('auth/respfil', function () {
     return view('auth.respfil');
 });
+Route::get('auth/filiere', function () {
+    return view('auth.filiere');
+});
+Route::get('auth/tableModule', function () {
+    return view('auth.tableModule');
+});
+
 

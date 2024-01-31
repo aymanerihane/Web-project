@@ -96,6 +96,47 @@ function chnagerManupulation(url) {
       }else if(navButtons[index].querySelector("span").textContent === "Ajouter Module"){
         chnagerManupulation('addModule');
         center.style.opacity = 0;
+        setTimeout(function () {
+            document.getElementById("affectmodule").addEventListener('click', function () {
+                var formData = new FormData(document.getElementById('afctform'));
+                // AJAX request using fetch
+                fetch('/module', {
+                    method: 'POST',
+                    body: formData
+                })
+                fetchAffectationmodule(formData.get('fil'));
+            });
+        }, 2000)
+        setTimeout(function () {
+            document.getElementById("dep").addEventListener('change', function () {
+                fetch('filiere?fil='+this.value)
+            .then(response => response.text())
+            .then(rep => {
+                document.getElementById("fil").innerHTML = rep;
+                    fetch('respfil?dep='+this.value)
+                .then(response => response.text())
+                .then(rep => {
+                    document.getElementById("prof").innerHTML = rep;
+                });
+            });
+            });
+            document.getElementById("listCla").addEventListener('change', function () {
+                fetch('tableModule?module='+this.value)
+            .then(response => response.text())
+            .then(rep => {
+                document.getElementById("tableModule").innerHTML = rep;
+                var supButtons = document.querySelectorAll(".supmod");
+                supButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    var id = this.dataset.id;
+                    var fil = document.getElementById('filid');
+                    deletemodule(id);
+                    fetchAffectationmodule(fil.value);
+                });
+            });
+            });
+            });
+        }, 1200);
       }else if(navButtons[index].querySelector("span").textContent === "Etat Demande"){
         chnagerManupulation('etatDemande');
         center.style.opacity = 0;
@@ -515,6 +556,12 @@ chargerCategories();
             method: 'GET',
         })
     }
+    function deletemodule(ele){
+        var id = ele;
+        fetch('/module/' + id, {
+            method: 'GET',
+        })
+    }
     function deleteemp(ele){
         var id = ele;
         fetch('/emploi/' + id, {
@@ -556,6 +603,22 @@ chargerCategories();
                         var fil = document.getElementById('filid');
                         deleteclasse(id);
                       fetchAffectationclasse(fil.value);
+                    });
+                });
+                });
+    }
+    function fetchAffectationmodule(value) {
+                fetch('tableModule?module='+value)
+                .then(response => response.text())
+                .then(rep => {
+                    document.getElementById("tableModule").innerHTML = rep;
+                    var supButtons = document.querySelectorAll(".supmod");
+                    supButtons.forEach(function (button) {
+                    button.addEventListener('click', function () {
+                        var id = this.dataset.id;
+                        var fil = document.getElementById('filid');
+                        deletemodule(id);
+                      fetchAffectationmodule(fil.value);
                     });
                 });
                 });

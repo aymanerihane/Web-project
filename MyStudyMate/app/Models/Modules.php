@@ -11,7 +11,7 @@ class Modules extends Model
     protected $fillable = [
         'id_module',
         'nom',
-        'id_professeur_responsable',
+        'MatriculeProf',
         'id_filiere'
     ];
 }

@@ -17,4 +17,16 @@ public function getmodule($id)
         $module =ModelsModules::where('id_module','=',$id)->get()->first();
         return $module;
     }
+    public function create()
+    {
+    ModelsModules::create([
+        'nom' => $_POST['nomFiliere'],
+        'MatriculeProf' => $_POST['respo'],
+        'id_filiere' => $_POST['fil'],
+    ]);
+    return redirect('/auth/home');
+    }
+    public function delete($id){
+        ModelsModules::where('id_module', $id)->delete();
+    }
 }

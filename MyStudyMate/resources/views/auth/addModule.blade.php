@@ -1,18 +1,13 @@
 
 <div class="manup">
-    <form id="afctform">
+    <form id="afctform" method="POST" action="{{route('module')}}">
         @csrf
     <div class="gestion">
         <div class="salle">
-                <Label>Nom Filiere :</Label><br>
+                <Label>Nom Module :</Label><br>
                 <input type="text" name="nomFiliere" required>
 
         </div>
-        <div class="salle">
-            <Label>Contenu Filiere :</Label><br>
-            <input type="text" name="Contenu" required>
-
-    </div>
 
 
 </div>
@@ -21,17 +16,19 @@
     <div class="departement">
         <Label>Departements</Label><br>
         <span class="custom-dropdown small">
-            <select name="departement" required>
+            <select name="departement" id="dep" required>
+                <option class="option" value=""></option>
                 @php
-                $filieres = app('App\Http\Controllers\filieres')->showFilieres();
+                $departements = app('App\Http\Controllers\Departements')->showDepartements();
                 @endphp
-                @foreach ($filieres as $filiere)
-                <option class="option" value="{{ $filiere->id_filiere }}">{{ $filiere->nom }}</option>
+                @foreach ($departements as $departement)
+                <option class="option" value="{{ $departement->id_departement }}">{{ $departement->nom }}</option>
                 @endforeach
             </select>
         </span>
     </div>
 </div>
+<div id="fil"></div>
 {{-- <div style="width: 100%;display:flex;justify-content: center;">
 
     <div class="departement">
@@ -48,15 +45,15 @@
         </span>
     </div>
 </div> --}}
-    <button class="asso" type="button" id="affectclasse" style="width: 100%;display:flex;justify-content: center;">
+    <button class="asso" type="button" id="affectmodule" style="width: 100%;display:flex;justify-content: center;">
         <div class="btnLogin"><span>ADD</span></div>
     </button>
 </form>
 
 </div><br>
-<h1 class="h1">Liste des Module</h1>
+<h1 class="h1">Liste des Modules</h1>
 
-<Label>Filiere :</Label><br>
+<Label>Filieres :</Label><br>
                     <span class="custom-dropdown small" >
                         <Select class="select" id="listCla"  style="margin-bottom: 15px;" >
                             <option class="option" value="2" disabled selected>Filiere</option>
