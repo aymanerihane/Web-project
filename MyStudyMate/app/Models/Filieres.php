@@ -13,6 +13,7 @@ class Filieres extends Model
         'nom',
         'contenuFiliere',
         'id_RespoFiliere',
-        'id_departement'
+        'id_departement',
+        'id_formation'
     ];
 }

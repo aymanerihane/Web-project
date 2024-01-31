@@ -1,8 +1,10 @@
 @php
-if (iss) {
-    $filieres = app('App\Http\Controllers\Departements')->findfilfor($id);
+if (isset($_GET['dep'])) {
+    $id=$_GET['dep'];
+    $modules = [];
+    $filieres = app('App\Http\Controllers\filieres')->findfildep($id);
     foreach ($filieres as $filiere) {
-        $modules+=app('App\Http\Controllers\Departements')->select($filiere->id_filiere);
+        $modules[] = app('App\Http\Controllers\modules')->select($filiere->id_filiere);
     }
 }
 @endphp
@@ -12,10 +14,12 @@ if (iss) {
         <span class="custom-dropdown small">
             <select name="respo" required>
                 @foreach ($modules as $module)
+                @foreach ($module as $mod)
                 @php
-                $profs = app('App\Http\Controllers\addEtudiant')->findprof($module->MatriculeProf);
+                $prof = app('App\Http\Controllers\addEtudiant')->findprof($mod->MatriculeProf);
+                $pr = app('App\Http\Controllers\addEtudiant')->finduser($prof->id_Utilisateur);
                 @endphp
-                <option class="option" value="{{ $departement->id_departement }}">{{ $departement->nom }}</option>
+                <option class="option" value="{{ $prof->MatriculeProf }}">{{ $pr->name }}</option>
                 @endforeach
                 @endforeach
             </select>

@@ -5,6 +5,7 @@ use App\Http\Controllers\emploisDuTemps;
 use App\Http\Controllers\annonces;
 use App\Http\Controllers\Demande;
 use App\Http\Controllers\classes;
+use App\Http\Controllers\filieres;
 use App\Http\Controllers\Locals;
 use App\Models\Demande as ModelsDemande;
 use Illuminate\Support\Facades\Auth;
@@ -52,6 +53,7 @@ Route::get('/salle/{id}', [Locals::class, 'delete']);
 Route::get('/classe/{id}', [classes::class, 'delete']);
 Route::get('/emploi/{id}', [emploisDuTemps::class, 'delete']);
 Route::get('etudiant/showAbscence', [emploisDuTemps::class, 'showAbscence'])->name('showAbscence');
+Route::post('filieres', [filieres::class, 'create'])->name('filiere');
 // web.php
 Route::get('auth/affectationSalle', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('auth.affectationSalle');
 });
@@ -191,5 +193,8 @@ Route::get('auth/ajouterfiliere', function () {
 });
 Route::get('auth/addModule', function () {
     return view('auth.addModule');
+});
+Route::get('auth/respfil', function () {
+    return view('auth.respfil');
 });
 

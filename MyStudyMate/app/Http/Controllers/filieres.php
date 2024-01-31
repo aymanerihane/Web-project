@@ -23,7 +23,7 @@ class filieres extends Controller
     $filiere =ModelsFilieres::where('id_formation',$id)->get();
         return $filiere;
     }
-    public function findfilfor($id)
+    public function findfildep($id)
     {
     $filiere =ModelsFilieres::where('id_departement',$id)->get();
         return $filiere;
@@ -31,11 +31,13 @@ class filieres extends Controller
     public function create()
     {
     ModelsFilieres::create([
-        'nom' =>,
-        'contenuFiliere',
-        'id_RespoFiliere',
-        'id_departement'
+        'nom' => $_POST['nomFiliere'],
+        'contenuFiliere' => $_POST['Contenu'],
+        'id_RespoFiliere' => $_POST['respo'],
+        'id_departement' => $_POST['departement'],
+        'id_formation' => $_POST['fromation'],
     ]);
+    return redirect('/auth/home');
     }
 
 }

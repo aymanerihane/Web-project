@@ -1,6 +1,6 @@
 
 <div class="manup">
-    <form id="afctform">
+    <form id="afctform" method="POST" action="{{route('filiere')}}">
         @csrf
     <div class="gestion">
         <div class="salle">
@@ -37,7 +37,8 @@
     <div class="departement">
         <Label>Departements</Label><br>
         <span class="custom-dropdown small">
-            <select name="departement" required>
+            <select name="departement" id="dep" required>
+                <option class="option" value=""></option>
                 @php
                 $departements = app('App\Http\Controllers\Departements')->showDepartements();
                 @endphp
@@ -66,7 +67,7 @@
         </span>
     </div>
 </div> --}}
-    <button class="asso" type="button" id="affectclasse" style="width: 100%;display:flex;justify-content: center;">
+    <button class="asso" type="submit"  style="width: 100%;display:flex;justify-content: center;">
         <div class="btnLogin"><span>ADD</span></div>
     </button>
 </form>

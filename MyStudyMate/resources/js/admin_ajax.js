@@ -84,6 +84,15 @@ function chnagerManupulation(url) {
       }else if(navButtons[index].querySelector("span").textContent === "Ajouter Filiere"){
         chnagerManupulation('ajouterfiliere');
         center.style.opacity = 0;
+        setTimeout(function () {
+            document.getElementById("dep").addEventListener('change', function () {
+                fetch('respfil?dep='+this.value)
+            .then(response => response.text())
+            .then(rep => {
+                document.getElementById("respfil").innerHTML = rep;
+            });
+            });
+        }, 1000);
       }else if(navButtons[index].querySelector("span").textContent === "Ajouter Module"){
         chnagerManupulation('addModule');
         center.style.opacity = 0;
@@ -108,7 +117,6 @@ function chnagerManupulation(url) {
         document.getElementById('listCla').addEventListener('change',function () {
             // if(event.target.classList.contains('listCla'))
             var value = this.value;
-            console.log(value);
             fetch('listeClasse?class='+value)
             .then(response => response.text())
             .then(rep => {
