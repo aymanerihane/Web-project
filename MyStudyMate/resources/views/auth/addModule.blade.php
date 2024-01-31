@@ -75,6 +75,6 @@
 
 
 
-<div id="tabclasse">
+<div id="tableModule">
 
 </div>
