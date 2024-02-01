@@ -1,4 +1,5 @@
 @vite(['resources/css/profCard.css','resources/js/cardprof.js'])
+
 {{-- <div class="flex"> --}}
     {{-- men hna tal fin hatl9a lcoment akhor ra exemple hna hadir foreach --}}
     @php

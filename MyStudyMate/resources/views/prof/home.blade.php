@@ -15,12 +15,13 @@
                 <div id="nav-content">
                     <div class="nav-button btn1 active-side1 active-side"><span>Gérer Annonces Modules</span></div>
                     <div class="nav-button btn2"><span>Répondre Demandes Étudiants</span></div>
+                    <div class="nav-button btn3"><span>Ajouter abscence</span></div>
 
 
 
                     <div id="nav-content-highlight"></div>
                     <div id="nav-content-highlight2"></div>
-                    @if(Auth::user()->is_chef == 1)
+                    @if(Auth::user()->is_chef == 1 || Auth::user()->is_chef == 1)
                     <div class="nav-footer" style="z-index: 1999">
                         <a href="{{url('chefDep/choixMode')}}">Change Mode</a>
                     </div>

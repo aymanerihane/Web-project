@@ -8,6 +8,7 @@
     @php
                 $Demandes = app('App\Http\Controllers\Demande')->etuddemande(); // khass function hna katjbed ga3e les demande li dar had letudiant
                 @endphp
+                @if (count($Demandes)>0)
                 @foreach ($Demandes as $Demande)
                 <tr>
                     <td>{{ $Demande->objet }}</td>
@@ -22,4 +23,7 @@
                     @endif
                 </tr>
                 @endforeach
+                    @else
+                    <td  colspan="4">no damande has been send yet</td>
+                @endif
 </table>

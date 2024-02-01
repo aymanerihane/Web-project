@@ -81,6 +81,18 @@ function chnagerManupulation(url) {
       }else if(navButtons[index].querySelector("span").textContent === "Emplois du Temps"){
         chnagerManupulation('emploisTemps');
         center.style.opacity = 0;
+      }else if(navButtons[index].querySelector("span").textContent === "Ajouter abscence"){
+        chnagerManupulation('addAbscence');
+        center.style.opacity = 0;
+        setTimeout(function () {
+            document.getElementById("etudFil").addEventListener('change', function() {
+                fetch('listEtudiantFIlier?idFil='+this.value)
+            .then(response => response.text())
+            .then(rep => {
+                document.getElementById("etudList").innerHTML = rep;
+            });
+            });
+        }, 2000);
       }else if(navButtons[index].querySelector("span").textContent === "Ajouter Filiere"){
         chnagerManupulation('ajouterfiliere');
         center.style.opacity = 0;

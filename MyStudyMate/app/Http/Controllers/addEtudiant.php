@@ -94,6 +94,9 @@ function findetud(){
 function findetude($id){
     return etudiant::where('id_Utilisateur',$id)->first();
 }
+function findetudeByFiliere($id){
+    return etudiant::where('id_Filiere',$id)->get();
+}
 function finduser($id){
     return User::where('id',$id)->first();
 }

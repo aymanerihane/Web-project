@@ -26,6 +26,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/emploisTemps', function () {
+    return view('emploisTemps');
+});
+
 
 Auth::routes();
 Route::middleware(['isRole'])->group(function () {
@@ -98,6 +102,12 @@ Route::get('chefDep/annonce', function () {
 });
 Route::get('prof/annonce', function () {
     return view('prof.gererAnnonces');
+});
+Route::get('prof/addAbscence', function () {
+    return view('prof.addAbscence');
+});
+Route::get('prof/listEtudiantFIlier', function () {
+    return view('prof.listEtudiantFIlier');
 });
 Route::get('formAn', function () {
     return view('chefDep.formulaire_annance');
