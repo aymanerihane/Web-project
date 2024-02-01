@@ -7,6 +7,7 @@ use App\Http\Controllers\Demande;
 use App\Http\Controllers\classes;
 use App\Http\Controllers\filieres;
 use App\Http\Controllers\Modules;
+use App\Http\Controllers\abscence;
 use App\Http\Controllers\Locals;
 use App\Models\Demande as ModelsDemande;
 use Illuminate\Support\Facades\Auth;
@@ -60,6 +61,7 @@ Route::get('/emploi/{id}', [emploisDuTemps::class, 'delete']);
 Route::get('etudiant/showAbscence', [emploisDuTemps::class, 'showAbscence'])->name('showAbscence');
 Route::post('filiere', [filieres::class, 'create'])->name('filiere');
 Route::post('module', [Modules::class, 'create'])->name('module');
+Route::post('abcsence', [abscence::class, 'create'])->name('abscence');
 Route::get('/module/{id}', [Modules::class, 'delete']);
 // web.php
 Route::get('auth/affectationSalle', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('auth.affectationSalle');

@@ -14,4 +14,13 @@ class abscence extends Controller
         $absence = ModelAbscence::where('CNE',$cne)->get();
         return $absence;
     }
+    public function create(){
+        foreach($_POST['cne'] as $cne){
+        ModelAbscence::create([
+            'CNE'=> $cne,
+            'justification'=> $cne,
+    ]);
+        }
+        return redirect('/prof/home');
+    }
 }

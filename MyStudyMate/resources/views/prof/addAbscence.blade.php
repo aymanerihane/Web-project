@@ -12,7 +12,8 @@
                     @endforeach
                 </select>
             </span>
-
+            <form method="POST" action="{{route('abscence')}}">
+                @csrf
         <div class="demandes" >
 
             <div class="barMessage">
@@ -34,3 +35,4 @@
               </div>
 
         </div>
+            </form>

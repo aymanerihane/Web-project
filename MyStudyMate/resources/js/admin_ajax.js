@@ -295,6 +295,7 @@ function chnagerManupulation(url) {
       }else if(navButtons[index].querySelector("span").textContent === "Justifier Absence"){
         chnagerManupulation('justify');
         center.style.opacity = 0;
+        
       }else if(navButtons[index].querySelector("span").textContent === "Demandes"){
         chnagerManupulation('Demandes');
         setTimeout(function () {

@@ -11,8 +11,7 @@ class Abscence extends Model
     protected $fillable = [
     'id_abscence',
     'justification',
-    'date',
-    'filepath',
-    'CNE'
+    'CNE',
+    'created_at',
     ];
 }

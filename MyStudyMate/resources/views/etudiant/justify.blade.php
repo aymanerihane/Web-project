@@ -17,8 +17,7 @@
                         <div class="line line-indicator"></div>
                     </label>
                     <div>
-                        <h3 class="NameOfEtud mes" data-id="{{$abscence->id_abscence}}">{{app('App\Http\Controllers\Demande')->findetud($abscence->CNE)->name}} </h3>
-                        <p class="objectDemande mes"  data-id="{{$abscence->id_abscence}}">{{$abscence->date}}</p>
+                        <p class="objectDemande mes"  data-id="{{$abscence->id_abscence}}">{{$abscence->created_at}}</p>
                     </div>
                     <div class="new" style="background-color: red"></div>
                 </div>

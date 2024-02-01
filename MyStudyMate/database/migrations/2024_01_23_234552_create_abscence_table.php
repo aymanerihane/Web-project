@@ -14,8 +14,6 @@ return new class extends Migration
         Schema::create('abscences', function (Blueprint $table) {
             $table->id('id_abscence');
             $table->text('justification');
-            $table->date('date');
-            $table->string('filepath');
             $table->foreignId('CNE')->references('CNE')->on('etudiants');
 
             $table->timestamps();
