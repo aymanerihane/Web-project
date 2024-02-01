@@ -308,30 +308,52 @@ function chnagerManupulation(url) {
                 });
             });
         }, 1000);
-      }else if(navButtons[index].querySelector("span").textContent === "Demandes"){
+      }else if (navButtons[index].querySelector("span").textContent === "Demandes") {
         chnagerManupulation('Demandes');
+
         setTimeout(function () {
-            var select=document.getElementById("DemandesType");
-            var radio = document.getElementById('matcProf');
-            select.addEventListener('change',function(){
+            var select = document.getElementById("DemandesType");
+            select.addEventListener('change', function () {
                 if (select.value == 0) {
                     chnagerManupulation1('demandesTp');
                 } else if (select.value == 1) {
                     chnagerManupulation1('demandeLettre');
+                    var radio = document.getElementById('matcProf');
+                    var hidden = document.getElementById('hiddenMat');
+                    hidden.value = radio.value;
                 } else if (select.value == 2) {
                     chnagerManupulation1('demandeRendezVous');
-                }else if (select.value == 4) {
+                    var radio = document.getElementById('matcProf');
+                    var hidden = document.getElementById('hiddenMat');
+                    hidden.value = radio.value;
+                } else if (select.value == 4) {
                     chnagerManupulation1('signalInci');
+                    var radio = document.getElementById('matcProf');
+                    var hidden = document.getElementById('hiddenMat');
+                    hidden.value = radio.value;
                 } else if (select.value == 5) {
                     chnagerManupulation1('signalMate');
+                    var radio = document.getElementById('matcProf');
+                    var hidden = document.getElementById('hiddenMat');
+                    hidden.value = radio.value;
                 }
             });
+
+            var radios = document.querySelectorAll('.matcProf');
+            radios.forEach(function (radio) {
+                radio.addEventListener('click', function () {
+                    console.log(this.value);
+                    var hidden = document.getElementById('hiddenMat');
+                    hidden.value = this.value;
+                });
+            });
+
             var hidden = document.getElementById('hiddenMat');
-            hidden.value = radio.value;
+            hidden.value = radios[0].value; // Assuming you want to initialize with the value of the first radio button
         }, 1200);
 
         center.style.opacity = 0;
-      }
+    }
     }
     // Add event listeners to each nav button
     navButtons.forEach((button, index) => {
