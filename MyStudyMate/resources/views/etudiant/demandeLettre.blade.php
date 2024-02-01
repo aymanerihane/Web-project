@@ -5,6 +5,8 @@
             @csrf <!-- CSRF token -->
             <input type="hidden" id="" name="prof" value="">
             <input type="hidden" id="" name="dep" value="">
+            <input type="hidden" id="" name="discDem" value="">
+            <input type="hidden" id="hiddenMat" name="matcProf" value="">
 
             <div style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
                 <input type="hidden" value="Demander lettre Recommandation" name="object">
@@ -12,7 +14,7 @@
 
                 <div class="btn-conteiner">
                     <button type="submit" class="btn-content" style="background: #000">
-                        <span class="btn-title">SEND DEmande Lettre</span>
+                        <span class="btn-title">SEND Demande Lettre</span>
                         <span class="icon-arrow">
                             <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

@@ -21,7 +21,10 @@
 
                     <div id="nav-content-highlight"></div>
                     <div id="nav-content-highlight2"></div>
-                    @if(Auth::user()->is_chef == 1 || Auth::user()->is_chef == 1)
+                    @php
+                        $prof = app('App\Http\Controllers\addEtudiant')->findprofe(Auth::user()->id);
+                    @endphp
+                    @if($prof->is_RespoDepart == 1 || $prof->is_RespoFiliere == 1 )
                     <div class="nav-footer" style="z-index: 1999">
                         <a href="{{url('chefDep/choixMode')}}">Change Mode</a>
                     </div>

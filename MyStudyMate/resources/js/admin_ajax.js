@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         navButtons[1].classList.add(`active-side`);
     }
     chnagerManupulation('emploisTemps');
+    chnagerManupulation('information');
     chnagerManupulation('annonce');
     chnagerManupulation('annonceee');
     // Get all nav buttons and the highlight element
@@ -300,6 +301,7 @@ function chnagerManupulation(url) {
         setTimeout(function () {
             var select=document.getElementById("DemandesType");
             console.log(select)
+            var radio = document.getElementById('matcProf');
             select.addEventListener('change',function(){
                 if (select.value == 0) {
                     chnagerManupulation1('demandesTp');
@@ -313,7 +315,10 @@ function chnagerManupulation(url) {
                     chnagerManupulation1('signalMate');
                 }
             });
+            var hidden = document.getElementById('hiddenMat');
+            hidden.value = radio.value;
         }, 1200);
+
         center.style.opacity = 0;
       }
     }

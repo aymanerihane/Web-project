@@ -10,16 +10,11 @@
             @endphp
             @foreach ($demandes as $demande)
             <div class="message mes" data-id="{{$demande->id_demande}}">
-                <label class="container">
-                    <input type="checkbox" name="demandes" id="">
-                    <div class="line"></div>
-                    <div class="line line-indicator"></div>
-                </label>
                 <div>
-                    <h3 class="NameOfEtud mes" data-id="{{$demande->id_demande}}">{{app('App\Http\Controllers\Demande')->findetud($demande->CNE)->name}}</h3>
+                    <h3 style="margin: 10px" class="NameOfEtud mes" data-id="{{$demande->id_demande}}">{{app('App\Http\Controllers\Demande')->findetud($demande->CNE)->name}}</h3>
                     <p class="objectDemande mes" data-id="{{$demande->id_demande}}">{{$demande->DescripDemande}}</p>
                 </div>
-                <div class="new"></div>
+                <div class="new" style="background-color: rgba(255, 213, 0, 0.799)"></div>
             </div>
             @endforeach
 
