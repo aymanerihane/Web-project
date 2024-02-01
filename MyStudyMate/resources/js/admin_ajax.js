@@ -312,32 +312,22 @@ function chnagerManupulation(url) {
         chnagerManupulation('Demandes');
         setTimeout(function () {
             var select=document.getElementById("DemandesType");
-            var radio = document.querySelectorAll('.matcProf');
-            var hidden = document.getElementById('hiddenMat');
-            console.log(radio)
-            radio.forEach(function(radi){
-                radi.addEventListener('click',function(){
-                    hidden = document.getElementById('hiddenMat');
-                    hidden.value=this.value;
-                })
-            })
+            var radio = document.getElementById('matcProf');
             select.addEventListener('change',function(){
                 if (select.value == 0) {
                     chnagerManupulation1('demandesTp');
-
                 } else if (select.value == 1) {
                     chnagerManupulation1('demandeLettre');
-
                 } else if (select.value == 2) {
                     chnagerManupulation1('demandeRendezVous');
-
                 }else if (select.value == 4) {
                     chnagerManupulation1('signalInci');
                 } else if (select.value == 5) {
                     chnagerManupulation1('signalMate');
-
                 }
             });
+            var hidden = document.getElementById('hiddenMat');
+            hidden.value = radio.value;
         }, 1200);
 
         center.style.opacity = 0;
