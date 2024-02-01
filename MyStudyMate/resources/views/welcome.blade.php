@@ -17,7 +17,7 @@
         <ul class="nav">
             <li><a href="{{ url('/') }}">Home</a></li>
             <li><a href="#">About us</a></li>
-            <li><a href="#">Emplois du temps</a></li>
+            <li><a href="/emploisTemps">Emplois du temps</a></li>
             <li><a href="#">Our Service</a></li>
             <li><a href="#">Contact us</a></li>
         </ul>

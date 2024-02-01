@@ -9,7 +9,7 @@
     @endphp
 @foreach ($filieres as $filiere)
 @php
-$emplois=app('App\Http\Controllers\emploisDuTemps')->etudemploi($filiere);
+$emplois=app('App\Http\Controllers\emploisDuTemps')->etudemploi($filiere->id_filiere);
 
 @endphp
 <h1 style="margin-bottom: 100px;margin-top: 100px" class="h1">{{$filiere->nom}}</h1>
