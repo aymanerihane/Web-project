@@ -9,7 +9,7 @@ $filieres=app('App\Http\Controllers\filieres')->findfilfor($id);
 
 <Label>Filieres :</Label><br>
 <span class="custom-dropdown small" >
-    <Select class="select" name="filiere" style="margin-bottom: 15px;" id="classetudfor">
+    <Select class="select" name="filiere" style="margin-bottom: 15px;font-size: 12px;" id="classetudfor">
         <option class="option" value=""></option>
 
 @if($filieres->count() > 0)
@@ -20,6 +20,6 @@ $filieres=app('App\Http\Controllers\filieres')->findfilfor($id);
 </Select>
 </span>
 </div>
-<div id="classeetud">
+<div id="classeetud" style="display: flex;justify-content: space-between;align-items: center;">
 
 </div>

@@ -1,7 +1,7 @@
-<div class="signbox">
-    <form style="width:100%;" class="formSign" method="POST" action="{{ route('auth.addEtudiant')}}">
+<div class="signbox" style="overflow: scroll;position:relative;height:100%">
+    <form style="width:100%;overflow: scroll;position:absolute;top:0" class="formSign" method="POST" action="{{ route('auth.addEtudiant')}}">
         @csrf
-        <div class="nom">
+        <div class="nom" style="margin-top: 50px">
             <input id="nom" type="text"  @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
             <label class="labelf">
                 <span style="transition-delay:0ms">N</span><span style="transition-delay:50ms">O</span><span style="transition-delay:100ms">M</span>
@@ -35,24 +35,24 @@
                             <option class="option" value="0">Non</option>
                             <option class="option" value="1">Oui</option>
                 </Select>
-            </span>
+            </span><br>
             <div style="display: flex;justify-content: space-between;align-items: center;">
-                <div style="flex: 1">
-<Label>Formation :</Label><br>
-<span class="custom-dropdown small" >
-@php
-$formations=app('App\Http\Controllers\formation')->showFormation();
-@endphp
-<Select class="select"  id="etudfor" style="margin-bottom: 15px;">
-    <option class="option" value=""></option>
-@foreach ($formations as $formation)
-<option class="option" value="{{$formation->id_formation}}">{{$formation->nomformation}}</option>
-@endforeach
-</Select>
-</span>
-</div>
-<div id="modeetud"></div>
-</div>
+                <div style="flex: 1;display: flex;flex-direction: column;justify-content: center;align-items: center;">
+                <Label>Formation :</Label><br>
+                <span class="custom-dropdown small" >
+                    @php
+                    $formations=app('App\Http\Controllers\formation')->showFormation();
+                    @endphp
+                    <Select class="select"  id="etudfor" style="margin-bottom: 15px;">
+                            <option class="option" value="" disabled selected>formations</option>
+                        @foreach ($formations as $formation)
+                        <option class="option" value="{{$formation->id_formation}}">{{$formation->nomformation}}</option>
+                        @endforeach
+                    </Select>
+                </span>
+                <div id="modeetud" style="display: flex;justify-content: space-between;align-items: center;flex-direction:column"></div>
+                </div>
+            </div>
 <div class="email" style="flex: 1;margin-top: 20px;">
     <input type="text" name="cne"  style="margin-bottom: 0px;">
     <label class="labelf">

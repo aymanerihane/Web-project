@@ -50,7 +50,7 @@ class Demande extends Controller
     public function reponse($id){
     ModelsDemande::where('id_demande', $id)->update([
                 'ReponseDemande' => $_POST['reps'],
-                'statutDemande' => 'Approuvée',
+                'statutDemande' => $_POST['etat'],
             ]);
             return redirect('/prof/home');
      }

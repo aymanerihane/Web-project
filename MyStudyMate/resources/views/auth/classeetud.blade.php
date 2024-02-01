@@ -18,9 +18,9 @@ $classes=app('App\Http\Controllers\classes')->showclasfil($id);
 @endif
 </Select>
 </span>
-</div>
-<div id="tpetud">
+<div id="tpetud" style="display: flex;flex-direction:column;justify-content: space-between;align-items: center;">
 
+</div>
 </div>
 
 
