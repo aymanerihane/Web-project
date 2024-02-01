@@ -13,14 +13,14 @@
                     <hr/>
                 </div>
                 <div id="nav-content">
-                    <div class="nav-button btn1 active-side1 active-side"><span>Emplois du Temps</span></div>
-                    <div class="nav-button btn2"><span>Annonces des Professeurs</span></div>
-                    <div class="nav-button btn3"><span>Demandes</span></div>
+                    <div class="nav-button btn1 active-side1 active-side"><span>Information</span></div>
+                    <div class="nav-button btn2"><span>Emplois du Temps</span></div>
+                    <div class="nav-button btn3"><span>Annonces des Professeurs</span></div>
                     {{-- <div class="nav-button btn4"><span> Demander Rendez-vous</span></div> --}}
                     <hr class="hr"/>
-                    <div class="nav-button btn5"><span>Justifier Absence</span></div>
-                    <div class="nav-button btn6"><span>Information</span></div>
-                    <div class="nav-button btn7"><span>Etat Demande</span></div>
+                    <div class="nav-button btn4"><span>Justifier Absence</span></div>
+                    <div class="nav-button btn5"><span>Demandes</span></div>
+                    <div class="nav-button btn6"><span>Etat Demande</span></div>
                     {{-- <div class="nav-button btn6"><span>Demander Changement Groupe TP</span></div> --}}
                     {{-- <div class="nav-button btn7"><span>Signaler Pannes Matérielles</span></div><!-- just for deleguer --> --}}
                      {{-- <div class="nav-button btn8"><span>Signaler Incidents Quotidiens</span></div><!-- just for deleguer --> --}}

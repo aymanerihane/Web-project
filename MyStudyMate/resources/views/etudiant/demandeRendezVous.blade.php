@@ -4,12 +4,14 @@
 <form style="width:100%;" class="formSign" method="POST" action="{{ route('demandes')}}" id="demandeForm">
     @csrf <!-- CSRF token -->
     <input type="hidden" id="fil" name="filiere">
+    <input type="hidden" id="hiddenMat" name="matcProf" value="">
+
 
     <div style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
         <input type="hidden" value="Demander Rendez-vous" name="object">
         <h1>Demandes</h1>
         <textarea class="textarea" name="discDem" id="" cols="30" rows="10"></textarea>
-        
+
         <div class="btn-conteiner">
             <button type="submit" class="btn-content" style="background: #000">
                 <span class="btn-title">SEND</span>

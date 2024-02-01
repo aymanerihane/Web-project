@@ -20,7 +20,7 @@ class Demande extends Controller
             'statutDemande' => "En attente", // Fixed the typo in "en attend"
             'ReponseDemande' => "",
             'CNE' => $cne,
-            'MatriculeProf' => 6878,
+            'MatriculeProf' => $_POST['matcProf'],
             'id_departement' => 1,
         ]);
 

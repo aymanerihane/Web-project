@@ -14,7 +14,7 @@
             $user=app('App\Http\Controllers\addEtudiant')->finduser($prof->id_Utilisateur);
         @endphp
 		<label>
-            <input class="radio-input" type="radio" name="engine">
+            <input class="radio-input" type="radio" id="matcProf" value="{{$module->MatriculeProf}}" required>
             <span class="radio-tile">
 					<span class="radio-icon">
 						<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="1855 26 66 77" height="77px" width="66px">
