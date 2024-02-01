@@ -6,18 +6,18 @@
             <div class="barMessage">
             </div>
             @php
-                $abscences=app('App\Http\Controllers\abscence')->showAbscence();
+                $abscences=app('App\Http\Controllers\abscence')->showAbscencenot();
             @endphp
             @if(is_countable($abscences) && count($abscences) > 0)
                 @foreach ($abscences as $abscence)
-                <div class="message mes" data-id="{{$abscence->id_abscence}}">
+                <div class="message absc" data-id="{{$abscence->id_abscence}}" >
                     <label class="container">
                         <input type="checkbox" name="demandes" id="">
                         <div class="line"></div>
                         <div class="line line-indicator"></div>
                     </label>
                     <div>
-                        <p class="objectDemande mes"  data-id="{{$abscence->id_abscence}}">{{$abscence->created_at}}</p>
+                        <p class="objectDemande"  data-id="{{$abscence->id_abscence}}">{{$abscence->created_at}}</p>
                     </div>
                     <div class="new" style="background-color: red"></div>
                 </div>
@@ -28,11 +28,11 @@
 
     </div>
     <div class="espaceRPDEM" >
-        <form style="width:100%;" class="formSign" method="POST" action="{{ route('demandes')}}" id="demandeForm">
+        <form style="width:100%;" class="formSign" method="POST"  id="justiForm">
             @csrf <!-- CSRF token -->
 
             <div style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
-                <input type="hidden" value="Justifier Absence" name="object">
+                <input type="hidden" id="hidinp" name="object">
                 <h1>JUSTIFICATION</h1>
                 <textarea class="textarea" name="discDem" id="" cols="30" rows="10" required></textarea>
 

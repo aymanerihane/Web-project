@@ -62,6 +62,7 @@ Route::get('etudiant/showAbscence', [emploisDuTemps::class, 'showAbscence'])->na
 Route::post('filiere', [filieres::class, 'create'])->name('filiere');
 Route::post('module', [Modules::class, 'create'])->name('module');
 Route::post('abcsence', [abscence::class, 'create'])->name('abscence');
+Route::post('etudiant/justify/{id}', [abscence::class, 'justify'])->name('justify');
 Route::get('/module/{id}', [Modules::class, 'delete']);
 // web.php
 Route::get('auth/affectationSalle', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('auth.affectationSalle');

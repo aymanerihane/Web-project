@@ -296,12 +296,22 @@ function chnagerManupulation(url) {
       }else if(navButtons[index].querySelector("span").textContent === "Justifier Absence"){
         chnagerManupulation('justify');
         center.style.opacity = 0;
-        
+        setTimeout(function () {
+            var supButtons = document.querySelectorAll(".absc");
+                supButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    var id=this.dataset.id;
+                    var inp=document.getElementById("hidinp");
+                   inp=id;
+                   var mess = document.getElementById('justiForm');
+                  mess.action = 'justify/' + id + '';
+                });
+            });
+        }, 1000);
       }else if(navButtons[index].querySelector("span").textContent === "Demandes"){
         chnagerManupulation('Demandes');
         setTimeout(function () {
             var select=document.getElementById("DemandesType");
-            console.log(select)
             var radio = document.getElementById('matcProf');
             select.addEventListener('change',function(){
                 if (select.value == 0) {
