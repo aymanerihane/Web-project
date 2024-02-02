@@ -16,9 +16,9 @@
                         </Select>
                     </span>
                     <div class="signbox"  style="position: relative;margin-bottom:76px">
-                        <form style="width:100%;" class="formSign" id="formemp">
+                        <form style="width:100%;" class="formSign" id="formres">
                             @csrf
-                            <input type="hidden" id="fil" name="filiere" required>
+                            <input type="hidden" id="sal" name="loc" required>
                                 <div style="display: flex;flex-direction:column;justify-content: space-between;align-items: center;">
                                         <Label>Jour:</Label><br>
                                         <span class="custom-dropdown small" >
@@ -36,16 +36,6 @@
                                                 <option value="0">Heure</option>
                                                 @foreach(['09h00 - 10h45', '11h00 - 12h45', '13h00 - 14h45','15h00 - 16h45','17h00 - 18h45'] as $heure)
                                                 <option value="{{ $heure }}">{{ $heure }}</option>
-                                                @endforeach
-                                            </Select>
-                                        </span>
-
-                                        <Label>Activite :</Label><br>
-                                        <span class="custom-dropdown small" >
-                                            <Select class="select" name="act" style="margin-bottom: 15px;" required>
-                                                <option value="0"></option>
-                                                @foreach(['Cours', 'TD', 'TP'] as $act)
-                                                <option value="{{ $act }}">{{ $act }}</option>
                                                 @endforeach
                                             </Select>
                                         </span>

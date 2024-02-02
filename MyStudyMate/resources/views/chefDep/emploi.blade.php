@@ -1,10 +1,10 @@
 @php
-if(isset($_GET['filiere'])){
-$id=$_GET['filiere'];
-$emplois=app('App\Http\Controllers\emploisDuTemps')->select($id);
+if(isset($_GET['salle'])){
+$id=$_GET['salle'];
+$emplois=app('App\Http\Controllers\reservations')->select($id);
 }
 @endphp
-
+<input type="hidden" id="sl" value="{{$id}}">
 <table>
     <tr>
         <th></th>
@@ -23,14 +23,13 @@ $emplois=app('App\Http\Controllers\emploisDuTemps')->select($id);
                     foreach ($emplois as $emploi) {
                         if ($emploi->jour == $jour && $emploi->creneau_horaire == $heure) {
                             $emploiFound = true;
-                            $m = app('App\Http\Controllers\modules')->getmodule($emploi->id_module);
                             $l = app('App\Http\Controllers\Locals')->getlocal($emploi->id_local);
                             break;
                         }
                     }
                 @endphp
                 @if($emploiFound)
-                    <td data-id="{{ $emploi->id_emploi }}" class="supemp">{{ $m->nom }} <br> {{ $emploi->activite }} <br> {{ $l->nom }}</td>
+                    <td data-id="{{ $emploi->id_reservation }}" class="supreser">Reserve</td>
                 @else
                     <td value=""></td>
                 @endif

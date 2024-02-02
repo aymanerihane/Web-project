@@ -20,10 +20,10 @@ document.addEventListener("DOMContentLoaded", function () {
         navButtons[1].classList.add(`active-side2`);
         navButtons[1].classList.add(`active-side`);
     }
-    // chnagerManupulation('emploisTemps');
-    // chnagerManupulation('information');
-    // chnagerManupulation('annonce');
-    // chnagerManupulation('annonceee');
+    chnagerManupulation('emploisTemps');
+    chnagerManupulation('information');
+    chnagerManupulation('annonce');
+    chnagerManupulation('annonceee');
     // Get all nav buttons and the highlight element
     var navButtons = document.querySelectorAll(".nav-button");
     var iconAdd = document.getElementById("addClick");
@@ -310,6 +310,27 @@ function chnagerManupulation(url) {
       }else if(navButtons[index].querySelector("span").textContent === "Gérer Emplois du Temps Salle"){
         chnagerManupulation('chefDep/emploisTemps');
         center.style.opacity = 0;
+        setTimeout(function () {
+        document.getElementById('sallesel').addEventListener('change', function () {
+            var sl=document.getElementById('sal');
+            sl.value=this.value;
+            fetch("emploi?salle=" + this.value)
+                .then(response => response.text())
+                .then(rep => {
+                    document.getElementById("salle").innerHTML = rep;
+                    var supButtons = document.querySelectorAll(".supreser");
+                   supButtons.forEach(function (button) {
+                    button.addEventListener('click', function () {
+                    var id = this.dataset.id;
+                    var fil = document.getElementById('sl');
+                    deletereserv(id);
+                    fetchAffectationreserv(fil.value);
+                });
+            });
+                });
+        });
+        document.getElementById('submitemp').addEventListener('click', submitreserv);
+    }, 1000);
       }else if(navButtons[index].querySelector("span").textContent === "Annonces des Professeurs"){
         chnagerManupulation('annonceProf');
         center.style.opacity = 0;
@@ -318,19 +339,7 @@ function chnagerManupulation(url) {
         center.style.opacity = 0;
       }else if(navButtons[index].querySelector("span").textContent === "Justifier Absence"){
         chnagerManupulation('justify');
-        center.style.opacity = 0;
-        setTimeout(function () {
-            var supButtons = document.querySelectorAll(".absc");
-                supButtons.forEach(function (button) {
-                button.addEventListener('click', function () {
-                    var id=this.dataset.id;
-                    var inp=document.getElementById("hidinp");
-                   inp=id;
-                   var mess = document.getElementById('justiForm');
-                  mess.action = 'justify/' + id + '';
-                });
-            });
-        }, 1000);
+        center.style.opacity = 0
       }else if (navButtons[index].querySelector("span").textContent === "Demandes") {
         chnagerManupulation('Demandes');
 
@@ -592,6 +601,18 @@ chargerCategories();
                             chargerProduits(fil.value);
                             chargerModules(fil.value);
     }
+    function submitreserv() {
+                // Get form data
+                var formData = new FormData(document.getElementById('formres'));
+
+                // AJAX request using fetch
+                fetch('/reservation', {
+                    method: 'POST',
+                    body: formData
+                })
+                var sl=document.getElementById("sal");
+                fetchAffectationreserv(sl.value);
+    }
     function affectsalle() {
                 // Get form data
                 var formData = new FormData(document.getElementById('afctform'));
@@ -647,6 +668,13 @@ chargerCategories();
             method: 'GET',
         })
     }
+    function deletereserv(ele){
+        var id = ele;
+        fetch('/reservation/' + id, {
+            method: 'GET',
+        })
+    }
+
     function fetchAffectationSalle() {
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function () {
@@ -717,6 +745,22 @@ chargerCategories();
                     });
                 });
                 });
+    }
+    function fetchAffectationreserv(value) {
+        fetch("emploi?salle=" + value)
+        .then(response => response.text())
+        .then(rep => {
+            document.getElementById("salle").innerHTML = rep;
+            var supButtons = document.querySelectorAll(".supreser");
+           supButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+            var id = this.dataset.id;
+            var fil = document.getElementById('sl');
+            deletereserv(id);
+            fetchAffectationreserv(fil.value);
+        });
+    });
+        });
     }
   });
 

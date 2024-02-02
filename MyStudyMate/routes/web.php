@@ -9,6 +9,7 @@ use App\Http\Controllers\filieres;
 use App\Http\Controllers\Modules;
 use App\Http\Controllers\abscence;
 use App\Http\Controllers\Locals;
+use App\Http\Controllers\reservations;
 use App\Models\Demande as ModelsDemande;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -62,9 +63,11 @@ Route::get('etudiant/showAbscence', [emploisDuTemps::class, 'showAbscence'])->na
 Route::post('filiere', [filieres::class, 'create'])->name('filiere');
 Route::post('module', [Modules::class, 'create'])->name('module');
 Route::post('abcsence', [abscence::class, 'create'])->name('abscence');
+Route::post('/reservation', [reservations::class, 'create'])->name('reservation');
 Route::post('etudiant/justify/{id}', [abscence::class, 'justify'])->name('justify');
 Route::get('/module/{id}', [Modules::class, 'delete']);
 Route::get('/filiere/{id}', [filieres::class, 'delete']);
+Route::get('/reservation/{id}', [reservations::class, 'delete']);
 // web.php
 Route::get('auth/affectationSalle', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('auth.affectationSalle');
 });
@@ -225,6 +228,9 @@ Route::get('auth/listefiliere', function () {
 });
 Route::get('chefDep/emploisTemps', function () {
     return view('chefDep.emploisTemps');
+});
+Route::get('/emploi', function () {
+    return view('chefDep.emploi');
 });
 
 
