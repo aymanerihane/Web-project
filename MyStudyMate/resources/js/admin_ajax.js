@@ -20,10 +20,10 @@ document.addEventListener("DOMContentLoaded", function () {
         navButtons[1].classList.add(`active-side2`);
         navButtons[1].classList.add(`active-side`);
     }
-    chnagerManupulation('emploisTemps');
-    chnagerManupulation('information');
-    chnagerManupulation('annonce');
-    chnagerManupulation('annonceee');
+    // chnagerManupulation('emploisTemps');
+    // chnagerManupulation('information');
+    // chnagerManupulation('annonce');
+    // chnagerManupulation('annonceee');
     // Get all nav buttons and the highlight element
     var navButtons = document.querySelectorAll(".nav-button");
     var iconAdd = document.getElementById("addClick");
