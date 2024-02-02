@@ -64,6 +64,7 @@ Route::post('module', [Modules::class, 'create'])->name('module');
 Route::post('abcsence', [abscence::class, 'create'])->name('abscence');
 Route::post('etudiant/justify/{id}', [abscence::class, 'justify'])->name('justify');
 Route::get('/module/{id}', [Modules::class, 'delete']);
+Route::get('/filiere/{id}', [filieres::class, 'delete']);
 // web.php
 Route::get('auth/affectationSalle', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('auth.affectationSalle');
 });
@@ -218,6 +219,9 @@ Route::get('auth/filiere', function () {
 });
 Route::get('auth/tableModule', function () {
     return view('auth.tableModule');
+});
+Route::get('auth/listefiliere', function () {
+    return view('auth.listefiliere');
 });
 
 

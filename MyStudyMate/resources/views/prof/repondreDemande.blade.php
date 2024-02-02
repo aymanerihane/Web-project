@@ -14,7 +14,7 @@
             <div class="message mes" data-id="{{$demande->id_demande}}">
                 <div>
                     <h3 style="margin: 10px" class="NameOfEtud mes" data-id="{{$demande->id_demande}}">{{app('App\Http\Controllers\Demande')->findetud($demande->CNE)->name}}</h3>
-                    <p class="objectDemande mes" data-id="{{$demande->id_demande}}">{{$demande->DescripDemande}}</p>
+                    <p class="objectDemande mes" data-id="{{$demande->id_demande}}">{{$demande->objet}}</p>
                 </div>
                 <div class="new" style="background-color: rgba(255, 213, 0, 0.799)"></div>
             </div>

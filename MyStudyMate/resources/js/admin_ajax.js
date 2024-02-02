@@ -106,6 +106,26 @@ function chnagerManupulation(url) {
             });
             });
         }, 1000);
+        setTimeout(function () {
+            document.getElementById('listfor').addEventListener('change',function () {
+                // if(event.target.classList.contains('listCla'))
+                var value = this.value;
+                fetch('listefiliere?fil='+value)
+                .then(response => response.text())
+                .then(rep => {
+                    document.getElementById("tabfiliere").innerHTML = rep;
+                    var supButtons = document.querySelectorAll(".supfil");
+                    supButtons.forEach(function (button) {
+                    button.addEventListener('click', function () {
+                        var id = this.dataset.id;
+                        var fil = document.getElementById('filid');
+                        deletefil(id);
+                        fetchAffectationfil(fil.value);
+                    });
+                });
+                });
+            });
+        }, 2000);
       }else if(navButtons[index].querySelector("span").textContent === "Ajouter Module"){
         chnagerManupulation('addModule');
         center.style.opacity = 0;
@@ -618,6 +638,12 @@ chargerCategories();
             method: 'GET',
         })
     }
+    function deletefil(ele){
+        var id = ele;
+        fetch('/filiere/' + id, {
+            method: 'GET',
+        })
+    }
     function fetchAffectationSalle() {
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function () {
@@ -656,6 +682,22 @@ chargerCategories();
                     });
                 });
                 });
+    }
+    function fetchAffectationfil(value) {
+        fetch('listefiliere?fil='+value)
+        .then(response => response.text())
+        .then(rep => {
+            document.getElementById("tabfiliere").innerHTML = rep;
+            var supButtons = document.querySelectorAll(".supfil");
+            supButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                var id = this.dataset.id;
+                var fil = document.getElementById('filid');
+                deletefil(id);
+                fetchAffectationfil(fil.value);
+            });
+        });
+        });
     }
     function fetchAffectationmodule(value) {
                 fetch('tableModule?module='+value)

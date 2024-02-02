@@ -13,6 +13,7 @@ if (isset($_GET['dep'])) {
         <Label>Responsable</Label><br>
         <span class="custom-dropdown small">
             <select name="respo" required>
+                <option class="option" ></option>
                 @foreach ($modules as $module)
                 @foreach ($module as $mod)
                 @php

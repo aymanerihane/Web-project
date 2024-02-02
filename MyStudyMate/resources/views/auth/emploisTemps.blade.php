@@ -37,7 +37,7 @@
                                                 @endforeach
                                             </Select>
                                         </span>
-                                        
+
                                         <Label>Activite :</Label><br>
                                         <span class="custom-dropdown small" >
                                             <Select class="select" name="act" style="margin-bottom: 15px;" required>
@@ -47,6 +47,7 @@
                                                 @endforeach
                                             </Select>
                                         </span>
+                                        
                                         <div id="efrom"> </div>
 
                                     <div class="sb">

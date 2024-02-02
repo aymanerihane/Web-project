@@ -17,7 +17,8 @@ $fil = app('App\Http\Controllers\filieres')->findfil($id);
                                                 <option value="{{ $salle->id_local }}">{{ $salle->nom }}</option>
                                                 @endforeach
                                             </Select>
-                                        </span>
+                                        </span><br>
+
 <Label>Module :</Label><br>
      <span class="custom-dropdown small" >
      <Select class="select" name="module" style="margin-bottom: 15px;">

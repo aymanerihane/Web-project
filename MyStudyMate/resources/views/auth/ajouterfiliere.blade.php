@@ -72,4 +72,24 @@
     </button>
 </form>
 
-</div>
+</div><br>
+<h1 class="h1">Liste des filieres</h1>
+<Label>Formation :</Label><br>
+                    <span class="custom-dropdown small" >
+                        <Select class="select" id="listfor"  style="margin-bottom: 15px;" >
+                            <option class="option" value="2" disabled selected>Filiere</option>
+                            @php
+                    $formations = app('App\Http\Controllers\formation')->showFormation();
+                    @endphp
+                    @if($formations->count() > 0)
+                    @foreach ($formations as $formation)
+                            <option class="option" value="{{ $formation->id_formation }}">{{ $formation->nomformation }}</option>
+                        @endforeach
+                        @endif
+                        </Select>
+                    </span>
+
+
+
+
+<div id="tabfiliere"></div>
