@@ -340,6 +340,19 @@ function chnagerManupulation(url) {
       }else if(navButtons[index].querySelector("span").textContent === "Justifier Absence"){
         chnagerManupulation('justify');
         center.style.opacity = 0
+        setTimeout(function () {
+            var supButtons = document.querySelectorAll(".absc");
+                supButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    var id=this.dataset.id;
+                    console.log(id)
+                    var inp=document.getElementById("hidinp");
+                   inp.value=id;
+                   var mess = document.getElementById('justiForm');
+                  mess.action = 'justify/' + id + '';
+                });
+            });
+        }, 1000);
       }else if (navButtons[index].querySelector("span").textContent === "Demandes") {
         chnagerManupulation('Demandes');
 
