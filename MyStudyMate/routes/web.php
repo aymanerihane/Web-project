@@ -223,5 +223,8 @@ Route::get('auth/tableModule', function () {
 Route::get('auth/listefiliere', function () {
     return view('auth.listefiliere');
 });
+Route::get('chefDep/emploisTemps', function () {
+    return view('chefDep.emploisTemps');
+});
 
 

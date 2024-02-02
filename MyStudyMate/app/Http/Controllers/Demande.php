@@ -27,10 +27,9 @@ class Demande extends Controller
         return redirect('/etudiant/home');
     }
     public function find(){
-        $prof=Professeur::where('id_Utilisateur', auth()->user()->id)->first();
-        $idprof=$prof->MatriculeProf;
-        $demandes = ModelsDemande::where('MatriculeProf', $idprof)->get();
-        $demandes = ModelsDemande::where('statutDemande', 'En attente')->get();
+        $prof = Professeur::where('id_Utilisateur', auth()->user()->id)->first();
+        $idprof = $prof->MatriculeProf;
+        $demandes = ModelsDemande::where('MatriculeProf', $idprof)->where('statutDemande', 'En attente')->get();
         return $demandes;
     }
     public function etuddemande(){

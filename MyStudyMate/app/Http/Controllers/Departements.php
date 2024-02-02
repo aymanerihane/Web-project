@@ -17,4 +17,9 @@ class Departements extends Controller
     $departement =ModelsDepartements::where('id_departement',$id)->first();
         return $departement;
     }
+    public function finddepprof($id)
+    {
+    $departement =ModelsDepartements::where('id_RespoDepart',$id)->first();
+        return $departement;
+    }
 }
