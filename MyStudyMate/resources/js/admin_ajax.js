@@ -222,10 +222,10 @@ function chnagerManupulation(url) {
         chnagerManupulation('list');
         center.style.opacity = 0;
 
-        select=document.getElementById("memberType");
+        var select=document.getElementById("memberType");
         console.log(select)
-        document.addEventListener('change', ()=>{
-           var  select = document.getElementById("memberType");
+        document.addEventListener('change', function(){
+            select = document.getElementById("memberType");
             if (select.value == 0) {
                 chnagerManupulation1('allMembers');
             } else if (select.value == 1) {
