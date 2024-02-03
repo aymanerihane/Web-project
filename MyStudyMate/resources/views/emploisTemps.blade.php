@@ -1,6 +1,6 @@
 @vite(["resources/js/admin_ajax.js","resources/CSS/emplois.css"])
 @vite(['resources/js/loader.js',"resources/CSS/annonce.css","resources/js/admin_ajax.js",'resources/css/Normalize.css','resources/css/header.css',"resources/css/admin.css","resources/css/loader.css","resources/css/welcome.css"])
-@extends('layouts.app')
+@extends('layouts.welcom')
 @section('content')
 
 <h1 class="h1">Emplois du temps</h1>

@@ -1,5 +1,14 @@
 
 @vite(['resources/js/loader.js',"resources/CSS/annonce.css","resources/js/admin_ajax.js",'resources/css/Normalize.css','resources/css/header.css',"resources/css/admin.css","resources/css/loader.css","resources/css/welcome.css"])
+<style>
+    .landing{
+        min-height:100vh;
+        background-color: #1f2021;
+        background-image: url('{{ asset("storage/images/study.jpg") }}');
+        background-size: cover;
+        position: relative;
+        }
+</style>
 <?php
     if($_SERVER["PHP_SELF"] == "/index.php"){
 ?>
@@ -16,10 +25,9 @@
             ?>
         <ul class="nav">
             <li><a href="{{ url('/') }}">Home</a></li>
-            <li><a href="#">About us</a></li>
             <li><a href="/emploisTemps">Emplois du temps</a></li>
-            <li><a href="#">Our Service</a></li>
-            <li><a href="#">Contact us</a></li>
+            <li><a href="/motDoy">Mot du Doyen</a></li>
+            <li><a href="/contact">Contact us</a></li>
         </ul>
         <?php }
         ?>

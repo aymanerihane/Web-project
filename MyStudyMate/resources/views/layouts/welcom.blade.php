@@ -51,20 +51,13 @@
             </g>
         </svg>
     </div> --}}
-    <?php
-        if($_SERVER["PHP_SELF"] == "/index.php"){
-    ?>
+
     <header class="header-container">
-    <?php }else{?>
-        <header style="height: 80px" class="header-container">
-    <?php }?>
         <!-- logo -->
         <h1 class="logo"><a href="{{ url('/') }}">MyStudyMate!!</a></h1>
         <!-- nav bar -->
         <div class="nav-bar">
-            <?php
-            if($_SERVER["PHP_SELF"] == "/index.php"){
-                ?>
+
             <ul class="nav">
                 <li><a href="{{ url('/') }}">Home</a></li>
                 <li><a href="#">About us</a></li>
@@ -72,25 +65,18 @@
                 <li><a href="/motDoy">Mot du Doyen</a></li>
                 <li><a href="/contact">Contact us</a></li>
             </ul>
-            <?php }
-            ?>
+
             <!-- sing in and sing up -->
             <ul class="sign">
                 @guest
 
                             {{-- @if (Route::has('login')) --}}
 
-                            <?php
-                            if($_SERVER["PHP_SELF"] == "/index.php"){
-                                ?>
                             <li><a href="{{ route('login') }}">Sign in</a></li>
-
-                            <?php }
-                            ?>
 
                             @else
                             <div class="log">
-                                @if($_SERVER["PHP_SELF"] == "/index.php")
+
                                     @auth
                                         <p class="name"> {{ Auth::user()->name }} </p>
                                         <li class="btnlog">
@@ -102,29 +88,11 @@
                                             </div>
                                         </li>
                                     @endauth
-                                @else
-                                {{-- <p class="name"> {{ Auth::user()->name }} </p>
-                                    <li class="btnlog">
 
-                                        <div class="lougout">
-                                            <a class="loga" href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                            document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}
-                                            </a>
-
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                @csrf
-                                            </form>
-                                        </div>
-                                    </li> --}}
-                                @endif
                             </div>
                         @endguest
             </ul>
         </div>
-        <?php
-        if($_SERVER["PHP_SELF"] == "/index.php"){?>
         <!-- menu burger for small screen -->
         <div class="menuConatiner">
 
@@ -134,7 +102,6 @@
                 <span></span>
             </div>
         </div>
-        <?php } ?>
     </header>
     <script>
         document.addEventListener("DOMContentLoaded", function () {

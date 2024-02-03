@@ -34,6 +34,15 @@ Route::get('/emploisTemps', function () {
 Route::get('/filierePage', function () {
     return view('filierePage');
 });
+Route::get('/contact', function () {
+    return view('contact');
+});
+Route::get('/motDoy', function () {
+    return view('motDoy');
+});
+Route::get('/contact', function () {
+    return view('contact');
+});
 
 Auth::routes();
 Route::middleware(['isRole'])->group(function () {
