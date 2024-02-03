@@ -9,7 +9,7 @@
                     @if($filieres->count() > 0)
                         @foreach ($filieres as $filiere)
                             {{-- <a href="{{url('auth/filierePage')}}?idFiliere={{ $filiere->id_filiere }}"><div class="optionsMode filierech {{$filiere->nom}}" data-id="{{ $filiere->id_filiere }}"> --}}
-                                <div class="forchoix" style="background-color: transparent:z-index: 999;">
+                                <div class="filchoix" style="background-color: transparent:z-index: 999;">
 
                                     <div id="choix1 filchoix" class="e-card playing cardW {{ $filiere->nom }}" data-id="{{$filiere->id_filiere}}">
                                         <div class="image {{ $filiere->nom }}"></div>
