@@ -13,11 +13,17 @@
                 <tr>
                     <td>{{ $Demande->objet }}</td>
                     <td>{{ $Demande->created_at }}</td>
-                    <td>{{ $Demande->statutDemande }}</td>
+                    @if ($Demande->statutDemande == "Approuvée")
+                    <td style="background-color: green">{{ $Demande->statutDemande }}</td>
+                    @elseif ($Demande->statutDemande == "Rejetée")
+                    <td style="background-color: red">{{ $Demande->statutDemande }}</td>
+                    @else
+                    <td style="background-color: rgb(255, 187, 0)">{{ $Demande->statutDemande }}</td>
+                    @endif
                     @if ($Demande->statutDemande == "Approuvée")
                     <td>{{ $Demande->ReponseDemande }}</td>
                     @elseif ($Demande->statutDemande == "Rejetée")
-                    <td style="background-color: red">Demande Rejeter</td>
+                    <td>{{ $Demande->ReponseDemande }}</td>
                     @else
                     <td>-</td>
                     @endif
