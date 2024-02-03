@@ -12,6 +12,7 @@
 ::-webkit-scrollbar {
     width: 10px; /* Width of the vertical scrollbar */
     height: 10px; /* Height of the horizontal scrollbar */
+    visibility: hidden;
 }
 
 ::-webkit-scrollbar-track {
