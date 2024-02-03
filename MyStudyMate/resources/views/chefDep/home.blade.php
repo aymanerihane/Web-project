@@ -17,8 +17,8 @@
                 <hr/>
             </div>
             <div id="nav-content">
-                <div class="nav-button btn1 active-side1 active-side"><span>Gérer Emplois du Temps Salle</span></div>
-                <div class="nav-button btn2"><span>Gérer Annonces Département</span></div>
+                <div class="nav-button btn1 active-side1 active-side"><span>Gérer Annonces Département</span></div>
+                <div class="nav-button btn2"><span>Gérer Emplois du Temps Salle</span></div>
 
 
                 <div id="nav-content-highlight"></div>

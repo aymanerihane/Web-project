@@ -20,10 +20,17 @@ document.addEventListener("DOMContentLoaded", function () {
         navButtons[1].classList.add(`active-side2`);
         navButtons[1].classList.add(`active-side`);
     }
+    var referrer1 = window.location.pathname;
+    var added1='';
+    var lastSegment1 = referrer1.substr(referrer1.lastIndexOf('/') + 1);
+    console.log(lastSegment1);
+    if (lastSegment1 !== "chefDep"){
     chnagerManupulation('emploisTemps');
+    }
     chnagerManupulation('information');
     chnagerManupulation('annonce');
     chnagerManupulation('annonceee');
+    chnagerManupulation('chefDep/annonce');
     // Get all nav buttons and the highlight element
     var navButtons = document.querySelectorAll(".nav-button");
     var iconAdd = document.getElementById("addClick");
