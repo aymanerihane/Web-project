@@ -16,6 +16,7 @@
                     <div class="signbox"  style="position: relative;margin-bottom:76px">
                         <form style="width:100%;" class="formSign" id="formemp">
                             @csrf
+                            <div>
                             <input type="hidden" id="fil" name="filiere" required>
                                 <div style="display: flex;flex-direction:column;justify-content: space-between;align-items: center;">
                                         <Label>Jour:</Label><br>
@@ -47,9 +48,9 @@
                                                 @endforeach
                                             </Select>
                                         </span>
-                                        
-                                        <div id="efrom"> </div>
 
+                                        <div id="efrom"> </div>
+                                        </div>
                                     <div class="sb">
                                         <button type="button" id="submitemp">
                                             <div style="margin-bottom: 0" class="btnLogin"><span>ADD</span></div>
