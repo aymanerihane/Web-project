@@ -24,7 +24,7 @@
                     @php
                         $prof = app('App\Http\Controllers\addEtudiant')->findprofe(Auth::user()->id);
                     @endphp
-                    @if($prof->is_RespoDepart == 1 || $prof->is_RespoFiliere == 1 )
+                    @if($prof->is_RespoDepart == true || $prof->is_RespoFiliere == true )
                     <div class="nav-footer" style="z-index: 1999">
                         <a href="{{url('chefDep/choixMode')}}">Change Mode</a>
                     </div>

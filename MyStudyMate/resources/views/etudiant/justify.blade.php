@@ -11,12 +11,7 @@
             @if(is_countable($abscences) && count($abscences) > 0)
                 @foreach ($abscences as $abscence)
                 <div class="message absc" data-id="{{$abscence->id_abscence}}" >
-                    <label class="container">
-                        <input type="checkbox" name="demandes" id="">
-                        <div class="line"></div>
-                        <div class="line line-indicator"></div>
-                    </label>
-                    <div>
+                    <div style="margin: 10px">
                         <p class="objectDemande"  data-id="{{$abscence->id_abscence}}">{{$abscence->created_at}}</p>
                     </div>
                     <div class="new" style="background-color: red"></div>

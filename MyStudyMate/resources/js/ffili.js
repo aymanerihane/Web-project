@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Masquer toutes les cellules de données sauf les en-têtes
-    var dataCells = document.querySelectorAll('.contenufilier .td');
-    dataCells.forEach(function (cell) {
-        cell.classList.add('hidden');
-    });
+    // var dataCells = document.querySelectorAll('.contenufilier .td');
+    // dataCells.forEach(function (cell) {
+    //     cell.classList.add('hidden');
+    // });
 
 });
 document.addEventListener('click',(event)=>{
@@ -20,11 +20,12 @@ document.addEventListener('click',(event)=>{
 });
 
 function toggleColumn(columnIndex) {
+    console.log(columnIndex)
     var table = document.querySelector('.contenufilier table');
     var rows = table.querySelectorAll('.table-row');
 
     // Retirez la classe 'active' de toutes les cellules du header
-    var headerCells = document.getElementById('header').querySelectorAll('th');
+    var headerCells = document.querySelectorAll('.th');
     headerCells.forEach(function (cell) {
         cell.classList.remove('active');
     });
@@ -37,9 +38,10 @@ function toggleColumn(columnIndex) {
         var cells = row.children;
         for (var i = 0; i < cells.length; i++) {
             if (i === columnIndex) {
-                cells[i].classList.remove('hidden');
+                console.log(cells[i])
+                cells[i].style.display= '';
             } else {
-                cells[i].classList.add('hidden');
+                cells[i].style.display= 'none';
             }
         }
     });

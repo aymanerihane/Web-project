@@ -117,26 +117,18 @@
 
 <div class="box-container">
 
-<div class="box" data-aos="flip-right">
-<img style="margin-bottom: 60px;" src="{{ asset('storage/images/deust.jpeg') }}" alt="">
-<p>DEUST</p>
-</div>
-
-<div class="box" data-aos="flip-down">
-<img style="margin-bottom: 60px;" src="{{ asset('storage/images/master.jpg') }}" alt="">
-<p>LICENSE EN SCIENCE TECHNIQUE</p>
-</div>
-
-<div class="box" data-aos="flip-left">
-<img style="margin-bottom: 60px;" src="{{ asset('storage/images/deust.jpeg') }}" alt="">
-<p>MASTER EN SCIENCE TECHNIQUE</p>
-</div>
-
-<div class="box" data-aos="flip-right">
-<img style="margin-bottom: 60px;" src="{{ asset('storage/images/master.jpg') }}" alt="">
-<p>INGENIEUR D'ETAT</p>
-</div>
-
+    @php
+$filieres = app('App\Http\Controllers\filieres')->showFilieres();
+@endphp
+@foreach ($filieres as $filiere)
+<a href="{{url('filierePage')}}?idFiliere={{$filiere->id_filiere}}">
+    <div class="box" data-aos="flip-right">
+    <img style="margin-bottom: 60px;" src="{{ asset('storage/images/deust.jpeg') }}" alt="">
+    <p>{{ $filiere->nom }}</p>
+    </div>
+</a>
+@endforeach
+{{-- <div id="choix1 filchoix" class="e-card playing cardW " > --}}
 
 
 </div>
@@ -151,13 +143,13 @@
     @if(is_countable($annonces) && count($annonces) > 0)
         @foreach ($annonces as $annonce)
             <div class="annonce-card" style="display: flex;flex-direction: column;align-items:center;justify-content:center;">
-                <h1 class="head-card">{{ app('App\Http\Controllers\filieres')->findfil($annonce->id_filiere)->nom }}</h1>
                 <div class="imgholder">
                     {{-- You can add an image here if needed --}}
                 </div>
+                <h1 class="head-card">{{ app('App\Http\Controllers\filieres')->findfil($annonce->id_filiere)->nom }}</h1>
                 <div class="containerAnnonceText" style="width: 100%;">
                     <h1 class="head-card">{{ $annonce->titre }}</h1>
-                    <p class="text-card" style="width: 100%;">{{ $annonce->resume }}</p>
+                    <p class="text-card" style="width: 100%;padding: 5px">{{ $annonce->resume }}</p>
                 </div>
             </div>
         @endforeach
@@ -207,15 +199,7 @@
 </section>
 -->
 <!-- service section ends -->
-<iframe
-  width="600"
-  height="450"
-  style="border:0"
-  loading="lazy"
-  allowfullscreen
-  referrerpolicy="no-referrer-when-downgrade"
-  src="https://www.google.com/maps/embed/v1/place?key=&q=Space+Needle,Seattle+WA">
-</iframe>
+{{--  --}}
 <!-- footer -->
 <div class="footer">
 <div class="container">

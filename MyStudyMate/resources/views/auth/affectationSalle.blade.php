@@ -52,7 +52,7 @@
         </div>
 
     </div>
-    <button class="asso" type="button" id="affectbut">
+    <button class="asso" type="button" id="affectbut" style="width: 100%;display:flex;justify-content: center;">
         <div class="btnLogin"><span>Associer</span></div>
     </button>
 </form>

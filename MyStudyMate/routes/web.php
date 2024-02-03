@@ -31,7 +31,9 @@ Route::get('/', function () {
 Route::get('/emploisTemps', function () {
     return view('emploisTemps');
 });
-
+Route::get('/filierePage', function () {
+    return view('filierePage');
+});
 
 Auth::routes();
 Route::middleware(['isRole'])->group(function () {
