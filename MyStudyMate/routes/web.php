@@ -48,10 +48,14 @@ Auth::routes();
 Route::middleware(['isRole'])->group(function () {
 Route::get('auth/home', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('auth.home');
 Route::get('chefDep/choixMode', [App\Http\Controllers\chefDep\HomeController::class, 'index'])->name('chefDep.choixMode');
+Route::get('chefDep', [App\Http\Controllers\chefDep\HomeController::class, 'index'])->name('chefDep.home');
 Route::get('respFil/choixMod', [App\Http\Controllers\respFill\HomeController::class, 'index'])->name('respFil.choixMod');
 Route::get('prof/home', [App\Http\Controllers\Professeur\HomeController::class, 'index'])->name('prof.home');
 Route::get('etudiant/home', [App\Http\Controllers\etudiant\HomeController::class, 'index'])->name('etudiant.home');
 Route::get('landing/home', [App\Http\Controllers\landing\HomeController::class, 'index'])->name('landing.home');
+// web.php
+Route::get('auth/affectationSalle', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('auth.affectationSalle');
+});
 Route::post('auth/addEtudiant', [addEtudiant::class, 'create'])->name('auth.addEtudiant');
 Route::post('choixMode/annonces', [annonces::class, 'add'])->name('annonces');
 Route::post('demandes', [Demande::class, 'add'])->name('demandes');
@@ -79,9 +83,6 @@ Route::post('etudiant/justify/{id}', [abscence::class, 'justify'])->name('justif
 Route::get('/module/{id}', [Modules::class, 'delete']);
 Route::get('/filiere/{id}', [filieres::class, 'delete']);
 Route::get('/reservation/{id}', [reservations::class, 'delete']);
-// web.php
-Route::get('auth/affectationSalle', [App\Http\Controllers\Auth\HomeController::class, 'index'])->name('auth.affectationSalle');
-});
 Route::get('prof/message', function () {
     return view('prof.message');
 });
@@ -112,9 +113,9 @@ Route::get('auth/formationChoix', function () {
     // Route::get('auth/choixSousFil', function () {
     //     return view('auth.choixSousFil');
     // });
-Route::get('chefDep', function () {
-    return view('chefDep.home');
-});
+// Route::get('chefDep', function () {
+//     return view('chefDep.home');
+// });
 Route::get('chefDep/annonce', function () {
     return view('chefDep.gererAnnonces');
 });
