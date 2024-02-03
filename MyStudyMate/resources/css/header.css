@@ -10,8 +10,8 @@
 }
 /* Scrollbar Styling for both horizontal and vertical scrollbars */
 ::-webkit-scrollbar {
-    width: 10px; /* Width of the vertical scrollbar */
-    height: 10px; /* Height of the horizontal scrollbar */
+    width: 0px; /* Width of the vertical scrollbar */
+    height: 0px; /* Height of the horizontal scrollbar */
     visibility: hidden;
 }
 
