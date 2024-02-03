@@ -30,8 +30,6 @@
                     Professeur
                 @elseif ($allMember->is_role == 3)
                     Etudiants
-                @else
-                    NONE
                 @endif
             </td>
         </tr>

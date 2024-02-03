@@ -14,7 +14,7 @@ class addEtudiant extends Controller
 {
     public function allMember()
 {
-    $members = User::where('is_role', '!=', 0)->get();
+    $members = User::where('is_role', '!=', 1)->get();
     return $members;
 }
     public function etudMember()
