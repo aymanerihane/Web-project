@@ -28,10 +28,8 @@ class isRole
                 return redirect()->route('prof.home');
             }
              elseif (auth()->user()->is_role == 2 && app('App\Http\Controllers\addEtudiant')->findprofe(auth()->user()->id)->is_RespoDepart==1){
-                if($_SERVER['PHP_SELF']=='/chefDep' && $_SERVER["REQUEST_METHOD"]=='POST'){
-                }
-                elseif($routename!='chefDep.choixMode' && $routename!='prof.home' && $routename!='chefDep')
-                    return redirect()->route('chefDep.choixMode');
+                if($routename!='chefDep.choixMode' && $routename!='prof.home' && $routename!='chefDep')
+                    return redirect()->route('chefDep.home');
                 elseif($routename=='prof.home' && $routename=='chefDep')
                  return redirect()->route('chefDep.choixMode');
             }

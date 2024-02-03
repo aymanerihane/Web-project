@@ -113,9 +113,9 @@ Route::get('auth/formationChoix', function () {
     // Route::get('auth/choixSousFil', function () {
     //     return view('auth.choixSousFil');
     // });
-// Route::get('chefDep', function () {
-//     return view('chefDep.home');
-// });
+Route::get('chefDep', function () {
+    return view('chefDep.home');
+});
 Route::get('chefDep/annonce', function () {
     return view('chefDep.gererAnnonces');
 });
