@@ -245,4 +245,7 @@ Route::get('/emploi', function () {
     return view('chefDep.emploi');
 });
 
+Route::get('/filiereWelc', function () {
+    return view('filiereWelc');
+});
 

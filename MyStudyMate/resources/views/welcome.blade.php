@@ -126,13 +126,13 @@
 <div class="box-container">
 
     @php
-$filieres = app('App\Http\Controllers\filieres')->showFilieres();
+$formations = app('App\Http\Controllers\formation')->showFormation();
 @endphp
-@foreach ($filieres as $filiere)
-<a href="{{url('filierePage')}}?idFiliere={{$filiere->id_filiere}}">
+@foreach ($formations as $formation)
+<a href="{{url('filiereWelc')}}?idFormation={{$formation->id_formation}}">
     <div class="box" data-aos="flip-right">
     <img style="margin-bottom: 60px;" src="{{ asset('storage/images/deust.jpeg') }}" alt="">
-    <p>{{ $filiere->nom }}</p>
+    <p>{{ $formation->nomformation }}</p>
     </div>
 </a>
 @endforeach

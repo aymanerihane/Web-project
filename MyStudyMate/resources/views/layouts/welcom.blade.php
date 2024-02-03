@@ -60,7 +60,6 @@
 
             <ul class="nav">
                 <li><a href="{{ url('/') }}">Home</a></li>
-                <li><a href="#">About us</a></li>
                 <li><a href="/emploisTemps">Emplois du temps</a></li>
                 <li><a href="/motDoy">Mot du Doyen</a></li>
                 <li><a href="/contact">Contact us</a></li>
