@@ -6,7 +6,7 @@
         $filieres = app('App\Http\Controllers\filieres')->findfil($idFiliere);
     }
 @endphp
-<h1 class="heading">Filieres:</h1>
+<h1 class="heading" style="margin: 0;font-size:1rem">Filieres:</h1>
 
         <div class="box-container" style="width: 100%;display: flex;flex-direction: column;align-items:center">
 

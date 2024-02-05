@@ -49,10 +49,10 @@
                                             </Select>
                                         </span>
 
-                                        <div id="efrom"> </div>
+                                        <div id="efrom" style="display: flex;flex-direction: column;overflow: scroll;justify-content: space-between;align-items: center;"> </div>
                                         </div>
                                     <div class="sb">
-                                        <button type="button" id="submitemp">
+                                        <button type="button" id="submitemp" style="width: 100%;display:flex;justify-content: center;">
                                             <div style="margin-bottom: 0" class="btnLogin"><span>ADD</span></div>
                                             </button>
 

@@ -21,7 +21,7 @@ $fil = app('App\Http\Controllers\filieres')->findfil($id);
 
 <Label>Module :</Label><br>
      <span class="custom-dropdown small" >
-     <Select class="select" name="module" style="margin-bottom: 15px;">
+     <Select class="select" name="module" style="margin-bottom: 15px;font-size: 10px">
     <option value="0"></option>
     @foreach($modules as $module)
     <option value="{{ $module->id_module }}">{{ $module->nom }}</option>

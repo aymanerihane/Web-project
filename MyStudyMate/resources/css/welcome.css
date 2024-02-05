@@ -420,3 +420,103 @@
         .footer.social-icons i{
         padding:  10px 15px;
         }
+
+
+
+/* cardstyle */
+
+        .card {
+            margin: 10px;
+            width: 300px;
+            height: 200px;
+            perspective: 1000px;
+          }
+
+          .card-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.999s;
+          }
+
+          .card:hover .card-inner {
+            transform: rotateY(180deg);
+          }
+
+          .card-front,
+          .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+}
+
+          .card-front {
+            background-color: #a58e6a;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            border: 10px solid #a58e6a;
+            border-radius: 10px;
+            justify-content: center;
+            font-size: 24px;
+            transform: rotateY(0deg);
+            -webkit-transform: rotateY(0deg);
+            -moz-transform: rotateY(0deg);
+            -ms-transform: rotateY(0deg);
+            -o-transform: rotateY(0deg);
+}
+
+          .card-back {
+            background-color: rgb(132, 103, 89);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 10px solid rgb(132, 103, 89);
+            border-radius: 10px;
+            justify-content: center;
+            font-size: 24px;
+            transform: rotateY(180deg);
+          }
+
+
+          /* footer */
+          .grid{
+            display: grid;
+            align-content: center;
+            column-gap: 50px;
+            grid-template-columns: auto auto auto ;
+          }
+          .grid ul li a{
+            color: #fff;
+          }
+          .grid ul li{
+            margin: 30px 10px 10px 10px;
+            text-align: left;
+          }
+          .grid ul li a:hover{
+            color: #000;
+          }
+          .grid ul li::before{
+            content: '>>';
+            color: #ffffff;
+            font-weight: 600;
+            margin: 10px;
+          }
+
+
+          .cont{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+        i{
+            color: white;
+            width: 40px;
+            font-size: 25px;
+            margin: 10px
+        }
