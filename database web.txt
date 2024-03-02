@@ -1,0 +1,151 @@
+
+INSERT INTO `users` (`id`, `name`, `email`, `is_role`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'AZMANI ABDELLAH', 'azmani.abdellah@uae.ac.ma', 0, NULL, '$2y$12$m1xVp/R7w9mX3ObDuimG2edXJsNsGXBvzEVmIy7JvjHKkSwiRQiXe', NULL, NULL, NULL),
+(2, 'EL YUSUFI YASYN', 'elyusfi.yasyn@uae.ac.ma', 0, NULL, '$2y$12$m1xVp/R7w9mX3ObDuimG2edXJsNsGXBvzEVmIy7JvjHKkSwiRQiXe', NULL, '2024-01-24 01:55:00', '2024-01-24 01:55:00'),
+(3, 'EZZIYYANI MOSTAFA', 'ezziyani.mostafa@uae.ac.ma', 0, NULL, '$2y$12$m1xVp/R7w9mX3ObDuimG2edXJsNsGXBvzEVmIy7JvjHKkSwiRQiXe', NULL, '2024-01-24 01:56:50', '2024-01-24 01:56:50'),
+(4, 'EN-NAIMI EL MOKHTAR', 'en-naimi.elmokhtar@uae.ac.ma', 0, NULL, '$2y$12$m1xVp/R7w9mX3ObDuimG2edXJsNsGXBvzEVmIy7JvjHKkSwiRQiXe', NULL, '2024-01-24 01:58:00', '2024-01-24 01:58:00'),
+(5, 'ABDELHAMID ZOUHAIR', 'Abdelhamid.zouhair@uae.ac.ma', 0, NULL, '$2y$12$m1xVp/R7w9mX3ObDuimG2edXJsNsGXBvzEVmIy7JvjHKkSwiRQiXe', NULL, '2024-01-24 01:58:59', '2024-01-24 01:58:59'),
+(6, 'KOUNAIDI MOHAMED', 'm.kounaidi@uae.ac.ma', 0, NULL, '$2y$12$m1xVp/R7w9mX3ObDuimG2edXJsNsGXBvzEVmIy7JvjHKkSwiRQiXe', NULL, '2024-01-24 02:00:06', '2024-01-24 02:00:06'),
+(7, 'CHAKER EL AMRAN', 'amran.chakir@uae.ac.ma', 0, NULL, '$2y$12$m1xVp/R7w9mX3ObDuimG2edXJsNsGXBvzEVmIy7JvjHKkSwiRQiXe', NULL, '2024-01-24 02:12:22', '2024-01-24 02:12:22'),
+(8, 'KHALI ISSA SANAE', 'khalissa.sanae@uae.ac.ma', 0, NULL, '$2y$12$m1xVp/R7w9mX3ObDuimG2edXJsNsGXBvzEVmIy7JvjHKkSwiRQiXe', NULL, '2024-01-24 02:15:07', '2024-01-24 02:15:07'),
+(9, 'wafae Baida', 'w.baida@uae.ac.ma', 0, NULL, '$2y$12$m1xVp/R7w9mX3ObDuimG2edXJsNsGXBvzEVmIy7JvjHKkSwiRQiXe', NULL, '2024-01-24 02:16:11', '2024-01-24 02:16:11'),
+(10, 'EL BRAK Mohamed', 'elbrak.mohammed@uae.ac.ma', 0, NULL, '$2y$12$m1xVp/R7w9mX3ObDuimG2edXJsNsGXBvzEVmIy7JvjHKkSwiRQiXe', NULL, '2024-01-24 02:16:35', '2024-01-24 02:16:35'),
+(11, 'CHABBI Mohamed', 'chabbi.mohammed@uae.ac.ma', 0, NULL, '$2y$12$m1xVp/R7w9mX3ObDuimG2edXJsNsGXBvzEVmIy7JvjHKkSwiRQiXe', NULL, '2024-01-24 02:17:21', '2024-01-24 02:17:21'),
+(12, 'BOULAASSAL Hakim', 'boulaassa.hakim@uae.ac.ma', 0, NULL, '$2y$12$m1xVp/R7w9mX3ObDuimG2edXJsNsGXBvzEVmIy7JvjHKkSwiRQiXe', NULL, '2024-01-24 02:19:06', '2024-01-24 02:19:06'),
+(13, ' ELAYACHI Ilham', 'elyachi.ilham@ue.ac.ma', 0, NULL, '$2y$12$m1xVp/R7w9mX3ObDuimG2edXJsNsGXBvzEVmIy7JvjHKkSwiRQiXe', NULL, '2024-01-24 02:21:20', '2024-01-24 02:21:20'),
+(14, 'HASSANI ZERROUK Mounir', 'hassnizerrouk.mounir@uae.ac.ma', 0, NULL, '$2y$12$m1xVp/R7w9mX3ObDuimG2edXJsNsGXBvzEVmIy7JvjHKkSwiRQiXe', NULL, '2024-01-24 02:22:58', '2024-01-24 02:22:58'),
+(15, 'HADJ BARAKA Ibrahim', 'hadjbaraka.ibrahim@uae.ac.ma', 0, NULL, '$2y$12$m1xVp/R7w9mX3ObDuimG2edXJsNsGXBvzEVmIy7JvjHKkSwiRQiXe', NULL, '2024-01-24 02:28:30', '2024-01-24 02:28:30'),
+(16, 'OUCHEN MOHAMED', 'ouchen.mohammed@uae.ac.ma', 0, NULL, '$2y$12$m1xVp/R7w9mX3ObDuimG2edXJsNsGXBvzEVmIy7JvjHKkSwiRQiXe', NULL, '2024-01-24 02:28:46', '2024-01-24 02:28:46'),
+(17, ' AJDOUR Mounia', 'ajdour.mounia@uae.ac.ma', 0, NULL, '$2y$12$m1xVp/R7w9mX3ObDuimG2edXJsNsGXBvzEVmIy7JvjHKkSwiRQiXe', NULL, '2024-01-24 02:29:45', '2024-01-24 02:29:45'),
+(18, 'EL HALIMI RACHID', 'elhalimi.rachid@uae.ac.ma', 0, NULL, '$2y$12$m1xVp/R7w9mX3ObDuimG2edXJsNsGXBvzEVmIy7JvjHKkSwiRQiXe', NULL, '2024-01-24 02:33:31', '2024-01-24 02:33:31');
+
+
+INSERT INTO `professeurs` (`MatriculeProf`, `is_RespoDepart`, `is_RespoFiliere`, `id_Utilisateur`, `created_at`, `updated_at`) VALUES
+(1, 0, 0, 1, '2024-01-24 02:28:46', '2024-01-24 02:28:46'),
+(2, 0, 0, 2, '2024-01-24 02:28:30', '2024-01-24 02:28:30'),
+(3, 0, 0, 3, '2024-01-24 02:22:58', '2024-01-24 02:22:58'),
+(4, 0, 0, 4, '2024-01-24 02:00:06', '2024-01-24 02:00:06'),
+(5, 0, 0, 5, '2024-01-24 02:16:11', '2024-01-24 02:16:11'),
+(6, 0, 1, 6, '2024-01-24 02:16:35', '2024-01-24 02:16:35'),
+(7, 0, 0, 7, '2024-01-24 02:16:35', '2024-01-24 02:16:35'),
+(8, 0, 0, 8, '2024-01-24 02:16:35', '2024-01-24 02:16:35'),
+(9, 0, 1, 9, '2024-01-24 02:16:35', '2024-01-24 02:16:35'),
+(10, 1, 0, 10, '2024-01-24 02:16:35', '2024-01-24 02:16:35'),
+(11, 1, 0, 11, '2024-01-24 02:16:35', '2024-01-24 02:16:35'),
+(12, 1, 0, 12, '2024-01-24 02:16:35', '2024-01-24 02:16:35'),
+(13, 1, 0, 13, '2024-01-24 02:16:35', '2024-01-24 02:16:35'),
+(14, 1, 0, 14, '2024-01-24 02:16:35', '2024-01-24 02:16:35'),
+(15, 1, 0, 15, '2024-01-24 02:16:35', '2024-01-24 02:16:35'),
+(16, 1, 0, 16, '2024-01-24 02:16:35', '2024-01-24 02:16:35'),
+(17, 1, 0, 17, '2024-01-24 02:16:35', '2024-01-24 02:16:35'),
+(18, 1, 0, 18, '2024-01-24 02:16:35', '2024-01-24 02:16:35');
+
+
+
+
+
+
+INSERT INTO `formation` (`id_formation`, `nomformation`, `created_at`, `updated_at`) VALUES
+(1, 'DEUST', NULL, NULL),
+(2, 'LICENCE', NULL, NULL),
+(3, 'MASTER', NULL, NULL),
+(4, 'INGENIEUR D\'ETAT', NULL, NULL),
+(5, 'Doctorat en Sciences et Techniques', NULL, NULL);
+
+
+
+
+
+INSERT INTO `departements` (`id_departement`, `nom`, `id_RespoDepart`, `created_at`, `updated_at`) VALUES
+(1, 'Genie Informatique', 1, NULL, NULL),
+(2, 'Genie Chimique', 2, NULL, NULL),
+(3, 'Science de la Terre', 3, NULL, NULL),
+(4, 'Genie Mecanique', 4, NULL, NULL),
+(5, 'Science de la Vie', 5, NULL, NULL),
+(6, 'Genie Electrique', 6, NULL, NULL),
+(7, 'TEC', 7, NULL, NULL),
+(8, 'Phusique', 8, NULL, NULL),
+(9, 'Mathematique', 9, NULL, NULL);
+
+INSERT INTO `filieres` (`id_filiere`, `nom`, `contenuFiliere`, `id_RespoFiliere`, `id_departement`, `id_formation`, `created_at`, `updated_at`) VALUES
+(1, 'Analytique de donnees', 'Mathématiques pour la science des données-Structures des données avancées et théorie des graphes- Fondamentaux des bases de données- Algorithmique avancée et programmation- Développement WEB- Développement personnel et intelligence émotionnelle (Soft skil', 1, 1, 2, NULL, NULL),
+(2, 'Biotechnologie', 'Biologie moléculaire- Génétique- Enzymologie- Immunologie et immunotechnologie- Génie Microbiologique- Techniques appliquées à la Biologie- Valorisation des ressources végétales et génie des biomolécules- Physiologie végétale- Biotechnologie végétale- Pro', 2, 5, 2, NULL, NULL),
+(3, 'Design Industriel', 'Choix des matériaux, dimensionnement et essais- Eléments de machines- Machines industrielles- Management Industriel- CAO : Conception Assistée par Ordinateur- Métrologie et Contrôle de Qualité- FAO : Fabrication Assistée par Ordinateur- Prototypage Rapide', 3, 7, 2, NULL, NULL),
+(4, 'Energie Renouvelables', 'Calcul Scientifique/Traitement du Signal- Mécanique des Fluides/Transferts Thermiques- Génie des Matériaux- Convertisseurs Statiques d’Énergie Électrique- Électrotechnique et Machines Électriques- Production des Énergies Renouvelables-Énergie Solaire- Éne', 4, 8, 2, NULL, NULL),
+(5, 'Genie civil', 'Mécanique des milieux continus et Outils Techniques en Génie Civil- Résistance des matériaux- Béton armé- Mécanique des sols et notions de base de la géotechnique- Matériaux de construction- Méthodes numériques et calcul scientifique- Analyse et calcul de', 5, 4, 2, NULL, NULL),
+(6, 'genie Des Procedes', 'Calculs des réacteurs- Bilan Matière et Énergie- Opérations Unitaires- Mécanique des fluides et Hydraulique- Optimisation des Procédés Industrielle- Modélisation des processus et Régulation des Procédés- Matériaux et Industrie chimique- Procédés de Dépoll', 6, 2, 2, NULL, NULL),
+(7, 'Genie Electrique', 'Traitement de signal & Télécommunication- Actionneurs industriels- Électronique et systèmes- Automatismes- Électronique de puissance- Gestion de maintenance et sûreté de fonctionnement- Management du projet- Microcontrôleur microprocesseur- Réseaux et bas', 7, 6, 2, NULL, NULL),
+(8, 'Genie Industriel', 'Machines Hydrauliques- Gestion de production- Machines Thermiques- Gestion de la qualité- Gestion de la maintenance et sureté de fonctionnement- Matériaux et RDM- Logistique et Supply Chain Management- Optimisation des Systèmes- Management de projet Proje', 8, 6, 2, NULL, NULL),
+(9, 'Geosciences Appliquees', 'Pétrographie/Minéralogie- Environnements sédimentaires- Élément de tectonique/Domaines structuraux du Maroc- Ressources hydriques- Géochimie et pollution urbaine- Pédologie- Traitement des données géologiques-Cartographie numérique- Géologie appliquée- Pr', 9, 3, 2, NULL, NULL),
+(11, 'ingenierie de developpement d\'Application informatique', 'Modélisations avancée et Méthodes de génie logiciel- Développement Web- Base de données Structurées et non Structurées- Programmation Orientée Objet en C++/Java- Systèmes et réseaux informatiques- Développement de soft skills- Innover, Entreprendre et s’i', 10, 1, 2, NULL, NULL),
+(12, 'Ingenierie Statistique', 'Topologies dans les espaces métriques- Intégration- Probabilités avancées- Recherche Opérationnelle- Concept de base de Programmation avancée C++- Analyse des données- Statistique Mathématique- MSP- Régression–Anova- Projet de fin d’études', 11, 9, 2, NULL, NULL),
+(13, 'Mathematique et Informatique Decisionnelles', 'Base de données Relationnelles et Nosql- POO/ Développement web- Intégration et Probabilités- Topologie et Calcul différentiel- Optimisation non linéaire et recherche opérationnelle- Anglais et Management de Projet-PYTHON ET MACHINE LEARNING- Mathématique', 12, 9, 2, NULL, NULL),
+(14, 'Risques et ressources Naturels', 'Risques et ressources naturels-Techniques géophysiques/géotechniques/géochimiques- Techniques géomatiques- Informatiques- Modélisation et analyse de données- Soft Skills-Risques géologiques - Risques hydroclimatiques- Risques naturels et aménagement- Proj', 13, 3, 2, NULL, NULL),
+(15, 'Techniuqes d\'analyse Chimiques', 'Chimie organique avancée-Chimie inorganique-Thermochimie, Cinétique et Catalyse- Electrochimie et Méthodes électro-analytiques- Méthodes Spectroscopiques- Techniques d’analyse inorganiques-Techniques Séparatives- Chimie et analyse des eaux- Assurance qual', 14, 2, 2, NULL, NULL);
+
+INSERT INTO `modules` (`id_module`, `nom`, `MatriculeProf`, `id_filiere`, `created_at`, `updated_at`) VALUES
+(1, 'Mathematique pour la science des donnees', 1, 1, NULL, NULL),
+(2, 'Structures des donnees avances et theorie des graphes', 2, 1, NULL, NULL),
+(3, 'fondamentaux des bases de donnees', 3, 1, NULL, NULL),
+(4, 'Algorithm avancee et programmation', 4, 1, NULL, NULL),
+(5, 'Developpement Web', 5, 1, NULL, NULL),
+(6, 'soft skills', 6, 1, NULL, NULL),
+(7, 'Analyse et fouille de donnees', 7, 1, NULL, NULL),
+(8, 'Système et Reseaux', 8, 1, NULL, NULL),
+(9, 'Ingenierie des donnees', 9, 1, NULL, NULL),
+(10, 'PFE', 10, 1, NULL, NULL),
+(11, 'Modelisation avancee et Methodes de gemie logiciel', 11, 11, NULL, NULL),
+(12, 'Developpement Web', 12, 11, NULL, NULL),
+(13, 'Base de donnees Structurees et non Structurees', 13, 11, NULL, NULL),
+(14, 'Programmtion oriente Objet en C++/JAVA', 14, 11, NULL, NULL),
+(15, 'Systemes et Reseaux Informatique', 15, 11, NULL, NULL),
+(16, 'Soft skills', 16, 11, NULL, NULL),
+(17, 'Innover Entreprendre et s\'initier a la gestion d\'une entreprise avec un ERP', 17, 11, NULL, NULL),
+(18, 'Initiation en developpement mobile et Edge computing', 18, 11, NULL, NULL);
+
+
+INSERT INTO `locals` (`id_local`, `nom`, `type`, `id_departement`, `created_at`, `updated_at`) VALUES
+(1, 'E11', 'cour/TD/TP', 1, NULL, NULL),
+(2, 'E12', 'cour/TD/TP', 1, NULL, NULL),
+(3, 'E13', 'cour/TD/TP', 1, NULL, NULL),
+(4, 'E14', 'cour/TD/TP', 1, NULL, NULL),
+(5, 'E15', 'cour/TD/TP', 1, NULL, NULL),
+(6, 'E16', 'cour/TD/TP', 1, NULL, NULL),
+(7, 'E17', 'cour/TD/TP', 1, NULL, NULL),
+(8, 'E18', 'cour/TD/TP', 1, NULL, NULL),
+(9, 'E21', 'cour/TD/TP', 1, NULL, NULL),
+(10, 'E22', 'cour/TD/TP', 1, NULL, NULL),
+(11, 'E23', 'cour/TD/TP', 1, NULL, NULL),
+(12, 'E24', 'cour/TD/TP', 1, NULL, NULL),
+(13, 'E25', 'cour/TD/TP', 1, NULL, NULL);
+
+
+INSERT INTO `emplois_du_temps` (`id_emploi`, `jour`, `creneau_horaire`, `activite`, `id_module`, `id_local`, `id_filiere`, `created_at`, `updated_at`) VALUES
+(56, 'MARDI', '15h00 - 16h45', 'Cours', 13, 5, 11, '2024-01-25 15:30:14', '2024-01-25 15:30:14'),
+(57, 'MARDI', '17h00 - 18h45', 'TD', 13, 5, 11, '2024-01-25 15:52:38', '2024-01-25 15:52:38'),
+(58, 'MERCREDI', '09h00 - 10h45', 'Cours', 12, 5, 11, '2024-01-26 00:12:58', '2024-01-26 00:12:58'),
+(59, 'MERCREDI', '11h00 - 12h45', 'TD', 12, 5, 11, '2024-01-27 14:04:41', '2024-01-27 15:06:16'),
+(60, 'JEUDI', '09h00 - 10h45', 'Cours', 11, 5, 11, '2024-01-27 14:05:02', '2024-01-27 14:05:02'),
+(61, 'JEUDI', '11h00 - 12h45', 'TD', 11, 5, 11, '2024-01-27 14:31:43', '2024-01-27 14:31:43'),
+(62, 'VENDREDI', '15h00 - 16h45', 'Cours', 15, 5, 11, '2024-01-27 14:34:53', '2024-01-27 14:34:53'),
+(63, 'VENDREDI', '17h00 - 18h45', 'TD', 15, 5, 11, '2024-01-27 14:37:30', '2024-01-27 14:37:30'),
+(64, 'SAMEDI', '09h00 - 10h45', 'Cours', 14, 5, 11, '2024-01-27 15:03:02', '2024-01-27 15:05:45'),
+(65, 'SAMEDI', '11h00 - 12h45', 'TD', 16, 5, 11, '2024-01-27 15:03:03', '2024-01-27 15:05:46'),
+(66, 'LUNDI', '09h00 - 10h45', 'Cours', 1, 5, 1, '2024-01-27 15:03:04', '2024-01-27 15:05:47'),
+(67, 'LUNDI', '11h00 - 12h45', 'TD', 1, 5, 1, '2024-01-27 15:03:05', '2024-01-27 15:05:48'),
+(68, 'MARDI', '09h00 - 10h45', 'Cours', 3, 5, 1, '2024-01-27 15:03:06', '2024-01-27 15:05:49'),
+(69, 'MARDI', '11h00 - 12h45', 'TD', 3, 5, 1, '2024-01-27 15:03:07', '2024-01-27 15:05:50'),
+(70, 'MERCREDI', '15h00 - 16h45', 'Cours', 4, 5, 1, '2024-01-27 15:03:08', '2024-01-27 15:05:51'),
+(71, 'MERCREDI', '17h00 - 18h45', 'TD', 4, 5, 1, '2024-01-27 15:03:09', '2024-01-27 15:05:52'),
+(72, 'JEUDI', '15h00 - 16h45', 'Cours', 5, 5, 1, '2024-01-27 15:03:10', '2024-01-27 15:05:53'),
+(73, 'JEUDI', '17h00 - 18h45', 'TD', 5, 5, 1, '2024-01-27 15:03:11', '2024-01-27 15:05:54'),
+(74, 'VENDREDI', '09h00 - 10h45', 'Cours', 2, 5, 1, '2024-01-27 15:03:12', '2024-01-27 15:05:55'),
+(75, 'VENDREDI', '11h00 - 12h45', 'TD', 2, 5, 1, '2024-01-27 15:03:13', '2024-01-27 15:05:56'),
+(76, 'SAMEDI', '09h00 - 10h45', 'Cours', 6, 5, 1, '2024-01-27 15:03:14', '2024-01-27 15:05:57'),
+(77, 'SAMEDI', '11h00 - 12h45', 'TD', 6, 5, 1, '2024-01-27 15:03:15', '2024-01-27 15:05:58');
+
+
+
+INSERT INTO `annonces` (`id_annonce`, `titre`, `resume`, `Description`, `id_Utilisateur`, `id_filiere`, `created_at`, `updated_at`) VALUES
+(1, 'les notes', 'affichage des notes vous trouvez ci-dessous les notes de l\'examen fait en janvier 2024', '', 1, 1, '2024-01-26 15:49:33', '2024-01-26 15:49:33'),
+(2, 'les examens', 'repport d\'examen', 'je vous informe que l\'examen programme le 29 Janvier 2014 est repporte jusqu\'au 20 Fevrier 2024', 2, 11, '2024-01-26 15:49:33', '2024-01-26 15:49:33');
